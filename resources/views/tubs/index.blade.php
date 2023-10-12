@@ -813,7 +813,7 @@ session_start();
                     $('.progress-box').slideDown();
                 }
 
-                var progressPercentage = ((current_step-12) / (totalStep)) * 98;
+                var progressPercentage = ((current_step-13) / (totalStep)) * 98;
                 var progressBar = $(".progress-bar");
                 progressBar.css("width", progressPercentage + "%");
 
@@ -833,7 +833,7 @@ session_start();
                 });
 
                 $.height();
-                if ((current_step-12) == totalStep){
+                if ((current_step-13) == totalStep){
                     $('#tcpa_cont').show();
                 }
             }
