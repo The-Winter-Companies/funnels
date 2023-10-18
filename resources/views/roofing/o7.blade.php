@@ -6,7 +6,7 @@ if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "roofing.foreverhome
 
 } else {
     $leadProsperUrl = "https://api.leadprosper.io/ingest";
-    $submitUrl = "http://localhost";
+    $submitUrl = "https://winterbot.app";
     $leadBackupUrl = "https://lb.winterbot.app";
 }
 if(!isset($_GET['ef_aff_id'])){
