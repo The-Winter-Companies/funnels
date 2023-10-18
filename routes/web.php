@@ -68,4 +68,7 @@ Route::get('/thank-you', function () {
 Route::get('/astrology', function () {
     return view('signup/index');
 });
+Route::get('/astrology2', function () {
+    return view('signup/index');
+});
 
