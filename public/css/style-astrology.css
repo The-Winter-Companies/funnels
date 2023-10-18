@@ -1,0 +1,680 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent
+}
+
+body {
+    line-height: 1
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none
+}
+
+:focus {
+    outline: 0
+}
+
+a:focus {
+    outline: 0;
+    text-decoration: none
+}
+
+ins {
+    text-decoration: none
+}
+
+del {
+    text-decoration: line-through
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease
+}
+
+a:hover {
+    text-decoration: none
+}
+
+::-webkit-input-placeholder {
+    opacity: 1
+}
+
+:-moz-placeholder {
+    opacity: 1
+}
+
+::-moz-placeholder {
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    opacity: 1
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1150px;
+}
+
+.container > .row {
+    clear: both
+}
+
+a {
+    color: #008eff;
+    font-weight: 400
+}
+
+a:hover {
+    color: #ffdf5a;
+    text-decoration: none
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.428571429;
+    color: #fff;
+    background-color: #0d0417;
+    min-width: 320px;
+    overflow-x: hidden;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;;
+
+}
+
+header, nav, section, article, aside, footer {
+    display: block;
+    position: relative;
+    z-index: 99;
+}
+
+form {
+    max-width: 800px !important;
+}
+
+form fieldset {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form fieldset:not(:first-of-type) {
+    display: none;
+}
+
+
+form .form-control {
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 55px;
+    line-height: 55px;
+    font-weight: 400 !important;
+    padding: 0 20px;
+    background: #1703557d;
+    border-radius: 5px;
+    border: solid 1px #fff;
+    color: #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+form .form-control:focus, form .form-control:active {
+    outline: none;
+    box-shadow: none;
+    background: #1703557d;
+    color: #fff;
+    font-weight: 400;
+    border-color: #f4a745;
+    -webkit-box-shadow: 0 0 9px 4px rgba(244, 167, 69, 0.5);
+    box-shadow: 0 0 9px 4px rgba(244, 167, 69, 0.5);
+}
+
+select.form-control:not([size]):not([multiple]) {
+    min-height: 57px !important;
+    background-size: 30px;
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'  fill='%23ffffff' stroke-width='0' stroke-linecap='round' stroke-linejoin='round'><path d='M7,10L12,15L17,10H7Z'/></svg>") !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: center right 1rem;
+    padding-right: 1.5rem
+}
+
+main {
+    z-index: 999;
+    position: relative;
+}
+
+
+.step-cont {
+    max-width: 510px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.step-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-bottom: 30px;
+}
+
+.step-title span {
+    display: block;
+    color: #f4a745;
+    font-size: 16px;
+}
+
+.step-desc {
+    margin-bottom: 50px;
+    text-align: center
+}
+
+
+form .form-btn {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    position: relative;
+    -webkit-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
+    width: 100%;
+    border: none;
+    color: #fff;
+    margin-bottom: 20px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    background: -webkit-linear-gradient(-45deg, #d701fe 0, #6f00ff 100%);
+    background: -moz-linear-gradient(135deg, #d701fe 0, #6f00ff 100%);
+    background: linear-gradient(135deg, #d701fe 0, #6f00ff 100%);
+}
+
+form .btn-text {
+    height: 65px;
+    line-height: 65px;
+}
+
+form .form-btn:hover, .form .form-btn:active, .form .form-btn:focus {
+    background: #f3a641;
+    border-color: #f3a641;
+}
+
+.form-control.error {
+    border-color: #dc3545;
+    text-align: left
+}
+
+.form-control.valid {
+    border-color: rgb(215, 1, 254);
+}
+
+label.error {
+    width: 100%;
+    color: #dc3545;
+    font-size: 12px;
+    transform: translateY(-15px);
+    background: #fff;
+    padding: 5px;
+}
+
+.error:not(input) {
+    text-align: center;
+    font-weight: 600;
+}
+
+
+.zodiac {
+    text-align: center;
+}
+
+.zodiac img {
+    display: block;
+    /*max-width: 100%;*/
+    max-width: 140px;
+    max-height: 140px;
+    transition: opacity .8s ease-out, transform .9s cubic-bezier(.33, 1, .68, 1);
+    margin-bottom: 10px;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+}
+
+.zodiac label:hover {
+    cursor: pointer
+}
+
+.zodiac label:hover img {
+    transform: translateY(-15px);
+}
+
+.zodiac label span {
+    display: block;
+    font-size: 14px;
+}
+
+.zodiac input {
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none !important;
+    opacity: 0 !important;
+    width: 1px;
+    height: 1px;
+}
+
+.zodiac label {
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.zodiac label b {
+    background: #44B9FE;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    background: linear-gradient(to bottom, #44B9FE 0%, #735DC7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Dosis', cursive;
+}
+
+.label {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: -webkit-linear-gradient(-90deg, rgba(13, 4, 23, 0) 0, #0d0417 100%);
+    background: -moz-linear-gradient(180deg, rgba(13, 4, 23, 0) 0, #0d0417 100%);
+    background: linear-gradient(180deg, rgba(13, 4, 23, 0) 0, #0d0417 100%);
+    padding: 30px;
+    background-position: 50% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    font-size: 14px;
+
+}
+
+footer ul li a {
+    font-size: 14px;
+    line-height: 1
+}
+
+footer ul li:not(:last-of-type) a {
+    padding-right: 10px;
+    border-right: solid 1px #fff;
+}
+
+footer ul li:not(:first-of-type) a {
+    padding-left: 10px;
+}
+
+
+footer .copy {
+    margin: 20px 0;
+    font-weight: 200;
+    font-size: 13px;
+    text-align: justify
+}
+
+.no-gutter {
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+}
+
+.no-gutter > .col,
+.no-gutter > [class*="col-"] {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+
+.bg-obj {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-obj object {
+    position: absolute !important;
+    top: 20%;
+    left: 50%;
+    max-width: 520px;
+    transform: translate(-50%)
+}
+
+.bg-obj .on {
+    display: block !important;
+    animation-name: h-item;
+    animation-duration: 2s;
+}
+
+.dot-follow {
+    color: #8c1dd2;
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    z-index: 2;
+    visibility: hidden;
+}
+
+.dot-follow:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: currentColor 0 0 60px 60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out, visibility .2s .2s;
+    background-color: currentColor;
+    border-radius: 50%
+}
+
+.dot-follow.is-active:after {
+    transition: opacity 1s ease-in-out, visibility .2s .2s;
+    opacity: 1;
+    visibility: visible
+}
+
+
+.stars {
+    background: #0d0417 url("../img/stars.png") repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 0;
+    overflow: hidden
+}
+
+.stars:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent url("../img/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    animation: move-background 45s linear infinite;
+}
+
+i.circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 999;
+    background: #fff;
+}
+
+.planet {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    animation-name: h-item;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+
+}
+
+.planet:before {
+    content: "";
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: -moz-linear-gradient(-90deg, rgba(31, 119, 192, 0) 0%, rgb(39, 35, 100) 100%);
+    background-image: -webkit-linear-gradient(-90deg, rgba(31, 119, 192, 0) 0%, rgb(39, 35, 100) 100%);
+    background-image: -ms-linear-gradient(-90deg, rgba(31, 119, 192, 0) 0%, rgb(39, 35, 100) 100%);
+    z-index: 99
+}
+
+.planet img {
+    position: relative;
+    z-index: 99999;
+    max-width: 100%;
+    top: 0;
+    animation-name: rotate; /* added animation-name property */
+    animation-duration: 100s; /* added animation-duration property */
+    animation-iteration-count: infinite; /* added animation-iteration-count property */
+    animation-timing-function: linear; /* added animation-timing-function property */
+}
+
+@keyframes h-item {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes rotate { /* added keyframes */
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move-background {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    50% {
+        transform: translate3d(1000px, 0px, 0px);
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+.rotate {
+    -webkit-animation-name: rotate;
+    animation-name: rotate;
+    -webkit-animation-duration: 50s;
+    animation-duration: 50s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+
+.col.h-item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+
+@media (max-width: 768px) {
+    .step-cont {
+        padding: 0 30px;
+    }
+
+    .navbar-brand img {
+        max-width: 250px;
+    }
+
+    .step-title {
+        font-size: 24px;
+    }
+
+    .step-desc {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    footer ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+    }
+
+    footer ul li {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+    }
+
+    .zodiac img {
+        max-width: calc(100% - 20px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .col.h-item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .zodiac label {
+        font-size: 11px;
+        text-transform: uppercase
+    }
+
+    .zodiac label b {
+        letter-spacing: 0
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+
+        transform: translateX(-10px);
+    }
+
+    20%, 40%, 60%, 80% {
+
+        transform: translateX(10px);
+    }
+}
+
+.shake {
+    animation-name: shake;
+}
+
+.shake {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
