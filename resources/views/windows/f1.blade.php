@@ -11,8 +11,8 @@ session_start();
 ?>
 
 <?php
-if(!isset($_GET['ef_aff_id'])){
-    if(!isset($_GET['ef_tx_id'])){
+if(empty($_GET['ef_aff_id'])){
+    if(empty($_GET['ef_tx_id'])){
         header("Location: https://foreverhomehub.com", true, 302);
         exit;
     }
