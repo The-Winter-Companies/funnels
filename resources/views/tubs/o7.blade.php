@@ -7,7 +7,7 @@ if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "roofing.foreverhome
 } else {
     $leadProsperUrl = "https://api.leadprosper.io/ingest";
     $submitUrl = "https://winterbot.app";
-    $leadBackupUrl = "https://lb.winterbot.app";
+    $leadBackupUrl = "https://lead-backup.winterbot.app";
 }
 if(empty($_GET['ef_aff_id'])){
     if(empty($_GET['ef_tx_id'])){
@@ -350,6 +350,8 @@ session_start();
     (function () {
         "use strict";
         $(document).ready(function () {
+
+            window.submittingToLeadProsper = false;
 
             var totalStep = $("fieldset").length;
             var currentStep = $('fieldset:visible').data('step');
@@ -790,29 +792,36 @@ session_start();
                     var formData = fillFormDataTubs();
                     window.formdata = formData;
 
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $leadProsperUrl?>',
-                        data: formData,
-                        // async: false,
-                        dataType: "text",
-                        success: function (data) {
-                            var result = JSON.parse(data);
-                            if(result.status !== 'ACCEPTED') {
-                                Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
-                            }
-                            setTimeout(function() {
-                                window.location.replace("/thank-you?ef_aff_id="+getUrlParameter('ef_aff_id')+"&ef_tx_id="+getUrlParameter('ef_tx_id')+"&s1="+getUrlParameter('s1')+"&s2="+getUrlParameter('s2')+"&s3="+getUrlParameter('s3')+"&s4="+getUrlParameter('s4')+"&s5="+getUrlParameter('s5')+"&v=tubs"+"&ef_offer_id="+getUrlParameter('ef_offer_id'));
-                            }, 500);
-                            // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
+                    if(window.submittingToLeadProsper === false){
+                        window.submittingToLeadProsper = true;
+                        $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $leadProsperUrl?>',
+                            data: formData,
+                            // async: false,
+                            dataType: "text",
+                            success: function (data) {
+                                var result = JSON.parse(data);
+                                if(result.status !== 'ACCEPTED') {
+                                    Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
+                                }
+                                setTimeout(function() {
+                                    window.location.replace("/thank-you?ef_aff_id="+getUrlParameter('ef_aff_id')+"&ef_tx_id="+getUrlParameter('ef_tx_id')+"&s1="+getUrlParameter('s1')+"&s2="+getUrlParameter('s2')+"&s3="+getUrlParameter('s3')+"&s4="+getUrlParameter('s4')+"&s5="+getUrlParameter('s5')+"&v=tubs"+"&ef_offer_id="+getUrlParameter('ef_offer_id'));
+                                }, 500);
+                                // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
 
-                        }, error: function(data) {
-                            // console.log(data);
-                            alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                            $('#form_submit').removeAttr('disabled');
-                        }
-                    });
-                    stl(formData);
+                            }, error: function(data) {
+                                // console.log(data);
+                                alert("There was an issue, please try again or contact us at info@astrologyspark.com");
+                                $('#form_submit').removeAttr('disabled');
+                            }, complete: function() {
+                                window.submittingToLeadProsper = false; // Unlock the submit when finished
+                            }
+                        });
+                        stl(formData);
+                    } else {
+                        console.log('Already submitting to LeadProsper, please wait...');
+                    }
 
                 }
 
