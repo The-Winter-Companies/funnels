@@ -520,6 +520,7 @@ session_start();
                                     return;
                                 }else{
                                     $('form').submit();
+                                    $('#form_submit').attr('disabled', 'disabled');
                                 }
                             })()
                         }
@@ -852,6 +853,7 @@ session_start();
                         }, error: function(data) {
                             // console.log(data);
                             alert("There was an issue, please try again or contact us at info@astrologyspark.com");
+                            $('#form_submit').removeAttr('disabled');
                         }
                     });
                     stl(formData);
