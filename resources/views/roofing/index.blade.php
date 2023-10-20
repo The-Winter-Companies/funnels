@@ -1,5 +1,5 @@
-include(resource_path('views/partials/funnel_submission_params.blade.php'));
 <?php
+include(resource_path('views/partials/funnel_submission_params.blade.php'));
 session_start();
 ?>
 

@@ -4,7 +4,10 @@ session_start();
 ?>
 @include('partials.redirect_if_missing_vars')
 
-    <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -59,6 +62,7 @@ session_start();
     @include('partials.lead_id')
 
 </head>
+
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS7PJDW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
@@ -70,7 +74,7 @@ session_start();
 </header>
 <div class="hero">
     <h2>
-        Find Top-Rated Window Pros And Save!
+        Find Top-Rated Windows Pros And Save!
     </h2>
     <p>
         Compare free quotes & calculate savings!
