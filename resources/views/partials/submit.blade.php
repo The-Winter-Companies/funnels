@@ -95,6 +95,52 @@ $('form').submit(function (e) {
     }
 });
 
+
+// Form submit
+
+function fillFormDataRoofing() {
+    var formData = {};
+
+    // Get all input fields and iterate over them
+    $(":input").each(function() {
+        var id = $(this).attr('id');
+        var value = $(this).val();
+
+        // If the input field has an id, add it to the formData object
+        if(id) {
+            formData[id] = value;
+        }
+    });
+
+    // Set static values
+    formData['lp_campaign_id'] = "17608";
+    formData['lp_supplier_id'] = "38543";
+    formData['lp_key'] = "2e3nsxqveudg5l";
+    if($('#email').val() === 'test@test.com' ){
+        formData['lp_action'] = "test";
+    }
+    formData['trustedform_cert_url'] = $("input[name='xxTrustedFormToken']").val();
+    formData['jornaya_leadid'] = $('#leadid_token').val();
+    formData['user_agent'] = window.navigator.userAgent;
+    formData['home_owner'] = "Yes";
+    formData['landing_page_url'] = window.location.href;
+    formData['roofing_type'] = $('#roofing_type').val();
+    formData['s1'] = getUrlParameter('s1');
+    formData['s2'] = getUrlParameter('s2');
+    formData['s3'] = getUrlParameter('s3');
+    formData['s4'] = getUrlParameter('s4');
+    formData['s5'] = getUrlParameter('s5');
+    formData['ef_aff_id'] = getUrlParameter('ef_aff_id');
+    formData['ef_tx_id'] = getUrlParameter('ef_tx_id');
+    formData['ef_aid'] = getUrlParameter('ef_aid');
+    formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
+    formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
+    formData['healthchecks_slug'] = 'roofing-f1';
+    formData['token'] = token;
+
+    return formData;
+}
+
 function stl(formdata){
     $.ajax({
                     type: 'POST',

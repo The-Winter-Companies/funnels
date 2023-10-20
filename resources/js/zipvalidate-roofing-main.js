@@ -12,11 +12,8 @@
 	var zip_inclick = false;
 
 	$('#btnzip').on('click', function(){zipValidate()});
-	
+
 		function zipValidate() {
-			
-			
-		
 
 			var el = $("[name='zip_code']");
 
@@ -54,7 +51,7 @@
 						if ($('#btnzip').hasClass('solar-btn')) {
 							window.hh.power_company(result.state_short);
 						}
-					
+
 					//proceed to next step
 					el.parents('fieldset').fadeOut(function() {
 
@@ -71,7 +68,7 @@
 					zip_inclick = false;
 				});
 
-				
+
 			} else if (el.val().length < 5) {
 				zipValidationError();
 			}
@@ -83,6 +80,6 @@
                   $(".zip_box").addClass('fail')
 		}
 
-		
+
 })();
 
