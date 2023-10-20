@@ -1,13 +1,5 @@
+include(resource_path('views/partials/funnel_submission_params.blade.php'));
 <?php
-if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "signup.astrologyspark.local"){
-    $submitUrl = "http://localhost";
-    $leadBackupUrl = $submitUrl;
-
-} else {
-    $submitUrl = "https://winterbot.app";
-    $leadBackupUrl = "https://lead-backup.winterbot.app";
-}
-
 if(isset($_GET['ebook']) && $_GET['ebook'] == true){
     $ebookMessage = "<br><br>After signing up, you will be able to download your free ebook!";
 }
@@ -84,20 +76,8 @@ session_start();
     <script type="text/javascript">var poptinAfterPageLoad = true;</script>
     <script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=064a7309bc204' async='true'></script>
 
-    <!--             Start TrustedForm-->
-    <script>
-        (function() {
-            var tf = document.createElement('script');
-            tf.type = 'text/javascript'; tf.async = true;
-            tf.src = ("https:" == document.location.protocol ? 'https' : 'http') + "://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&identifier=token&ping_field=xxTrustedFormPingUrl&l=" + new Date().getTime() + Math.random();
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
-        })();
-    </script>
-    <noscript>
-        <img src="https://api.trustedform.com/ns.gif" />
-    </noscript>
-
-    <!--             End TrustedForm-->
+    @include('partials.trusted_form')
+    @include('partials.lead_id')
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

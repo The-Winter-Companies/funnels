@@ -34,6 +34,8 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
     <meta name="twitter:description" content="Your Info Has Been Submitted!">
     <meta name="twitter:image" content="">
 
+    @include('partials.rollbar_script')
+
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap-roofing-main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ty.css') }}" rel="stylesheet">

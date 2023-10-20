@@ -53,11 +53,12 @@
         })(document, window);
     </script>
 
+    @include('partials.rollbar_script')
+    @include('partials.trusted_form')
+    @include('partials.lead_id')
+
 </head>
 <body>
-
-
-
 
 <header>
     <nav class="navbar justify-content-between mx-auto">

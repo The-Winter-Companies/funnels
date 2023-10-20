@@ -1,23 +1,8 @@
 <?php
-if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "roofing.foreverhomehub.local"){
-    $submitUrl = "http://localhost";
-    $leadBackupUrl = $submitUrl;
-
-} else {
-    $submitUrl = "https://winterbot.app";
-    $leadBackupUrl = "https://lb.winterbot.app";
-}
+include(resource_path('views/partials/funnel_submission_params.blade.php'));
 session_start();
 ?>
-
-<?php
-if(empty($_GET['ef_aff_id'])){
-    if(empty($_GET['ef_tx_id'])){
-        header("Location: https://foreverhomehub.com", true, 302);
-        exit;
-    }
-}
-?>
+@include('partials.redirect_if_missing_vars')
 
     <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"><head profile="http://gmpg.org/xfn/11">
     <meta charset="utf-8">
@@ -69,33 +54,9 @@ if(empty($_GET['ef_aff_id'])){
     <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
     <![endif]-->
 
-    <!--             Start TrustedForm-->
-    <script>
-        (function() {
-            var tf = document.createElement('script');
-            tf.type = 'text/javascript'; tf.async = true;
-            tf.src = ("https:" == document.location.protocol ? 'https' : 'http') + "://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&identifier=token&ping_field=xxTrustedFormPingUrl&l=" + new Date().getTime() + Math.random();
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
-        })();
-    </script>
-    <noscript>
-        <img src="https://api.trustedform.com/ns.gif" />
-    </noscript>
-
-    <!--             End TrustedForm-->
-
-    <script id="LeadiDscript" type="text/javascript">
-        (function() {
-            var s = document.createElement('script');
-            s.id = 'LeadiDscript_campaign';
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = '//create.lidstatic.com/campaign/afa16655-8fdd-dcd2-3e5a-3ca33da472df.js?snippet_version=2';
-            var LeadiDscript = document.getElementById('LeadiDscript');
-            LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
-        })();
-    </script>
-    <noscript><img src='//create.leadid.com/noscript.gif?lac=5CA41630-FEE8-F07B-6C06-80DBD7D64283&lck=afa16655-8fdd-dcd2-3e5a-3ca33da472df&snippet_version=2' /></noscript>
+    @include('partials.rollbar_script')
+    @include('partials.trusted_form')
+    @include('partials.lead_id')
 
 </head>
 <body>

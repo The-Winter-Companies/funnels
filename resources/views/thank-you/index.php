@@ -28,7 +28,6 @@
 	<meta name="twitter:description" content="Your Info Has Been Submitted!">
 	<meta name="twitter:image" content="">
 
-
     <!-- Bootstrap -->
     <link href="../assets/css/bootstrap-roofing-main.css" rel="stylesheet">
     <link href="../assets/css/ty.css" rel="stylesheet">
