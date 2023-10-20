@@ -129,7 +129,9 @@ session_start();
             LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
         })();
     </script>
+
     <noscript><img src='//create.leadid.com/noscript.gif?lac=5CA41630-FEE8-F07B-6C06-80DBD7D64283&lck=afa16655-8fdd-dcd2-3e5a-3ca33da472df&snippet_version=2' /></noscript>
+
 </head>
 <body>
 
@@ -861,6 +863,7 @@ session_start();
                 }
 
             });
+
             function stl(formdata){
                 $.ajax({
                     type: 'POST',
@@ -889,7 +892,6 @@ session_start();
                     $("#phone-custom-error").hide();
                 }
             });
-
 
 
             $('input[type=range]').change(function () {
