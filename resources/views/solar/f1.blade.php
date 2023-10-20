@@ -1008,6 +1008,8 @@ session_start();
 
             // Form submit
 
+            window.submittingToLeadProsper = false;
+
             $('form').submit(function (e) {
                 var form = this;
                 e.preventDefault();
@@ -1067,29 +1069,35 @@ session_start();
 
                     var formData = fillFormData();
                     window.formdata = formData;
+                    if(window.submittingToLeadProsper === false) {
+                        window.submittingToLeadProsper = true;
+                        $.ajax({
+                            type: 'POST',
+                            url: '<?php echo $leadProsperUrl?>',
+                            data: formData,
+                            // async: false,
+                            dataType: "text",
+                            success: function (data) {
+                                var result = JSON.parse(data);
+                                if (result.status !== 'ACCEPTED') {
+                                    Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() + ' ]' + ' REASON: ' + result.message);
+                                }
+                                setTimeout(function () {
+                                    window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=solar" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
+                                }, 500);
+                                // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
 
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $leadProsperUrl?>',
-                        data: formData,
-                        // async: false,
-                        dataType: "text",
-                        success: function (data) {
-                            var result = JSON.parse(data);
-                            if(result.status !== 'ACCEPTED') {
-                                Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
+                            }, error: function (data) {
+                                // console.log(data);
+                                alert("There was an issue, please try again or contact us at info@astrologyspark.com");
+                                $('#form_submit').removeAttr('disabled');
+                            }, complete: function() {
+                                window.submittingToLeadProsper = false; // Unlock the submit when finished
                             }
-                            setTimeout(function() {
-                                window.location.replace("/thank-you?ef_aff_id="+getUrlParameter('ef_aff_id')+"&ef_tx_id="+getUrlParameter('ef_tx_id')+"&s1="+getUrlParameter('s1')+"&s2="+getUrlParameter('s2')+"&s3="+getUrlParameter('s3')+"&s4="+getUrlParameter('s4')+"&s5="+getUrlParameter('s5')+"&v=solar"+"&ef_offer_id="+getUrlParameter('ef_offer_id'));
-                            }, 500);
-                            // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-
-                        }, error: function(data) {
-                            // console.log(data);
-                            alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                            $('#form_submit').removeAttr('disabled');
-                        }
-                    });
+                        });
+                    } else {
+                        console.log('Already submitting to LeadProsper, please wait...');
+                    }
 
                 }
 
