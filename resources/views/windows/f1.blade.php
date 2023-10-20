@@ -32,7 +32,7 @@ session_start();
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,800" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-4.0.0-windows-K2.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-windows-K2.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer-windows-K2.css') }}" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/trusted.svg') }}">

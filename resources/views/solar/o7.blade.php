@@ -22,7 +22,7 @@ session_start();
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;display=swap" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-4.0.0-solar-S10.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/v1-solar-S10.css') }}" rel="stylesheet">
     <style>
         button[disabled] {

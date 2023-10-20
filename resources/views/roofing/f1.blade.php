@@ -12,7 +12,12 @@ session_start();
 
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 
-@include('partials.head', ['vertical' => 'roofing'])
+<head>
+    @include('partials.head', ['vertical' => 'roofing', 'includePushnami' => false])
+
+    <link href="{{ asset('css/lp3-U4.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/footer-U4.css') }}" rel="stylesheet">
+</head>
 
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS7PJDW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

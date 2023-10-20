@@ -36,7 +36,7 @@ session_start();
     <meta name="twitter:image" content="">
 
     <!-- Bootstrap -->
-    <link href="{{ asset('css/bootstrap-roofing-main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-roofing-main.css') }}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

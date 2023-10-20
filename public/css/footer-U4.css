@@ -17,8 +17,3 @@ footer .lp2 .footer-menu li:not(:first-of-type){border-left-color: rgba(255,255,
 footer .lp11 .footer-menu li:not(:first-of-type){border-left-color: rgba(255,255,255,0.2); }
 
 footer .ftr-logo{margin-left: auto !important; margin-right: auto !important;}
-
-@media (min-width:1800px){
-
-}
-

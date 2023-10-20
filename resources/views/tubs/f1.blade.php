@@ -31,7 +31,7 @@ session_start();
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,800" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-4.0.0-tubs-f1.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/lp3-tubs-f1.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/footer-tubs-f1.css') }}" rel="stylesheet">

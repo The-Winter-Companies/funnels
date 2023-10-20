@@ -37,7 +37,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
     @include('partials.rollbar_script')
 
     <!-- Bootstrap -->
-    <link href="{{ asset('css/bootstrap-roofing-main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ty.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="#">

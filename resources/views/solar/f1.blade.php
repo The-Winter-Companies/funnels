@@ -22,7 +22,7 @@ session_start();
     <!-- End Rollbar -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,800" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-4.0.0-solar-F1.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer-U4.css') }}" rel="stylesheet">
     <link href="{{ asset('css/v3z-solar-F1.css') }}" rel="stylesheet">
     <style>
