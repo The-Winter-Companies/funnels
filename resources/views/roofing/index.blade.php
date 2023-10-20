@@ -7,7 +7,7 @@ if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == "roofing.foreverhome
 } else {
     $leadProsperUrl = "https://api.leadprosper.io/ingest";
     $submitUrl = "https://winterbot.app";
-    $leadBackupUrl = "https://lb.winterbot.app";
+    $leadBackupUrl = "https://lead-backup.winterbot.app";
 }
 session_start();
 ?>
@@ -713,6 +713,8 @@ session_start();
 
         $(document).ready(function() {
 
+            window.submittingToLeadProsper = false;
+
             const z=$("#zip_code"),zipPlaceholder=z.attr("data-placeholder")||"",animatePlaceholder=()=>{let e=0;z.prop("placeholder",""),timer=setInterval(()=>{0==z.val().length?(z.prop("placeholder",z.prop("placeholder")+zipPlaceholder[e]),e++,e==zipPlaceholder.length&&(clearInterval(timer),setTimeout(animatePlaceholder,3e3))):(clearInterval(timer),z.prop("placeholder",""))},100)};animatePlaceholder(),z.on("focus",()=>{z.prop("placeholder",""),clearInterval(timer)}),z.on("input focusout",()=>{z.val().length>0?(z.prop("placeholder",""),clearInterval(timer)): (clearInterval(timer),animatePlaceholder())});
 
             function is_int(value) {
@@ -1285,18 +1287,15 @@ session_start();
                 var formdata = fillFormDataRoofing();
                 window.formdata = formdata;
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $leadProsperUrl?>',
-                    data: formdata,
-                    // async: false,
-                    dataType: "text",
-                    success: function (data) {
-                        var result = JSON.parse(data);
-                        if(result.status !== 'ACCEPTED') {
-                            Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
-                        }
-                        setTimeout(function() {
+                if(window.submittingToLeadProsper === false){
+                    window.submittingToLeadProsper = true;
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $leadProsperUrl?>',
+                        data: formdata,
+                        // async: false,
+                        dataType: "text",
+                        success: function (data) {
                             var result = JSON.parse(data);
                             if(result.status !== 'ACCEPTED') {
                                 Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
@@ -1306,17 +1305,18 @@ session_start();
                             }, 500);
                             // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
 
-                        }, 1500);
-                        // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-                    }, error: function(data) {
-                        // console.log(data);
-                        alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                        $('#form_submit').removeAttr('disabled');
-                    }
-                });
-
-                stl(formdata);
-
+                        }, error: function(data) {
+                            // console.log(data);
+                            alert("There was an issue, please try again or contact us at info@astrologyspark.com");
+                            $('#form_submit').removeAttr('disabled');
+                        }, complete: function() {
+                            window.submittingToLeadProsper = false; // Unlock the submit when finished
+                        }
+                    });
+                    stl(formdata);
+                } else {
+                    console.log('Already submitting to LeadProsper, please wait...');
+                }
             });
 
             function stl(formdata){
