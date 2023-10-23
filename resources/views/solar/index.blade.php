@@ -340,10 +340,6 @@ session_start();
 
                 </div>
 
-                <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next pulse"  type="button" id="form_submit" ><span class="btn-text">Continue</span></button>
-                </div>
-
 
 
                 <div id="tcpa_cont" style="display: none;">
@@ -357,6 +353,10 @@ session_start();
                             a condition of purchase. I also have read and agree to the <a href="https://foreverhomehub.com/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://foreverhomehub.com/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
                         </label>
                     </p>
+                </div>
+
+                <div class="form-action mx-auto text-center">
+                    <button class="btn form-btn btn-next pulse"  type="button" id="form_submit" ><span class="btn-text">Continue</span></button>
                 </div>
 
             </fieldset>
