@@ -655,6 +655,8 @@ session_start();
 
         $(document).ready(function() {
 
+            window.submittingToLeadProsper = false;
+
             const z=$("#zip_code"),zipPlaceholder=z.attr("data-placeholder")||"",animatePlaceholder=()=>{let e=0;z.prop("placeholder",""),timer=setInterval(()=>{0==z.val().length?(z.prop("placeholder",z.prop("placeholder")+zipPlaceholder[e]),e++,e==zipPlaceholder.length&&(clearInterval(timer),setTimeout(animatePlaceholder,3e3))):(clearInterval(timer),z.prop("placeholder",""))},100)};animatePlaceholder(),z.on("focus",()=>{z.prop("placeholder",""),clearInterval(timer)}),z.on("input focusout",()=>{z.val().length>0?(z.prop("placeholder",""),clearInterval(timer)): (clearInterval(timer),animatePlaceholder())});
 
             function is_int(value) {
@@ -1140,36 +1142,6 @@ session_start();
             window.dontRemoteValidateEmail = false;
             window.dontRemoveValidatePhone = false;
 
-            function submitToWinterbot(){
-
-                // prepare form for lead post
-                var formdata = $(form).serializeArray().reduce(function (m, o) {
-                    m[o.name] = o.value;
-                    return m;
-                }, {});
-
-                const searchParams = new URLSearchParams(window.location.search);
-                searchParams.forEach((value, key) => {
-                    if (formdata[key] === undefined)
-                        formdata[key] = value;
-                });
-
-                formdata = Object.keys(formdata).reduce((acc, k) => (!formdata[k] && k != 'test' && delete acc[k], acc), formdata);
-
-
-                formdata['email_address'] = $('#email').val();
-                formdata['lead'] = "true";
-                formdata['vertical'] = "windows";
-                formdata['token'] = token;
-                formdata['currentStep'] = current_step;
-                formdata['totalSteps'] = totalStep;
-                formdata['getParams'] = getUrlVars();
-                formdata['url'] = window.location.href;
-
-            }
-
-            // Form submit
-
             function fillFormDataRoofing() {
                 var formData = {};
 
@@ -1188,15 +1160,16 @@ session_start();
                 formData['lp_campaign_id'] = "17608";
                 formData['lp_supplier_id'] = "38543";
                 formData['lp_key'] = "2e3nsxqveudg5l";
-                if($('#email').val() === 'test@test.com' ){
+                if($('#email').val() === 'test@test.com' || $('#email').val() === 'pingdom@test.com'){
                     formData['lp_action'] = "test";
                 }
+                formData['email_address'] = $('#email').val();
                 formData['trustedform_cert_url'] = $("input[name='xxTrustedFormToken']").val();
                 formData['jornaya_leadid'] = $('#leadid_token').val();
                 formData['user_agent'] = window.navigator.userAgent;
                 formData['home_owner'] = "Yes";
-                formData['landing_page_url'] = window.location.href;
-                formData['roofing_type'] = $('#roofing_type').val();
+                formData['url'] = window.location.href;
+                formData['roof_type'] = $('#roofing_type').val();
                 formData['time_frame'] = $('#time_frame').val();
                 formData['project_type'] = $('#project_type').val();
                 formData['s1'] = getUrlParameter('s1');
@@ -1209,56 +1182,47 @@ session_start();
                 formData['ef_aid'] = getUrlParameter('ef_aid');
                 formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
                 formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
-                formData['healthchecks_slug'] = 'roofing-main';
                 formData['token'] = token;
+                formData['complete'] = 1;
+                formData['lead'] = 1;
+                formData['vertical'] = 'roofing';
 
                 return formData;
             }
 
 
             $('form').submit(function (e) {
-                var form = this;
-                e.preventDefault();
+                if(window.submittingToLeadProsper === false){
+                    window.submittingToLeadProsper = true;
+                    var form = this;
+                    e.preventDefault();
 
-                if (!$(form).validate().form())
-                    return;
-                // $('#form_submit').prop('disabled', true);
+                    if (!$(form).validate().form())
+                        return;
+                    // $('#form_submit').prop('disabled', true);
 
-                var formdata = fillFormDataRoofing();
-                window.formdata = formdata;
+                    var formdata = fillFormDataRoofing();
+                    window.formdata = formdata;
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $leadProsperUrl?>',
-                    data: formdata,
-                    // async: false,
-                    dataType: "text",
-                    success: function (data) {
-                        var result = JSON.parse(data);
-                        if(result.status !== 'ACCEPTED') {
-                            Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $submitUrl?>',
+                        data: formdata,
+                        //async: false,
+                        dataType: "text",
+                        success: function (data) {
+                            window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=roofing" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
+                        }, error: function (data) {
+                            alert("There was an issue, please try again or contact us at info@astrologyspark.com");
+                            $('#form_submit').removeAttr('disabled');
+                        }, complete: function () {
+                            window.submittingToLeadProsper = false; // Unlock the submit when finished
                         }
-                        setTimeout(function() {
-                            var result = JSON.parse(data);
-                            if(result.status !== 'ACCEPTED') {
-                                Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
-                            }
-                            setTimeout(function() {
-                                window.location.replace("/thank-you?ef_aff_id="+getUrlParameter('ef_aff_id')+"&ef_tx_id="+getUrlParameter('ef_tx_id')+"&s1="+getUrlParameter('s1')+"&s2="+getUrlParameter('s2')+"&s3="+getUrlParameter('s3')+"&s4="+getUrlParameter('s4')+"&s5="+getUrlParameter('s5')+"&v=roofing"+"&ef_offer_id="+getUrlParameter('ef_offer_id'));
-                            }, 500);
-                            // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-
-                        }, 1500);
-                        // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-                    }, error: function(data) {
-                        // console.log(data);
-                        alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                        $('#form_submit').removeAttr('disabled');
-                    }
-                });
-
-                stl(formdata);
-
+                    });
+                    stl(formdata);
+                }else {
+                    console.log('Already submitting to LeadProsper, please wait...');
+                }
             });
 
             function stl(formdata){

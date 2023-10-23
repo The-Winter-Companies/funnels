@@ -590,6 +590,7 @@ session_start();
 
         $(document).ready(function() {
 
+            window.submittingToLeadProsper = false;
 
             const z=$("#zip_code"),zipPlaceholder=z.attr("data-placeholder")||"",animatePlaceholder=()=>{let e=0;z.prop("placeholder",""),timer=setInterval(()=>{0==z.val().length?(z.prop("placeholder",z.prop("placeholder")+zipPlaceholder[e]),e++,e==zipPlaceholder.length&&(clearInterval(timer),setTimeout(animatePlaceholder,3e3))):(clearInterval(timer),z.prop("placeholder",""))},100)};animatePlaceholder(),z.on("focus",()=>{z.prop("placeholder",""),clearInterval(timer)}),z.on("input focusout",()=>{z.val().length>0?(z.prop("placeholder",""),clearInterval(timer)): (clearInterval(timer),animatePlaceholder())});
 
@@ -1097,14 +1098,15 @@ session_start();
                 formData['lp_campaign_id'] = "18372";
                 formData['lp_supplier_id'] = "41113";
                 formData['lp_key'] = "x2yzfldq0srz17";
-                if($('#email').val() === 'test@test.com' ){
+                if($('#email').val() === 'test@test.com' || $('#email').val() === 'pingdom@test.com' ){
                     formData['lp_action'] = "test";
                 }
+                formData['email_address'] = $('#email').val();
                 formData['trustedform_cert_url'] = $("input[name='xxTrustedFormToken']").val();
                 formData['jornaya_leadid'] = $('#leadid_token').val();
                 formData['user_agent'] = window.navigator.userAgent;
                 formData['home_owner'] = "Yes";
-                formData['landing_page_url'] = window.location.href;
+                formData['url'] = window.location.href;
                 formData['time_frame'] = $('#time_frame').val();
                 formData['project_reason'] = $('#project_reason').val();
                 formData['s1'] = getUrlParameter('s1');
@@ -1117,8 +1119,10 @@ session_start();
                 formData['ef_aid'] = getUrlParameter('ef_aid');
                 formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
                 formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
-                formData['healthchecks_slug'] = 'tubs-o7';
                 formData['token'] = token;
+                formData['complete'] = 1;
+                formData['lead'] = 1;
+                formData['vertical'] = 'tubs';
 
                 return formData;
             }
@@ -1126,42 +1130,37 @@ session_start();
             // Form submit
 
             $('form').submit(function (e) {
-                var form = this;
-                e.preventDefault();
+                if(window.submittingToLeadProsper === false){
+                    window.submittingToLeadProsper = true;
+                    var form = this;
+                    e.preventDefault();
 
-                if (!$(form).validate().form())
-                    return;
-                // $('#form_submit').prop('disabled', true);
+                    if (!$(form).validate().form())
+                        return;
+                    // $('#form_submit').prop('disabled', true);
 
-                var formData = fillFormDataTubs();
-                window.formdata = formData;
+                    var formdata = fillFormDataTubs();
+                    window.formdata = formdata;
 
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $leadProsperUrl?>',
-                    data: formData,
-                    // async: false,
-                    dataType: "text",
-                    success: function (data) {
-                        var result = JSON.parse(data);
-                        if(result.status !== 'ACCEPTED') {
-                            //Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() +' ]' + ' REASON: ' + result.message);
-                            console.log("Bum");
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo $submitUrl?>',
+                        data: formdata,
+                        //async: false,
+                        dataType: "text",
+                        success: function (data) {
+                            window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=tubs" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
+                        }, error: function (data) {
+                            alert("There was an issue, please try again or contact us at info@astrologyspark.com");
+                            $('#form_submit').removeAttr('disabled');
+                        }, complete: function () {
+                            window.submittingToLeadProsper = false; // Unlock the submit when finished
                         }
-                        setTimeout(function() {
-                            window.location.replace("/thank-you?ef_aff_id="+getUrlParameter('ef_aff_id')+"&ef_tx_id="+getUrlParameter('ef_tx_id')+"&s1="+getUrlParameter('s1')+"&s2="+getUrlParameter('s2')+"&s3="+getUrlParameter('s3')+"&s4="+getUrlParameter('s4')+"&s5="+getUrlParameter('s5')+"&v=tubs"+"&ef_offer_id="+getUrlParameter('ef_offer_id'));
-                        }, 500);
-                        // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-
-                    }, error: function(data) {
-                        // console.log(data);
-                        alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                        $('#form_submit').removeAttr('disabled');
-                    }
-                });
-
-                //stl(formdata);
-
+                    });
+                    stl(formdata);
+                }else {
+                    console.log('Already submitting to LeadProsper, please wait...');
+                }
             });
 
             function stl(formdata){

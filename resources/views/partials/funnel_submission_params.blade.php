@@ -7,5 +7,5 @@ if(isset($_SERVER['HTTP_HOST']) && str_contains($_SERVER['HTTP_HOST'], "local"))
 } else {
     $leadProsperUrl = "https://api.leadprosper.io/ingest";
     $submitUrl = "https://winterbot.app";
-    $leadBackupUrl = "https://lb.winterbot.app";
+    $leadBackupUrl = "https://lead-backup.winterbot.app/";
 }
