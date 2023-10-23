@@ -106,6 +106,11 @@ session_start();
             <input type="hidden" id="tcpa_text" name="tcpa_text" value>
             <input type="hidden" id="state" name="state" value>
             <input type="hidden" id="ip_address" name="ip_address" value>
+            <input type="hidden" id="monthly_electric_bill" name="monthly_electric_bill" value="$201-$300">
+            <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
+            <input type="hidden" id="property_type" name="property_type" value="Single Family">
+            <input type="hidden" id="credit_rating" name="credit_rating" value="Good">
+            <input type="hidden" id="roof_type" name="roof_type" value="Tile">
 
             <fieldset id="zip-container"><legend hidden="true">zip</legend>
 
@@ -769,7 +774,7 @@ session_start();
                     $('.progress-box').slideDown();
                 }
 
-                var progressPercentage = ((current_step-11) / (totalStep)) * 98;
+                var progressPercentage = ((current_step-16) / (totalStep)) * 98;
                 var progressBar = $(".progress-bar");
                 progressBar.css("width", progressPercentage + "%");
 
@@ -789,7 +794,7 @@ session_start();
                 });
 
                 $.height();
-                if ((current_step-11) == totalStep){
+                if ((current_step-16) === totalStep){
                     $('#tcpa_cont').show();
                 }
             }
@@ -1114,6 +1119,10 @@ session_start();
                 formData['landing_page_url'] = window.location.href;
                 formData['monthly_electric_bill'] = $('#monthly_electric_bill').val();
                 formData['utility_provider'] = $('#utility_provider').val();
+                formData['credit_rating'] = $('#credit_rating').val();
+                formData['time_frame'] = $('#time_frame').val();
+                formData['property_type'] = $('#property_type').val();
+                formData['roof_type'] = $('#roof_type').val();
                 formData['s1'] = getUrlParameter('s1');
                 formData['s2'] = getUrlParameter('s2');
                 formData['s3'] = getUrlParameter('s3');
