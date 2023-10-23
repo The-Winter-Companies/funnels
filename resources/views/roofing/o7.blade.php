@@ -108,6 +108,7 @@ session_start();
             <input type="hidden" id="address_short" value>
             <input type="hidden" id="roofing_type" name="roofing_type" value>
             <input type="hidden" id="time_frame" name="time_frame" value>
+            <input type="hidden" id="project_type" name="project_type" value="New roof for new home">
             <fieldset data-step="2">
                 <legend hidden="true">homeowner</legend>
                 <h3 class="form_box-question">What is your zip code?</h3>
@@ -693,6 +694,7 @@ session_start();
                 formData['landing_page_url'] = window.location.href;
                 formData['roofing_type'] = $('#roofing_type').val();
                 formData['time_frame'] = $('#time_frame').val();
+                formData['project_type'] = $('#project_type').val();
                 formData['s1'] = getUrlParameter('s1');
                 formData['s2'] = getUrlParameter('s2');
                 formData['s3'] = getUrlParameter('s3');
@@ -874,51 +876,6 @@ session_start();
                 }
             });
 
-
-// Form submit
-
-            function fillFormDataRoofing() {
-                var formData = {};
-
-                // Get all input fields and iterate over them
-                $(":input").each(function() {
-                    var id = $(this).attr('id');
-                    var value = $(this).val();
-
-                    // If the input field has an id, add it to the formData object
-                    if(id) {
-                        formData[id] = value;
-                    }
-                });
-
-                // Set static values
-                formData['lp_campaign_id'] = "17608";
-                formData['lp_supplier_id'] = "38543";
-                formData['lp_key'] = "2e3nsxqveudg5l";
-                if($('#email').val() === 'test@test.com' ){
-                    formData['lp_action'] = "test";
-                }
-                formData['trustedform_cert_url'] = $("input[name='xxTrustedFormToken']").val();
-                formData['jornaya_leadid'] = $('#leadid_token').val();
-                formData['user_agent'] = window.navigator.userAgent;
-                formData['home_owner'] = "Yes";
-                formData['landing_page_url'] = window.location.href;
-                formData['roofing_type'] = $('#roofing_type').val();
-                formData['s1'] = getUrlParameter('s1');
-                formData['s2'] = getUrlParameter('s2');
-                formData['s3'] = getUrlParameter('s3');
-                formData['s4'] = getUrlParameter('s4');
-                formData['s5'] = getUrlParameter('s5');
-                formData['ef_aff_id'] = getUrlParameter('ef_aff_id');
-                formData['ef_tx_id'] = getUrlParameter('ef_tx_id');
-                formData['ef_aid'] = getUrlParameter('ef_aid');
-                formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
-                formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
-                formData['healthchecks_slug'] = 'roofing-f1';
-                formData['token'] = token;
-
-                return formData;
-            }
 
             function stl(formdata){
                 $.ajax({

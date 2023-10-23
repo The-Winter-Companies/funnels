@@ -74,6 +74,9 @@ session_start();
             <input type="hidden" id="ip_address" name="ip_address" value>
             <input type="hidden" id="address_short" value>
             <input type="hidden" name="monthly_electric_bill" id="monthly_electric_bill" value="$201-$300">
+            <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
+            <input type="hidden" id="property_type" name="property_type" value="Single Family">
+            <input type="hidden" id="roof_type" name="roof_type" value="Tile">
             <input type="hidden" name="credit_rating" id="credit_rating" value="Good">
             <fieldset data-step="1">
                 <legend hidden="true">homeowner</legend>
@@ -1059,6 +1062,9 @@ session_start();
                 formData['monthly_electric_bill'] = $('#monthly_electric_bill').val();
                 formData['utility_provider'] = $('#utility_provider').val();
                 formData['credit_rating'] = $('#credit_rating').val();
+                formData['time_frame'] = $('#time_frame').val();
+                formData['property_type'] = $('#property_type').val();
+                formData['roof_type'] = $('#roof_type').val();
                 formData['s1'] = getUrlParameter('s1');
                 formData['s2'] = getUrlParameter('s2');
                 formData['s3'] = getUrlParameter('s3');

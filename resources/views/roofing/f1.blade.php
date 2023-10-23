@@ -66,6 +66,8 @@ session_start();
             <input type="hidden" id="ip_address" name="ip_address" value>
             <input type="hidden" id="address_short" value>
             <input type="hidden" id="roofing_type" name="roofing_type" value>
+            <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
+            <input type="hidden" id="project_type" name="project_type" value="New roof for new home">
             <h3 class="form_box-question mb-2"><b>Where</b> would this project take place?</h3>
             <p class="form_box-desc">Enter your zip code and we will help you compare free quotes!</p>
             <div class="form-cont mxwdth">
@@ -833,6 +835,8 @@ session_start();
                 formData['home_owner'] = "Yes";
                 formData['landing_page_url'] = window.location.href;
                 formData['roofing_type'] = $('#roofing_type').val();
+                formData['time_frame'] = $('#time_frame').val();
+                formData['project_type'] = $('#project_type').val();
                 formData['s1'] = getUrlParameter('s1');
                 formData['s2'] = getUrlParameter('s2');
                 formData['s3'] = getUrlParameter('s3');
