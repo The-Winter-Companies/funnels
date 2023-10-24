@@ -806,7 +806,6 @@ session_start();
                     dataType: "text",
                     success: function (data) {
                         var result = JSON.parse(data);
-                        console.log(result);
                         if (result.status !== 'ACCEPTED') {
                             Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() + ' ]' + ' REASON: ' + result.message);
                         }
