@@ -252,7 +252,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 
 
 
-                <a class="partner" href="https://thetamkt.com/?a=13418&c=148803&s1=' . $_GET['s1'] . '&s2=' . $_GET['ef_aff_id'] . '&s3=' . $_GET['ef_tx_id'] . '">
+                <a class="partner" href="https://thetamkt.com/?a=13418&c=148803&s1={{\Illuminate\Support\Facades\Request::get('s1')}}&s2={{\Illuminate\Support\Facades\Request::get('s2')}}&s3={{\Illuminate\Support\Facades\Request::get('s3')}}">
                         <h4 class="d-block d-md-none  partner_title">Reduce Your Mortgage</h4>
                         <div class="row align-items-center">
                             <div class="col col-partner_img">
@@ -274,7 +274,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 
 
 
-                <a class="partner" href="https://mumkt.com/?a=13418&c=151271&s1=' . $_GET['ef_tx_id'] . '">
+                <a class="partner" href="https://mumkt.com/?a=13418&c=151271&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">The Secret to Saving $1,080 when switching to DISH!!</h4>
                         <div class="row align-items-center">
                             <div class="col col-partner_img">
