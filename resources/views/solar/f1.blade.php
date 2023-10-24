@@ -42,8 +42,12 @@ session_start();
 
 </head>
 <body>
-<header class="container-fluid">
-    <h1 class="logo">ForeverHomeHub</h1>
+<header>
+    <div class="container">
+        <nav class="navbar text-center">
+            <h1 class="navbar-brand mx-auto"><img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="180" height="47" alt="Forever Home Hub" class="img-fluid"></h1>
+        </nav>
+    </div>
 </header>
 <div class="hero"><h2>Save BIG on Solar Installation!</h2> <p>Calculate savings and compare free quotes
     </p></div>
