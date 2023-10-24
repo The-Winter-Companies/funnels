@@ -171,7 +171,7 @@ session_start();
                                     <br class="mob-only">$400</label>
                             </div>
                             <div class="col radio-btn-group_btn">
-                                <input id="electricBill-7" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$401+">
+                                <input id="electricBill-7" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$400+">
                                 <label class="radio-btn-group_label" for="electricBill-7">$400+</label>
                             </div>
                         </div>
