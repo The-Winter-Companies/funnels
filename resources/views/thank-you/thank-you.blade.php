@@ -76,7 +76,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
         <div class="nextsteps container text-center" style="display: none;">
             <h2 class="nextstepHead">Your Info Has Been Received! </h2>
             <!--				<h2 class="nextstepHead"></h2>-->
-            <p style="color: #545253;font-size: 20px ;font-weight: 700" ">You will receive a call shortly.</p><br>
+            <p style="color: #545253;font-size: 20px ;font-weight: 700">You will receive a call shortly.</p><br>
         </div>
 
         <article class="results">
