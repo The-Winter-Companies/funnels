@@ -1187,6 +1187,7 @@ session_start();
                 formData['complete'] = 1;
                 formData['lead'] = 1;
                 formData['vertical'] = 'roofing';
+                formData['healthchecks_slug'] = 'roofing-main';
 
                 return formData;
             }

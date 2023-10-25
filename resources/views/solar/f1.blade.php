@@ -1020,6 +1020,7 @@ session_start();
                 formData['complete'] = 1;
                 formData['lead'] = 1;
                 formData['vertical'] = 'solar';
+                formData['healthchecks_slug'] = 'solar-f1';
 
                 return formData;
             }

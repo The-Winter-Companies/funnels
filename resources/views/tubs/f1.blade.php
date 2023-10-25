@@ -832,6 +832,7 @@ session_start();
                 formData['complete'] = 1;
                 formData['lead'] = 1;
                 formData['vertical'] = 'tubs';
+                formData['healthchecks_slug'] = 'tubs-f1';
 
                 return formData;
             }
