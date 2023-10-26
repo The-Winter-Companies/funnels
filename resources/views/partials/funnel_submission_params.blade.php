@@ -13,5 +13,5 @@ if(isset($_SERVER['HTTP_HOST']) && str_contains($_SERVER['HTTP_HOST'], "local"))
     $leadBackupUrl = "https://lead-backup.winterbot.app/";
 }
 if(!empty($_GET['ef_aid']) && !empty($_GET['ef_adv_event_id'])){
-    Log::info('One lead came through from thank-you page - Please look further if it converted !');
+    callHealthcheck('https://hc-ping.com/28df2a22-4a91-430a-9870-acd5a5f121e7', null, null, null, ['$_GET' => $_GET, '$_POST' => $_POST]);
 }
