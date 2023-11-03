@@ -247,7 +247,6 @@
             formData['landing_page_url'] = 'https://localhost.com';
         }
 
-
         formData['url'] = window.location.href;
         formData['getParams'] = getURLParams();
         formData['lead'] = 1;
@@ -281,7 +280,6 @@
             formData['time_frame'] = $('#time_frame').val();
             formData['project_type'] = $('#project_type').val();
         }
-
 
         if(isTestLead(formData)){
             formData['lp_action'] = "test";
