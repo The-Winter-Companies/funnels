@@ -84,7 +84,7 @@ $page = 'o7';
     </header>
     <div class="progress_box">
         <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="10" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" aria-valuenow="10" style="width: 12%" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
     </div>
     <div class="form_box">
@@ -430,7 +430,7 @@ $page = 'o7';
         });
 
         $("#btn-zip").on("click", function () {
-            validateZip();
+            validateZip('o7');
         });
 
         /* next step*/
@@ -471,7 +471,7 @@ $page = 'o7';
                             $(this).next().fadeIn(function() {
                                 $(this).find('input:not([name=address]),select').first().focus();
                             });
-                            stepanimate();
+                            $.stepanimateO7Funnels();
                         });
 
                     }
@@ -518,13 +518,13 @@ $page = 'o7';
             parent_fieldset_prv.fadeOut(300, function () {
                 $(this).prev().fadeIn(300, function () {
                     $(this).find('input,select').first().focus();
-                    stepanimate();
+                    $.stepanimateO7Funnels();
                 });
 
             });
         });
 
-        function stepanimate() {
+        $.stepanimateO7Funnels = function () {
             const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
 
             if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
@@ -535,7 +535,8 @@ $page = 'o7';
                 });
             }
 
-            currentStep 		= $('fieldset:visible').data('step');
+            var totalStep = $('fieldset').length;
+            var currentStep = $('fieldset:visible').data('step');
             var step = $('form fieldset:visible').data('step');
             var percent = parseInt((currentStep / totalStep) * 98);
 

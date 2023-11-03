@@ -136,6 +136,10 @@ function validateZip(page){
                             setUtilityProvidersOptions($('#state').val());
                             if(page === 'main'){
                                 $.stepanimate();
+                            }else{
+                                if(page === 'o7'){
+                                    $.stepanimateO7Funnels();
+                                }
                             }
                         });
                     });

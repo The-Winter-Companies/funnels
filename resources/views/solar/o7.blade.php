@@ -492,7 +492,7 @@ $page = 'o7';
         });
 
         $("#btn-zip").on("click", function () {
-            validateZip();
+            validateZip('o7');
         });
 
         $('#email').on('input', function() {
@@ -560,7 +560,7 @@ $page = 'o7';
                             $(this).next().fadeIn(
                                 function() {
                                     $(this).find('input').first().focus();
-                                    stepanimate();
+                                    $.stepanimateO7Funnels();
                                 });
 
                         })
@@ -569,7 +569,7 @@ $page = 'o7';
             }
         });
 
-        function stepanimate() {
+        $.stepanimateO7Funnels = function() {
             var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
 
             if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
@@ -600,6 +600,7 @@ $page = 'o7';
                 $('#subHead').hide();
             }
         }
+
     });
 
 </script>
