@@ -58,7 +58,6 @@
 			}, "Please enter valid email address!");
 
 
-
 			jQuery.validator.addMethod("ContainsAtLeastOneDigit", function (value, element) {
 				return /\d/.test(value);
 			}, 'Address must contain at least one digit');

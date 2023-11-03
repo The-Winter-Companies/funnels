@@ -30,7 +30,7 @@
 
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style-roofing-main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/funnels-main.css') }}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -563,7 +563,6 @@
 
 <script type="text/javascript">	$(document).ready(function() { hh.homepage(); });</script>
 
-<script type="text/javascript" src="{{ asset('js/main-roofing-main.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/zipvalidate-roofing-main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/pop-power-company.js') }}"></script>
 </body>
 </html>

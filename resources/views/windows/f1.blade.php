@@ -33,10 +33,10 @@ session_start();
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,800" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style-windows-K2.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/footer-windows-K2.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/windows-f1.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/funnels-footer.css') }}" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/trusted.svg') }}">
-    <script type="text/javascript">if(typeof window.jQuery === 'undefined') {document.write('<script src=""{{ asset('s/jquery-3.4.1.min.js') }}"><\/script>');}</script>
+    <script type="text/javascript">if(typeof window.jQuery === 'undefined') {document.write('<script src=""{{ asset('s/jquery/jquery-3.4.1.min.js') }}"><\/script>');}</script>
     <!--[if (gte IE 6)&(lte IE 8)]>
     <script type="text/javascript">
         document.createElement('header');
@@ -64,7 +64,6 @@ session_start();
 </head>
 
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS7PJDW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
     <div class="container">
         <nav class="navbar text-center">
@@ -384,28 +383,16 @@ session_start();
         margin-bottom: 20px;
     }
 </style>
-<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery-3.4.1.min.js') }}"></script>
 <!--[if lte IE 8]>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <![endif]-->
-<script src="{{ asset('js/jquery.mask.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.custom.min.js') }}"></script>
-<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.mask.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery-ui.custom.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.validate.min.js') }}"></script>
 <script>
 
     (function(){
-
-        function isStrictMode(){
-            return !this;
-        }
-        /*
-           returns false, since 'this' refers to global object and
-           '!this' becomes false
-        */
-        function isStrictMode(){
-            "use strict";
-            return !this;
-        }
 
         /* min height zip*/
         function mincont() {
@@ -418,7 +405,6 @@ session_start();
 
         $(document).ready(function() {
 
-            processUrlParameters();
 
             var f = 1;
             $('form fieldset').each(function(){
@@ -435,7 +421,7 @@ session_start();
             var resultEmail = false;
             var zip_inclick = false;
 
-            var zip_container = true;
+            window.zip_container = true;
 
             function is_int(value) {
                 return parseFloat(value) === parseInt(value) && !isNaN(value);
@@ -477,7 +463,7 @@ session_start();
                                         .fadeIn(function () {
                                             $(this).find("input,select").first().focus();
                                             current_step = fieldset.index($(this));
-                                            zip_container = false;
+                                            window.zip_container = false;
                                             stepanimate();
                                         });
                                 });
@@ -505,7 +491,7 @@ session_start();
 
             /* next step*/
             $(".radio-next input[type=radio],.btn-next").bind("click",function () {
-                if(!zip_container){
+                if(!window.zip_container){
                     var parent_fieldset = $(this).parents('fieldset').last();
                     current_step = fieldset.index(parent_fieldset);
                     var next_step = true;
@@ -624,76 +610,6 @@ session_start();
 
             }
 
-            function validateEmail(email, returnFullResponse = false) {
-
-                var phpData = (function get_php_data() {
-                    var php_data;
-                    var ip_address = $("#ip_address").val();
-
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo $submitUrl;?>/validateEmail.php",
-                        data: {"email":email,"ip_address":ip_address},
-                        async: false,
-                        dataType: 'json',
-                        timeout: 3000,
-                        success: function (json) {
-                            php_data = json;
-                        },
-                        fail: function () {
-                            php_data.valid = true;
-                            console.log("Failed to get response to validate");
-                        },
-                    });
-                    return php_data;
-                })();
-
-                if(returnFullResponse === true){
-                    return phpData;
-                } else {
-                    if(phpData.valid===true){
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-
-
-            function validatePhone(phone, returnFullResponse = false) {
-
-                var phpData = (function get_php_data() {
-                    var php_data;
-
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo $submitUrl;?>/validatePhone.php",
-                        data: {"phone":phone},
-                        async: false,
-                        dataType: 'json',
-                        timeout: 3000,
-                        success: function (json) {
-                            php_data = json;
-                        },
-                        fail: function () {
-                            php_data.valid = true;
-                            console.log("Failed to get response to validate");
-                        },
-                    });
-                    return php_data;
-                })();
-
-                if(returnFullResponse === true){
-                    return phpData;
-                } else {
-                    if(phpData.valid===true){
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-
             $('#email').on('input', function() {
                 if ($("#email-custom-error").is(":visible"))
                 {
@@ -729,34 +645,6 @@ session_start();
 
             if (phoneSelector.mask !== undefined) {
                 phoneSelector.mask('(000)-000-0000', maskOptions);
-            }
-
-            $.makeid = function makeid(length) {
-                let result = '';
-                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                const charactersLength = characters.length;
-                let counter = 0;
-                while (counter < length) {
-                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-                    counter += 1;
-                }
-                return result;
-            }
-
-
-            var token = $.makeid(6);
-
-            function getUrlVars()
-            {
-                var vars = [], hash;
-                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-                for(var i = 0; i < hashes.length; i++)
-                {
-                    hash = hashes[i].split('=');
-                    vars.push(hash[0]);
-                    vars[hash[0]] = hash[1];
-                }
-                return vars;
             }
 
             /* progress */
@@ -853,7 +741,7 @@ session_start();
                 formdata['token'] = token;
                 formdata['currentStep'] = current_step;
                 formdata['totalSteps'] = totalStep;
-                formdata['getParams'] = getUrlVars();
+                formdata['getParams'] = getUrlParams();
                 formdata['url'] = window.location.href;
 
                 window.formdata = formdata;
@@ -929,71 +817,6 @@ session_start();
         NodeList.prototype.forEach = Array.prototype.forEach;
     }
 
-    var getUrlParameter = function getUrlParameter(sParam) {
-        var sPageURL = window.location.search.substring(1),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
-            i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-            }
-        }
-    };
-
-    //process url parameters
-    function processUrlParameters() {
-        $("#ef_aff_id").val(getUrlParameter('ef_aff_id'));
-        $("#sub_id").val(getUrlParameter('sub_id'));
-        $("#transaction_id").val(getUrlParameter('transaction_id'));
-        //$("#source").val(getUrlParameter('source'));
-        var s_params = ["s2", "s3", "s4", "s5"];
-
-        //check for both S2 and s2, S3 and s3 etc
-        s_params.forEach(function (item, index) {
-            var param_val = getUrlParameter(item);
-            if (param_val) $("#" + item).val(param_val);
-            else {
-                param_val = getUrlParameter(item.toUpperCase());
-                if (param_val) {
-                    $("#" + item).val(param_val);
-                }
-            }
-        });
-
-        if (!$("#ef_aff_id").val()) {
-            $("#ef_aff_id").val(getUrlParameter('AFFID'));
-        }
-        if (!$("#sub_id").val()) {
-            $("#sub_id").val(getUrlParameter('SUBID'));
-        }
-        if (!$("#transaction_id").val()) {
-            $("#transaction_id").val(getUrlParameter('TRANSACTIONID'));
-        }
-
-        var gclid = getUrlParameter('gclid');
-        if(gclid) {
-            $("#msform").append('<input type="hidden" name="gclid" id="gclid" value="' + gclid + '">');
-        }
-
-        var type = getUrlParameter('type');
-        if(type) {
-            $("#msform").append('<input type="hidden" name="type" id="type" value="' + type + '">');
-        }
-    }
-
-
-    function is_int(value) {
-        if ((parseFloat(value) == parseInt(value)) && !isNaN(value)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     jQuery.validator.addMethod("emailfull", function (value, element) {
         return this.optional(element) || /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i.test(value);
     }, "Please enter valid email address!");
@@ -1065,8 +888,6 @@ session_start();
 
 </script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWGUjDoetHonsX_8REioiFxYojrnomGIs&libraries=places"></script>
-<script src="{{ asset('js/jquery.geocomplete.min.js') }}"></script>
 <script>
     var invalid_city_state = false;
     if(typeof window.google !== 'undefined' && typeof window.google.maps !== 'undefined') {
@@ -1148,7 +969,6 @@ session_start();
                 },
                 email_address: {
                     required: true,
-                    emailfull: true,
                 },
                 first_name: {
                     required: true,
@@ -1169,7 +989,7 @@ session_start();
                 },
                 phone: {
                     required: true,
-                    phone: true
+                    phone_number: true
                 },
                 state: {
                     required: true,

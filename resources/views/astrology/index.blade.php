@@ -1,5 +1,5 @@
-include(resource_path('views/partials/funnel_submission_params.blade.php'));
 <?php
+include(resource_path('views/partials/funnel_submission_params.blade.php'));
 if(isset($_GET['ebook']) && $_GET['ebook'] == true){
     $ebookMessage = "<br><br>After signing up, you will be able to download your free ebook!";
 }
@@ -37,7 +37,7 @@ session_start();
 
     <!--<script>window.jQuery || document.write('<script src="./js/jquery-3.6.0.min.js"><\/script>')</script> -->
 
-    <script src="{{ asset('js/jquery-3.6.0.min-astrology.js') }}"></script>
+    <script src="{{ asset('js/jquery/jquery-3.6.0.min-astrology.js') }}"></script>
 
     <!--    LeadPost-->
     <meta name='referrer' content='no-referrer-when-downgrade'>
@@ -106,8 +106,8 @@ session_start();
     <meta name="twitter:description" content="Discover the power of astrology with AstrologySpark. Get free, personalized, and accurate predictions to transform your life. Sign up now for horoscopes that go beyond generic readings and start your journey today!">
     <meta name="twitter:image" content="">
     <!-- Bootstrap -->
-    <link href="{{ asset('css/bootstrap-astrology.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style-astrology.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/astrology.css') }}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -112,3 +112,9 @@ function postCurl($url, $postParams, $httpBuildQuery = true, $timeoutMs = null, 
     curl_close ($ch);
     return $result;
 }
+
+function callHealthcheckIfVisitCameFromThankYouPageOffer(){
+    if(!empty($_GET['ef_aid']) && !empty($_GET['ef_adv_event_id'])){
+        callHealthcheck('https://hc-ping.com/28df2a22-4a91-430a-9870-acd5a5f121e7', null, null, null, ['$_GET' => $_GET, '$_POST' => $_POST]);
+    }
+};

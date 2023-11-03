@@ -38,7 +38,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/ty.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/thank-you.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="#">
 
@@ -320,23 +320,9 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!--[if lte IE 8]>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
 <![endif]-->
 <script>
-    var getUrlParameter = function getUrlParameter(sParam) {
-        var sPageURL = window.location.search.substring(1),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
-            i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-            }
-        }
-        return false;
-    };
 
 
     (function(){

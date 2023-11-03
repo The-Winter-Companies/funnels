@@ -1,6 +1,8 @@
 <?php
 include(resource_path('views/partials/funnel_submission_params.blade.php'));
 session_start();
+$vertical = 'solar';
+$page = 'o7';
 ?>
 @include('partials.redirect_if_missing_vars')
     <!DOCTYPE html><html lang="en"><head>
@@ -18,12 +20,11 @@ session_start();
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Lower your electric bill up to 80%">
 
-
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;display=swap" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/v1-solar-S10.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/solar-o7.css') }}" rel="stylesheet">
     <style>
         button[disabled] {
             opacity:0.7;
@@ -32,7 +33,6 @@ session_start();
             border: 1px solid red;
         }
     </style>
-    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 
     <link rel="manifest" href={{ asset('manifest.json') }}>
 
@@ -42,10 +42,9 @@ session_start();
 
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6WH8QB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main class="container">
     <header>
-        <h1>ForeverHomeHub</h1>
+        <h1>Forever Home Hub</h1>
         <span id="subHead">
 <h2>Get Your Free Solar Quotes</h2>
 <p> Take this survey to find out if you qualify. Only takes 30 seconds!</p>
@@ -59,19 +58,10 @@ session_start();
     <div class="form_box">
         <div class="form_nav">Question <span id="slidenum">1</span></div>
         <form id="msform" class="form">
-            <input id="leadid_token" name="universal_leadid" type="hidden" value>
-            <input type="hidden" id="xxTrustedFormCertUrl" name="xxTrustedFormCertUrl" value>
-            <input type="hidden" id="ef_aff_id" name="ef_aff_id" value>
-            <input type="hidden" id="ef_tx_id" name="ef_tx_id" value>
-            <input type="hidden" id="s1" name="s1" value>
-            <input type="hidden" id="s2" name="s2" value>
-            <input type="hidden" id="s3" name="s3" value>
-            <input type="hidden" id="s4" name="s4" value>
-            <input type="hidden" id="s5" name="s5" value>
-            <input type="hidden" id="tcpa_text" name="tcpa_text" value>
+
+            @include('partials.hidden-inputs')
             <input type="hidden" id="city" name="city" value>
             <input type="hidden" id="state" name="state" value>
-            <input type="hidden" id="ip_address" name="ip_address" value>
             <input type="hidden" id="address_short" value>
             <input type="hidden" name="monthly_electric_bill" id="monthly_electric_bill" value="$201-$300">
             <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
@@ -350,109 +340,17 @@ session_start();
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
-<script src="{{ asset('js/jquery.mask.js') }}"></script>
-<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.custom.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.mask.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('js/jquery/jquery-ui.custom.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap-4.0.0.js') }}"></script>
+
+@include('partials.funnel_scripts', ['vertical' => $vertical, 'page' => $page])
+
 <script>
-
-    var getUrlParameter = function getUrlParameter(sParam) {
-        var sPageURL = window.location.search.substring(1),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
-            i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
-                if(sParameterName[1] === true){
-                    return true;
-                }else{
-                    if(sParameterName[1] === false){
-                        return false;
-                    }
-                }
-                return decodeURIComponent(sParameterName[1]);
-            }
-        }
-        return "";
-    }
-
-    jQuery.validator.addMethod("emailfull", function (value, element) {
-        return this.optional(element) || /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i.test(value);
-    }, "Please enter valid email address!");
-
-    jQuery.validator.addMethod("minLengthNoSpaces", function (value, element, len) {
-        if((typeof value !== 'undefined') && (typeof value === 'string' || value instanceof String)) {
-            if(value.includes("@")) {
-                return false;
-            }
-            var noSpacesValue = value.split(' ').join('');
-            if((typeof noSpacesValue !== 'undefined') && (typeof noSpacesValue === 'string' || noSpacesValue instanceof String)) {
-                return noSpacesValue.length >= len;
-            }
-        }
-        return true
-    });
-
-    jQuery.validator.addMethod("phone_number", function (value, element) {
-        var phone_selector = $('input[name="phone"]');
-        if (phone_selector.mask !== undefined) {
-            var phone_value_clean = phone_selector.cleanVal();
-        }
-        else {
-            var phone_value_clean = phone_selector.val();
-        }
-        if(phone_value_clean.length < 10) {
-            return false;
-        }
-        if(phone_value_clean.length == 11 && phone_value_clean.charAt(0) != '1') {
-            return false;
-        }
-        return true;
-
-    }, "Please enter a valid phone!");
-
-
-    jQuery.validator.addMethod("fullName", function (value, element, len) {
-        if((typeof value !== 'undefined') && (typeof value === 'string' || value instanceof String)) {
-            if(value.includes("@")) {
-                return false;
-            }
-            var index = value.indexOf(" ");  // Gets the first index where a space occours
-            if(!index) {
-                return false;
-            }
-            var firstName = value.substr(0, index); // Gets the first part
-            var lastName = value.substr(index + 1);  // Gets the text part
-            if(typeof firstName !== 'string' || typeof lastName !== 'string' || firstName.length < 4 || lastName.length < 4) {
-                return false;
-            } else {
-                $("#first_name").val(firstName);
-                $("#last_name").val(lastName);
-            }
-        }
-        return true
-    });
-
-    jQuery.validator.addMethod("hasNumber", function (value, element) {
-        return value.match(".*\\d.*");
-    }, "Your address must include the house/unit number.");
-
-    jQuery.validator.addMethod("hasLettersAndSpaces", function (value, element) {
-        return value.match(/[a-zA-Z]/) && value.trim().match(/\s/);
-    }, "Your address must include letters and spaces.");
-
-    jQuery.validator.addMethod("notNumber", function (value, element) {
-        return !value.match(".*\\d.*");
-    }, "Number not permitted.");
-
-    jQuery.validator.addMethod("state", function (value, element) {
-        var states = "|AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MP|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY|";
-        return (value.length == 2 && states.indexOf(value) !== -1)
-    }, "Please enter two letter state name.");
-
 
     $("#msform").validate({
         rules: {
@@ -501,779 +399,211 @@ session_start();
                 state: true
             }
         },
-
-        messages: {
-            zip_code: 'Please enter valid US zip code.',
-            email_address: {
-                required: 'Please enter your email address!',
-                emailfull: 'Invalid email - please check spelling or use another!',
-                remote: 'Invalid email - please check spelling or use another!'
-            },
-            first_name: "Don't forget to tell us your name.",
-            last_name: "Don't forget to tell us your last name.",
-            full_name: {
-                required: "Don't forget to tell us your name.",
-                fullName:  "Please enter your full name",
-            },
-            address: {
-                required: 'Please enter your address.',
-                hasNumber:  'Your address must include the house/unit number. ',
-                minLengthNoSpaces: 'Your address is too short'
-            },
-            phone: 'Please enter your phone number.'
-        },
-
+        messages: validationMessages,
         errorElement: 'div',
-
-
         onkeyup :false,
     });
 
-    $(document).ready(function () {
 
-        window.submittingToLeadProsper = false;
+    $(document).ready(function() {
 
-        $.ajaxSetup({
-            //timeout: 20000, //Time in milliseconds
-            cache: false
+        $('form').submit(function (e) {
+            var form = this;
+            e.preventDefault();
+
+            if (!$(form).validate().form()){
+                return;
+            } else {
+                let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
+                submitLead(formData);
+            }
+            $('#form_submit').removeAttr('disabled');
         });
 
 
-        $('#tcpa_text').val($('#leadid_tcpa_disclosure').parent().text());
+        $('input[type=radio][name=credit_rating_radio]').click(function(){
+            $('#credit_rating').val($(this).val());
+        });
 
+        $("#monthly_electric_bill_range").change(function(){
+            $("#billOutputName").val($("#monthly_electric_bill_range").val());
+            if($(this).val() <= 50) {
+                $("#monthly_electric_bill").val("$0-$50");
+            }
 
-        var phoneSelector = $('input[name="phone"]');
+            if( ($(this).val() >= 51) && ($(this).val() <= 100) ) {
+                $("#monthly_electric_bill").val("$51-$100");
+            }
 
+            if( ($(this).val() >= 101) && ($(this).val() <= 150) ) {
+                $("#monthly_electric_bill").val("$101-$150");
+            }
 
-        var maskOptions = {
-            onKeyPress: function (cep, e, field, options) {
-                var masks = ['(000) 000-0000'];
-                var mask = masks[0];
-                $('input[name="phone"]').mask(mask, options);
-            },
-            translation: {
-                'Z': {
-                    pattern: /[0-9]/, optional: true
+            if( ($(this).val() >= 151) && ($(this).val() <= 200) ) {
+                $("#monthly_electric_bill").val("$151-$200");
+            }
+
+            if( ($(this).val() >= 201) && ($(this).val() <= 300) ) {
+                $("#monthly_electric_bill").val("$201-$300");
+            }
+
+            if( ($(this).val() >= 301) && ($(this).val() <= 400) ) {
+                $("#monthly_electric_bill").val("$300-$400");
+            }
+
+            if($(this).val() >= 401){
+                $("#monthly_electric_bill").val("$400+");
+            }
+        });
+
+        $('input[type=range]').change(function () {
+            var rangeval = $(this).val();
+            if (rangeval == 800) {
+                $("#billOutputName").addClass('intmax');
+            } else {
+                $("#billOutputName").removeClass('intmax');
+            }
+        });
+
+        $("#zip").change(function () {
+            $("#add-zip").val($("#zip").val());
+            $(".zip_span").text($("#zip").val());
+            setTimeout(function(){
+                $("#add-city").val($("#city").val());
+                $(".city_span").text($("#city").val());
+                $("#add-state").val($("#state").val());
+                $(".state_span").text($("#state").val());
+            }, 3000);
+
+        });
+
+        var fieldset = $("form fieldset");
+
+        window.zip_container = false;
+
+        $("#zip_code").on('keyup change', function (e) {
+            var el = $("[name='zip_code']");
+            if (el.val().length === 5){
+                $('#btn-zip').removeAttr('disabled');
+            }else{
+                $('#btn-zip').attr('disabled', 'disabled');
+            }
+            $(".zip_error").hide();
+        });
+
+        $("#btn-zip").on("click", function () {
+            validateZip();
+        });
+
+        $('#email').on('input', function() {
+            if ($("#email-custom-error").is(":visible"))
+            {
+                $("#email-custom-error").hide();
+            }
+        });
+
+        $('#phone').on('input', function() {
+            if ($("#phone-custom-error").is(":visible"))
+            {
+                $("#phone-custom-error").hide();
+            }
+        });
+
+        $("#provider-select").on('change',function(){
+            $(this).closest("fieldset").find(".btn-next").trigger("click");
+        });
+
+        $("input:radio").click(function() {
+            $(this).closest("fieldset").find(".btn-next").trigger("click");
+        });
+
+        $(".btn-next").click(function(){
+            if(!window.zip_container){
+                var parent_fieldset = $(this).parents('fieldset');
+                var next_step = true;
+                var current_step = fieldset.index(parent_fieldset) + 1;
+                var progwidth = $(this).parents('fieldset').next().attr('data-bar');
+
+                if(current_step+1 === $('#zipContainer').data('step')){
+                    window.zip_container = true;
+                }
+
+                parent_fieldset.find('[required]:visible').each(function() {
+                    var result = $("#msform").valid();
+                    if (!result) {
+                        next_step = false;
+                    }
+                });
+
+                if( next_step ) {
+                    if(current_step === $('#phoneContainer').data('step')){
+                        (async function(){
+                            var emailValid = await emailIsValid();
+                            var phoneValid = await phoneIsValid();
+                            if(phoneValid === false || emailValid === false){
+                                return;
+                            }else{
+                                $('form').submit();
+                                $('#form_submit').attr('disabled', 'disabled');
+                            }
+                        })()
+                    }
+                    var ls = $('#phoneContainer').data('step');
+
+                    if(current_step < ls) {
+                        parent_fieldset.removeClass('fadeInRight');
+                        parent_fieldset.toggleClass('fadeOutLeft');
+                        parent_fieldset.fadeOut(function() {
+                            $(this).find('.form-group').children('.form-error-message').hide();
+                            $("body").animate({ scrollTop: 0 },'500');window.top.scrollTo(0,0)
+
+                            $(this).next().fadeIn(
+                                function() {
+                                    $(this).find('input').first().focus();
+                                    stepanimate();
+                                });
+
+                        })
+                    }
                 }
             }
-        };
-
-        if (phoneSelector.mask !== undefined) {
-            phoneSelector.mask('(000) 000-0000', maskOptions);
-        }
-
-        //disable copy/paste
-        $('input[type="text"],input[type="tel"],input[type="email"],input[type="number"]').bind('cut copy paste', function (e) {
-            e.preventDefault();
         });
+
+        function stepanimate() {
+            var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
+
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+                window.scrollTo(0, 0)
+            } else {
+                $('html,body').animate({scrollTop: 0}, 500, function () {
+                    $('html,body').clearQueue();
+                });
+            }
+
+            var totalStep = $('fieldset').length;
+
+            var step = $('form fieldset:visible').data('step'),
+                percent = parseInt((step / totalStep) * 98);
+
+            var currentIndex = $('form fieldset:visible').index();
+
+            $('form fieldset:visible').find('input:not([name=address]),select').first().focus();
+
+            $('.progress-bar').css({width: percent + '%'});
+            $('#slidenum').html('' + step + ' of ' + totalStep + '');
+
+            if ($('#phoneContainer').is(':visible')) {
+                $('#tcpa_cont').show();
+            }
+
+            if (step > 1){
+                $('#subHead').hide();
+            }
+        }
     });
 
 </script>
-<script>
 
-    (function () {
-        "use strict";
-        $(document).ready(function () {
+</body>
 
-            $('input[type=radio][name=credit_rating_radio]').click(function(){
-                $('#credit_rating').val($(this).val());
-            });
-
-            $("#monthly_electric_bill_range").change(function(){
-                $("#billOutputName").val($("#monthly_electric_bill_range").val());
-                if($(this).val() <= 50) {
-                    $("#monthly_electric_bill").val("$0-$50");
-                }
-
-                if( ($(this).val() >= 51) && ($(this).val() <= 100) ) {
-                    $("#monthly_electric_bill").val("$51-$100");
-                }
-
-                if( ($(this).val() >= 101) && ($(this).val() <= 150) ) {
-                    $("#monthly_electric_bill").val("$101-$150");
-                }
-
-
-                if( ($(this).val() >= 151) && ($(this).val() <= 200) ) {
-                    $("#monthly_electric_bill").val("$151-$200");
-                }
-
-                if( ($(this).val() >= 201) && ($(this).val() <= 300) ) {
-                    $("#monthly_electric_bill").val("$201-$300");
-                }
-
-                if( ($(this).val() >= 301) && ($(this).val() <= 400) ) {
-                    $("#monthly_electric_bill").val("$300-$400");
-                }
-
-                if($(this).val() >= 401){
-                    $("#monthly_electric_bill").val("$400+");
-                }
-
-            });
-
-
-            $('input[type=range]').change(function () {
-                var rangeval = $(this).val();
-                if (rangeval == 800) {
-                    $("#billOutputName").addClass('intmax');
-                } else {
-                    $("#billOutputName").removeClass('intmax');
-                }
-            });
-
-
-
-            $("#zip").change(function () {
-                $("#add-zip").val($("#zip").val());
-                $(".zip_span").text($("#zip").val());
-                setTimeout(function(){
-                    $("#add-city").val($("#city").val());
-                    $(".city_span").text($("#city").val());
-                    $("#add-state").val($("#state").val());
-                    $(".state_span").text($("#state").val());
-                }, 3000);
-
-            });
-
-        });
-    })();
-
-</script>
-
-<script>
-
-    (function(){
-
-        function is_int(value) {
-            if ((parseFloat(value) == parseInt(value)) && !isNaN(value)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        $(document).ready(function() {
-            var zip_inclick = false;
-            var fieldset = $("form fieldset");
-            var resultEmail = false;
-            var resultPhone = false;
-            var zip_container = false;
-
-            $("#zip_code").on('keyup change', function (e) {
-                var el = $("[name='zip_code']");
-                if (el.val().length === 5){
-                    $('#btn-zip').removeAttr('disabled');
-                }else{
-                    $('#btn-zip').attr('disabled', 'disabled');
-                }
-                $(".zip_error").hide();
-            });
-
-            $("#btn-zip").on("click", function () {
-                var el = $("[name='zip_code']");
-
-                $('#btn-zip .btn-text').text('Please Wait');
-
-                setTimeout(function() {
-                    // check if zip is valid
-                    if (el.val().length === 5 && is_int(el.val()) && !zip_inclick) {
-
-                        zip_inclick = true;
-
-
-                        $.getJSON("https://zip.getziptastic.com/v2/US/" + el.val())
-                            .done(function (result) {
-                                $("#zip_code").val(result.postal_code).addClass('valid');
-                                $("[name='city']").val(result.city).addClass('valid');
-                                $("[name='state']").val(result.state_short).addClass('valid');
-
-                                zip_inclick = false;
-                                $(".zip_error").hide();
-
-                                el.parents("fieldset").fadeOut(function () {
-                                    $(".headline").hide("blind");
-                                    $(this)
-                                        .next()
-                                        .fadeIn(function () {
-                                            $(this).find("input,select").first().focus();
-                                            zip_container = false;
-                                            setUtilityProvidersOptions($('#state').val());
-                                            stepanimate();
-                                        });
-                                });
-
-                            })
-                            .fail(function () {
-                                zipValidationError()
-                            })
-                            .always(function () {
-                                $('#btn-zip .btn-text').text('Next');
-                                zip_inclick = false;
-                            });
-
-                    } else if (el.val().length < 5) {
-                        zipValidationError()
-                    }
-
-                    function zipValidationError() {
-                        $(".zip_error").text("Please enter a valid zip code. (i.e. 90210)").fadeIn().css("display", "inline-block").css("color", "red");
-                        $(".zip_box").addClass('fail')
-                    }
-
-                });
-            });
-
-            function phoneIsValid(){
-
-                var response = true;
-
-                var phone = $("#phone").val();
-
-                if(phone === '(111) 111-1111' || phone === '(612) 842-0000'){
-                    return true;
-                }
-
-                const phoneValidation = $.ajax({
-                    type: "POST",
-                    url: "<?php echo $submitUrl;?>/validatePhone.php",
-                    data: {"phone":phone},
-                    async: false,
-                    dataType: 'json'
-                }).then((fullResponse) => {
-                    return fullResponse;
-                });
-
-                const promiseFunction =
-                    phoneValidation.then((a) => {
-                        if(a.valid === false){
-                            $("#phone").addClass(" .form-control .error")
-                            $("#phone-custom-error").html("Please provide a valid phone number to proceed.");
-                            $("#phone-custom-error").fadeIn('fast');
-                            response = false;
-                        }
-                        return response;
-                    });
-
-                return promiseFunction.then(function (response){
-                    return response;
-                });
-
-            }
-
-            function emailIsValid() {
-
-                function isTestEmail(email){
-                    return email === 'test@test.com' || email === 'pingdom@test.com';
-                }
-
-                var response = true;
-                var email = $('#email').val();
-                var ipAddress = $("#ip_address").val();
-
-                if(!isTestEmail(email)){
-
-                    const emailValidation = $.ajax({
-                        type: "POST",
-                        url: "<?php echo $submitUrl;?>/validateEmail.php",
-                        data: {"email":email,"ip_address":ipAddress},
-                        async: false,
-                        dataType: 'json'
-                    }).then((fullResponse) => {
-                        return fullResponse;
-                    });
-
-                    const promiseFunction = emailValidation.then((a) => {
-                        if(a.valid === false){
-                            $("#email").addClass(" .form-control .error")
-                            $("#email-custom-error").html("Please provide a valid email address to proceed.");
-                            $("#email-custom-error").fadeIn('fast');
-                            response = false;
-                        }
-                        return response;
-                    });
-
-                    return promiseFunction.then(function (response){
-                        return response;
-                    });
-                }
-
-            }
-
-            function setUtilityProvidersOptions(state){
-                var company = JSON.parse(power_company);
-                var result = company[state];
-                for (var i = 0; i < result.length; i++) {
-                    var $o = $('<option>');
-                    $o.val(result[i].name);
-                    $o.html(result[i].name);
-                    $('#utility_provider').append($o);
-                }
-            }
-
-            function validateEmail(email, returnFullResponse = false) {
-
-                var phpData = (function get_php_data() {
-                    var php_data;
-                    var ip_address = $("#ip_address").val();
-
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo $submitUrl;?>/validateEmail.php",
-                        data: {"email":email,"ip_address":ip_address},
-                        async: false,
-                        dataType: 'json',
-                        timeout: 3000,
-                        success: function (json) {
-                            php_data = json;
-                        },
-                        fail: function () {
-                            php_data.valid = true;
-                            console.log("Failed to get response to validate");
-                        },
-                    });
-                    return php_data;
-                })();
-
-                if(returnFullResponse === true){
-                    return phpData;
-                } else {
-                    if(phpData.valid===true){
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-
-
-            function validatePhone(phone, returnFullResponse = false) {
-
-                var phpData = (function get_php_data() {
-                    var php_data;
-
-                    $.ajax({
-                        type: "POST",
-                        url: "<?php echo $submitUrl;?>/validatePhone.php",
-                        data: {"phone":phone},
-                        async: false,
-                        dataType: 'json',
-                        timeout: 3000,
-                        success: function (json) {
-                            php_data = json;
-                        },
-                        fail: function () {
-                            php_data.valid = true;
-                            console.log("Failed to get response to validate");
-                        },
-                    });
-                    return php_data;
-                })();
-
-                if(returnFullResponse === true){
-                    return phpData;
-                } else {
-                    if(phpData.valid===true){
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
-            }
-
-            $.makeid = function makeid(length) {
-                let result = '';
-                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                const charactersLength = characters.length;
-                let counter = 0;
-                while (counter < length) {
-                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-                    counter += 1;
-                }
-                return result;
-            }
-
-            $('#email').on('input', function() {
-                if ($("#email-custom-error").is(":visible"))
-                {
-                    $("#email-custom-error").hide();
-                }
-            });
-
-            $('#phone').on('input', function() {
-                if ($("#phone-custom-error").is(":visible"))
-                {
-                    $("#phone-custom-error").hide();
-                }
-            });
-
-            var token = $.makeid(6);
-
-
-            $("#provider-select").on('change',function(){
-                $(this).closest("fieldset").find(".btn-next").trigger("click");
-            });
-
-            $("input:radio").click(function() {
-                $(this).closest("fieldset").find(".btn-next").trigger("click");
-            });
-
-            $(".btn-next").click(function(){
-                if(!zip_container){
-                    var parent_fieldset = $(this).parents('fieldset');
-                    var next_step = true;
-                    var current_step = fieldset.index(parent_fieldset) + 1;
-                    var progwidth = $(this).parents('fieldset').next().attr('data-bar');
-
-
-                    if(current_step+1 === $('#zipContainer').data('step')){
-                        zip_container = true;
-                    }
-
-
-                    parent_fieldset.find('[required]:visible').each(function() {
-                        var result = $("#msform").valid();
-                        if (!result) {
-                            next_step = false;
-                        }
-                    });
-
-                    if( next_step ) {
-                        if(current_step === $('#phoneContainer').data('step')){
-                            (async function(){
-                                var emailValid = await emailIsValid();
-                                var phoneValid = await phoneIsValid();
-                                if(phoneValid === false || emailValid === false){
-                                    return;
-                                }else{
-                                    $('form').submit();
-                                    $('#form_submit').attr('disabled', 'disabled');
-                                }
-                            })()
-                        }
-                        var ls = $('#phoneContainer').data('step');
-
-                        if(current_step < ls) {
-                            parent_fieldset.removeClass('fadeInRight');
-                            parent_fieldset.toggleClass('fadeOutLeft');
-                            parent_fieldset.fadeOut(function() {
-                                $(this).find('.form-group').children('.form-error-message').hide();
-                                $("body").animate({ scrollTop: 0 },'500');window.top.scrollTo(0,0)
-
-                                $(this).next().fadeIn(
-                                    function() {
-                                        $(this).find('input').first().focus();
-                                        stepanimate();
-                                    });
-
-                            })
-                        }
-                    }
-                }
-            });
-
-            /*
-            $(".btn-back").click(function () {
-                var parent_fieldset_prv = $(this).parents('fieldset');
-                var prev_fs = $(this).parent().prev();
-                parent_fieldset_prv.fadeOut(300, function () {
-                    $(this).prev().fadeIn(300, function () {
-                        $(this).find('input,select').first().focus();
-                        stepanimate();
-                    });
-
-                });
-            });
-
-             */
-
-
-            function stepanimate() {
-                var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-
-                if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                    window.scrollTo(0, 0)
-                } else {
-                    $('html,body').animate({scrollTop: 0}, 500, function () {
-                        $('html,body').clearQueue();
-                    });
-                }
-
-                var totalStep = $('fieldset').length;
-
-                var step = $('form fieldset:visible').data('step'),
-                    percent = parseInt((step / totalStep) * 98);
-
-
-                var currentIndex = $('form fieldset:visible').index();
-
-                $('form fieldset:visible').find('input:not([name=address]),select').first().focus();
-
-                $('.progress-bar').css({width: percent + '%'});
-                $('#slidenum').html('' + step + ' of ' + totalStep + '');
-
-                if ($('#phoneContainer').is(':visible')) {
-                    $('#tcpa_cont').show();
-                }
-
-                if (step > 1){
-                    $('#subHead').hide();
-                }
-
-            }
-
-            $('form input').on('keypress', function(e) {
-                var keyCode = e.keyCode || e.which;
-                if (keyCode === 13) {
-                    var next_btn = $(this).closest("fieldset").find(".btn-next");
-                    if(!next_btn.prop('disabled'))
-                        next_btn.trigger("click");
-                    e.preventDefault();
-                    return false;
-
-                }
-            });
-
-            function fillFormDataSolar() {
-                var formData = {};
-
-                // Get all input fields and iterate over them
-                $(":input").each(function() {
-                    var id = $(this).attr('id');
-                    var value = $(this).val();
-
-                    // If the input field has an id, add it to the formData object
-                    if(id) {
-                        formData[id] = value;
-                    }
-                });
-
-                // Set static values
-                formData['lp_campaign_id'] = "17604";
-                formData['lp_supplier_id'] = "38531";
-                formData['lp_key'] = "qqz1h52vku0dpy";
-                if($('#email').val() === 'test@test.com' || $('#email').val() === 'pingdom@test.com'){
-                    formData['lp_action'] = "test";
-                }
-                formData['email_address'] = $('#email').val();
-                formData['trustedform_cert_url'] = $("input[name='xxTrustedFormToken']").val();
-                formData['jornaya_leadid'] = $('#leadid_token').val();
-                formData['user_agent'] = window.navigator.userAgent;
-                formData['home_owner'] = "Yes";
-                formData['roof_shade'] = "No Shade";
-                formData['url'] = window.location.href;
-                formData['landing_page_url'] = window.location.href;
-                formData['monthly_electric_bill'] = $('#monthly_electric_bill').val();
-                formData['credit_rating'] = $('#credit_rating').val();
-                formData['time_frame'] = $('#time_frame').val();
-                formData['property_type'] = $('#property_type').val();
-                formData['roof_type'] = $('#roof_type').val();
-                formData['utility_provider'] = $('#utility_provider').val();
-                formData['s1'] = getUrlParameter('s1');
-                formData['s2'] = getUrlParameter('s2');
-                formData['s3'] = getUrlParameter('s3');
-                formData['s4'] = getUrlParameter('s4');
-                formData['s5'] = getUrlParameter('s5');
-                formData['ef_aff_id'] = getUrlParameter('ef_aff_id');
-                formData['ef_tx_id'] = getUrlParameter('ef_tx_id');
-                formData['ef_aid'] = getUrlParameter('ef_aid');
-                formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
-                formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
-                formData['token'] = token;
-                formData['complete'] = 1;
-                formData['lead'] = 1;
-                formData['vertical'] = 'solar';
-                formData['healthchecks_slug'] = 'solar-o7';
-
-                return formData;
-            }
-
-            function submitToLeadProsper() {
-
-                var formdata = fillFormDataSolar();
-                window.formdata = formdata;
-
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $leadProsperUrl?>',
-                    data: formdata,
-                    // async: false,
-                    dataType: "text",
-                    success: function (data) {
-                        var result = JSON.parse(data);
-                        console.log(result);
-                        if (result.status !== 'ACCEPTED') {
-                            Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() + ' ]' + ' REASON: ' + result.message);
-                        }
-                        setTimeout(function () {
-                            window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=solar" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
-                        }, 500);
-                        // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-
-                    }, error: function (data) {
-                        alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                        $('#form_submit').removeAttr('disabled');
-                    }, complete: function () {
-                        window.submittingToLeadProsper = false; // Unlock the submit when finished
-                    }
-                });
-                stl(formdata);
-            }
-
-            $('form').submit(function (e) {
-
-                var form = this;
-                e.preventDefault();
-
-                if (!$(form).validate().form())
-                    return;
-                // $('#form_submit').prop('disabled', true);
-
-                var formdata = fillFormDataSolar();
-                window.formdata = formdata;
-
-                if($('#email').val() === 'pingdom@test.com'){
-
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $submitUrl?>',
-                        data: formdata,
-                        //async: false,
-                        dataType: "text",
-                        success: function (data) {
-                            window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=solar" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
-                        }, error: function (data) {
-                            alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                            $('#form_submit').removeAttr('disabled');
-                        }, complete: function () {
-                            window.submittingToLeadProsper = false; // Unlock the submit when finished
-                        }
-                    });
-                    stl(formdata);
-
-                }else{
-                    if(window.submittingToLeadProsper === false){
-                        window.submittingToLeadProsper = true;
-
-                        $.ajax({
-                            type: 'POST',
-                            url: '<?php echo $leadProsperUrl?>',
-                            data: formdata,
-                            //async: false,
-                            dataType: "text",
-                            success: function (data) {
-                                var result = JSON.parse(data);
-                                if (result.status !== 'ACCEPTED') {
-                                    Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() + ' ]' + ' REASON: ' + result.message);
-                                }
-                                setTimeout(function () {
-                                    window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=solar" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
-                                }, 500);
-                                // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-
-                            }, error: function (data) {
-                                //Rollbar.error('Failed to submit the lead through Winterbot, sending it straight to LeadProsper from the funnels - Lead email : [ ' + $('#email').val() + ' ]. Verify urgent !');
-                                //submitToLeadProsper();
-                                alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                                $('#form_submit').removeAttr('disabled');
-                            }, complete: function () {
-                                window.submittingToLeadProsper = false; // Unlock the submit when finished
-                            }
-                        });
-                        stl(formdata);
-                    }else {
-                        console.log('Already submitting to LeadProsper, please wait...');
-                    }
-                }
-            });
-
-            $.getJSON("https://api.ipify.org?format=json", function(data) {
-                $('#ip_address').val(data.ip);
-            });
-
-            function stl(formdata){
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $leadBackupUrl."/stl.php"?>',
-                    data: formdata,
-                    async: true,
-                    dataType: "text",
-                    success: function (data) {
-                        // var result = JSON.parse(data);
-                    }, error: function(data) {
-                        // console.log(data);
-                    }
-                });
-            }
-
-        });
-
-
-    })();
-
-</script>
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWGUjDoetHonsX_8REioiFxYojrnomGIs&libraries=places"></script>
-<script src="{{ asset('js/jquery.geocomplete.min.js') }}"></script>
-<script>
-    var invalid_city_state = false;
-    if(typeof window.google !== 'undefined' && typeof window.google.maps !== 'undefined') {
-        $("#address").geocomplete({
-            formId: "#msform",
-            componentRestrictions: {
-                country: ['us']
-            },
-            types: ['address'],
-            fields: ['address_components'],
-            onChange: function (name, result) {
-                var searchAddressComponents = result.address_components;
-                $.each(searchAddressComponents, function () {
-                    if (this.types[0] === "locality") {
-                        $(".city_span, #fcity").text(this.short_name);
-                        if(!$("#city").val()) {
-                            invalid_city_state = true;
-                            $("#city").val(this.short_name);
-                        }
-                    }
-                    if (this.types[0] === "administrative_area_level_1") {
-                        $(".state_span, #fstate").text(this.short_name);
-                        if(!$("#state").val()) {
-                            invalid_city_state = true;
-                            $("#state").val(this.short_name);
-                        }
-                    }
-                    if (this.types[0] === "postal_code") {
-                        $(".zip_span").text(this.short_name);
-                        if(invalid_city_state) {
-                            $("input[name='zip_code']").val(this.short_name);
-                        }
-                    }
-                });
-                $('#add-change').show();
-                $('.address_loc').slideDown();
-                $('#adddetails-change').hide();
-                $("input[name='address']").valid();
-
-                //Autocomplete if house number is invalid
-                var originalAddress = $("input[name='address']").val();
-                var matches = originalAddress.match(/(\d+)/);
-                setTimeout(function () {
-                    function hasNumbers(t)
-                    {
-                        var regex = /\d/g;
-                        return regex.test(t);
-                    }
-                    var updatedAddress = $("input[name='address']").val();
-                    if(!hasNumbers(updatedAddress) && hasNumbers(originalAddress) && matches) {
-                        $("input[name='address']").val(matches[0] + " " + updatedAddress);
-                    }
-                    $("input[name='address']").valid();
-                }, 100);
-            }
-        });
-    }
-
-</script>
-<script type="text/javascript" src="{{ asset('js/power_company-roofing-main.js') }}"></script>
-
-</body></html>
+</html>

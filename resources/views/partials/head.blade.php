@@ -28,11 +28,10 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,800" rel="stylesheet">
 
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10787294212"></script>
 
 <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
 
-<script type="text/javascript">if(typeof window.jQuery === 'undefined') {document.write('<script src="{{ asset('js/jquery-3.4.1.min.js') }}"><\/script>');}</script>
+<script type="text/javascript">if(typeof window.jQuery === 'undefined') {document.write('<script src="{{ asset('js/jquery/jquery-3.4.1.min.js') }}"><\/script>');}</script>
 <!--[if (gte IE 6)&(lte IE 8)]>
 <script type="text/javascript" src="js/selectivizr.js"></script>
 <script type="text/javascript">
@@ -55,7 +54,10 @@
 
 <![endif]-->
 
-@include('partials.rollbar_script')
+@if ( env('APP_ENV') !== 'local' )
+    @include('partials.rollbar_script')
+@endif
+
 @include('partials.trusted_form')
 @include('partials.lead_id')
 

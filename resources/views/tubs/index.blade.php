@@ -1,6 +1,8 @@
 <?php
 include(resource_path('views/partials/funnel_submission_params.blade.php'));
 session_start();
+$vertical = 'tubs';
+$page = 'main';
 ?>
     <!DOCTYPE html>
 <html lang="en">
@@ -36,26 +38,13 @@ session_start();
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
     @include('partials.lead_id')
+    @include('partials.pushnami_script')
 
     <link rel="manifest" href="{{ asset('manifest.json') }}">
-    <script type="text/javascript">
-        (function(document, window){
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = "https://api.pushnami.com/scripts/v1/pushnami-adv/649341c06d1a52001362ee20";
-            script.onload = function() {
-                Pushnami
-                    .update()
-                    .prompt();
-            };
-            document.getElementsByTagName("head")[0].appendChild(script);
-        })(document, window);
-    </script>
-
 
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style-roofing-main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/funnels-main.css') }}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,9 +55,6 @@ session_start();
 </head>
 <body>
 
-
-
-
 <header>
     <nav class="navbar justify-content-between mx-auto">
 				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
@@ -77,10 +63,8 @@ session_start();
     </nav>
 </header>
 
-
 <main class="tubs">
     <section id="formSec" class="formSec">
-
 
         <div class="progress-box" style="display: none;">
             <div class="progress" >
@@ -95,22 +79,12 @@ session_start();
         </div>
 
         <form class="form container-fluid" >
-
-            <input id="leadid_token" name="universal_leadid" type="hidden" value>
-            <input type="hidden" id="xxTrustedFormCertUrl" name="xxTrustedFormCertUrl" value>
-            <input type="hidden" id="ef_aff_id" name="ef_aff_id" value>
-            <input type="hidden" id="ef_tx_id" name="ef_tx_id" value>
-            <input type="hidden" id="s1" name="s1" value>
-            <input type="hidden" id="s2" name="s2" value>
-            <input type="hidden" id="s3" name="s3" value>
-            <input type="hidden" id="s4" name="s4" value>
-            <input type="hidden" id="s5" name="s5" value>
-            <input type="hidden" id="tcpa_text" name="tcpa_text" value>
-            <input type="hidden" id="state" name="state" value>
+            @include('partials.hidden-inputs')
             <input type="hidden" id="ip_address" name="ip_address" value>
             <input type="hidden" id="project_reason" name="project_reason" value>
             <input type="hidden" id="time_frame" name="time_frame" value>
 
+            <input type="hidden" id="state" name="state" value>
             <fieldset id="zip-container"><legend hidden="true">zip</legend>
 
                 <h4 class="form-question">Enter your zip code<br class="d-none d-md-block">to get started:</h4>
@@ -123,7 +97,7 @@ session_start();
 
                             </div>
                             <div class="col-auto form-btns text-center mb-0">
-                                <button class="btn form-btn mb-0" id="btnzip"  type="button" ><span class="btn-text">Get Started</span></button>
+                                <button class="btn form-btn mb-0" id="btn-zip"  type="button" ><span class="btn-text">Get Started</span></button>
                             </div>
                         </div>
                     </div>
@@ -131,9 +105,6 @@ session_start();
                 </div>
 
             </fieldset>
-
-
-
 
             <fieldset><legend hidden="true">project_type</legend>
                 <h4 class="form-question">Why Do You Want A Walk-In Tub?</h4>
@@ -162,17 +133,9 @@ session_start();
                 </div>
             </fieldset>
 
-
-
-
-
-
-
-
             <fieldset><legend hidden="true">project_timeframe</legend>
 
                 <h4 class="form-question">When do you need a tub installed? </h4>
-
 
                 <div class="form-cont ">
                     <div class="form-group radio-next">
@@ -217,9 +180,6 @@ session_start();
 
             </fieldset>
 
-
-
-
             <fieldset><legend hidden="true">address</legend>
 
                 <h4 class="form-question">Where will this project <br class="d-none d-md-block">take place?</h4>
@@ -232,20 +192,20 @@ session_start();
                             <input type="hidden" id="address_short" value="">
                         <div class="form-error-message"> Please complete this field</div>
                     </div>
-                    <div class="form-group" >
-                        <label for="city" class="label">City</label>
-                        <input id="city" class="form-control" name="city" type="text"
-                               placeholder="City" required>
-                        <div class="form-error-message"> Please complete this field</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="zip-code" class="label">ZIP code</label>
-                        <input id="zip-code" class="form-control"  type="text"  placeholder="ZIP" >
-                        <div class="form-error-message"> Please complete this field</div>
-                    </div>
-                    <div class="zip-details">
-                        <span class="county">City</span>, <span class="state">State</span>
-                    </div>
+{{--                    <div class="form-group" >--}}
+{{--                        <label for="city" class="label">City</label>--}}
+{{--                        <input id="city" class="form-control" name="city" type="text"--}}
+{{--                               placeholder="City" required>--}}
+{{--                        <div class="form-error-message"> Please complete this field</div>--}}
+{{--                    </div>--}}
+{{--                    <div class="form-group">--}}
+{{--                        <label for="zip-code" class="label">ZIP code</label>--}}
+{{--                        <input id="zip-code" class="form-control"  type="text"  placeholder="ZIP" >--}}
+{{--                        <div class="form-error-message"> Please complete this field</div>--}}
+{{--                    </div>--}}
+{{--                    <div class="zip-details">--}}
+{{--                        <span class="county">City</span>, <span class="state">State</span>--}}
+{{--                    </div>--}}
                 </div>
 
 
@@ -253,7 +213,6 @@ session_start();
                     <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
-
 
             <fieldset><legend hidden="true">name</legend>
                 <h3 class="form-question">Who are these free quotes for?</h3>
@@ -276,7 +235,6 @@ session_start();
                     <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
-
 
             <fieldset><legend hidden="true">email</legend>
                 <h3 class="form-question">Where should your free quotes<br class="d-none d-md-block"> be sent?</h3>
@@ -302,8 +260,6 @@ session_start();
             </fieldset>
 
 
-
-
             <fieldset><legend hidden="true">Phone</legend>
                 <center>
                     <h3 class="form-question mb-2">You're almost finished!</h3>
@@ -324,8 +280,6 @@ session_start();
     padding: 5px;text-align: center;
     font-weight: 600;">Please enter a valid phone number.</label>
                     </div>
-
-
 
                 </div>
 
@@ -562,803 +516,245 @@ session_start();
     </div>
 </section>
 
-
 @include('partials/footer')
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
-<script type="text/javascript" src="{{ asset('js/formvalidate-roofing-main.js') }}"></script>
 
 <!--[if lte IE 8]>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <![endif]-->
+
+@include('partials.funnel_scripts', ['includeAddressValidation' => false, 'vertical' => $vertical, 'page' => $page])
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-    (function(){
-        function isStrictMode(){
-            return !this;
-        }
 
-        function isStrictMode(){
-            "use strict";
-            return !this;
-        }
-
-
-        $(document).ready(function() {
-
-            window.submittingToLeadProsper = false;
-
-            const z=$("#zip_code"),zipPlaceholder=z.attr("data-placeholder")||"",animatePlaceholder=()=>{let e=0;z.prop("placeholder",""),timer=setInterval(()=>{0==z.val().length?(z.prop("placeholder",z.prop("placeholder")+zipPlaceholder[e]),e++,e==zipPlaceholder.length&&(clearInterval(timer),setTimeout(animatePlaceholder,3e3))):(clearInterval(timer),z.prop("placeholder",""))},100)};animatePlaceholder(),z.on("focus",()=>{z.prop("placeholder",""),clearInterval(timer)}),z.on("input focusout",()=>{z.val().length>0?(z.prop("placeholder",""),clearInterval(timer)): (clearInterval(timer),animatePlaceholder())});
-
-            function is_int(value) {
-                return parseFloat(value) === parseInt(value) && !isNaN(value);
+    $("form").validate({
+        rules: {
+            zip_code: {
+                required: true,
+                digits: true,
+                minlength: 5,
+                maxlength: 5
+            },
+            email: {
+                required: true,
+                emailfull: true,
+            },
+            first_name: {
+                required: true,
+                minLengthNoSpaces: 2,
+                notNumber: true,
+                noSpace: true,
+            },
+            last_name: {
+                required: true,
+                minLengthNoSpaces: 2,
+                notNumber: true,
+                noSpace: true,
+            },
+            address: {
+                required: true,
+                minLengthNoSpaces: 5,
+                ContainsAtLeastOneDigit: true,
+                hasLettersAndSpaces: true,
+            },
+            phone: {
+                required: true,
+                phone_number: true
+            },
+            state: {
+                required: true,
+                state: true
+            },
+            city: {
+                required: true
             }
+        },
 
-            var zip_inclick = false;
+        messages: validationMessages,
+        errorElement : 'span',
+        errorPlacement: function(error, element) {
+            $(element).closest('.form-group').children('.form-error-message').html(error).show();
+        },
+        showErrors: function(errorMap, errorList) {leadid_tcpa_disclosure
+            this.defaultShowErrors();
+        }
+    });
 
-            var fieldset = $("form fieldset");
-            var totalStep = fieldset.length; // Without 1 it was doing 10 instead of 9
-            var current_step = 1;
-            var s = 1;
-            $('form fieldset').each(function () {
-                $(this).attr('data-step', s++);
-            });
+    $(document).ready(function() {
 
-            $("#btnzip").on("click", function () {
-                var el = $("[name='zip_code']");
+        $('form').submit(function (e) {
+            var form = this;
+            e.preventDefault();
 
-                $('#btnzip .btn-text').text('Please Wait');
+            if (!$(form).validate().form()){
+                return;
+            } else {
+                let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
+                submitLead(formData);
+            }
+            $('#form_submit').removeAttr('disabled');
+        });
 
-                setTimeout(function() {
-                    // check if zip is valid
-                    if (el.val().length === 5 && is_int(el.val()) && !zip_inclick) {
-                        zip_inclick = true;
+        const z=$("#zip_code"),zipPlaceholder=z.attr("data-placeholder")||"",animatePlaceholder=()=>{let e=0;z.prop("placeholder",""),timer=setInterval(()=>{0==z.val().length?(z.prop("placeholder",z.prop("placeholder")+zipPlaceholder[e]),e++,e==zipPlaceholder.length&&(clearInterval(timer),setTimeout(animatePlaceholder,3e3))):(clearInterval(timer),z.prop("placeholder",""))},100)};animatePlaceholder(),z.on("focus",()=>{z.prop("placeholder",""),clearInterval(timer)}),z.on("input focusout",()=>{z.val().length>0?(z.prop("placeholder",""),clearInterval(timer)): (clearInterval(timer),animatePlaceholder())});
 
-                        $.getJSON("https://zip.getziptastic.com/v2/US/" + el.val())
-                            .done(function (result) {
-                                $("#zip-code").val(result.postal_code).addClass('valid');
-                                $("[name='city']").val(result.city).addClass('valid');
-                                $("[name='state']").val(result.state_short).addClass('valid');
-                                $("span.state").text(result.state_short);
-                                $("span.county").text(result.county);
+        var fieldset = $("form fieldset");
+        var totalStep = fieldset.length; // Without 1 it was doing 10 instead of 9
+        var current_step = 1;
+        var s = 1;
+        $('form fieldset').each(function () {
+            $(this).attr('data-step', s++);
+        });
 
-                                zip_inclick = false;
-                                $(".zip_error").hide();
+        $("#btn-zip").on("click", function () {
+            validateZip("main");
+        });
 
-                                el.parents("fieldset").fadeOut(function () {
-                                    $(".headline").hide("blind");
-                                    $(this)
-                                        .next()
-                                        .fadeIn(function () {
-                                            $(this).find("input,select").first().focus();
-                                            current_step = fieldset.index($(this));
-                                            $.stepanimate();
-                                        });
+        function goNext(ele) {
+            var next_step = true;
+            var parent_fieldset = ele.closest('fieldset');
+            current_step = fieldset.index(parent_fieldset);
+
+            // var result = $("form").valid();
+            var result = $("form").valid();
+
+            if (!result) {
+                next_step = false;
+            }
+            if (next_step) {
+
+                if(current_step === 6){
+                    (async function(){
+                        var emailValid = await emailIsValid();
+                        if(emailValid === false){
+                            return;
+                        }else{
+                            parent_fieldset.hide("slide", {direction: "left"},300, function() {
+                                $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
+                                    ele.find('input,select').first().focus();
+                                    $.stepanimate();
                                 });
                             })
-                            .fail(function () {
-                                zipValidationError()
-                            })
-                            .always(function () {
-                                $('#btnzip .btn-text').text('Get Started');
-                                zip_inclick = false;
-                            });
-
-                    } else if (el.val().length < 5) {
-                        zipValidationError()
-                    }
-
-                    function zipValidationError() {
-                        $(".zip_error").text("Please enter a valid zip code. (i.e. 90210)").fadeIn().css("display", "inline-block");
-                        $('#btnzip .btn-text').text('Get Started');
-                        $(".zip_box").addClass('fail')
-                    }
-
-                }, 500);
-            });
-
-
-            function goNext(ele) {
-                var next_step = true;
-                var parent_fieldset = ele.closest('fieldset');
-                current_step = fieldset.index(parent_fieldset);
-
-                // var result = $("form").valid();
-                var result = $("form").valid();
-
-                if (!result) {
-                    next_step = false;
-                }
-                if (next_step) {
-
-                    if(current_step === 6){
-                        (async function(){
-                            var emailValid = await emailIsValid();
-                            if(emailValid === false){
-                                return;
-                            }else{
-                                parent_fieldset.hide("slide", {direction: "left"},300, function() {
-                                    $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
-                                        ele.find('input,select').first().focus();
-                                        $.stepanimate();
-                                    });
-                                })
-                            }
-                        })()
-                    }else if(current_step !==7 ){
-                        parent_fieldset.hide("slide", {direction: "left"},300, function() {
-
-                            $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
-                                ele.find('input,select').first().focus();
-                                $.stepanimate();
-                            });
-                        })
-                    }else{
-                        (async function(){
-                            var phoneValid = await phoneIsValid();
-                            if(phoneValid === false){
-                                return;
-                            }else{
-                                $('form').submit();
-                                $('#form_submit').attr('disabled', 'disabled');
-                            }
-                        })()
-                    }
-
-                }
-            }
-
-
-            $.fn.enterKey = function (fnc) {
-                return this.each(function () {
-                    $(this).keypress(function (ev) {
-                        var keycode = (ev.keyCode ? ev.keyCode : ev.which);
-                        if (keycode == '13') {
-                            fnc.call(this, ev);
                         }
-                    })
-                })
-            }
-
-            $(document).on('click', ".radio-next input[type=radio],.btn-next", function () {
-                goNext($(this));
-            });
-
-            $("#email").enterKey(function () {
-                goNext($(this));
-            })
-
-            $("#zip").enterKey(function () {
-                goNext($(this));
-            })
-
-            $.stepanimate = function () {
-                $.height();
-
-                const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-
-                if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                    window.scrollTo(0, 0)
-                } else {
-                    $('html,body').animate({scrollTop: 0}, 500, function () {
-                        $('html,body').clearQueue();
-                    });
-                }
-
-
-                current_step = $("form fieldset:visible").index()+1;
-
-                if (current_step >= 2) {
-                    $('.progress-box').slideDown();
-                }
-
-                var progressPercentage = ((current_step-13) / (totalStep)) * 98;
-                var progressBar = $(".progress-bar");
-                progressBar.css("width", progressPercentage + "%");
-
-
-                var currentVal = parseInt($("#progress-value").text());
-                var targetVal = Math.round(progressPercentage);
-
-                $({ count: currentVal }).animate({ count: targetVal }, {
-                    duration: 1000,
-                    easing: 'linear',
-                    step: function() {
-                        $("#progress-value").text(Math.round(this.count));
-                    },
-                    complete: function() {
-                        $("#progress-value").text(Math.round(this.count));
-                    }
-                });
-
-                $.height();
-                if ((current_step-13) == totalStep){
-                    $('#tcpa_cont').show();
-                }
-            }
-
-            $.height = function () {
-                var hd = $('header').outerHeight();
-                var xd = parseInt(window.innerHeight - hd);
-
-                $('main').animate({
-                    'min-height': xd + 'px'
-                }, 500);
-            }
-
-            $('input[type=radio][name=time_frame_radio]').click(function(){
-                $('#time_frame').val($(this).val());
-            });
-
-            $('input[type=radio][name=project_reason_radio]').click(function(){
-                $('#project_reason').val($(this).val());
-            });
-
-
-
-            jQuery.validator.addMethod("notNumber", function (value, element) {
-                return !value.match(".*\\d.*");
-            }, "Number not permitted.");
-
-
-            jQuery.validator.addMethod("boolean", function (value, element) {
-                if (value == 1 || value == 0) return true;
-                else return false;
-            }, "Please enter valid value!");
-
-
-            jQuery.validator.addMethod("minLengthNoSpaces", function (value, element, len) {
-                if((typeof value !== 'undefined') && (typeof value === 'string' || value instanceof String)) {
-                    if(value.includes("@")) {
-                        return false;
-                    }
-                    var noSpacesValue = value.split(' ').join('');
-                    if((typeof noSpacesValue !== 'undefined') && (typeof noSpacesValue === 'string' || noSpacesValue instanceof String)) {
-                        return noSpacesValue.length >= len;
-                    }
-                }
-                return true
-            });
-
-
-            jQuery.validator.addMethod("hasLettersAndSpaces", function (value, element) {
-                return value.match(/[a-zA-Z]/) && value.trim().match(/\s/);
-            }, "Your address must include letters and spaces.");
-
-            jQuery.validator.addMethod("noSpace", function(value, element) {
-                return value.indexOf(" ") < 0;
-            }, "Spaces not allowed");
-
-
-            jQuery.validator.addMethod("emailfull", function (value, element) {
-                return this.optional(element) || /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i.test(value);
-            }, "Please enter valid email address!");
-
-            jQuery.validator.addMethod("ContainsAtLeastOneDigit", function (value, element) {
-                return /\d/.test(value);
-            }, 'Address must contain at least one digit');
-
-            $("form").validate({
-                rules: {
-                    zip_code: {
-                        required: true,
-                        digits: true,
-                        minlength: 5,
-                        maxlength: 5
-                    },
-                    email: {
-                        required: true,
-                        emailfull: true,
-                    },
-                    first_name: {
-                        required: true,
-                        minLengthNoSpaces: 2,
-                        notNumber: true,
-                        noSpace: true,
-                    },
-                    last_name: {
-                        required: true,
-                        minLengthNoSpaces: 2,
-                        notNumber: true,
-                        noSpace: true,
-                    },
-                    address: {
-                        required: true,
-                        minLengthNoSpaces: 5,
-                        ContainsAtLeastOneDigit: true,
-                        hasLettersAndSpaces: true,
-                    },
-                    phone: {
-                        required: true,
-                    },
-                    state: {
-                        required: true,
-                        state: true
-                    },
-                    city: {
-                        required: true
-                    }
-                },
-
-                messages: {
-                    zip_code: 'Please enter a valid zip code. (i.e. 90210)',
-                    email: 'Please enter your email address.',
-                    first_name: "Don't forget to tell us your name.",
-                    last_name: "Don't forget to tell us your last name.",
-                    address: {
-                        required: 'Please enter your address.',
-                        minLengthNoSpaces: 'Your address is too short',
-                    },
-                    phone: 'Please enter a valid phone number',
-                },
-                errorElement : 'span',
-                errorPlacement: function(error, element) {
-                    $(element).closest('.form-group').children('.form-error-message').html(error).show();
-                },
-                showErrors: function(errorMap, errorList) {
-                    this.defaultShowErrors();
-                }
-            });
-
-            $('#tcpa_text').val($('#leadid_tcpa_disclosure').parent().text());
-
-
-            var phoneSelector = $('input[name="phone"]');
-
-            var maskOptions = {
-                onKeyPress: function (cep, e, field, options) {
-                    var masks = ['(000) 000-0000'];
-                    var mask = masks[0];
-                    $('input[name="phone"]').mask(mask, options);
-                },
-            };
-
-            if (phoneSelector.mask !== undefined) {
-                phoneSelector.mask('(000) 000-0000', maskOptions);
-            }
-
-            $.makeid = function makeid(length) {
-                let result = '';
-                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                const charactersLength = characters.length;
-                let counter = 0;
-                while (counter < length) {
-                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-                    counter += 1;
-                }
-                return result;
-            }
-
-            function phoneIsValid(){
-
-                var response = true;
-
-                var phone = $("#phone").val();
-
-                if(phone === '(111) 111-1111' || phone === '(612) 842-0000'){
-                    return true;
-                }
-
-                const phoneValidation = $.ajax({
-                    type: "POST",
-                    url: "<?php echo $submitUrl;?>/validatePhone.php",
-                    data: {"phone":phone},
-                    async: false,
-                    dataType: 'json'
-                }).then((fullResponse) => {
-                    return fullResponse;
-                });
-
-                const promiseFunction =
-                    phoneValidation.then((a) => {
-                        if(a.valid === false){
-                            $("#phone").addClass(" .form-control .error")
-                            $("#phone-custom-error").html("Please provide a valid phone number to proceed.");
-                            $("#phone-custom-error").fadeIn('fast');
-                            response = false;
-                        }
-                        return response;
-                    });
-
-                return promiseFunction.then(function (response){
-                    return response;
-                });
-
-            }
-
-            function emailIsValid() {
-
-                function isTestEmail(email){
-                    return email === 'test@test.com' || email === 'pingdom@test.com';
-                }
-
-                var response = true;
-                var email = $('#email').val();
-                var ipAddress = $("#ip_address").val();
-
-                if(!isTestEmail(email)){
-
-                    const emailValidation = $.ajax({
-                        type: "POST",
-                        url: "<?php echo $submitUrl;?>/validateEmail.php",
-                        data: {"email":email,"ip_address":ipAddress},
-                        async: false,
-                        dataType: 'json'
-                    }).then((fullResponse) => {
-                        return fullResponse;
-                    });
-
-                    const promiseFunction = emailValidation.then((a) => {
-                        if(a.valid === false){
-                            $("#email").addClass(" .form-control .error")
-                            $("#email-custom-error").html("Please provide a valid email address to proceed.");
-                            $("#email-custom-error").fadeIn('fast');
-                            response = false;
-                        }
-                        return response;
-                    });
-
-                    return promiseFunction.then(function (response){
-                        return response;
-                    });
-                }
-
-            }
-
-            var token = $.makeid(6);
-
-
-            var getUrlParameter = function getUrlParameter(sParam) {
-                var sPageURL = window.location.search.substring(1),
-                    sURLVariables = sPageURL.split('&'),
-                    sParameterName,
-                    i;
-
-                for (i = 0; i < sURLVariables.length; i++) {
-                    sParameterName = sURLVariables[i].split('=');
-
-                    if (sParameterName[0] === sParam) {
-                        if(sParameterName[1] === true){
-                            return true;
-                        }else{
-                            if(sParameterName[1] === false){
-                                return false;
-                            }
-                        }
-                        return decodeURIComponent(sParameterName[1]);
-                    }
-                }
-                return "";
-            };
-
-            function getUrlVars()
-            {
-                var vars = [], hash;
-                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-                for(var i = 0; i < hashes.length; i++)
-                {
-                    hash = hashes[i].split('=');
-                    vars.push(hash[0]);
-                    vars[hash[0]] = hash[1];
-                }
-                return vars;
-            }
-
-            $(document).on("click", '#possible-email-correction', function() {
-                $("#email").val($(this).text());
-                $("#email").css('border-color','green');
-                window.dontRemoteValidateEmail = true;
-                goNext($(this));
-                // return false;
-            });
-
-            $('#email').on('input', function() {
-                if ($("#email-custom-error").is(":visible"))
-                {
-                    $("#email-custom-error").hide();
-                }
-            });
-
-            window.dontRemoteValidateEmail = false;
-            window.dontRemoveValidatePhone = false;
-
-            $('#email').on('input', function() {
-                if ($("#email-custom-error").is(":visible"))
-                {
-                    $("#email-custom-error").hide();
-                }
-            });
-
-            $('#phone').on('input', function() {
-                if ($("#phone-custom-error").is(":visible"))
-                {
-                    $("#phone-custom-error").hide();
-                }
-            });
-
-            function fillFormDataTubs() {
-                var formData = {};
-
-                // Get all input fields and iterate over them
-                $(":input").each(function() {
-                    var id = $(this).attr('id');
-                    var value = $(this).val();
-
-                    // If the input field has an id, add it to the formData object
-                    if(id) {
-                        formData[id] = value;
-                    }
-                });
-
-                // Set static values
-                formData['lp_campaign_id'] = "18372";
-                formData['lp_supplier_id'] = "41113";
-                formData['lp_key'] = "x2yzfldq0srz17";
-                if($('#email').val() === 'test@test.com' || $('#email').val() === 'pingdom@test.com' ){
-                    formData['lp_action'] = "test";
-                }
-                formData['email_address'] = $('#email').val();
-                formData['trustedform_cert_url'] = $("input[name='xxTrustedFormToken']").val();
-                formData['jornaya_leadid'] = $('#leadid_token').val();
-                formData['user_agent'] = window.navigator.userAgent;
-                formData['home_owner'] = "Yes";
-                formData['url'] = window.location.href;
-                formData['landing_page_url'] = window.location.href;
-                formData['time_frame'] = $('#time_frame').val();
-                formData['project_reason'] = $('#project_reason').val();
-                formData['s1'] = getUrlParameter('s1');
-                formData['s2'] = getUrlParameter('s2');
-                formData['s3'] = getUrlParameter('s3');
-                formData['s4'] = getUrlParameter('s4');
-                formData['s5'] = getUrlParameter('s5');
-                formData['ef_aff_id'] = getUrlParameter('ef_aff_id');
-                formData['ef_tx_id'] = getUrlParameter('ef_tx_id');
-                formData['ef_aid'] = getUrlParameter('ef_aid');
-                formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
-                formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
-                formData['token'] = token;
-                formData['complete'] = 1;
-                formData['lead'] = 1;
-                formData['vertical'] = 'tubs';
-                formData['healthchecks_slug'] = 'tubs-main';
-
-                return formData;
-            }
-
-            function submitToLeadProsper() {
-
-                var formdata = fillFormDataTubs();
-                window.formdata = formdata;
-
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $leadProsperUrl?>',
-                    data: formdata,
-                    // async: false,
-                    dataType: "text",
-                    success: function (data) {
-                        var result = JSON.parse(data);
-                        console.log(result);
-                        if (result.status !== 'ACCEPTED') {
-                            Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() + ' ]' + ' REASON: ' + result.message);
-                        }
-                        setTimeout(function () {
-                            window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=tubs" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
-                        }, 500);
-                        // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-
-                    }, error: function (data) {
-                        alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                        $('#form_submit').removeAttr('disabled');
-                    }, complete: function () {
-                        window.submittingToLeadProsper = false; // Unlock the submit when finished
-                    }
-                });
-                stl(formdata);
-            }
-
-            // Form submit
-
-            $('form').submit(function (e) {
-
-                var form = this;
-                e.preventDefault();
-
-                if (!$(form).validate().form())
-                    return;
-                // $('#form_submit').prop('disabled', true);
-
-                var formdata = fillFormDataTubs();
-                window.formdata = formdata;
-
-                if($('#email').val() === 'pingdom@test.com'){
-
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $submitUrl?>',
-                        data: formdata,
-                        //async: false,
-                        dataType: "text",
-                        success: function (data) {
-                            window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=tubs" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
-                        }, error: function (data) {
-                            alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                            $('#form_submit').removeAttr('disabled');
-                        }, complete: function () {
-                            window.submittingToLeadProsper = false; // Unlock the submit when finished
-                        }
-                    });
-                    stl(formdata);
-
-                }else{
-                    if(window.submittingToLeadProsper === false){
-                        window.submittingToLeadProsper = true;
-
-                        $.ajax({
-                            type: 'POST',
-                            url: '<?php echo $leadProsperUrl?>',
-                            data: formdata,
-                            //async: false,
-                            dataType: "text",
-                            success: function (data) {
-                                var result = JSON.parse(data);
-                                if (result.status !== 'ACCEPTED') {
-                                    Rollbar.error('LeadProsper - Lead submission FAILED for' + ' email : [ ' + $('#email').val() + ' ]' + ' REASON: ' + result.message);
-                                }
-                                setTimeout(function () {
-                                    window.location.replace("/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v=tubs" + "&ef_offer_id=" + getUrlParameter('ef_offer_id'));
-                                }, 500);
-                                // location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-
-                            }, error: function (data) {
-                                //Rollbar.error('Failed to submit the lead through Winterbot, sending it straight to LeadProsper from the funnels - Lead email : [ ' + $('#email').val() + ' ]. Verify urgent !');
-                                //submitToLeadProsper();
-                                alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                                $('#form_submit').removeAttr('disabled');
-                            }, complete: function () {
-                                window.submittingToLeadProsper = false; // Unlock the submit when finished
-                            }
+                    })()
+                }else if(current_step !==7 ){
+                    parent_fieldset.hide("slide", {direction: "left"},300, function() {
+
+                        $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
+                            ele.find('input,select').first().focus();
+                            $.stepanimate();
                         });
-                        stl(formdata);
-                    }else {
-                        console.log('Already submitting to LeadProsper, please wait...');
-                    }
+                    })
+                }else{
+                    (async function(){
+                        var phoneValid = await phoneIsValid();
+                        if(phoneValid === false){
+                            return;
+                        }else{
+                            $('form').submit();
+                            $('#form_submit').attr('disabled', 'disabled');
+                        }
+                    })()
                 }
-            });
 
-            function stl(formdata){
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo $leadBackupUrl."/stl.php"?>',
-                    data: formdata,
-                    async: true,
-                    dataType: "text",
-                    success: function (data) {
-                        // var result = JSON.parse(data);
-                    }, error: function(data) {
-                        // console.log(data);
-                    }
+            }
+        }
+
+        $(document).on('click', ".radio-next input[type=radio],.btn-next", function () {
+            goNext($(this));
+        });
+
+        $("#email").enterKey(function () {
+            goNext($(this));
+        })
+
+        $("#zip").enterKey(function () {
+            goNext($(this));
+        })
+
+        $.stepanimate = function () {
+            $.height();
+
+            const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
+
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+                window.scrollTo(0, 0)
+            } else {
+                $('html,body').animate({scrollTop: 0}, 500, function () {
+                    $('html,body').clearQueue();
                 });
             }
 
-            $.getJSON("https://api.ipify.org?format=json", function(data) {
-                $('#ip_address').val(data.ip);
-            });
 
+            current_step = $("form fieldset:visible").index()+1;
 
-            /*$.get("https://ipinfo.io", function(response) {
-                $("#ip_address").val(response.ip);
-                $("#ip_city").val(response.city);
-                $("#ip_country").val(response.country);
-                $("#ip_loc").val(response.loc);
-                $("#ip_org").val(response.org);
-                $("#ip_postal").val(response.postal);
-                // $("#ip_readme").val(response.readme);
-                $("#ip_region").val(response.region);
-                $("#ip_timezone").val(response.timezone);
-            }, "jsonp");
-
-             */
-
-
-        });// Ready
-
-
-    })();
-
-</script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWGUjDoetHonsX_8REioiFxYojrnomGIs&libraries=places"></script>
-<script src="{{ asset('js/jquery.geocomplete.min.js') }}"></script>
-<script>
-    var invalid_city_state = false;
-    if(typeof window.google !== 'undefined' && typeof window.google.maps !== 'undefined') {
-        var autocomplete = new google.maps.places.Autocomplete((document.getElementById('address')), {
-            componentRestrictions: {
-                country: ['us']
-            },
-            types: ['address'],
-            fields: ['address_components','adr_address'],
-        })
-    }
-
-    google.maps.event.addListener(autocomplete,'place_changed', function (){
-        var place = autocomplete.getPlace();
-        var addressComponents = place.address_components;
-        $.each(addressComponents, function(){
-            if (this.types[0] === "locality") {
-                $(".city_span, #fcity").text(this.short_name);
-                if(!$("#city").val()) {
-                    invalid_city_state = true;
-                    $("#city").val(this.short_name);
-                }
+            if (current_step >= 2) {
+                $('.progress-box').slideDown();
             }
-            if (this.types[0] === "administrative_area_level_1") {
-                $(".state_span, #fstate").text(this.short_name);
-                if(!$("#state").val()) {
-                    invalid_city_state = true;
-                    $("#state").val(this.short_name);
-                }
-            }
-            if (this.types[0] === "postal_code") {
-                $(".zip_span").text(this.short_name);
-                if(invalid_city_state) {
-                    $("input[name='zip_code']").val(this.short_name);
-                }
-            }
-        })
 
-        if (place.adr_address) {
-            var address = '';
-            $('<div>', {html: place.adr_address }).find('span.street-address').each(function(){
-                address += $(this).text();
-            });
-            $('<div>', {html: place.adr_address }).find('span.country-name').each(function(){
-                var address_value = $("#address").val();
-                $("#address").val(address_value.replace(", " + $(this).text(),''));
-            });
-            $('<div>', {html: place.adr_address }).find('span.locality').each(function(){
-                address = address.replace(", " + $(this).text(),'');
+            var progressPercentage = ((current_step-13) / (totalStep)) * 98;
+            var progressBar = $(".progress-bar");
+            progressBar.css("width", progressPercentage + "%");
+
+
+            var currentVal = parseInt($("#progress-value").text());
+            var targetVal = Math.round(progressPercentage);
+
+            $({ count: currentVal }).animate({ count: targetVal }, {
+                duration: 1000,
+                easing: 'linear',
+                step: function() {
+                    $("#progress-value").text(Math.round(this.count));
+                },
+                complete: function() {
+                    $("#progress-value").text(Math.round(this.count));
+                }
             });
 
-            $('<div>', {html: place.adr_address }).find('span.region').each(function(){
-                address = address.replace(", " + $(this).text(),'');
-            });
-            if (address) {
-                document.getElementById("address_short").value = address;
-
-                var originalAddress = document.getElementById("address").value;
-                var addressField = $('#address');
-                addressField.val(document.getElementById("address_short").value);
+            $.height();
+            if ((current_step-13) == totalStep){
+                $('#tcpa_cont').show();
             }
-            //check is house number is invalid in the Google API and manually autocomplete
-            var matches = originalAddress.match(/(\d+)/);
-            setTimeout(function () {
-                function hasNumbers(t)
-                {
-                    var regex = /\d/g;
-                    return regex.test(t);
-                }
-                var updatedAddress = addressField.val();
-                if(!hasNumbers(updatedAddress) && hasNumbers(originalAddress) && matches) {
-                    addressField.val(matches[0] + " " + updatedAddress);
-                }
-                $('#address').valid();
-            }, 100);
         }
-        $('#address').valid();
-    })
 
+        $('input[type=radio][name=time_frame_radio]').click(function(){
+            $('#time_frame').val($(this).val());
+        });
 
-    $('#add-change').show();
-    $('.address_loc').slideDown();
-    $('#adddetails-change').hide();
+        $('input[type=radio][name=project_reason_radio]').click(function(){
+            $('#project_reason').val($(this).val());
+        });
+
+        $('#email').on('input', function() {
+            if ($("#email-custom-error").is(":visible"))
+            {
+                $("#email-custom-error").hide();
+            }
+        });
+
+        $('#email').on('input', function() {
+            if ($("#email-custom-error").is(":visible"))
+            {
+                $("#email-custom-error").hide();
+            }
+        });
+
+        $('#phone').on('input', function() {
+            if ($("#phone-custom-error").is(":visible"))
+            {
+                $("#phone-custom-error").hide();
+            }
+        });
+
+    });
+
 </script>
 
-<script type="text/javascript" src="{{ asset('js/main-roofing-main.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/zipvalidate-roofing-main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/address-validation-index.js') }}"></script>
 </body>
 </html>
