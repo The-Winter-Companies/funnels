@@ -80,6 +80,9 @@ $page = 'main';
 
         <form class="form container-fluid" >
             @include('partials.hidden-inputs')
+
+            <input type="hidden" id="city" name="city" value>
+            <input type="hidden" id="state" name="state" value>
             <input type="hidden" id="ip_address" name="ip_address" value>
             <input type="hidden" id="project_reason" name="project_reason" value>
             <input type="hidden" id="time_frame" name="time_frame" value>

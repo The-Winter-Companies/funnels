@@ -85,6 +85,7 @@ session_start();
 
             @include('partials.hidden-inputs')
 
+            <input type="hidden" id="city" name="city" value>
             <input type="hidden" id="state" name="state" value>
             <input type="hidden" id="monthly_electric_bill" name="monthly_electric_bill" value="$201-$300">
             <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
