@@ -120,7 +120,7 @@ $page = 'o7';
                 <div class="row">
                     <div class="col">
                         <div class="form-btns ml-auto text-center">
-                            <button class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
+                            <button id="utility-next" class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
                             </button>
                         </div>
                     </div>
@@ -140,7 +140,7 @@ $page = 'o7';
                 <div class="row">
                     <div class="col">
                         <div class="form-btns ml-auto text-center">
-                            <button class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
+                            <button id="bill-next" class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
                             </button>
                         </div>
                     </div>
@@ -225,7 +225,7 @@ $page = 'o7';
                 <div class="row">
                     <div class="col">
                         <div class="form-btns ml-auto text-center">
-                            <button class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
+                            <button id="address-next" class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
                             </button>
                         </div>
                     </div>
@@ -272,7 +272,7 @@ $page = 'o7';
     font-weight: 600;">Please enter a valid email address.</label>
                 </div>
                 <div class="form-btns mx-auto sbmt">
-                    <button class="btn form-btn btn-next" type="button" id="form_submit"><span class="btn-text">Continue</span>
+                    <button id="btn-continue" class="btn form-btn btn-next" type="button" id="form_submit"><span class="btn-text">Continue</span>
                     </button>
                 </div>
             </fieldset>

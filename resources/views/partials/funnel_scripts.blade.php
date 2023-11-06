@@ -62,7 +62,7 @@
         let result = false;
         $.ajax({
             type: 'POST',
-            url: '{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}',
+            url: '{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}/ingest.php',
             data: formData,
             async: false,
             dataType: "text",

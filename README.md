@@ -32,3 +32,9 @@ populateDummyData
 @if(!empty($_GET['populateDummyData']) && $_GET['populateDummyData'] == 'true')
     populateFormWithDummyData();
 @endif
+
+
+To run tests: 
+1. Install Dusk
+2. Make sure the .env APP_URL is correct for your local
+3. run laravel dusk
