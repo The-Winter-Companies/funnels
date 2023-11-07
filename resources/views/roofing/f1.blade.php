@@ -301,7 +301,7 @@ $page = 'f1';
 <script src="{{ asset('js/jquery/jquery-ui.custom.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery.validate.min.js') }}"></script>
 
-@include('partials.funnel_scripts')
+@include('partials.funnel_scripts', ['vertical' => $vertical, 'page' => $page])
 
 <script>
     $("#msform").validate({
@@ -436,7 +436,7 @@ $page = 'f1';
                             $(this).next().show("slide", { direction: "right" }, 300, function() {
                                 $(this).find('input:not([name=address]),select').first().focus();
                             });
-                            $.stepanimateFunnelsF1();
+                            stepanimateFunnelsF1();
                         });
 
                     }

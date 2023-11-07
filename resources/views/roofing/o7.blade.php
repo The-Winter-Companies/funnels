@@ -469,7 +469,7 @@ $page = 'o7';
                             $(this).next().fadeIn(function() {
                                 $(this).find('input:not([name=address]),select').first().focus();
                             });
-                            $.stepanimateO7Funnels();
+                            stepanimateO7Funnels();
                         });
 
                     }
@@ -516,7 +516,7 @@ $page = 'o7';
             parent_fieldset_prv.fadeOut(300, function () {
                 $(this).prev().fadeIn(300, function () {
                     $(this).find('input,select').first().focus();
-                    $.stepanimateO7Funnels();
+                    stepanimateO7Funnels();
                 });
 
             });

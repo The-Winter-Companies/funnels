@@ -430,7 +430,7 @@ $page = 'f1';
                                     $(this).next().show("slide", { direction: "right" }, 300, function() {
                                         $(this).find('input:not([name=address]),select').first().focus();
                                     });
-                                    $.stepanimateFunnelsF1();
+                                    stepanimateFunnelsF1();
                                 });
                             }
                         })()
@@ -442,7 +442,7 @@ $page = 'f1';
                                 $(this).next().show("slide", { direction: "right" }, 300, function() {
                                     $(this).find('input:not([name=address]),select').first().focus();
                                 });
-                                $.stepanimateFunnelsF1();
+                                stepanimateFunnelsF1();
                             });
 
                         }else{

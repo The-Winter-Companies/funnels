@@ -397,7 +397,7 @@ $page = 'o7';
                                         $(this).next().fadeIn(function() {
                                             $(this).find('input:not([name=address]),select').first().focus();
                                         });
-                                        $.stepanimateO7Funnels();
+                                        stepanimateO7Funnels();
                                     });
 
                                 }
@@ -411,7 +411,7 @@ $page = 'o7';
                                 $(this).next().fadeIn(function() {
                                     $(this).find('input:not([name=address]),select').first().focus();
                                 });
-                                $.stepanimateO7Funnels();
+                                stepanimateO7Funnels();
                             });
 
                         }else{

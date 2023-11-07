@@ -486,7 +486,7 @@ $page = 'f1';
                                     $(this).next().fadeIn(
                                         function () {
                                             $(this).find('input').first().focus();
-                                            $.stepanimateFunnelsF1();
+                                            stepanimateFunnelsF1();
 
                                         });
 
@@ -504,7 +504,7 @@ $page = 'f1';
                             $(this).next().fadeIn(
                                 function () {
                                     $(this).find('input').first().focus();
-                                    $.stepanimateFunnelsF1();
+                                    stepanimateFunnelsF1();
 
                                 });
 
