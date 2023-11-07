@@ -17,15 +17,8 @@ jobs:
       GOOGLE_MAPS_API_KEY: "AIzaSyCWGUjDoetHonsX_8REioiFxYojrnomGIs"
     steps:
       - uses: actions/checkout@v4
-      - name: Set APP_ENV to production if branch is master
-        run: echo "APP_ENV=production" >> $GITHUB_ENV
-        if: github.ref == 'refs/heads/master'
       - name: Prepare The Environment
         run: cp .env.example .env
-      - name: Create Database
-        run: |
-          sudo systemctl start mysql
-          mysql --user="root" --password="root" -e "CREATE DATABASE \`my-database\` character set UTF8mb4 collate utf8mb4_bin;"
       - name: Install Composer Dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
       - name: Generate Application Key
