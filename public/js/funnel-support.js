@@ -48,6 +48,99 @@ $.fn.enterKey = function (fnc) {
     })
 }
 
+$.stepanimateFunnelsF1 = function (){
+
+    if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+        window.scrollTo(0,0)
+    }else{
+        $('html,body').animate({scrollTop: 0}, 500, function(){
+            $('html,body').clearQueue();
+        });
+    }
+
+    var totalStep = $('#phoneContainer').data('step'),
+        currentStep = $('form fieldset:visible').data('step'),
+        currentPercent = parseInt((currentStep / totalStep) * 98),
+        percent = 100 - currentPercent,
+        prevStep = $('form fieldset:visible').data('step')-1,
+        prevPercent = parseInt((prevStep / totalStep) * 98);
+
+    if (currentStep >= 1){
+        if (currentPercent > 98){
+            $(".percent span").html('100');
+            $('.progress-bar_progress').css({ strokeDashoffset: 0});
+        }else{
+            $('.progress-bar_progress').css({ strokeDashoffset: percent});
+            $('.percent span').html(currentPercent);
+        }
+
+
+        $({ Counter: prevPercent }).animate({ Counter: $('.percent span').text()},
+            {
+                duration: 1500,
+                step: function() {$('.percent span').text(Math.ceil(this.Counter)); }
+            });
+
+        $(".complete").html('completed');
+        $(".percent i").show();
+    }
+
+    if($('#phoneContainer').is(':visible')){ $('.trusted').hide(); }
+}
+
+$.stepanimateFunnelsMain = function () {
+    $.height();
+
+    var fieldset = $("form fieldset");
+    var totalStep = fieldset.length;
+    let current_step = $('form fieldset:visible').data('step');
+
+    if (current_step >= 2) {
+        $('.progress-box').slideDown();
+    }
+
+    var progressPercentage = (current_step / totalStep) * 98;
+    var progressBar = $(".progress-bar");
+    progressBar.css("width", progressPercentage + "%");
+
+
+    var currentVal = parseInt($("#progress-value").text());
+    var targetVal = Math.round(progressPercentage);
+
+    $({ count: currentVal }).animate({ count: targetVal }, {
+        duration: 1000,
+        easing: 'linear',
+        step: function() {
+            $("#progress-value").text(Math.round(this.count));
+        },
+        complete: function() {
+            $("#progress-value").text(Math.round(this.count));
+        }
+    });
+
+    $.height();
+    if (current_step === totalStep){
+        $('#tcpa_cont').show();
+    }
+}
+
+$.stepanimateO7Funnels = function () {
+
+    var totalStep = $('fieldset').length;
+    var currentStep = $('fieldset:visible').data('step');
+    var percent = parseInt((currentStep / totalStep) * 98);
+
+
+    $('form fieldset:visible').find('input:not([name=address]),select').first().focus();
+
+    $('.progress-bar').css({width: percent + '%'});
+
+    if (currentStep > 1){
+        $('#slidenum').html(''+currentStep+' of '+totalStep+'');
+    }
+
+}
+
 $.makeid = function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -135,11 +228,11 @@ function validateZip(page){
                             $(this).find("input,select").first().focus();
                             setUtilityProvidersOptions($('#state').val());
                             if(page === 'main'){
-                                $.stepanimate();
-                            }else{
-                                if(page === 'o7'){
+                                $.stepanimateFunnelsMain();
+                            }else if(page === 'o7'){
                                     $.stepanimateO7Funnels();
-                                }
+                                } else if(page === 'f1'){
+                                $.stepanimateFunnelsF1();
                             }
                         });
                     });

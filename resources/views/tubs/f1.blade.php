@@ -46,26 +46,8 @@ $page = 'f1';
         </nav>
     </div>
 </header>
-<main style="min-height:680px;">
-    <section class="main tubs text-center text-white">
-        <h1 class="main_heading ">Save BIG On Walk-In Bathtubs</h1>
-        <h2 class="main_subheading">
-            Calculate savings and compare free quotes
-        </h2>
-    </section>
-    <section id="progress">
-        <div class="progress-value">
-            <div class="progress-content">
-                <div class="percent"><span>Start</span><i style="display: none;">%</i></div>
-                <div class="complete"><i class="progress-arow"></i></div>
-            </div>
-        </div>
-        <svg class="circ" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
-            <circle cx="16" cy="16" r="15.9155" class="progress-bar_background"></circle>
-            <circle cx="16" cy="16" r="15.9155" class="progress-bar_progress js-progress-bar" style="stroke-dashoffset: 100px;"></circle>
-        </svg>
-    </section>
-    <form id="msform" class="form container-fluid">
+<main>
+    <form id="msform" class="form">
 
         @include('partials.hidden-inputs')
 
@@ -75,7 +57,26 @@ $page = 'f1';
         <input type="hidden" id="time_frame" name="time_frame" value>
         <input type="hidden" id="project_reason" name="project_reason" value>
         <input type="hidden" name="own_rented" id="own_rented" value="Own">
-        <fieldset id="zip-container" class="field_zip" data-step="1"><legend hidden="true" style="visibility: hidden; position: absolute;">Zip Code</legend>
+
+        <section class="main tubs text-center text-white">
+            <h1 class="main_heading ">Save BIG On Walk-In Bathtubs</h1>
+            <h2 class="main_subheading">
+                Calculate savings and compare free quotes
+            </h2>
+        </section>
+        <section id="progress">
+            <div class="progress-value">
+                <div class="progress-content">
+                    <div class="percent"><span>Start</span><i style="display: none;">%</i></div>
+                    <div class="complete"><i class="progress-arow"></i></div>
+                </div>
+            </div>
+            <svg class="circ" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+                <circle cx="16" cy="16" r="15.9155" class="progress-bar_background"></circle>
+                <circle cx="16" cy="16" r="15.9155" class="progress-bar_progress js-progress-bar" style="stroke-dashoffset: 100px;"></circle>
+            </svg>
+        </section>
+        <fieldset id="zip-container" class="field_zip" data-step="0"><legend hidden="true" style="visibility: hidden; position: absolute;">Zip Code</legend>
             <h3 class="form_box-question mb-2"><b>Where</b> would this project take place?</h3>
             <p class="form_box-desc">Enter your zip code and we will help you compare free quotes!</p>
             <div class="zip_box">
@@ -92,7 +93,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-step="2" id="emailContainer"><legend hidden="true" style="visibility: hidden; position: absolute;">email</legend>
+        <fieldset data-step="1" id="emailContainer"><legend hidden="true" style="visibility: hidden; position: absolute;">email</legend>
             <h3 class="form_box-question"><b>Where</b> should your free quotes be sent?</h3>
             <div class="form-cont">
                 <div class="form-group">
@@ -113,7 +114,7 @@ $page = 'f1';
                 <div class="secure-text">Your information is secure.</div>
             </div>
         </fieldset>
-        <fieldset data-step="3">
+        <fieldset data-step="2">
             <legend style="visibility: hidden; position: absolute;">Name</legend>
             <h3 class="form_box-question "><b>Who</b> are these free quotes for?</h3>
             <div class="form-cont">
@@ -133,7 +134,7 @@ $page = 'f1';
                 <div class="secure-text">Your information is secure.</div>
             </div>
         </fieldset>
-        <fieldset data-step="4">
+        <fieldset data-step="3">
             <legend hidden="true">Credit</legend>
             <h3 class="form_box-question"><b>Why</b> are you considering a walk-in-tub?</h3>
             <div class="form-cont lg">
@@ -157,7 +158,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-step="5"><legend hidden="true">timeline</legend>
+        <fieldset data-step="4"><legend hidden="true">timeline</legend>
             <h3 class="form_box-question"><b>When</b> do you want to begin this project?</h3>
             <div class="form-cont">
                 <div class="form-group row radio-next no-gutter justify-content-center">
@@ -180,7 +181,7 @@ $page = 'f1';
                 <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
             </div>
         </fieldset>
-        <fieldset data-step="6"><legend hidden="true">own_rented</legend>
+        <fieldset data-step="5"><legend hidden="true">own_rented</legend>
             <h3 class="form_box-question">Do you <b>own</b> the home?</h3>
             <div class="form-cont">
                 <div class="form-group radio-next ">
@@ -199,7 +200,7 @@ $page = 'f1';
                 <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
             </div>
         </fieldset>
-        <fieldset data-step="7"><legend hidden="true">Address</legend>
+        <fieldset data-step="6"><legend hidden="true">Address</legend>
             <h3 class="form_box-question mb-2"><b>Where</b> do you live?</h3>
             <p class="form_box-desc">Enter your address to find the best results for your area.</p>
             <div class="form-cont">
@@ -216,7 +217,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset id="phoneContainer" data-step="8"><legend hidden="true">Phone</legend>
+        <fieldset id="phoneContainer" data-step="7"><legend hidden="true">Phone</legend>
             <center>
                 <h3 class="form_box-question mb-2 last"><b>Last step!</b> Your quote is ready.</h3>
             </center>
@@ -377,10 +378,6 @@ $page = 'f1';
         });
 
 
-        var f = 1;
-        $('form fieldset').each(function(){
-            $(this).attr('data-step',f++);
-        });
 
         mincont();
         var fieldset = $("form fieldset");
@@ -400,7 +397,7 @@ $page = 'f1';
         });
 
         $("#btn-zip").on("click", function () {
-            validateZip();
+            validateZip('f1');
         });
 
         /* next step*/
@@ -433,7 +430,7 @@ $page = 'f1';
                                     $(this).next().show("slide", { direction: "right" }, 300, function() {
                                         $(this).find('input:not([name=address]),select').first().focus();
                                     });
-                                    stepanimate();
+                                    $.stepanimateFunnelsF1();
                                 });
                             }
                         })()
@@ -445,7 +442,7 @@ $page = 'f1';
                                 $(this).next().show("slide", { direction: "right" }, 300, function() {
                                     $(this).find('input:not([name=address]),select').first().focus();
                                 });
-                                stepanimate();
+                                $.stepanimateFunnelsF1();
                             });
 
                         }else{
@@ -487,52 +484,6 @@ $page = 'f1';
                 $("#own_rented").val('Rented');
             }
         });
-
-        /* progress */
-        function stepanimate(){
-            var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-
-            current_step = $("form fieldset:visible").index()
-
-            if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                window.scrollTo(0,0)
-            }else{
-                $('html,body').animate({scrollTop: 0}, 500, function(){
-                    $('html,body').clearQueue();
-                });
-            }
-
-            var totalStep = $('#phoneContainer').data('step'),
-                currentStep = $('form fieldset:visible').data('step'),
-                currentPercent = parseInt((currentStep / totalStep) * 98),
-                percent = 100 - currentPercent,
-                prevStep = $('form fieldset:visible').data('step')-1,
-                prevPercent = parseInt((prevStep / totalStep) * 98);
-
-            if (currentStep > 1){
-                if (currentPercent > 98){
-                    $(".percent span").html('100');
-                    $('.progress-bar_progress').css({ strokeDashoffset: 0});
-                }else{
-                    $('.progress-bar_progress').css({ strokeDashoffset: percent});
-                    $('.percent span').html(currentPercent);
-                }
-
-
-                $({ Counter: prevPercent }).animate({ Counter: $('.percent span').text()},
-                    {
-                        duration: 1500,
-                        step: function() {$('.percent span').text(Math.ceil(this.Counter)); }
-                    });
-
-                $(".complete").html('completed');
-                $(".percent i").show();
-            }
-
-            if($('#phoneContainer').is(':visible')){ $('.trusted').hide(); }
-        }
-
-        stepanimate();
 
         $('input[type=radio][name=project_reason_radio]').click(function(){
             $('#project_reason').val($(this).val());

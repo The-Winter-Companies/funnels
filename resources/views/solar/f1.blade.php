@@ -50,8 +50,6 @@ $page = 'f1';
         </nav>
     </div>
 </header>
-<div class="hero"><h2>Save BIG on Solar Installation!</h2> <p>Calculate savings and compare free quotes
-    </p></div>
 <form id="msform" class="form">
 
     @include('partials.hidden-inputs')
@@ -64,16 +62,26 @@ $page = 'f1';
     <input type="hidden" id="property_type" name="property_type" value="Single Family">
     <input type="hidden" id="credit_rating" name="credit_rating" value="Good">
     <input type="hidden" id="roof_type" name="roof_type" value="Tile">
-    <div id="hero-header-progress-wrapper">
-        <div id="hero-header-progress">
-            <div class="circle-progress" data-progress="0"><span class="progress-left"><span class="progress-bar"></span></span><span class="progress-right"><span class="progress-bar"></span></span>
-                <div class="progress-value">
-                    <div class="progress-content"><span class="percent">Start</span>
-                        <br><span class="complete"><i class="arrowdown"></i></span></div>
-                </div>
+    <section class="main solar text-center text-white">
+        <h1 class="main_heading ">
+            Save BIG On a New Roof!
+        </h1>
+        <h2 class="main_subheading">
+            Compare free quotes and calculate savings !
+        </h2>
+    </section>
+    <section id="progress">
+        <div class="progress-value">
+            <div class="progress-content">
+                <div class="percent"><span>Start</span><i style="display: none;">%</i></div>
+                <div class="complete"><i class="progress-arow"></i></div>
             </div>
         </div>
-    </div>
+        <svg class="circ" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+            <circle cx="16" cy="16" r="15.9155" class="progress-bar_background"/>
+            <circle cx="16" cy="16" r="15.9155" class="progress-bar_progress js-progress-bar" style="stroke-dashoffset: 100px;"/>
+        </svg>
+    </section>
     <div class="container-fluid">
         <fieldset data-bar="0" id="zip-container"><legend style="visibility: hidden; position: absolute;">Zip Code</legend>
             <h3 class="step-title"><b>Where</b> would this project take place?</h3>
@@ -111,7 +119,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-bar="28" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">full name</legend>
+        <fieldset data-step="2" data-bar="28" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">full name</legend>
             <h3 class="step-title">Enter your <b>name</b>.</h3>
             <p class="step-desc">Who should we create these free quotes for?</p>
             <div class="container" style="max-width:500px;">
@@ -130,7 +138,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-bar="42" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">electric bill</legend>
+        <fieldset data-step="3" data-bar="42" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">electric bill</legend>
             <h3 class="step-title">What is your <b>estimated monthly electric bill?</b></h3>
             <p class="step-desc">This helps us determine how much solar power may save you.</p>
             <div class="container" style="max-width:500px;">
@@ -179,7 +187,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-bar="56" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">roof shade</legend>
+        <fieldset data-step="4" data-bar="56" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">roof shade</legend>
             <h3 class="step-title"><b>How much shade</b> does your roof get?</h3>
             <p class="step-desc">Shade helps us determines what type of solar panels to use</p>
             <div class="container" style="max-width:500px;">
@@ -203,7 +211,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-bar="70" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">utility provider</legend>
+        <fieldset data-step="5" data-bar="70" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">utility provider</legend>
             <h3 class="step-title">Who is your <b>utility provider?</b></h3>
             <p class="step-desc">This helps us compare your current bill with how much solar can save you</p>
             <div class="container" style="max-width:600px;">
@@ -219,7 +227,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-bar="84" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">address</legend>
+        <fieldset data-step="6" data-bar="84" class="fadeInRight"><legend style="visibility: hidden; position: absolute;">address</legend>
             <h3 class="step-title">What <b>address</b> would this project be located at?</h3>
             <p class="step-desc">This helps us find and compare contractors in your area.</p>
             <div class="container" style="max-width:640px;">
@@ -417,7 +425,7 @@ $page = 'f1';
         });
 
         $("#btn-zip").on("click", function () {
-            validateZip();
+            validateZip('f1');
         });
 
         $('#email').on('input', function() {
@@ -478,9 +486,7 @@ $page = 'f1';
                                     $(this).next().fadeIn(
                                         function () {
                                             $(this).find('input').first().focus();
-                                            $(".circle-progress").attr('data-progress', progwidth);
-                                            $(".percent").html(progwidth + '%');
-                                            $(".complete").html('completed')
+                                            $.stepanimateFunnelsF1();
 
                                         });
 
@@ -498,9 +504,7 @@ $page = 'f1';
                             $(this).next().fadeIn(
                                 function () {
                                     $(this).find('input').first().focus();
-                                    $(".circle-progress").attr('data-progress', progwidth);
-                                    $(".percent").html(progwidth + '%');
-                                    $(".complete").html('completed')
+                                    $.stepanimateFunnelsF1();
 
                                 });
 

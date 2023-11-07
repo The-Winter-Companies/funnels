@@ -678,7 +678,7 @@ session_start();
 
                                     $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
                                         ele.find('input,select').first().focus();
-                                        $.stepanimate();
+                                        $.stepanimateFunnelsMain();
                                     });
                                 })
                             }
@@ -688,7 +688,7 @@ session_start();
 
                             $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
                                 ele.find('input,select').first().focus();
-                                $.stepanimate();
+                                $.stepanimateFunnelsMain();
                             });
                         })
                     }else{
@@ -728,51 +728,6 @@ session_start();
             $("#zip").enterKey(function () {
                 goNext($(this));
             })
-
-            $.stepanimate = function () {
-                $.height();
-
-                const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-
-                if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                    window.scrollTo(0, 0)
-                } else {
-                    $('html,body').animate({scrollTop: 0}, 500, function () {
-                        $('html,body').clearQueue();
-                    });
-                }
-
-
-                current_step = $("form fieldset:visible").index()+1;
-
-                if (current_step >= 2) {
-                    $('.progress-box').slideDown();
-                }
-
-                var progressPercentage = ((current_step-24) / (totalStep)) * 98;
-                var progressBar = $(".progress-bar");
-                progressBar.css("width", progressPercentage + "%");
-
-
-                var currentVal = parseInt($("#progress-value").text());
-                var targetVal = Math.round(progressPercentage);
-
-                $({ count: currentVal }).animate({ count: targetVal }, {
-                    duration: 1000,
-                    easing: 'linear',
-                    step: function() {
-                        $("#progress-value").text(Math.round(this.count));
-                    },
-                    complete: function() {
-                        $("#progress-value").text(Math.round(this.count));
-                    }
-                });
-
-                $.height();
-                if ((current_step-24) === totalStep){
-                    $('#tcpa_cont').show();
-                }
-            }
 
             $.height = function () {
                 var hd = $('header').outerHeight();
