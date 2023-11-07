@@ -1,9 +1,9 @@
 name: Dusk
 on:
   push:
-    branches: [ "staging" ]
+    branches: [ "staging", "master" ]
   pull_request:
-    branches: [ "staging" ]
+    branches: [ "staging", "master" ]
 
 jobs:
   dusk-php:
@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set APP_ENV to production if branch is master
-          run: echo "APP_ENV=production" >> $GITHUB_ENV
-          if: github.ref == 'refs/heads/master'
+        run: echo "APP_ENV=production" >> $GITHUB_ENV
+        if: github.ref == 'refs/heads/master'
       - name: Prepare The Environment
         run: cp .env.example .env
       - name: Create Database
