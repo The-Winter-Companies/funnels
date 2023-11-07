@@ -566,39 +566,6 @@ $page = 'o7';
                 }
             }
         });
-
-        $.stepanimateO7Funnels = function() {
-            var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-
-            if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                window.scrollTo(0, 0)
-            } else {
-                $('html,body').animate({scrollTop: 0}, 500, function () {
-                    $('html,body').clearQueue();
-                });
-            }
-
-            var totalStep = $('fieldset').length;
-
-            var step = $('form fieldset:visible').data('step'),
-                percent = parseInt((step / totalStep) * 98);
-
-            var currentIndex = $('form fieldset:visible').index();
-
-            $('form fieldset:visible').find('input:not([name=address]),select').first().focus();
-
-            $('.progress-bar').css({width: percent + '%'});
-            $('#slidenum').html('' + step + ' of ' + totalStep + '');
-
-            if ($('#phoneContainer').is(':visible')) {
-                $('#tcpa_cont').show();
-            }
-
-            if (step > 1){
-                $('#subHead').hide();
-            }
-        }
-
     });
 
 </script>

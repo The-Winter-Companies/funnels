@@ -104,7 +104,7 @@ $page = 'f1';
         </svg>
     </section>
     <form class="form container-fluid" id="msform">
-        <fieldset class="field_zip" data-step="1"><legend hidden="true" style="visibility: hidden; position: absolute;">Zip Code</legend>
+        <fieldset class="field_zip" data-step="0"><legend hidden="true" style="visibility: hidden; position: absolute;">Zip Code</legend>
 
             @include('partials.hidden-inputs')
 
@@ -131,7 +131,7 @@ $page = 'f1';
                 </div>
             </div>
         </fieldset>
-        <fieldset data-step="2"><legend hidden="true">material</legend>
+        <fieldset data-step="1"><legend hidden="true">material</legend>
             <h3 class="form_box-question">What type of roof or material do you need or want?</h3>
             <div class="form-cont">
                 <div class="form-group radio-next row no-gutter">
@@ -166,7 +166,7 @@ $page = 'f1';
                 <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button><br>
             </div>
         </fieldset>
-        <fieldset data-step="3"><legend hidden="true">timeline</legend>
+        <fieldset data-step="2"><legend hidden="true">timeline</legend>
             <h3 class="form_box-question mb-2"><b>Where</b> do you live?</h3>
             <p class="form_box-desc">Enter your address to find the best results for your area.</p>
             <div class="form-cont">
@@ -189,7 +189,7 @@ $page = 'f1';
                 <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
             </div>
         </fieldset>
-        <fieldset data-step="4" id="phoneContainer"><legend hidden="true">Phone</legend>
+        <fieldset data-step="3" id="phoneContainer"><legend hidden="true">Phone</legend>
             <center><h3 class="form_box-question last mb-0"><b>
                         Your results are ready!
                     </b></h3></center>
@@ -395,7 +395,7 @@ $page = 'f1';
         });
 
         $("#btn-zip").on("click", function () {
-            validateZip();
+            validateZip('f1');
         });
 
         /* next step*/
@@ -436,7 +436,7 @@ $page = 'f1';
                             $(this).next().show("slide", { direction: "right" }, 300, function() {
                                 $(this).find('input:not([name=address]),select').first().focus();
                             });
-                            stepanimate();
+                            $.stepanimateFunnelsF1();
                         });
 
                     }
@@ -466,52 +466,6 @@ $page = 'f1';
                 $("#own_rented").val('Rented');
             }
         });
-
-        /* progress */
-        function stepanimate(){
-            var scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-
-            current_step = $("form fieldset:visible").index()
-
-            if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                window.scrollTo(0,0)
-            }else{
-                $('html,body').animate({scrollTop: 0}, 500, function(){
-                    $('html,body').clearQueue();
-                });
-            }
-
-            var totalStep = $('#phoneContainer').data('step'),
-                currentStep = $('form fieldset:visible').data('step'),
-                currentPercent = parseInt((currentStep / totalStep) * 98),
-                percent = 100 - currentPercent,
-                prevStep = $('form fieldset:visible').data('step')-1,
-                prevPercent = parseInt((prevStep / totalStep) * 98);
-
-            if (currentStep > 1){
-                if (currentPercent > 98){
-                    $(".percent span").html('100');
-                    $('.progress-bar_progress').css({ strokeDashoffset: 0});
-                }else{
-                    $('.progress-bar_progress').css({ strokeDashoffset: percent});
-                    $('.percent span').html(currentPercent);
-                }
-
-
-                $({ Counter: prevPercent }).animate({ Counter: $('.percent span').text()},
-                    {
-                        duration: 1500,
-                        step: function() {$('.percent span').text(Math.ceil(this.Counter)); }
-                    });
-
-                $(".complete").html('completed');
-                $(".percent i").show();
-            }
-
-            if($('#phoneContainer').is(':visible')){ $('.trusted').hide(); }
-        }
-
-        stepanimate();
 
         $('input[type=radio][name=roofing_type_radio]').click(function(){
             $('#roofing_type').val($(this).val());

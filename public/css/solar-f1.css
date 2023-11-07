@@ -4,29 +4,44 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 b{font-weight: 700;}
 body {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 300;
-	font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
     line-height: 1.428571429;
-    color: #545253;
-    background-color: #eee;
-	min-width: 320px; overflow-x: hidden;
-}
+    color: #495464;
+    background-color: #fff;
+    min-width: 320px; overflow-x: hidden;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}                                                                                                                                                                                                                                                       header, nav, section, article, aside, footer {
+                                                                                                                                                                                                                                                            display:block;
+                                                                                                                                                                                                                                                        }
 
-header {background: #fff; max-width: 100%; padding:0 15px; z-index: 999; position: relative; -moz-box-shadow:0 0 16px rgba(23,31,43, .6);
-	-webkit-box-shadow:0 0 16px rgba(23,31,43, .6);
-	box-shadow:0 0 16px rgba(23,31,43, .6);   padding-top: 10px; padding-bottom: 10px;}
-	.logo {background: url('');    background-repeat: no-repeat; width: 335px; height:45px;background-size: contain; text-indent: -500px; overflow: hidden; display: block; background-position: center; margin: 0 auto;  }
-	.phonecol{max-width:365px; min-width: 365px; }
-	.phonetab .infopic{width: 78px; float: right;}
-	.phonetab .info {padding-right: 88px; text-align: center; line-height: 1; padding-top: 10px;}
-	.phonetab .info a {font-size: 30px; font-weight: 800; color: #10406a; display: block;margin-top:5px; }
-	.phonetab .info span {color: #777777; font-size: 14px; margin-top:5px; display: block;}
-	.phonetab .info span:before {content:" "; background: #5cb85c;width: 10px; height: 10px; display: inline-block; -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;  margin-right: 5px;}
+header{ background: #fff; max-width: 100%; padding:0; z-index: 999; position: relative; -webkit-box-shadow:0 0 16px rgba(23,31,43, .2); box-shadow:0 0 16px rgba(23,31,43, .2); position: relative;}
+.main {background-size: cover;background-position: right top;padding: 40px 20px 60px; background-color: #0070bb; background-repeat: no-repeat; }
 
-.hero {background: url('../img/bg-solar-F1.jpg') no-repeat; background-size: cover;  background-position:right top; padding: 40px 20px 60px; color: #fff; text-align: center;}
-.hero h2 {font-size: 36px;font-weight: 500; }
-.hero p {margin-bottom:15px; }
+.main.solar{background-image: url(../img/bg-solar-F1.jpg);}
+
+
+
+.main_heading {font-size: 36px;font-weight: 500;}
+.main_subheading{font-size: 16px; margin-bottom: 25px;}
+
+#progress{margin-top: -60px; width: 120px; margin-bottom:30px; height: 120px; margin-left: auto; margin-right: auto;position: relative; background: #fff;border-radius: 60px;}
+#progress svg{height:100%;-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);width:100%; overflow: visible;}
+.progress-bar_background{fill:none;stroke:#eeeeee;stroke-width:2;opacity:1}
+.progress-bar_progress{fill:none;stroke:#ADADAD;stroke:#2f9ee9;stroke-dasharray:100 100;stroke-dashoffset:100;stroke-width:2;-webkit-transition:stroke-dashoffset 1s ease-in-out;-o-transition:stroke-dashoffset 1s ease-in-out;transition:stroke-dashoffset 1s ease-in-out}
+
+.progress-value{display:-webkit-box;display:-ms-flexbox;display:flex;border-radius:50%;font-size:32px;text-align:center;line-height:20px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:100%;font-weight:300;background:#fff; position: absolute; top: 0; width: 100%;}
+.progress-value div,
+.progress-value div span{text-align:center;line-height: 1;}
+.progress-value .complete{font-size:12px;text-transform:uppercase; display: block; width: 100%; }
+.progress-arow{border-style:solid;border-width:2px 2px 0 0;content:'';display:inline-block;height:8px;left:0;position:relative;top:0;-webkit-transform: rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg);vertical-align:top;width:8px}
+.progress-value .percent{margin-bottom: 10px;}
+.progress-value .percent i {font-style: normal !important;}
 .arrowdown{border-style:solid;border-width:2px 2px 0 0;content:'';display:inline-block;height:8px;left:0;margin-top:10px;position:relative;top:0;transform:rotate(135deg);vertical-align:top;width:8px}
 .step-title{color:#444;font-size:26px;margin-top:22px;margin-bottom:10px; text-align: center;}
 .step-title.stlast{ background-repeat: no-repeat; background-size: auto 25px; display: inline-block; margin-left: auto; margin-right: auto; float: none; padding-left: 40px; background-image: url("data:image/svg+xml; utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='55px' height='42px' fill='rgb(51, 204, 51)'><path fill-rule='evenodd'  d='M54.000,5.801 L49.176,0.994 C48.514,0.335 47.709,0.005 46.764,0.005 C45.817,0.005 45.013,0.335 44.351,0.994 L21.079,24.217 L10.649,13.789 C9.987,13.130 9.183,12.800 8.237,12.800 C7.291,12.800 6.486,13.130 5.824,13.789 L1.000,18.596 C0.337,19.256 0.006,20.057 0.006,21.000 C0.006,21.942 0.337,22.744 1.000,23.404 L13.842,36.199 L18.667,41.005 C19.328,41.665 20.133,41.995 21.079,41.995 C22.025,41.995 22.829,41.665 23.491,41.005 L28.316,36.199 L54.000,10.609 C54.662,9.949 54.994,9.148 54.994,8.205 C54.994,7.263 54.662,6.461 54.000,5.801 Z'/></svg>");}
@@ -287,6 +302,36 @@ footer h5 {margin: 20px auto;}
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
   animation-name: fadeInRight;
+}
+
+.loading{
+    position: absolute; right: 0; top: 50%; margin-top: -15px; margin-right: 13px;
+    height: 30px;
+    width: 30px; display: block;
+    border-radius: 50%;
+    border-top: 3px solid rgba(255, 255, 255, 0.5);
+    border-right: 3px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    border-left: 3px solid rgba(255, 255, 255, 1);
+    -webkit-animation: loading 1s cubic-bezier(.41,.25,.32,.83) infinite;
+    animation: loading 1s cubic-bezier(.41,.25,.32,.83) infinite;
+}
+
+
+@keyframes loading {
+    0%{ -ms-transform: rotate(0);-webkit-transform: rotate(0);transform: rotate(0);  }
+    100%{  -ms-transform: rotate(1turn); -webkit-transform: rotate(1turn); transform: rotate(1turn);}
+}
+
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
 }
 
 
@@ -1861,6 +1906,14 @@ footer h5 {margin: 20px auto;}
 
     .logo {margin-left: auto; margin-right: auto;}
     .phonecol {display: none;}
+}
+
+@media (max-width: 576px) {
+    .main {padding: 20px 20px 40px;}
+    .col-auto{min-width: 100%;}
+    #progress {margin-bottom: 15px; margin-top: -50px;width: 100px; height: 100px; border-radius:50px;}
+    .progress-value div, .progress-value div span {font-size:21px;}
+    .progress-value .complete{font-size:9px;}
 }
 @media (max-width: 414px) {
     .hero{padding-top: 15px;padding-bottom: 40px;}

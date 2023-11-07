@@ -475,36 +475,6 @@ $page = 'o7';
             });
         });
 
-        $.stepanimateO7Funnels = function () {
-            const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
-
-            if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-                window.scrollTo(0,0)
-            }else{
-                $('html,body').animate({scrollTop: 0}, 500, function(){
-                    $('html,body').clearQueue();
-                });
-            }
-
-            currentStep 		= $('fieldset:visible').data('step');
-            var step = $('form fieldset:visible').data('step');
-            var percent = parseInt((currentStep / totalStep) * 98);
-
-
-            $('form fieldset:visible').find('input:not([name=address]),select').first().focus();
-
-            $('.progress-bar').css({width: percent + '%'});
-
-            if (currentStep > 1){
-                $('#slidenum').html(''+currentStep+' of '+totalStep+'');
-            }
-
-            if (currentStep == totalStep){
-                $('#tcpa_cont').show();
-            }
-
-        }
-
         $('form input, form select').on('keypress', function (e) {
             var keyCode = e.keyCode || e.which;
             var x = $(this).closest("fieldset").find("button");
