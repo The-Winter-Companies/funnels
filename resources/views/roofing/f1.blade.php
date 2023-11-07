@@ -123,9 +123,7 @@ $page = 'f1';
                         <input id="zip_code" class="form-control zipcode" type="tel" name="zip_code" pattern="^[0-9]{5}(?:-[0-9]{4})?$" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" placeholder="Enter Your Zip Code Here" required>
                         <div class="zip_error" style="display: none">Please enter a valid zip code. (i.e. 90210)</div>
                         <label for="city" style="display: none; opacity: 0; font-size: 1px; position: absolute; color: transparent;">city</label>
-                        <input type="hidden" id="city" name="city" value>
                         <label for="state" style="display: none; opacity: 0; font-size: 1px; position: absolute; color: transparent;">state</label>
-                        <input type="hidden" id="state" name="state" value>
                     </div>
                     <div class="form-btns">
                         <button class="btn form-btn btn-next" id="btn-zip" type="button" disabled><span class="btn-text">Get Started</span></button>
