@@ -87,7 +87,7 @@
      * @param formData
      */
     function stl(formData){
-        var submitUrl = "{{ env('LEAD_BACKUP_URL') }}/stl.php"
+        var submitUrl = "{{ env('LEAD_BACKUP_URL') }}/ingest.php?file=1"
         $.ajax({
             type: 'POST',
             url: submitUrl,
