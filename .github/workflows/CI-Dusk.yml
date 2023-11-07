@@ -1,4 +1,4 @@
-name: Dusk
+name: Dusk Automated Tests
 on:
   push:
     branches: [ "staging", "master" ]
