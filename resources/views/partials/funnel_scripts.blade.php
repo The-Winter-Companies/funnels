@@ -332,7 +332,7 @@
         submitLead(formData);
     }
 
-    @if(!empty($_GET['dummyTest']) && $_GET['dummyTest'] == 'true')
+    @if(!empty($_GET['dummyTest']) && ($_GET['dummyTest'] == 'true' || $_GET['dummyTest'] == 1))
         setTimeout(dummyTest(), 1000);
     @endif
 

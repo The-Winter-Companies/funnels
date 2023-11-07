@@ -38,3 +38,5 @@ To run tests:
 1. Install Dusk
 2. Make sure the .env APP_URL is correct for your local
 3. run laravel dusk
+
+Docs: https://laravel.com/docs/10.x/dusk

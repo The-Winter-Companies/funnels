@@ -51,6 +51,7 @@ class AllFunnelPagesTest extends DuskTestCase
         //test failing Zip Code
         //test failing email
         //test failing winterbot and LP submit
+        //check we have trusted form and jornaya scripts on all pages and rollbar
         //Do one for the thank you page clicking on those links too to make sure they pass through the offers
 
         $this->browse(function (Browser $browser) {
@@ -59,7 +60,7 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->assertSee('Solar')
                 ->assertSee('Are you a homeowner?')
                 ->click("#pc01")
-                ->pause(500)
+                ->pause(750)
                 ->assertSee('What is your zip code?')
                 ->type("zip_code", "55442")
                 ->click("#btn-zip")
