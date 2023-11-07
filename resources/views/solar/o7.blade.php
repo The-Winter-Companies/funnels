@@ -95,9 +95,7 @@ $page = 'o7';
                         <div class="zip_error" style="display: none">Please enter a valid zip code. (i.e. 90210)</div>
                     </div>
                     <label style="visibility: hidden; position: absolute;" for="city">city</label>
-                    <input type="hidden" id="city" name="city" value>
                     <label style="visibility: hidden; position: absolute;" for="state">state</label>
-                    <input type="hidden" id="state" name="state" value>
                     <div class="row">
                         <div class="col">
                             <div class="form-btns ml-auto text-center">

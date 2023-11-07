@@ -104,8 +104,6 @@ $page = 'o7';
                 <div class="form-group">
                     <label style="visibility: hidden; position: absolute;" for="zip_code">Zip Code</label>
                     <input id="zip_code" class="form-control zipcode" type="tel" name="zip_code" pattern="^[0-9]{5}(?:-[0-9]{4})?$" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" placeholder="Enter your zip code" required>
-                    <input type="hidden" id="city" name="city" value>
-                    <input type="hidden" id="state" name="state" value>
                     <div class="zip-error form-error-message">Please enter valid US zip code.</div>
                 </div>
                 <div class="zip_error mb-2" style="display: none">Please enter a valid zip code. (i.e. 90210)</div>
