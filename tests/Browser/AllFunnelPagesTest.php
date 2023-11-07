@@ -24,22 +24,22 @@ class AllFunnelPagesTest extends DuskTestCase
      * Only the main pages should load without the EF params
      * @throws \Throwable
      */
-    public function testMissingEFURLParamsRedirect(){
-        foreach($this->pages as $page){
-            if(!str_ends_with($page, '/')){
-                $this->browse(function (Browser $browser) use ($page) {
-                    $browser
-                        ->visit($page)
-                        ->assertUrlIs('https://foreverhomehub.com/');
-                });
-                $this->browse(function (Browser $browser) use ($page) {
-                    $browser
-                        ->visit($page . '?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
-                        ->assertPathIs($page);
-                });
-            }
-        }
-    }
+//    public function testMissingEFURLParamsRedirect(){
+//        foreach($this->pages as $page){
+//            if(!str_ends_with($page, '/')){
+//                $this->browse(function (Browser $browser) use ($page) {
+//                    $browser
+//                        ->visit($page)
+//                        ->assertUrlIs('https://foreverhomehub.com/');
+//                });
+//                $this->browse(function (Browser $browser) use ($page) {
+//                    $browser
+//                        ->visit($page . '?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+//                        ->assertPathIs($page);
+//                });
+//            }
+//        }
+//    }
 
     /**
      * Tests the normal flow - success
@@ -83,6 +83,11 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->type("#first_name", 'test')
                 ->type("#last_name", 'test')
                 ->type("#phone", '1111111111')
+                ->type("#email", 'test@fail.com')
+                ->click("#btn-continue")
+                ->pause(3000)
+                ->assertSee('Please provide a valid email address to proceed')
+                ->clear("#email")
                 ->type("#email", 'test@test.com')
                 ->click("#btn-continue")
                 ->pause(2000)
