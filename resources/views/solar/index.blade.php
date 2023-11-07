@@ -95,7 +95,7 @@ session_start();
 
             <fieldset id="zip-container"><legend hidden="true">zip</legend>
 
-                <h4 class="form-question">Enter your zip code<br class="d-none d-md-block">to get started:</h4>
+                <h4 class="form-question">Enter your zip code<br class="d-none d-md-block"> to get started:</h4>
                 <div class="form-cont">
                     <div class="zip_box">
                         <div class="row no-gutters">
