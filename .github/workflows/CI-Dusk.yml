@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       APP_URL: "http://127.0.0.1:8000"
+      APP_ENV: "staging"
+      LEAD_PROSPER_SUBMIT_URL: "https://api.leadprosper.io/ingest"
+      WINTERBOT_LEAD_SUBMIT_URL: "https://winterbot.app"
+      LEAD_BACKUP_URL: "https://winterbot.app"
+      GOOGLE_MAPS_API_KEY: "AIzaSyCWGUjDoetHonsX_8REioiFxYojrnomGIs"
     steps:
       - uses: actions/checkout@v4
       - name: Prepare The Environment
