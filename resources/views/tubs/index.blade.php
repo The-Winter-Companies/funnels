@@ -640,7 +640,7 @@ $page = 'main';
                             parent_fieldset.hide("slide", {direction: "left"},300, function() {
                                 $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
                                     ele.find('input,select').first().focus();
-                                    $.stepanimateFunnelsMain();
+                                    stepanimateFunnelsMain();
                                 });
                             })
                         }
@@ -650,7 +650,7 @@ $page = 'main';
 
                         $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
                             ele.find('input,select').first().focus();
-                            $.stepanimateFunnelsMain();
+                            stepanimateFunnelsMain();
                         });
                     })
                 }else{

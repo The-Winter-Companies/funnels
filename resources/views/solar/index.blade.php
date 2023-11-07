@@ -678,7 +678,7 @@ session_start();
 
                                     $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
                                         ele.find('input,select').first().focus();
-                                        $.stepanimateFunnelsMain();
+                                        stepanimateFunnelsMain();
                                     });
                                 })
                             }
@@ -688,7 +688,7 @@ session_start();
 
                             $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
                                 ele.find('input,select').first().focus();
-                                $.stepanimateFunnelsMain();
+                                stepanimateFunnelsMain();
                             });
                         })
                     }else{

@@ -558,7 +558,7 @@ $page = 'o7';
                             $(this).next().fadeIn(
                                 function() {
                                     $(this).find('input').first().focus();
-                                    $.stepanimateO7Funnels();
+                                    stepanimateO7Funnels();
                                 });
 
                         })
