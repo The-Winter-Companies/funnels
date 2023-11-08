@@ -254,12 +254,12 @@
         formData['complete'] = 1;
         formData['token'] = $.token;
         formData['healthchecks_slug'] = vertical + '-' + pageKey;
+        formData['home_owner'] = "Yes";
 
         if(vertical === 'solar'){
             formData['lp_campaign_id'] = "17604";
             formData['lp_supplier_id'] = "38531";
             formData['lp_key'] = "qqz1h52vku0dpy";
-            formData['home_owner'] = "Yes";
             formData['roof_shade'] = "No Shade";
             formData['monthly_electric_bill'] = $('#monthly_electric_bill').val();
             formData['credit_rating'] = $('#credit_rating').val();
@@ -289,7 +289,7 @@
     }
 
     function isTestLead(formData){
-        if(formData['email_address'] === 'test@test.com' || formData['email_address'] === 'pingdom@test.com' || (formData['first_name'].toLowerCase() === "test" && formData['last_name'].toLowerCase() === "test")){
+        if(formData['email'] === 'test@test.com' || formData['email'] === 'pingdom@test.com' || (formData['first_name'].toLowerCase() === "test" && formData['last_name'].toLowerCase() === "test")){
             return true;
         } else {
             return false;
