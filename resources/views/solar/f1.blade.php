@@ -394,6 +394,8 @@ $page = 'f1';
 
     $(document).ready(function() {
 
+        $.sessionStartTime = new Date();
+
         $('form').submit(function (e) {
             var form = this;
             e.preventDefault();
