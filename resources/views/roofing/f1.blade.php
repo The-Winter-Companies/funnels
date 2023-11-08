@@ -3,6 +3,7 @@ include(resource_path('views/partials/funnel_submission_params.blade.php'));
 session_start();
 $vertical = 'roofing';
 $page = 'f1';
+$sessionStartTime = \Illuminate\Support\Carbon::now();
 ?>
 @include('partials.redirect_if_missing_vars')
 
@@ -359,6 +360,8 @@ $page = 'f1';
 
 
     $(document).ready(function() {
+
+        $.sessionStartTime = new Date();
 
         $('form').submit(function (e) {
             var form = this;

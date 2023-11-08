@@ -262,6 +262,11 @@ function stepanimateO7Funnels() {
 
 }
 
+function finalSessionLength(){
+    var currentTime = new Date();
+    return Math.floor((currentTime - $.sessionStartTime) / 1000); //returns in seconds
+}
+
 function is_int(value) {
     if ((parseFloat(value) == parseInt(value)) && !isNaN(value)) {
         return true;

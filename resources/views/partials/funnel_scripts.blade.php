@@ -242,6 +242,7 @@
         formData['user_agent'] = window.navigator.userAgent;
         formData['landing_page_url'] = window.location.href;
         formData['phone'] = stripPhoneNumber($('#phone').val());
+        formData['session_length'] = finalSessionLength();
 
         if (formData['landing_page_url'].includes('127.0.0.1') || formData['landing_page_url'].includes('localhost')) {
             formData['landing_page_url'] = 'https://localhost.com';

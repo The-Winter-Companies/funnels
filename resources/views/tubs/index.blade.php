@@ -591,6 +591,8 @@ $page = 'main';
 
     $(document).ready(function() {
 
+        $.sessionStartTime = new Date();
+
         $('form').submit(function (e) {
             var form = this;
             e.preventDefault();
