@@ -187,7 +187,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
             </div>
             <div class="form-btns">
-                <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
+                <button id="address-next" class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
             </div>
         </fieldset>
         <fieldset data-step="3" id="phoneContainer"><legend hidden="true">Phone</legend>
