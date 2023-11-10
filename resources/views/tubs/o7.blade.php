@@ -98,7 +98,7 @@ $page = 'o7';
                 <div class="row">
                     <div class="col">
                         <div class="form-btns ml-auto text-center">
-                            <button class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
+                            <button class="btn form-btn btn-next" type="button" id="btn-email"><span class="btn-text">Next</span>
                             </button>
                         </div>
                     </div>
@@ -110,19 +110,19 @@ $page = 'o7';
                 <div class="form-group radio-next">
                     <div class="radio-btn">
                         <input id="rfi-01" type="radio" name="project_reason_radio" value="Maintaining independence" required>
-                        <label for="rfi-01"><span>Maintaining independence</span></label>
+                        <label for="rfi-01" id="rfi-01"><span>Maintaining independence</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="rfi-02" type="radio" name="project_reason_radio" value="Pain relief" required>
-                        <label for="rfi-02"><span>Pain relief</span></label>
+                        <label for="rfi-02" id="rfi-02"><span>Pain relief</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="rfi-04" type="radio" name="project_reason_radio" value="Safety" required>
-                        <label for="rfi-04"><span>Safety</span></label>
+                        <label for="rfi-04" id="rfi-04"><span>Safety</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="rfi-05" type="radio" name="project_reason_radio" value="Other" required>
-                        <label for="rfi-05"><span>Other</span></label>
+                        <label for="rfi-05" id="rfi-05"><span>Other</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>
@@ -141,15 +141,15 @@ $page = 'o7';
                 <div class="form-group radio-next">
                     <div class="radio-btn">
                         <input id="ptf-01" type="radio" name="time_frame_radio" value="Immediately" required>
-                        <label for="ptf-01"><span>Immediately</span></label>
+                        <label for="ptf-01" id="ptf-01"><span>Immediately</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="ptf-02" type="radio" name="time_frame_radio" value="Within 6 months" required>
-                        <label for="ptf-02"><span>Within 6 months</span></label>
+                        <label for="ptf-02" id="ptf-02"><span>Within 6 months</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="ptf-03" type="radio" name="time_frame_radio" value="Not Sure" required>
-                        <label for="ptf-03"><span>Not Sure</span></label>
+                        <label for="ptf-03" id="ptf-03"><span>Not Sure</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>

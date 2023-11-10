@@ -100,7 +100,7 @@ $page = 'main';
 
                             </div>
                             <div class="col-auto form-btns text-center mb-0">
-                                <button class="btn form-btn mb-0" id="btn-zip"  type="button" ><span class="btn-text">Get Started</span></button>
+                                <button class="btn form-btn mb-0" id="btn-zip" type="button" ><span class="btn-text">Get Started</span></button>
                             </div>
                         </div>
                     </div>
@@ -116,20 +116,20 @@ $page = 'main';
                     <div class="form-group">
                         <div class="radio-next">
                             <div class="radio-btn ">
-                                <input id="rfi-cr01" type="radio" name="project_reason_radio" value="Maintaining independence" required>
-                                <label  for="rfi-cr01"><span>Maintaining independence</span></label>
+                                <input id="rfi-cr01" type="radio" name="project_reason_radio" value="Maintaining independence" >
+                                <label for="rfi-cr01" id="rfi-cr01"><span>Maintaining independence</span></label>
                             </div>
                             <div class="radio-btn ">
-                                <input id="rfi-cr02" type="radio" name="project_reason_radio" value="Pain relief" required>
-                                <label  for="rfi-cr02"><span>Pain relief</span></label>
+                                <input id="rfi-cr02" type="radio" name="project_reason_radio" value="Pain relief" >
+                                <label for="rfi-cr02" id="rfi-cr02"><span>Pain relief</span></label>
                             </div>
                             <div class="radio-btn ">
-                                <input id="rfi-cr03" type="radio" name="project_reason_radio" value="Safety" required>
-                                <label  for="rfi-cr03"><span>Safety</span></label>
+                                <input id="rfi-cr03" type="radio" name="project_reason_radio" value="Safety" >
+                                <label for="rfi-cr03" id="rfi-cr03"><span>Safety</span></label>
                             </div>
                             <div class="radio-btn ">
-                                <input id="rfi-cr04" type="radio" name="project_reason_radio" value="Other" required>
-                                <label for="rfi-cr04"><span>Other</span></label>
+                                <input id="rfi-cr04" type="radio" name="project_reason_radio" value="Other" >
+                                <label for="rfi-cr04" id="rfi-cr04"><span>Other</span></label>
                             </div>
                         </div>
                     </div>
@@ -144,15 +144,15 @@ $page = 'main';
                     <div class="form-group radio-next">
                         <div class="radio-btn ">
                             <input id="tf1" class="img-radio" type="radio" name="time_frame_radio" value="Immediately" required>
-                            <label class="radio-label" for="tf1"><span>Immediately</span></label>
+                            <label class="radio-label" for="tf1" id="tf1"><span>Immediately</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="tf2" class="img-radio" type="radio" name="time_frame_radio" value="Within 6 months" required>
-                            <label class="radio-label" for="tf2"><span>1-6 months</span></label>
+                            <label class="radio-label" for="tf2" id="tf2"><span>1-6 months</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="tf3" class="img-radio" type="radio" name="time_frame_radio" value="Not Sure" required>
-                            <label class="radio-label" for="tf3"><span>Not sure</span></label>
+                            <label class="radio-label" for="tf3" id="tf3"><span>Not sure</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -170,11 +170,11 @@ $page = 'main';
                     <div class="form-group radio-next">
                         <div class="radio-btn">
                             <input id="oh1" class="img-radio" type="radio" name="homeowner" value="Yes" required>
-                            <label class="radio-label" for="oh1"><span>Yes, I am the homeowner</span></label>
+                            <label class="radio-label" for="oh1" id="yes"><span>Yes, I am the homeowner</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="oh2" class="img-radio" type="radio" name="homeowner" value="No" required>
-                            <label class="radio-label" for="oh2"><span>No, I am not the homeowner</span></label>
+                            <label class="radio-label" for="oh2" id="no"><span>No, I am not the homeowner</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -213,7 +213,7 @@ $page = 'main';
 
 
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button class="btn form-btn btn-next"  type="button" id="btn-address"><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -235,7 +235,7 @@ $page = 'main';
                 </div>
 
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button class="btn form-btn btn-next"  type="button" id="btn-name"><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -258,7 +258,7 @@ $page = 'main';
                     </div>
                 </div>
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button class="btn form-btn btn-next"  type="button" id="btn-email"><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
