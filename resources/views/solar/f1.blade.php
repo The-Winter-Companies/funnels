@@ -115,7 +115,7 @@ $page = 'f1';
     font-weight: 600;">Please enter a valid email address.</label>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span></button>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-email"><span class="btn-text">Continue</span></button>
                 </div>
             </div>
         </fieldset>
@@ -134,7 +134,7 @@ $page = 'f1';
                     <div class="form-error-message">Don't forget to tell us your last name.</div>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span></button>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-name"><span class="btn-text">Continue</span></button>
                 </div>
             </div>
         </fieldset>
@@ -147,43 +147,43 @@ $page = 'f1';
                         <div class="row no-gutters">
                             <div class="col radio-btn-group_btn">
                                 <input id="electricBill-1" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$0-$50">
-                                <label class="radio-btn-group__label" for="electricBill-1">$0-
+                                <label class="radio-btn-group__label" for="electricBill-1" id="bill1-label">$0-
                                     <br class="mob-only">$50</label>
                             </div>
                             <div class="col radio-btn-group_btn">
                                 <input id="electricBill-2" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$51-$100">
-                                <label class="radio-btn-group_label" for="electricBill-2">$51-
+                                <label class="radio-btn-group_label" for="electricBill-2" id="bill2-label">$51-
                                     <br class="mob-only">$100</label>
                             </div>
                             <div class="col radio-btn-group_btn">
                                 <input id="electricBill-3" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$101-$150">
-                                <label class="radio-btn-group_label" for="electricBill-3">$101-
+                                <label class="radio-btn-group_label" for="electricBill-3" id="bill3-label">$101-
                                     <br class="mob-only">$150</label>
                             </div>
                             <div class="col radio-btn-group_btn">
                                 <input id="electricBill-4" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$151-$200">
-                                <label class="radio-btn-group_label" for="electricBill-4">$151-
+                                <label class="radio-btn-group_label" for="electricBill-4" id="bill4-label">$151-
                                     <br class="mob-only">$200</label>
                             </div>
                             <div class="col radio-btn-group_btn">
                                 <input id="electricBill-5" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$201-$300" checked>
-                                <label class="radio-btn-group__label" for="electricBill-5">$201-
+                                <label class="radio-btn-group__label" for="electricBill-5" id="bill5-label">$201-
                                     <br class="mob-only">$300</label>
                             </div>
                             <div class="col radio-btn-group_btn">
                                 <input id="electricBill-6" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$300-$400">
-                                <label class="radio-btn-group__label" for="electricBill-6">$300-
+                                <label class="radio-btn-group__label" for="electricBill-6"  id="bill6-label">$300-
                                     <br class="mob-only">$400</label>
                             </div>
                             <div class="col radio-btn-group_btn">
                                 <input id="electricBill-7" class="radio-btn-group__input" type="radio" name="monthly_electric_bill_radio" value="$400+">
-                                <label class="radio-btn-group_label" for="electricBill-7">$400+</label>
+                                <label class="radio-btn-group_label" for="electricBill-7" id="bill7-label">$400+</label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span></button>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-bill"><span class="btn-text">Continue</span></button>
                 </div>
             </div>
         </fieldset>
@@ -194,20 +194,20 @@ $page = 'f1';
                 <div class="form-group parent-error">
                     <div class="radio-colored">
                         <input id="roof_shade" type="radio" name="roof_shade" value="No Shade" required>
-                        <label for="roof_shade">No Shade</label> <span></span></div>
+                        <label for="roof_shade" id="no-shade-label">No Shade</label> <span></span></div>
                     <div class="radio-colored">
                         <input id="roof_shade" type="radio" name="roof_shade" value="Partial Shade" required>
-                        <label for="roof_shade">Partial Shade</label> <span></span></div>
+                        <label for="roof_shade" id="partial-shade-label">Partial Shade</label> <span></span></div>
                     <div class="radio-colored">
                         <input id="roof_shade" type="radio" name="roof_shade" value="Full Shade">
-                        <label for="roof_shade">Full Shade</label> <span></span></div>
+                        <label for="roof_shade" id="full-shade-label">Full Shade</label> <span></span></div>
                     <div class="radio-colored">
                         <input id="roof_shade" type="radio" name="roof_shade" value="Not sure">
-                        <label for="roof_shade">Not sure</label> <span></span></div>
+                        <label for="roof_shade" id="not-sure-label">Not sure</label> <span></span></div>
                     <div class="form-error-message">Pros need this information to generate a quote.</div>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span></button>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-shade"><span class="btn-text">Continue</span></button>
                 </div>
             </div>
         </fieldset>
@@ -223,7 +223,7 @@ $page = 'f1';
                     <div class="form-error-message">Pros need this information to generate a quote.</div>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span></button>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-utility"><span class="btn-text">Continue</span></button>
                 </div>
             </div>
         </fieldset>
@@ -245,7 +245,7 @@ $page = 'f1';
                     </div>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span></button>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-address"><span class="btn-text">Continue</span></button>
                 </div>
             </div>
         </fieldset>
