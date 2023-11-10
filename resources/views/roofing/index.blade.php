@@ -122,19 +122,19 @@ $page = 'main';
                     <div class="form-group radio-next">
                         <div class="radio-btn">
                             <input id="st1" class="img-radio" type="radio" name="project_type_radio" value="New roof for new home" required>
-                            <label class="radio-label" for="st1"><span>New roof for new home</span></label>
+                            <label class="radio-label" for="st1"><span id="sts1">New roof for new home</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="st2" class="img-radio" type="radio" name="project_type_radio" value="New roof for an existing home" required>
-                            <label class="radio-label" for="st2"><span>New roof for an existing home</span></label>
+                            <label class="radio-label" for="st2"><span id="sts2">New roof for an existing home</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="st3" class="img-radio" type="radio" name="project_type_radio" value="Repair" required>
-                            <label class="radio-label" for="st3"><span>Repair existing roof</span></label>
+                            <label class="radio-label" for="st3"><span id="sts3">Repair existing roof</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="st4" class="img-radio" type="radio" name="project_type_radio" value="Shingle over existing roof" required>
-                            <label class="radio-label" for="st4"><span>Shingle over existing roof</span></label>
+                            <label class="radio-label" for="st4"><span id="sts4">Shingle over existing roof</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -193,11 +193,11 @@ $page = 'main';
                     <div class="form-group radio-next">
                         <div class="radio-btn">
                             <input id="pt1" class="img-radio" type="radio" name="property_type" value="residential" required>
-                            <label class="radio-label" for="pt1"><span>Residential</span></label>
+                            <label class="radio-label" for="pt1"><span id="pts1">Residential</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="pt2" class="img-radio" type="radio" name="property_type" value="commercial" required>
-                            <label class="radio-label" for="pt2"><span>Commercial</span></label>
+                            <label class="radio-label" for="pt2"><span id="pts2">Commercial</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -215,11 +215,11 @@ $page = 'main';
                     <div class="form-group radio-next">
                         <div class="radio-btn">
                             <input id="oh1" class="img-radio" type="radio" name="homeowner" value="Yes" required>
-                            <label class="radio-label" for="oh1"><span>Yes, I am the homeowner</span></label>
+                            <label class="radio-label" for="oh1"><span id="ohs1">Yes, I am the homeowner</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="oh2" class="img-radio" type="radio" name="homeowner" value="No" required>
-                            <label class="radio-label" for="oh2"><span>No, I am not the homeowner</span></label>
+                            <label class="radio-label" for="oh2"><span id="ohs2">No, I am not the homeowner</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -238,19 +238,19 @@ $page = 'main';
                     <div class="form-group radio-next">
                         <div class="radio-btn">
                             <input id="t1" class="img-radio" type="radio" name="time_frame_radio" value="Immediately" required>
-                            <label class="radio-label" for="t1"><span>Immediately</span></label>
+                            <label class="radio-label" for="t1"><span id="ts1">Immediately</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="t2" class="img-radio" type="radio" name="time_frame_radio" value="Within 1 month" required>
-                            <label class="radio-label" for="t2"><span>Within 1 month</span></label>
+                            <label class="radio-label" for="t2"><span id="ts2">Within 1 month</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="t3" class="img-radio" type="radio" name="time_frame_radio" value="1-3 months" required>
-                            <label class="radio-label" for="t3"><span>Between 1 and 3 months</span></label>
+                            <label class="radio-label" for="t3"><span id="ts3">Between 1 and 3 months</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="t4" class="img-radio" type="radio" name="time_frame_radio" value="3+ months" required>
-                            <label class="radio-label" for="t4"><span>Over 3 months</span></label>
+                            <label class="radio-label" for="t4"><span id="ts4">Over 3 months</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -292,7 +292,7 @@ $page = 'main';
 
 
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button id="address-next" class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -315,7 +315,7 @@ $page = 'main';
                 </div>
 
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button id="fn-ln-next" class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -338,7 +338,7 @@ $page = 'main';
                     </div>
                 </div>
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button id="email-next" class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -615,7 +615,7 @@ $page = 'main';
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <![endif]-->
 
-@include('partials.funnel_scripts', ['includeAddressValidation' => false, 'vertical' => $vertical, 'page' => $page])
+@include('partials.funnel_scripts', ['vertical' => $vertical, 'page' => $page])
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -676,6 +676,8 @@ $page = 'main';
     (function(){
 
         $(document).ready(function() {
+
+            $.sessionStartTime = new Date();
 
             $('form').submit(function (e) {
                 var form = this;
@@ -802,7 +804,5 @@ $page = 'main';
     })();
 
 </script>
-
-<script type="text/javascript" src="{{ asset('js/address-validation-index.js') }}"></script>
 </body>
 </html>

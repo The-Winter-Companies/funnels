@@ -3,6 +3,7 @@ include(resource_path('views/partials/funnel_submission_params.blade.php'));
 session_start();
 $vertical = 'roofing';
 $page = 'f1';
+$sessionStartTime = \Illuminate\Support\Carbon::now();
 ?>
 @include('partials.redirect_if_missing_vars')
 
@@ -186,7 +187,7 @@ $page = 'f1';
                 </div>
             </div>
             <div class="form-btns">
-                <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
+                <button id="address-next" class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
             </div>
         </fieldset>
         <fieldset data-step="3" id="phoneContainer"><legend hidden="true">Phone</legend>
@@ -359,6 +360,8 @@ $page = 'f1';
 
 
     $(document).ready(function() {
+
+        $.sessionStartTime = new Date();
 
         $('form').submit(function (e) {
             var form = this;

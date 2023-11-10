@@ -2,10 +2,6 @@
     if(!isset($vertical, $page)){
         abort(500, 'Vertical or Page was not passed to the blade template.');
     }
-
-    if(!isset($includeAddressValidation)){
-        $includeAddressValidation = true;
-    }
 ?>
 
 <script src="{{ asset('js/jquery/jquery.custom-validators.js') }}"></script>
@@ -13,11 +9,7 @@
 <script src="{{ asset('js/funnel-support-document-ready.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/solar/power_companies.js') }}"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAPS_API_KEY")}}&libraries=places"></script>
-<script src="{{ asset('js/jquery/jquery.geocomplete.min.js') }}"></script>
-
-@if ( $includeAddressValidation == true )
-    <script src="{{ asset('js/address-validation.js') }}"></script>
-@endif
+<script src="{{ asset('js/address-validation.js') }}"></script>
 
 <script>
 
@@ -242,6 +234,7 @@
         formData['user_agent'] = window.navigator.userAgent;
         formData['landing_page_url'] = window.location.href;
         formData['phone'] = stripPhoneNumber($('#phone').val());
+        formData['session_length'] = finalSessionLength();
 
         if (formData['landing_page_url'].includes('127.0.0.1') || formData['landing_page_url'].includes('localhost')) {
             formData['landing_page_url'] = 'https://localhost.com';
@@ -253,12 +246,12 @@
         formData['complete'] = 1;
         formData['token'] = $.token;
         formData['healthchecks_slug'] = vertical + '-' + pageKey;
+        formData['home_owner'] = "Yes";
 
         if(vertical === 'solar'){
             formData['lp_campaign_id'] = "17604";
             formData['lp_supplier_id'] = "38531";
             formData['lp_key'] = "qqz1h52vku0dpy";
-            formData['home_owner'] = "Yes";
             formData['roof_shade'] = "No Shade";
             formData['monthly_electric_bill'] = $('#monthly_electric_bill').val();
             formData['credit_rating'] = $('#credit_rating').val();
@@ -288,7 +281,7 @@
     }
 
     function isTestLead(formData){
-        if(formData['email_address'] === 'test@test.com' || formData['email_address'] === 'pingdom@test.com' || (formData['first_name'].toLowerCase() === "test" && formData['last_name'].toLowerCase() === "test")){
+        if(formData['email'] === 'test@test.com' || formData['email'] === 'pingdom@test.com' || (formData['first_name'].toLowerCase() === "test" && formData['last_name'].toLowerCase() === "test")){
             return true;
         } else {
             return false;

@@ -202,7 +202,7 @@ $page = 'o7';
                     <div class="col colback"><a class="btn btn-link btn-back">Back</a></div>
                     <div class="col">
                         <div class="form-btns ml-auto text-center">
-                            <button class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
+                            <button id="address-next" class="btn form-btn btn-next" type="button"><span class="btn-text">Next</span>
                             </button>
                         </div>
                     </div>
@@ -392,6 +392,8 @@ $page = 'o7';
 
     $(document).ready(function () {
 
+        $.sessionStartTime = new Date();
+
         $('form').submit(function (e) {
             var form = this;
             e.preventDefault();
@@ -545,7 +547,6 @@ $page = 'o7';
 
 
 </script>
-
 </body>
 </html>
 

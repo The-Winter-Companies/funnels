@@ -530,7 +530,7 @@ $page = 'main';
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <![endif]-->
 
-@include('partials.funnel_scripts', ['includeAddressValidation' => false, 'vertical' => $vertical, 'page' => $page])
+@include('partials.funnel_scripts', ['vertical' => $vertical, 'page' => $page])
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -590,6 +590,8 @@ $page = 'main';
     });
 
     $(document).ready(function() {
+
+        $.sessionStartTime = new Date();
 
         $('form').submit(function (e) {
             var form = this;
@@ -713,6 +715,5 @@ $page = 'main';
 
 </script>
 
-<script type="text/javascript" src="{{ asset('js/address-validation-index.js') }}"></script>
 </body>
 </html>
