@@ -565,7 +565,7 @@ session_start();
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <![endif]-->
 
-@include('partials.funnel_scripts', ['includeAddressValidation' => false, 'vertical' => $vertical, 'page' => $page])
+@include('partials.funnel_scripts', ['vertical' => $vertical, 'page' => $page])
 
 {{--<script type="text/javascript">	$(document).ready(function() { hh.homepage();});</script>--}}
 
@@ -777,7 +777,6 @@ session_start();
 
 </script>
 
-<script type="text/javascript" src="{{ asset('js/address-validation-index.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/pop-power-company.js') }}"></script>
 </body>
 </html>

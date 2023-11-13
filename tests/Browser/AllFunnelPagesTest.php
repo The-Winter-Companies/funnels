@@ -24,6 +24,7 @@ class AllFunnelPagesTest extends DuskTestCase
      * Only the main pages should load without the EF params
      * @throws \Throwable
      */
+
     public function testMissingEFURLParamsRedirect(){
         foreach($this->pages as $page){
             if(!str_ends_with($page, '/')){
@@ -40,6 +41,7 @@ class AllFunnelPagesTest extends DuskTestCase
             }
         }
     }
+
 
     /**
      * Tests the normal flow - success
@@ -249,20 +251,20 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->type("#address", "123 Main St")
                 ->click("div.pac-container.pac-logo > div:nth-child(1) > span:nth-child(3)")
                 ->pause(750)
-                ->click("#pac-container_address > div:nth-child(1)")
+                ->click("div.pac-container.pac-logo > div:nth-child(1) > span.pac-item-query")
                 ->click("#address-next")
                 ->pause(750)
                 ->type("#first_name", 'test')
                 ->type("#last_name", 'test')
                 ->type("#phone", '1111111111')
                 ->type("#email", 'test@fail.com')
-                ->click("#btn-continue")
+                ->click("#form_submit")
                 ->pause(3000)
                 ->waitForText("Please provide a valid email address to proceed")
                 ->assertSee('Please provide a valid email address to proceed')
                 ->clear("#email")
                 ->type("#email", 'test@test.com')
-                ->click("#btn-continue")
+                ->click("#form_submit")
                 ->pause(2000)
                 ->assertPathIs('/thank-you');
         });

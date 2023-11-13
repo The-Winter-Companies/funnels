@@ -270,7 +270,7 @@ $page = 'o7';
     font-weight: 600;">Please enter a valid email address.</label>
                 </div>
                 <div class="form-btns mx-auto sbmt">
-                    <button id="btn-continue" class="btn form-btn btn-next" type="button" id="form_submit"><span class="btn-text">Continue</span>
+                    <button class="btn form-btn btn-next" type="button" id="form_submit"><span class="btn-text">Continue</span>
                     </button>
                 </div>
             </fieldset>
