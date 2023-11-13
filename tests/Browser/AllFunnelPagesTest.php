@@ -24,6 +24,7 @@ class AllFunnelPagesTest extends DuskTestCase
      * Only the main pages should load without the EF params
      * @throws \Throwable
      */
+
     public function testMissingEFURLParamsRedirect(){
         foreach($this->pages as $page){
             if(!str_ends_with($page, '/')){
@@ -34,12 +35,13 @@ class AllFunnelPagesTest extends DuskTestCase
                 });
                 $this->browse(function (Browser $browser) use ($page) {
                     $browser
-                        ->visit($page . '?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                        ->visit($page . '?ef_tx_id=X&ef_aff_id=Y&ef_offer_id=Z')
                         ->assertPathIs($page);
                 });
             }
         }
     }
+
 
     /**
      * Tests the normal flow - success
