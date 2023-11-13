@@ -422,7 +422,7 @@ $page = 'f1';
                 if(next_step){
 
 
-                    if(current_step+1 === $('#emailContainer').data('step')){
+                    if(current_step === $('#emailContainer').data('step')){
                         (async function(){
                             var emailValid = await emailIsValid();
                             if(emailValid === false){
