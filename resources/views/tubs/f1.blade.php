@@ -110,7 +110,7 @@ $page = 'f1';
                 </div>
             </div>
             <div class="form-btns text-center">
-                <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button><br>
+                <button class="btn form-btn btn-next" type="button" id="btn-email"><span class="btn-text">Continue</span></button><br>
                 <div class="secure-text">Your information is secure.</div>
             </div>
         </fieldset>
@@ -130,7 +130,7 @@ $page = 'f1';
                 </div>
             </div>
             <div class="form-btns text-center">
-                <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button><br>
+                <button class="btn form-btn btn-next" type="button" id="btn-name"><span class="btn-text">Continue</span></button><br>
                 <div class="secure-text">Your information is secure.</div>
             </div>
         </fieldset>
@@ -141,19 +141,19 @@ $page = 'f1';
                 <div class="form-group row radio-next justify-content-center ">
                     <div class="radio-btn col-md-6 col-12">
                         <input id="rfi-01" type="radio" name="project_reason_radio" value="Maintaining independence" required="">
-                        <label for="rfi-01"><span>Maintaining independence</span></label>
+                        <label for="rfi-01" id="rfi-01"><span>Maintaining independence</span></label>
                     </div>
                     <div class="radio-btn col-md-6 col-12">
                         <input id="rfi-02" type="radio" name="project_reason_radio" value="Pain relief" required="">
-                        <label for="rfi-02"><span>Pain relief</span></label>
+                        <label for="rfi-02" id="rfi-02"><span>Pain relief</span></label>
                     </div>
                     <div class="radio-btn col-md-6 col-12">
                         <input id="rfi-03" type="radio" name="project_reason_radio" value="Safety" required="">
-                        <label for="rfi-03"><span>Safety</span></label>
+                        <label for="rfi-03" id="rfi-03"><span>Safety</span></label>
                     </div>
                     <div class="radio-btn col-md-6 col-12 mx-auto">
                         <input id="rfi-04" type="radio" name="project_reason_radio" value="Other" required="">
-                        <label for="rfi-04"><span>Other</span></label>
+                        <label for="rfi-04" id="rfi-04"><span>Other</span></label>
                     </div>
                 </div>
             </div>
@@ -164,15 +164,15 @@ $page = 'f1';
                 <div class="form-group row radio-next no-gutter justify-content-center">
                     <div class="radio-btn col-12">
                         <input id="t01" type="radio" name="time_frame_radio" value="Immediately" required="">
-                        <label for="t01"><span>Immediately</span></label>
+                        <label for="t01" id="t01"><span>Immediately</span></label>
                     </div>
                     <div class="radio-btn col-12">
                         <input id="t02" type="radio" name="time_frame_radio" value="Within 6 months" required="">
-                        <label for="t02"><span>Within 6 months</span></label>
+                        <label for="t02" id="t02"><span>Within 6 months</span></label>
                     </div>
                     <div class="radio-btn col-12">
                         <input id="t03" type="radio" name="time_frame_radio" value="Not Sure" required="">
-                        <label for="t03"><span>Not sure</span></label>
+                        <label for="t03" id="t03"><span>Not sure</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>
@@ -187,11 +187,11 @@ $page = 'f1';
                 <div class="form-group radio-next ">
                     <div class="radio-btn">
                         <input id="or01" type="radio" name="own_rented" value="Yes" required="">
-                        <label for="or01"><span>Yes</span></label>
+                        <label for="or01" id="yes"><span>Yes</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="or02" type="radio" name="own_rented" value="No" required="">
-                        <label for="or02"><span>No</span></label>
+                        <label for="or02" id="no"><span>No</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>
@@ -213,7 +213,7 @@ $page = 'f1';
                 </p>
                 <div class="form-error-message">Please enter your street address.</div>
                 <div class="form-btns text-center mx-auto">
-                    <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button><br>
+                    <button class="btn form-btn btn-next" type="button" id="btn-address"><span class="btn-text">Continue</span></button><br>
                 </div>
             </div>
         </fieldset>
@@ -236,7 +236,7 @@ $page = 'f1';
     font-weight: 600;">Please enter a valid email address.</label>
                 </div>
                 <div class="form-btns text-center">
-                    <button class="btn form-btn btn-next text-uppercase" type="button"><span class="btn-text">Continue</span></button>
+                    <button class="btn form-btn btn-next text-uppercase" type="button" id="form_submit"><span class="btn-text">Continue</span></button>
                     <div class="secure-text mb-15">Your information is secure.</div>
                 </div>
             </div>
@@ -422,7 +422,7 @@ $page = 'f1';
                 if(next_step){
 
 
-                    if(current_step+1 === $('#emailContainer').data('step')){
+                    if(current_step === $('#emailContainer').data('step')){
                         (async function(){
                             var emailValid = await emailIsValid();
                             if(emailValid === false){
