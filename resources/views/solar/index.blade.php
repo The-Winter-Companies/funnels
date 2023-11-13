@@ -128,7 +128,7 @@ session_start();
                 </div>
 
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button class="btn form-btn btn-next"  type="button" id="btn-utility"><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -151,7 +151,7 @@ session_start();
                     </div>
 
                     <div class="form-btns ml-auto text-center">
-                        <button data-nav="electricity_bill" class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                        <button data-nav="electricity_bill" class="btn form-btn btn-next"  type="button" id="btn-bill"><span class="btn-text">Next</span></button>
                     </div>
                 </div>
             </fieldset>
@@ -161,20 +161,20 @@ session_start();
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input  id="roof_shade" type="radio" name="roof_shade" value="No Shade" required checked>
-                            <label for="roof_shade"><span>No Shade</span></label>
+                            <input  id="roof_shade" type="radio" name="roof_shade" value="No Shade"  checked>
+                            <label for="roof_shade" id="no-shade-label"><span>No Shade</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="roof_shade" type="radio" name="roof_shade" value="Partial Shade" required>
-                            <label for="roof_shade"><span>Partial Shade</span></label>
+                            <input id="roof_shade" type="radio" name="roof_shade" value="Partial Shade" >
+                            <label for="roof_shade" id="partial-shade-label"><span>Partial Shade</span></label>
                         </div>
                         <div class="radio-btn">
                             <input  id="roof_shade" type="radio" name="roof_shade" value="Full Shade" >
-                            <label for="roof_shade"><span>Full Shade</span></label>
+                            <label for="roof_shade" id="full-shade-label"><span>Full Shade</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="roof_shade" type="radio" name="roof_shade" value="Not Sure" >
-                            <label for="roof_shade"><span>Not Sure</span></label>
+                            <label for="roof_shade" id="not-sure-label"><span>Not Sure</span></label>
                         </div>
                         <div class="form-error-message">Pros need this information to generate a quote.</div>
                     </div>
@@ -190,11 +190,11 @@ session_start();
                     <div class="form-group radio-next">
                         <div class="radio-btn">
                             <input id="home_owner" class="img-radio" type="radio" name="home_owner" value="Yes" required>
-                            <label class="radio-label" for="home_owner"><span>Yes</span></label>
+                            <label class="radio-label" for="home_owner" id="yes"><span>Yes</span></label>
                         </div>
                         <div class="radio-btn">
                             <input id="home_owner" class="img-radio" type="radio" name="home_owner" value="No" required>
-                            <label class="radio-label" for="home_owner"><span>No</span></label>
+                            <label class="radio-label" for="home_owner" id="no"><span>No</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -236,7 +236,7 @@ session_start();
 
 
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button class="btn form-btn btn-next"  type="button" id="btn-address"><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -259,7 +259,7 @@ session_start();
                 </div>
 
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button class="btn form-btn btn-next"  type="button" id="btn-name"><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
@@ -283,7 +283,7 @@ session_start();
                     </div>
                 </div>
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button class="btn form-btn btn-next"  type="button" id="btn-email"><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
