@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function initMap(){
     var invalid_city_state = false;
     if(typeof window.google !== 'undefined' && typeof window.google.maps !== 'undefined') {
         var autocomplete = new google.maps.places.Autocomplete((document.getElementById('address')), {
@@ -70,4 +70,4 @@ $(document).ready(function () {
             }
         }
     });
-});
+}
