@@ -1,9 +1,14 @@
 //Make sure jquery has been loaded before this file is loaded
 $(document).ready(function () {
     populateIPHiddenFields();
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $('#ip_address').val(data.ip);
-    });
+
+    setTimeout(function (){
+        if($('#ip_address').val() === null){
+            $.getJSON("https://api.ipify.org?format=json", function(data) {
+                $('#ip_address').val(data.ip);
+            });
+        }
+    }, 1000);
 
     $('form input').on('keypress', function(e) {
         var keyCode = e.keyCode || e.which;
