@@ -329,7 +329,7 @@ function populateIPHiddenFields(){
         // $("#ip_readme").val(response.readme);
         $("#ip_region").val(response.region);
         $("#ip_timezone").val(response.timezone);
-    }, "jsonp");
+    }, "json");
 }
 
 function stripPhoneNumber(phoneNumber) {
