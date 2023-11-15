@@ -176,6 +176,15 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->assertPathIs('/thank-you');
         });
 
+        // ROOFING Thank You
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/thank-you?ef_aff_id=x&ef_tx_id=x&s1=&s2=&s3=&s4=&s5=&v=roofing&ef_offer_id=x')
+                ->pause(10000)
+                ->waitForText('Your Info Has Been Received!')
+                ->click("#offers > a:nth-child(4)");
+        });
+
         // SOLAR MAIN
         $this->browse(function (Browser $browser) {
             $browser
@@ -313,6 +322,15 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->assertPathIs('/thank-you');
         });
 
+        // SOLAR Thank You
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/thank-you?ef_aff_id=x&ef_tx_id=x&s1=&s2=&s3=&s4=&s5=&v=solar&ef_offer_id=x')
+                ->pause(10000)
+                ->waitForText('Your Info Has Been Received!')
+                ->click("#offers > a:nth-child(4)");
+        });
+
         // TUBS MAIN
         $this->browse(function (Browser $browser) {
             $browser
@@ -428,6 +446,15 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->click('#form_submit')
                 ->pause(2000)
                 ->assertPathIs('/thank-you');
+        });
+
+        // TUBS Thank You
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/thank-you?ef_aff_id=x&ef_tx_id=x&s1=&s2=&s3=&s4=&s5=&v=tubs&ef_offer_id=x')
+                ->pause(10000)
+                ->waitForText('Your Info Has Been Received!')
+                ->click("#offers > a:nth-child(4)");
         });
     }
 
