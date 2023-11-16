@@ -78,7 +78,7 @@
      * @param formData
      */
     function stl(formData){
-        var submitUrl = "{{ env('LEAD_BACKUP_URL') }}/ingest.php?file=1"
+        var submitUrl = "{{ env('LEAD_BACKUP_URL') }}/ingest.php?file=1";
         $.ajax({
             type: 'POST',
             url: submitUrl,
@@ -86,8 +86,20 @@
             async: true,
             dataType: "text",
             success: function (data) {
-            }, error: function (jqXHR, textStatus, errorThrown) {
-                Rollbar.error('Lead Backup (STL) - AJAX error: ' + textStatus + ', ' + errorThrown, {jqXHR: jqXHR, textStatus: textStatus, errorThrown: errorThrown, formData: formData});
+                // Handle success if needed
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                var errorDetails = {
+                    url: submitUrl,
+                    status: jqXHR.status,
+                    error: errorThrown,
+                    formData: formData
+                };
+
+                var errorMessage = 'Lead Backup (STL) - AJAX error: ' + textStatus + ', ' + errorThrown;
+
+                // Send error details to Rollbar
+                Rollbar.error(errorMessage, { errorDetails: errorDetails });
             }
         });
     }
