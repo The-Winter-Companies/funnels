@@ -20,7 +20,7 @@
      * @param formData
      */
     function submitLead(formData){
-        stl(formData);
+        //stl(formData);
         let lpResult = false;
         let winterbotResult = submitToWinterbot(formData);
 
