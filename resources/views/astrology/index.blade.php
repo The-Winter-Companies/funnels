@@ -90,7 +90,7 @@ session_start();
 </header>
 <main>
 
-    <form method="post" id="horoscopeform" class="container">
+    <form id="horoscopeform" class="container">
         <input id="xxTrustedFormCertUrl" style="display:none;" type="text"  name="xxTrustedFormCertUrl">
         <input id="ip_address" style="display:none;" type="text"  name="ip_address">
         <input id="ip_city" style="display:none;" type="text"  name="ip_city">
@@ -248,7 +248,7 @@ session_start();
         </fieldset>
 
 
-        <fieldset>
+        <fieldset data-step="2" id="emailContainer">
 
             <center>
                 <h2 class="step-title"><span>STEP 2 of 4 : </span>where should we send your free horoscope?</h2>
@@ -265,7 +265,6 @@ session_start();
     background: #fff;
     padding: 5px;text-align: center;
     font-weight: 600;">Please enter a valid email address.</label>
-                    <div class="col-12 form-error-message "></div>
                 </div>
 
                 <button  class="btn form-btn btn-next" type="button" ><span class="btn-text">Continue</span></button>
@@ -429,7 +428,7 @@ session_start();
                     </select>
 
                 </div>
-                <button  class="btn form-btn"  type="submit"><span class="btn-text">SEND MY HOROSCOPE</span></button>
+                <button  class="btn form-btn btn-next" type="button" id="form_submit"><span class="btn-text">SEND MY HOROSCOPE</span></button>
             </div>
         </fieldset>
 
@@ -613,9 +612,6 @@ session_start();
             });
             var currentStep = $('fieldset:visible').attr('data-step');
 
-            $("#email").enterKey(function () {
-                goNext($(this));
-            })
 
             function getUrlVars()
             {
@@ -637,60 +633,48 @@ session_start();
                 }
             });
 
-            window.dontRemoteValidateEmail = false;
-            function validateFields(){
-                var result = $("form").valid();
-
-                if(result == true){
-
-                    $("#email").removeClass(".form-control .error")
-                    $("#email-custom-error").fadeOut('fast');
-
-                    var currentStep = $('fieldset:visible').attr('data-step');
-
-                    if(currentStep == 2 && window.dontRemoteValidateEmail == false) {
-                        (async function(){
-                            var emailValid = await emailIsValid();
-                            if( emailValid === false){
-                                return;
-                            }else{
-                                result = true;
-                            }
-                        })()
-                    }
-                }
-
-                return result;
-            }
-
             function goNext(el) {
                 var next_step = true;
                 var parent_fieldset = el.parents('fieldset').last();
-                // var result = $("form").valid() && $("form").valid();
-                var result = validateFields();
+
+                var result = $("form").valid();
 
                 if (!result) {
                     next_step = false;
-                    parent_fieldset.find('.form-control.error').first().focus();
                 }
 
                 if (next_step) {
                     $('form').submit();
-                    if (parent_fieldset.data('step') < totalStep) {
-                        parent_fieldset.fadeOut( function() {
-                            $(this).next().fadeIn(function() {
-                                $(this).find('input,select').first().focus();
+
+                    var currentStep = $('fieldset:visible').attr('data-step');
+
+                    if(currentStep == $('#emailContainer').data('step')) {
+                        (async function () {
+                            var emailValid = await emailIsValid();
+                            if (emailValid === false) {
+                                return;
+                            } else {
+                                if (parent_fieldset.data('step') < totalStep) {
+                                    parent_fieldset.fadeOut( function() {
+                                        $(this).next().fadeIn(function() {
+                                            $(this).find('input,select').first().focus();
+                                        });
+                                        $.stepanimate();
+                                    });
+                                }
+                            }
+                        })()
+                    }else{
+                        if (parent_fieldset.data('step') < totalStep) {
+                            parent_fieldset.fadeOut( function() {
+                                $(this).next().fadeIn(function() {
+                                    $(this).find('input,select').first().focus();
+                                });
+                                $.stepanimate();
                             });
-                            $.stepanimate();
-                        });
+                        }
                     }
                 }
-
-                parent_fieldset.find('.form-control.error').each(function() {
-                    $(this).addClass(" shake").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function() {
-                        $(this).removeClass("shake ");
-                    });
-                });
             }
 
             $(document).on('click', ".radio-next input[type=radio], .btn-next", function () {
@@ -758,7 +742,6 @@ session_start();
                 formdata['vertical'] = "astrology";
                 formdata['token'] = token;
 
-                // console.log(currentStep);
                 formdata['currentStep'] = currentStep;
                 formdata['totalSteps'] = totalStep;
                 formdata['getParams'] = getUrlVars();
@@ -768,14 +751,14 @@ session_start();
 
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo $submitUrl?>',
+                    url: '<?php echo (env("WINTERBOT_LEAD_SUBMIT_URL")); ?>/ingest.php',
                     data: formdata,
                     //async: false,
                     dataType: "text",
                     success: function (data) {
                         var result = JSON.parse(data);
 
-                        if(result.complete == true){
+                        if(result.result === true && (currentStep == totalStep)){
 
                             var ebook = window.formdata['ebook'];
                             if(ebook === true || ebook === 1  || ebook === "1" ) {
@@ -787,7 +770,6 @@ session_start();
                             location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
                         }
                     }, error: function(data) {
-                        // console.log(data);
                         alert("There was an issue, please try again or contact us at info@astrologyspark.com");
                     }
                 });
