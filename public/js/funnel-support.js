@@ -318,8 +318,8 @@ function mincont() {
     $('main').attr('style','min-height:'+xd+'px;');
 }
 
-function populateIPHiddenFields(){
-    $.get("https://ipinfo.io", function(response) {
+function populateIPHiddenFields(token){
+    $.get("https://ipinfo.io?token="+token, function(response) {
         $("#ip_address").val(response.ip);
         $("#ip_city").val(response.city);
         $("#ip_country").val(response.country);
@@ -329,7 +329,7 @@ function populateIPHiddenFields(){
         // $("#ip_readme").val(response.readme);
         $("#ip_region").val(response.region);
         $("#ip_timezone").val(response.timezone);
-    }, "jsonp");
+    }, "json");
 }
 
 function stripPhoneNumber(phoneNumber) {

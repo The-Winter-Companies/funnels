@@ -3,13 +3,12 @@
         abort(500, 'Vertical or Page was not passed to the blade template.');
     }
 ?>
-
 <script src="{{ asset('js/jquery/jquery.custom-validators.js') }}"></script>
 <script src="{{ asset('js/funnel-support.js') }}"></script>
-<script src="{{ asset('js/funnel-support-document-ready.js') }}"></script>
+@include('partials.funnel-support-document-ready')
 <script type="text/javascript" src="{{ asset('js/solar/power_companies.js') }}"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAPS_API_KEY")}}&libraries=places"></script>
 <script src="{{ asset('js/address-validation.js') }}"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAPS_API_KEY")}}&libraries=places&callback=initMap"></script>
 
 <script>
 
@@ -21,7 +20,7 @@
      * @param formData
      */
     function submitLead(formData){
-        stl(formData);
+        //stl(formData);
         let lpResult = false;
         let winterbotResult = submitToWinterbot(formData);
 
@@ -79,7 +78,7 @@
      * @param formData
      */
     function stl(formData){
-        var submitUrl = "{{ env('LEAD_BACKUP_URL') }}/ingest.php?file=1"
+        var submitUrl = "{{ env('LEAD_BACKUP_URL') }}/ingest.php?file=1";
         $.ajax({
             type: 'POST',
             url: submitUrl,
@@ -87,8 +86,20 @@
             async: true,
             dataType: "text",
             success: function (data) {
-            }, error: function (jqXHR, textStatus, errorThrown) {
-                Rollbar.error('Lead Backup (STL) - AJAX error: ' + textStatus + ', ' + errorThrown, {jqXHR: jqXHR, textStatus: textStatus, errorThrown: errorThrown, formData: formData});
+                // Handle success if needed
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                var errorDetails = {
+                    url: submitUrl,
+                    status: jqXHR.status,
+                    error: errorThrown,
+                    formData: formData
+                };
+
+                var errorMessage = 'Lead Backup (STL) - AJAX error: ' + textStatus + ', ' + errorThrown;
+
+                // Send error details to Rollbar
+                Rollbar.error(errorMessage, { errorDetails: errorDetails });
             }
         });
     }
