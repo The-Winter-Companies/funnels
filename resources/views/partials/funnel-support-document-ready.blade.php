@@ -2,13 +2,14 @@
     $(document).ready(function () {
         populateIPHiddenFields('{{env('IP_INFO_TOKEN')}}');
 
-        setTimeout(function (){
-            if($('#ip_address').val() === null){
+
+        setInterval(function (){
+            if($('#ip_address').val() === null || typeof $('#ip_address').val() === "undefined"){
                 $.getJSON("https://api.ipify.org?format=json", function(data) {
                     $('#ip_address').val(data.ip);
                 });
             }
-        }, 1000);
+        }, 3000)
 
         $('form input').on('keypress', function(e) {
             var keyCode = e.keyCode || e.which;
