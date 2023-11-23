@@ -16,4 +16,5 @@
 <input type="hidden" id="ip_postal" name="ip_postal" value>
 <input type="hidden" id="ip_region" name="ip_region" value>
 <input type="hidden" id="ip_timezone" name="ip_timezone" value>
+<input type="hidden" id="ip_address_v6" name="ip_address_v6" value>
 
