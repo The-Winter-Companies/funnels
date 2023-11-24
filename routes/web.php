@@ -14,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+$astrologySparkDomains = [
+    'signup.astrologyspark.local',
+    'signup.astrologyspark.com'
+];
+
+foreach ($astrologySparkDomains as $astrologySparkDomain){
+    Route::domain($astrologySparkDomain)->group(function () {
+        Route::get('/', function () {
+            return view('astrology/index');
+        });
+    });
+}
+
 Route::get('/', function () {
     return view('redirect-fhh');
 });
