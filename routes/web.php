@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 $astrologySparkDomains = [
     'signup.astrologyspark.local',
-    'signup.astrologyspark.com'
+    'signup.astrologyspark.com',
+    'staging-signup-1.astrologyspark.com',
+    'staging-signup-2.astrologyspark.com',
+    'staging-signup.astrologyspark.com'
 ];
 
 foreach ($astrologySparkDomains as $astrologySparkDomain){
