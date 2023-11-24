@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +12,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+$astrologySparkDomains = [
+    'signup.astrologyspark.local',
+    'signup.astrologyspark.com'
+];
+
+foreach ($astrologySparkDomains as $astrologySparkDomain){
+    Route::domain($astrologySparkDomain)->group(function () {
+        Route::get('/', function () {
+            return view('astrology/index');
+        });
+    });
+}
 
 Route::get('/', function () {
     return view('redirect-fhh');
@@ -66,6 +78,3 @@ Route::get('/thank-you', function () {
     return view('thank-you/thank-you');
 });
 
-Route::get('/astrology', function () {
-    return view('astrology/index');
-});
