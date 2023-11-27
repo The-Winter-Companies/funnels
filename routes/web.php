@@ -81,7 +81,3 @@ Route::get('/windows', function () {
 Route::get('/thank-you', function () {
     return view('thank-you/thank-you');
 });
-
-Route::get('/astrology', function () {
-    return view('astrology/index');
-});
