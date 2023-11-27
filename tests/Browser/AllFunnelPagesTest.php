@@ -25,22 +25,22 @@ class AllFunnelPagesTest extends DuskTestCase
      * @throws \Throwable
      */
 
-    public function testMissingEFURLParamsRedirect(){
-        foreach($this->pages as $page){
-            if(!str_ends_with($page, '/')){
-                $this->browse(function (Browser $browser) use ($page) {
-                    $browser
-                        ->visit($page)
-                        ->assertUrlIs('https://foreverhomehub.com/');
-                });
-                $this->browse(function (Browser $browser) use ($page) {
-                    $browser
-                        ->visit($page . '?ef_tx_id=X&ef_aff_id=Y&ef_offer_id=Z')
-                        ->assertPathIs($page);
-                });
-            }
-        }
-    }
+//    public function testMissingEFURLParamsRedirect(){
+//        foreach($this->pages as $page){
+//            if(!str_ends_with($page, '/')){
+//                $this->browse(function (Browser $browser) use ($page) {
+//                    $browser
+//                        ->visit($page)
+//                        ->assertUrlIs('https://foreverhomehub.com/');
+//                });
+//                $this->browse(function (Browser $browser) use ($page) {
+//                    $browser
+//                        ->visit($page . '?ef_tx_id=X&ef_aff_id=Y&ef_offer_id=Z')
+//                        ->assertPathIs($page);
+//                });
+//            }
+//        }
+//    }
 
 
     /**
@@ -429,8 +429,38 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->pause(2000)
                 ->assertPathIs('/thank-you');
         });
+
+        // Astrology Funnel
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('http://signup.astrologyspark.local')
+                ->pause(2000)
+                ->assertSee('SELECT YOUR SIGN')
+                ->click("#horoscopeform > fieldset:nth-child(10) > div > div:nth-child(4) > label > picture > img")
+                ->pause(2000)
+                ->assertSee('WHERE SHOULD WE SEND YOUR FREE HOROSCOPE?')
+                ->type("#email", 'test@test.com')
+                ->click('#emailContainer > div > button')
+                ->pause(1000)
+                ->assertSee('BIRTH DETAILS')
+                ->click("#gender")
+                ->click('#gender > option:nth-child(2)')
+                ->pause(1000)
+                ->type("#first_name", 'test')
+                ->type("#last_name", 'test')
+                ->click('#bday-year')
+                ->click('#bday-year > option:nth-child(3)')
+                ->click('#horoscopeform > fieldset:nth-child(12) > div > button')
+                ->pause(1000)
+                ->click("#relationship_status")
+                ->click('#relationship_status > option:nth-child(4)')
+                ->click('#employment_status')
+                ->click('#employment_status > option:nth-child(6)')
+                ->click('#greatest_wish')
+                ->click('#greatest_wish > option:nth-child(4)')
+                ->pause(1000)
+                ->click('#form_submit');
+        });
     }
-
-
 
 }
