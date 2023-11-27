@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,3 +68,4 @@ Route::get('/thank-you', function () {
 Route::get('/astrology', function () {
     return view('astrology/index');
 });
+

@@ -1,5 +1,5 @@
 jQuery.validator.addMethod("emailfull", function (value, element) {
-    return this.optional(element) || /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/i.test(value);
+    return this.optional(element) || /^([\w\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/i.test(value);
 }, "Please enter valid email address!");
 
 jQuery.validator.addMethod("minLengthNoSpaces", function (value, element, len) {
