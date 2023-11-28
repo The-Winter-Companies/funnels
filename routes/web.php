@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+$astrologySparkDomains = [
+    'signup.astrologyspark.local',
+    'signup.astrologyspark.com',
+    'staging-signup-1.astrologyspark.com',
+    'staging-signup-2.astrologyspark.com',
+    'staging-signup.astrologyspark.com'
+];
+
+foreach ($astrologySparkDomains as $astrologySparkDomain){
+    Route::domain($astrologySparkDomain)->group(function () {
+        Route::get('/', function () {
+            return view('astrology/index');
+        });
+    });
+}
+
 Route::get('/', function () {
     return view('redirect-fhh');
 });
@@ -64,8 +80,3 @@ Route::get('/windows', function () {
 Route::get('/thank-you', function () {
     return view('thank-you/thank-you');
 });
-
-Route::get('/astrology', function () {
-    return view('astrology/index');
-});
-

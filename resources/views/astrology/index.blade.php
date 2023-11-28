@@ -101,6 +101,7 @@ session_start();
         <input id="ip_region" style="display:none;" type="text"  name="ip_region">
         <input id="ip_timezone" style="display:none;" type="text"  name="ip_timezone">
         <input id="ebook" style="display:none;" type="text"  name="ebook">
+        <input id="ef_tx_id" style="display:none;" type="text"  name="ef_tx_id">
 
         <fieldset><legend style="visibility:hidden;" hidden="true">Zodiac Sign</legend>
 
@@ -150,7 +151,7 @@ session_start();
                         <picture>
                             <source srcset="{{ asset('img/hd-cancer.webp') }}" type="image/webp">
                             <source srcset="{{ asset('img/hd-cancer.png') }}" type="image/png">
-                            <img src="{{ asset('img/hd-cancer.png') }}">
+                            <img id="cancer-sign" src="{{ asset('img/hd-cancer.png') }}">
                         </picture>
 
                         <b>Cancer</b> <span>Jun 21 - Jul 22</span></label>
@@ -267,7 +268,7 @@ session_start();
     font-weight: 600;">Please enter a valid email address.</label>
                 </div>
 
-                <button  class="btn form-btn btn-next" type="button" ><span class="btn-text">Continue</span></button>
+                <button id="email-next" class="btn form-btn btn-next" type="button" ><span class="btn-text">Continue</span></button>
             </div>
 
 
@@ -345,12 +346,10 @@ session_start();
                     </div>
                     <div class="col-12 form-error-message "></div>
                 </div>
-                <button  class="btn form-btn btn-next"  type="button" ><span class="btn-text">Continue</span></button>
+                <button id="birth-next"  class="btn form-btn btn-next"  type="button" ><span class="btn-text">Continue</span></button>
             </div>
 
-
         </fieldset>
-
 
 
         <fieldset>
@@ -738,6 +737,7 @@ session_start();
                 }, {});
 
                 formdata['email_address'] = $('#email').val();
+                formdata['ef_tx_id'] = $('#ef_tx_id').val();
                 formdata['lead'] = "true";
                 formdata['vertical'] = "astrology";
                 formdata['token'] = token;
