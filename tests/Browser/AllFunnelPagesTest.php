@@ -55,7 +55,6 @@ class AllFunnelPagesTest extends DuskTestCase
         //test failing winterbot and LP submit
         //check we have trusted form and jornaya scripts on all pages and rollbar
         //Do one for the thank you page clicking on those links too to make sure they pass through the offers
-
         // Roofing F1 test
 
         $this->browse(function (Browser $browser) {
@@ -432,8 +431,19 @@ class AllFunnelPagesTest extends DuskTestCase
 
         // Astrology Funnel
         $this->browse(function (Browser $browser) {
+
+            $testUrl = 'https://signup.astrologyspark.com';
+            $environment = env('APP_ENV');
+            if(!empty($environment)){
+                if($environment == 'local'){
+                    $testUrl = 'http://signup.astrologyspark.local';
+                }else if($environment == 'staging'){
+                    $testUrl = 'https://staging-signup.astrologyspark.com';
+                }
+            }
+
             $browser
-                ->visit('http://signup.astrologyspark.local')
+                ->visit($testUrl)
                 ->pause(1000)
                 ->assertSee('SELECT YOUR SIGN')
                 ->click("#cancer-sign")
