@@ -18,7 +18,9 @@ $astrologySparkDomains = [
     'signup.astrologyspark.com',
     'staging-signup-1.astrologyspark.com',
     'staging-signup-2.astrologyspark.com',
-    'staging-signup.astrologyspark.com'
+    'staging-signup.astrologyspark.com',
+    'web-server-2.astrologyspark.com',
+    'web-server-1.astrologyspark.com/'
 ];
 
 foreach ($astrologySparkDomains as $astrologySparkDomain){
