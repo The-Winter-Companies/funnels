@@ -13,7 +13,7 @@
 <script>
 
     "use strict";
-    $.token = $.makeid(6);
+    $.token = $.makeid(8);
 
     /**
      *
@@ -144,8 +144,6 @@
         return result;
     }
 
-
-
     function phoneIsValid(){
 
         var response = true;
@@ -159,7 +157,7 @@
         const phoneValidation = $.ajax({
             type: "POST",
             url: "{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}/validatePhone.php",
-            data: {"phone":phone},
+            data: {"phone":phone, "token": $.token},
             async: false,
             dataType: 'json'
         }).then((fullResponse) => {
@@ -198,7 +196,7 @@
             const emailValidation = $.ajax({
                 type: "POST",
                 url: "{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}/validateEmail.php",
-                data: {"email":email,"ip_address":ipAddress},
+                data: {"email":email,"ip_address":ipAddress, "token": $.token},
                 async: false,
                 dataType: 'json'
             }).then((fullResponse) => {
