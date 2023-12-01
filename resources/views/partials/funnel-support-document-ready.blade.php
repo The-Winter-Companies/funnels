@@ -2,13 +2,15 @@
     $(document).ready(function () {
         populateIPHiddenFields('{{env('IP_INFO_TOKEN')}}');
 
-        setTimeout(function (){
-            if($('#ip_address').val() === null){
-                $.getJSON("https://api.ipify.org?format=json", function(data) {
-                    $('#ip_address').val(data.ip);
-                });
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $('#ip_address').val(data.ip);
+        });
+
+        $.getJSON("https://api64.ipify.org?format=json", function(json) {
+            if ($('#ip_address').val() != json.ip) {
+                $('#ip_address_v6').val(json.ip);
             }
-        }, 1000);
+        });
 
         $('form input').on('keypress', function(e) {
             var keyCode = e.keyCode || e.which;
