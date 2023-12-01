@@ -1,3 +1,10 @@
+<?php
+include(resource_path('views/partials/funnel_submission_params.blade.php'));
+session_start();
+$vertical = 'windows';
+$page = 'main';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,34 +35,24 @@
     <meta name="twitter:description" content="Description">
     <meta name="twitter:image" content="">
 
+    @include('partials.rollbar_script')
+    @include('partials.trusted_form')
+    @include('partials.lead_id')
+    @include('partials.pushnami_script')
+
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/funnels-main.css') }}" rel="stylesheet">
 
+    <!-- Google APIs -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="shortcut icon" type="image/x-icon" href="#">
-
+    <!-- Tab icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
-    <script type="text/javascript">
-        (function(document, window){
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = "https://api.pushnami.com/scripts/v1/pushnami-adv/649341c06d1a52001362ee20";
-            script.onload = function() {
-                Pushnami
-                    .update()
-                    .prompt();
-            };
-            document.getElementsByTagName("head")[0].appendChild(script);
-        })(document, window);
-    </script>
-
-    @include('partials.rollbar_script')
-    @include('partials.trusted_form')
-    @include('partials.lead_id')
 
 </head>
 <body>
@@ -72,6 +69,15 @@
 <main class="window">
     <section id="formSec" class="formSec">
 
+        @include('partials.hidden-inputs')
+
+        <input type="hidden" id="city" name="city" value>
+        <input type="hidden" id="state" name="state" value>
+        <input type="hidden" id="address_short" value>
+        <input type="hidden" id="project_type" name="project_type" value="Replace">
+        <input type="hidden" id="number_of_windows" name="number_of_windows" value="3 to 5 windows">
+        <input type="hidden" name="home_ownership" id="home_ownership" value="Yes">
+        <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
 
         <div class="progress-box" style="display: none;">
             <div class="progress" >
@@ -87,7 +93,9 @@
 
         <form class="form container-fluid" >
 
-            <fieldset id="zip-container"><legend hidden="true">zip</legend>
+            <fieldset id="zip-container">
+
+                <legend hidden="true">zip</legend>
 
                 <h4 class="form-question">Enter your zip code<br class="d-none d-md-block"> to get started:</h4>
                 <div class="form-cont">
@@ -95,11 +103,10 @@
                         <div class="row no-gutters">
                             <div class="col form-group m-0">
                                 <label style="visibility: hidden; position: absolute;" for="zip">Zip Code</label>
-                                <input id="zip" class="form-control" type="tel"  name="zip_code" pattern="^[0-9]{5}(?:-[0-9]{4})?$" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" data-placeholder="Enter Your Zip Code Here" >
-
+                                <input id="zip_code" class="form-control" type="tel"  name="zip_code" pattern="^[0-9]{5}(?:-[0-9]{4})?$" onkeyup="this.value=this.value.replace(/[^\d]/,'')" maxlength="5" data-placeholder="Enter Your Zip Code Here" >
                             </div>
                             <div class="col-auto form-btns text-center mb-0">
-                                <button class="btn form-btn mb-0" id="btnzip"  type="button" ><span class="btn-text">Get Started</span></button>
+                                <button class="btn form-btn mb-0" id="btn-zip"  type="button" ><span class="btn-text">Get Started</span></button>
                             </div>
                         </div>
                     </div>
@@ -108,24 +115,24 @@
 
             </fieldset>
 
+            <fieldset>
 
+                <legend hidden="true">project_type</legend>
 
-
-            <fieldset><legend hidden="true">project_type</legend>
                 <h4 class="form-question">What is the nature of your windows project?</h4>
 
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input id="st1" class="img-radio" type="radio" name="project_type" value="install" required>
+                            <input id="st1" class="img-radio" type="radio" name="project_type_radio" value="install" required>
                             <label class="radio-label" for="st1"><span>Install </span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="st2" class="img-radio" type="radio" name="project_type" value="replace" required>
+                            <input id="st2" class="img-radio" type="radio" name="project_type_radio" value="replace" required>
                             <label class="radio-label" for="st2"><span>Replace</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="st3" class="img-radio" type="radio" name="project_type" value="repair" required>
+                            <input id="st3" class="img-radio" type="radio" name="project_type_radio" value="repair" required>
                             <label class="radio-label" for="st3"><span>Repair</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
@@ -134,32 +141,32 @@
                 </div>
             </fieldset>
 
-
-
             <fieldset >
-                <legend hidden="true">material</legend>
+
+                <legend hidden="true">number_of_windows</legend>
+
                 <h3 class="form-question">How many windows are <br class="d-none d-md-block">involved in the project?</h3>
 
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input data-nav="num_windows" id="now01" type="radio" name="num_windows" value="10+" required>
+                            <input data-nav="num_windows" id="now01" type="radio" name="number_of_windows_radio" value="10+" required>
                             <label for="now01"><span>10+</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input data-nav="num_windows" id="now02" type="radio" name="num_windows" value="6-9" required>
+                            <input data-nav="num_windows" id="now02" type="radio" name="number_of_windows_radio" value="6-9" required>
                             <label for="now02"><span>6-9</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input data-nav="num_windows" id="now03" type="radio" name="num_windows" value="3-5" required>
+                            <input data-nav="num_windows" id="now03" type="radio" name="number_of_windows_radio" value="3-5" required>
                             <label for="now03"><span>3-5</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input data-nav="num_windows" id="now05" type="radio" name="num_windows" value="2" required>
+                            <input data-nav="num_windows" id="now05" type="radio" name="number_of_windows_radio" value="2" required>
                             <label for="now05"><span>2</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input data-nav="num_windows" id="now06" type="radio" name="num_windows" value="1" required>
+                            <input data-nav="num_windows" id="now06" type="radio" name="number_of_windows_radio" value="1" required>
                             <label for="now06"><span>1</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
@@ -168,30 +175,24 @@
                 </div>
             </fieldset>
 
+            <fieldset>
 
-
-
-
-
-
-
-            <fieldset><legend hidden="true">project_timeframe</legend>
+                <legend hidden="true">time_frame</legend>
 
                 <h4 class="form-question">How soon do you want to begin this project??</h4>
-
 
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn ">
-                            <input id="tf1" class="img-radio" type="radio" name="project_timeframe" value="immediately" required>
+                            <input id="tf1" class="img-radio" type="radio" name="time_frame_radio" value="immediately" required>
                             <label class="radio-label" for="tf1"><span>Immediately</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="tf2" class="img-radio" type="radio" name="project_timeframe" value="1_6_months" required>
+                            <input id="tf2" class="img-radio" type="radio" name="time_frame_radio" value="1_6_months" required>
                             <label class="radio-label" for="tf2"><span>1-6 months</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="tf3" class="img-radio" type="radio" name="project_timeframe" value="not_sure" required>
+                            <input id="tf3" class="img-radio" type="radio" name="time_frame_radio" value="not_sure" required>
                             <label class="radio-label" for="tf3"><span>Not sure</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
@@ -201,23 +202,24 @@
 
             </fieldset>
 
+            <fieldset>
 
-            <fieldset><legend hidden="true">homeowner</legend>
+                <legend hidden="true">home_ownership</legend>
 
                 <h4 class="form-question">Are you the homeowner?</h4>
 
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input id="oh1" class="img-radio" type="radio" name="homeowner" value="yes" required>
+                            <input id="oh1" class="img-radio" type="radio" name="home_ownership_radio" value="yes" required>
                             <label class="radio-label" for="oh1"><span>Yes, I am the homeowner</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="oh2" class="img-radio" type="radio" name="homeowner" value="authorized" required>
+                            <input id="oh2" class="img-radio" type="radio" name="home_ownership_radio" value="authorized" required>
                             <label class="radio-label" for="oh2"><span>No, but authorized to make changes	</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="oh3" class="img-radio" type="radio" name="homeowner" value="no" required>
+                            <input id="oh3" class="img-radio" type="radio" name="home_ownership_radio" value="no" required>
                             <label class="radio-label" for="oh3"><span>No, I am not the homeowner</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
@@ -227,10 +229,9 @@
 
             </fieldset>
 
+            <fieldset>
 
-
-
-            <fieldset><legend hidden="true">address</legend>
+                <legend hidden="true">address</legend>
 
                 <h4 class="form-question">Where will this project <br class="d-none d-md-block">take place?</h4>
 
@@ -238,32 +239,22 @@
                     <div class="form-group" id="street_address">
                         <label for="address" class="label">Street Address</label>
                         <input id="address" class="form-control" name="address" type="text" placeholder="Enter Street Address" required>
+                        <p class="address_loc mb-3" style="display: none;" id="add-change"><b><span class="street_span"></span> <span class="city_span"></span> <span class="state_span"></span> </b>
+                            <input type="hidden" id="address_short" value="">
                         <div class="form-error-message"> Please complete this field</div>
                     </div>
-                    <div class="form-group" >
-                        <label for="city" class="label">City</label>
-                        <input id="city" class="form-control" name="city" type="text"
-                               placeholder="City" required>
-                        <div class="form-error-message"> Please complete this field</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="zip-code" class="label">ZIP code</label>
-                        <input id="zip-code" class="form-control"  type="text"  placeholder="ZIP" >
-                        <div class="form-error-message"> Please complete this field</div>
-                    </div>
-                    <div class="zip-details">
-                        <span class="county">City</span>, <span class="state">State</span>
                     </div>
                 </div>
 
-
                 <div class="form-action mx-auto text-center">
-                    <button class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
+                    <button id="address-next" class="btn form-btn btn-next"  type="button" ><span class="btn-text">Next</span></button>
                 </div>
             </fieldset>
 
+            <fieldset>
 
-            <fieldset><legend hidden="true">name</legend>
+                <legend hidden="true">name</legend>
+
                 <h3 class="form-question">Who are these free quotes for?</h3>
 
                 <div class="form-cont">
@@ -285,16 +276,18 @@
                 </div>
             </fieldset>
 
-            <fieldset><legend hidden="true">email</legend>
+            <fieldset>
+
+                <legend hidden="true">email</legend>
+
                 <h3 class="form-question">Where should your free quotes<br class="d-none d-md-block"> be sent?</h3>
+
                 <div class="form-cont">
                     <div class="form-group">
                         <label for="emailadd">Email</label>
                         <input id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control"
                                type="email" name="email" placeholder="Email Address"  >
                         <div class="form-error-message">Please enter a valid email address</div>
-                        <label id="email-custom-error" class="form-error-message " for="email" >Please enter a valid email address.</label>
-
                     </div>
                 </div>
                 <div class="form-action mx-auto text-center">
@@ -302,7 +295,10 @@
                 </div>
             </fieldset>
 
-            <fieldset><legend hidden="true">Phone</legend>
+            <fieldset>
+
+                <legend hidden="true">Phone</legend>
+
                 <center>
                     <h3 class="form-question mb-2">You're almost finished!</h3>
                     <p class="form-desc">What's the best number to reach you at if you qualify?</p>
@@ -314,18 +310,13 @@
                         <input id="phone" class="form-control" type="tel"  name="phone"
                                pattern="\d?[\(]\d{3}[\)][\-]\d{3}[\-]\d{4}"  placeholder="Enter Phone Number">
                         <div class="form-error-message phone-valid-error">Please enter a valid phone.</div>
-                        <label id="phone-custom-error" class="form-error-message" for="phone">Please enter a valid phone number.</label>
                     </div>
-
-
 
                 </div>
 
                 <div class="form-action mx-auto text-center">
                     <button class="btn form-btn btn-next pulse"  type="button" id="form_submit" ><span class="btn-text">Continue</span></button>
                 </div>
-
-
 
                 <p class="tcpa text-centerex">
                     <label style="font-weight: normal;  font-size: 12px;"><input type="hidden" id="leadid_tcpa_disclosure"/>By clicking "continue," I authorize up to 4 home improvement services companies,their contractors and <a href="https://foreverhomehub.com/partners" target="_blank">partner companies</a> to contact me about home improvement offers by phone calls and SMS messages to the number I provided. I authorize that these marketing communications may be delivered to me using an automatic telephone dialing system or by prerecorded message. I understand that my consent is not a condition of purchase. I also have read and agree to the <a href="https://foreverhomehub.com/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://foreverhomehub.com/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
@@ -334,10 +325,14 @@
 
             </fieldset>
 
+            <div class="container">
+                <center>
+                    <img src="{{ asset('img/trusted.svg') }}" alt="trusted site" class="mt-2">
+                </center>
+            </div>
+
         </form>
     </section>
-
-
 </main>
 
 <section class="page-content">
@@ -345,7 +340,6 @@
 
         <h2 class="page-desc text-center">Why Use Forever Home Hub </h2>
         <p class="page-title text-center">Get multiple quotes quickly and without any pressure</p>
-
 
         <div class="row">
             <div class="col-sm-4 col-12 p-box">
@@ -370,7 +364,6 @@
             <div class="col-sm-4 col-12 p-box">
                 <div class="page-box">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="124" height="124" viewBox="0 0 57 57" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-
 
                         <path class="st0" d="M25.4,47.5v6.6h-3c-1.4,0-2.6-1.2-2.6-2.6v-3.6c0-0.2-0.1-0.4-0.3-0.4c-2.6-0.8-7.7-7.1-7.7-14.7
 		c0-5.9,4-13.8,13.7-16.2"/>
@@ -409,16 +402,13 @@
                         <line class="st0" x1="48.2" y1="14.6" x2="44.5" y2="10.9"/>
                     </svg>
 
-
                     <h3>Qualify in less <br class="d-none d-md-block">than a minute!</h3>
                     <p>It takes less than a minute and you can get up to 4 custom quotes from top contractors who specialize in your project .</p>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
-
 
 <section class="page-content bl">
     <div class="container">
@@ -429,7 +419,6 @@
         <div class="row">
             <div class="col-sm-4 col-12 p-box">
                 <div class="page-box">
-
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="124" height="124" viewBox="0 0 57 57" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
 
@@ -449,7 +438,6 @@
                         <line class="st0" x1="110.1" y1="3.9" x2="118.3" y2="3.9"/>
                         <line class="st0" x1="94" y1="14.6" x2="97.6" y2="10.9"/>
                         <line class="st0" x1="134.5" y1="14.6" x2="130.8" y2="10.9"/>
-
                         <path class="st1" d="M11.8,44.6l0-1.9c0-3.5,4.1-4.4,9.2-4.4c5.1,0,9.2,0.9,9.2,4.4l0,1.9"/>
                         <ellipse class="st1" cx="21" cy="29.6" rx="4.8" ry="5.7"/>
                         <path class="st0" d="M28.8,30.2h2.7c0.3,0,0.5,0.2,0.5,0.5v7c0,0.2,0.1,0.3,0.3,0.4c0.2,0.1,0.4,0,0.5-0.1l8-7.7
@@ -461,10 +449,7 @@
 							c0-1.1-0.8-2.2-2.6-2.2c-1.7,0-2.7,1.4-2.7,2.7c0,0.7,0.1,1,0.1,1.1l-4.1-0.1c-0.1-0.4-0.1-0.8-0.1-1.2c0-3.4,2.5-6.3,6.8-6.3
 							c4.7,0,7.1,2.8,7.1,5.8c0,2.3-1.1,3.9-2.8,5.3l-1.1,0.8c-1,0.8-1.7,1.5-1.7,2.8H35z M36.8,22.3c1.4,0,2.5,1.1,2.5,2.5
 							c0,1.4-1.1,2.5-2.5,2.5s-2.5-1.1-2.5-2.5C34.3,23.5,35.4,22.3,36.8,22.3z"/>
-
                     </svg>
-
-
 
                     <h3>Answer some questions</h3>
                     <p data-step="1">Answer a few simple questions regarding your new window requirements</p>
@@ -495,8 +480,6 @@
 
                     </svg>
 
-
-
                     <h3>Recieve <br class="d-none d-md-block">free quotes</h3>
                     <p data-step="2">Instantly receive up to 4 free, no obligation quotes from local window experts</p>
                 </div>
@@ -522,16 +505,11 @@
                     </svg>
                     <h3>Hire the <br class="d-none d-md-block">right pro</h3>
                     <p data-step="3">Compare quotes, message or call pros, and hire only when ready.</p>
-
                 </div>
             </div>
-
         </div>
-
-
     </div>
 </section>
-
 
 <section class="page-content imgbg windowbg">
     <div class="container">
@@ -548,21 +526,204 @@
     </div>
 </section>
 
-
 @include('partials/footer')
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
-
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 
 <!--[if lte IE 8]>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <![endif]-->
+
+@include('partials.funnel_scripts', ['vertical' => $vertical, 'page' => $page])
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script type="text/javascript">	$(document).ready(function() { hh.homepage(); });</script>
+<script>
 
-<script type="text/javascript" src="{{ asset('js/pop-power-company.js') }}"></script>
+    $("form").validate({
+        rules: {
+            zip_code: {
+                required: true,
+                digits: true,
+                minlength: 5,
+                maxlength: 5
+            },
+            email: {
+                required: true,
+                emailfull: true,
+            },
+            first_name: {
+                required: true,
+                minLengthNoSpaces: 2,
+                notNumber: true,
+                noSpace: true,
+            },
+            last_name: {
+                required: true,
+                minLengthNoSpaces: 2,
+                notNumber: true,
+                noSpace: true,
+            },
+            address: {
+                required: true,
+                minLengthNoSpaces: 5,
+                ContainsAtLeastOneDigit: true,
+                hasLettersAndSpaces: true,
+            },
+            phone: {
+                required: true,
+                phone_number: true,
+            },
+            state: {
+                required: true,
+                state: true
+            },
+            city: {
+                required: true
+            }
+        },
+        messages: validationMessages,
+        errorElement : 'span',
+        errorPlacement: function(error, element) {
+            $(element).closest('.form-group').children('.form-error-message').html(error).show();
+        },
+        showErrors: function(errorMap, errorList) {
+            this.defaultShowErrors();
+        }
+    });
+
+    (function(){
+
+        $(document).ready(function() {
+
+            $.sessionStartTime = new Date();
+
+            $('form').submit(function (e) {
+                var form = this;
+                e.preventDefault();
+
+                if (!$(form).validate().form()){
+                    return;
+                } else {
+                    let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
+                    submitLead(formData);
+                }
+                $('#form_submit').removeAttr('disabled');
+            });
+
+            const z=$("#zip_code"),zipPlaceholder=z.attr("data-placeholder")||"",animatePlaceholder=()=>{let e=0;z.prop("placeholder",""),timer=setInterval(()=>{0==z.val().length?(z.prop("placeholder",z.prop("placeholder")+zipPlaceholder[e]),e++,e==zipPlaceholder.length&&(clearInterval(timer),setTimeout(animatePlaceholder,3e3))):(clearInterval(timer),z.prop("placeholder",""))},100)};animatePlaceholder(),z.on("focus",()=>{z.prop("placeholder",""),clearInterval(timer)}),z.on("input focusout",()=>{z.val().length>0?(z.prop("placeholder",""),clearInterval(timer)): (clearInterval(timer),animatePlaceholder())});
+
+            var fieldset = $("form fieldset");
+            var totalStep = fieldset.length; // Without 1 it was doing 10 instead of 9
+            var current_step = 1;
+            var s = 1;
+            $('form fieldset').each(function () {
+                $(this).attr('data-step', s++);
+            });
+
+            $("#btn-zip").on("click", function () {
+                validateZip("main");
+            });
+
+            function goNext(ele) {
+                var next_step = true;
+                var parent_fieldset = ele.closest('fieldset');
+                current_step = fieldset.index(parent_fieldset);
+
+                // var result = $("form").valid();
+                var result = $("form").valid();
+
+                if (!result) {
+                    next_step = false;
+                }
+                if (next_step) {
+
+                    if(current_step === 7){
+                        (async function(){
+                            var emailValid = await emailIsValid();
+                            if(emailValid === false){
+                                return;
+                            }else{
+                                parent_fieldset.hide("slide", {direction: "left"},300, function() {
+
+                                    $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
+                                        ele.find('input,select').first().focus();
+                                        stepanimateFunnelsMain();
+                                    });
+                                })
+                            }
+                        })()
+                    }else if(current_step !==8 ){
+                        parent_fieldset.hide("slide", {direction: "left"},300, function() {
+
+                            $(fieldset[current_step + 1]).show("slide", { direction: "right" },300, function () {
+                                ele.find('input,select').first().focus();
+                                stepanimateFunnelsMain();
+                            });
+                        })
+                    }else{
+                        (async function(){
+                            var phoneValid = await phoneIsValid();
+                            if(phoneValid === false){
+                                return;
+                            }else{
+                                $('form').submit();
+                                $('#form_submit').attr('disabled', 'disabled');
+                            }
+                        })()
+                    }
+
+                }
+            }
+
+            $('#phone').on('input', function() {
+                if ($("#phone-custom-error").is(":visible"))
+                {
+                    $("#phone-custom-error").hide();
+                }
+            });
+
+            $(document).on('click', ".radio-next input[type=radio],.btn-next", function () {
+                goNext($(this));
+            });
+
+            $("#email").enterKey(function () {
+                goNext($(this));
+            })
+
+            $("#zip_code").enterKey(function () {
+                goNext($(this));
+            })
+
+            $('input[type=radio][name=project_type_radio]').click(function(){
+                $('#project_type').val($(this).val());
+            });
+
+            $('input[type=radio][name=number_of_windows_radio]').click(function(){
+                $('#number_of_windows').val($(this).val());
+            });
+
+            $('input[type=radio][name=time_frame_radio]').click(function(){
+                $('#time_frame').val($(this).val());
+            });
+
+            $('input[type=radio][name=home_ownership_radio]').click(function(){
+                $('#home_ownership').val($(this).val());
+            });
+            $('#email').on('input', function() {
+                if ($("#email-custom-error").is(":visible"))
+                {
+                    $("#email-custom-error").hide();
+                }
+            });
+
+
+        });
+
+    })();
+
+</script>
 </body>
 </html>

@@ -283,6 +283,12 @@
             formData['roof_type'] = $('#roofing_type').val();
             formData['time_frame'] = $('#time_frame').val();
             formData['project_type'] = $('#project_type').val();
+        } else if(vertical === 'windows'){
+            formData['lp_campaign_id'] = "19638";
+            formData['lp_supplier_id'] = "45425";
+            formData['lp_key'] = "pqephnvmzfpvy0";
+            formData['time_frame'] = $('#time_frame').val();
+            formData['project_type'] = $('#project_type').val();
         }
 
         if(isTestLead(formData)){
