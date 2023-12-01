@@ -100,16 +100,18 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
     <input type="hidden" id="number_of_windows" name="number_of_windows" value="3 to 5 windows">
     <input type="hidden" name="home_ownership" id="home_ownership" value="Yes">
     <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
-    <div id="hero-header-progress-wrapper">
-        <div id="hero-header-progress">
-            <div class="circle-progress" data-progress="0"><span class="progress-left"><span class="progress-bar"></span></span><span class="progress-right"><span class="progress-bar"></span></span>
-                <div class="progress-value">
-                    <div class="progress-content"><span class="percent">Start</span>
-                        <br><span class="complete"><i class="arrowdown"></i></span></div>
-                </div>
+    <section id="progress">
+        <div class="progress-value">
+            <div class="progress-content">
+                <div class="percent"><span>Start</span><i style="display: none;">%</i></div>
+                <div class="complete"><i class="progress-arow"></i></div>
             </div>
         </div>
-    </div>
+        <svg class="circ" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+            <circle cx="16" cy="16" r="15.9155" class="progress-bar_background"/>
+            <circle cx="16" cy="16" r="15.9155" class="progress-bar_progress js-progress-bar" style="stroke-dashoffset: 100px;"/>
+        </svg>
+    </section>
     <div class="container-fluid">
         <fieldset id="zip-container" data-step="1" class="fadeIn">
             <legend style="visibility: hidden; position: absolute;">Zip Code</legend>
@@ -136,12 +138,12 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
             <div class="container" style="max-width:500px;">
                 <div class="form-group">
                     <label style="visibility: hidden; position: absolute;" for="firstName">FirstName</label>
-                    <input id="firstName" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="first_name" placeholder="First Name" required autofocus tabindex="1">
+                    <input id="first_name" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="first_name" placeholder="First Name" required autofocus tabindex="1">
                     <div class="form-error-message">Don't forget to tell us your first name.</div>
                 </div>
                 <div class="form-group">
                     <label style="visibility: hidden; position: absolute;" for="lastName">Last Name</label>
-                    <input id="lastName" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="last_name" placeholder="Last Name" required tabindex="2">
+                    <input id="last_name" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="last_name" placeholder="Last Name" required tabindex="2">
                     <div class="form-error-message">Don't forget to tell us your last name.</div>
                 </div>
                 <div class="form-btns">

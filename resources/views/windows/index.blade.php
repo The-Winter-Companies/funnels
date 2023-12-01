@@ -288,6 +288,13 @@ $page = 'main';
                         <input id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control"
                                type="email" name="email" placeholder="Email Address"  >
                         <div class="form-error-message">Please enter a valid email address</div>
+                        <label id="email-custom-error" class="mt-3" for="email" style="    display:none; width: 100%;
+     color: red;
+    font-size: 12px;
+    transform: translateY(-10px);
+    background: #ffffff;
+    padding: 1px;text-align: center;
+    font-weight: 600;">Please enter a valid email address.</label>
                     </div>
                 </div>
                 <div class="form-action mx-auto text-center">
@@ -310,6 +317,13 @@ $page = 'main';
                         <input id="phone" class="form-control" type="tel"  name="phone"
                                pattern="\d?[\(]\d{3}[\)][\-]\d{3}[\-]\d{4}"  placeholder="Enter Phone Number">
                         <div class="form-error-message phone-valid-error">Please enter a valid phone.</div>
+                        <label id="phone-custom-error" class="mt-3" for="phone" style="    display:none; width: 100%;
+     color: red;
+    font-size: 12px;
+    transform: translateY(-10px);
+    background: #fff;
+    padding: 1px;text-align: center;
+    font-weight: 600;">Please enter a valid email address.</label>
                     </div>
 
                 </div>
