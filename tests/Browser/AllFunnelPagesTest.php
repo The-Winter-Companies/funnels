@@ -465,6 +465,7 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->click('#form_submit')
                 ->pause(2000)
                 ->assertPathIs('/thank-you');
+
         });
 
         // WINDOWS F1
