@@ -124,11 +124,11 @@ $page = 'o7';
                 <div class="form-group radio-next">
                     <div class="radio-btn">
                         <input id="st2" class="img-radio" type="radio" name="project_type_radio" value="replace" required>
-                        <label class="radio-label" for="st2"><span>Replace</span></label>
+                        <label class="radio-label" for="st2" id="replace-label"><span>Replace</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="st3" class="img-radio" type="radio" name="project_type_radio" value="repair" required>
-                        <label class="radio-label" for="st3"><span>Repair</span></label>
+                        <label class="radio-label" for="st3" id="repair-label"><span>Repair</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>
@@ -151,23 +151,23 @@ $page = 'o7';
                 <div class="form-group radio-next">
                     <div class="radio-btn">
                         <input data-nav="num_windows" id="now01" type="radio" name="number_of_windows_radio" value="10+" required>
-                        <label for="now01"><span>10+</span></label>
+                        <label for="now01" id="nowr_10"><span>10+</span></label>
                     </div>
                     <div class="radio-btn">
                         <input data-nav="num_windows" id="now02" type="radio" name="number_of_windows_radio" value="6-9" required>
-                        <label for="now02"><span>6-9</span></label>
+                        <label for="now02" id="nowr_6-9"><span>6-9</span></label>
                     </div>
                     <div class="radio-btn">
                         <input data-nav="num_windows" id="now03" type="radio" name="number_of_windows_radio" value="3-5" required>
-                        <label for="now03"><span>3-5</span></label>
+                        <label for="now03" id="nowr_3-5"><span>3-5</span></label>
                     </div>
                     <div class="radio-btn">
                         <input data-nav="num_windows" id="now05" type="radio" name="number_of_windows_radio" value="2" required>
-                        <label for="now05"><span>2</span></label>
+                        <label for="now05" id="nowr_2"><span>2</span></label>
                     </div>
                     <div class="radio-btn">
                         <input data-nav="num_windows" id="now06" type="radio" name="number_of_windows_radio" value="1" required>
-                        <label for="now06"><span>1</span></label>
+                        <label for="now06" id="nowr_1"><span>1</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>
@@ -190,15 +190,15 @@ $page = 'o7';
                 <div class="form-group radio-next">
                     <div class="radio-btn ">
                         <input id="tf1" class="img-radio" type="radio" name="time_frame_radio" value="immediately" required>
-                        <label class="radio-label" for="tf1"><span>Immediately</span></label>
+                        <label class="radio-label" for="tf1" id="tfr_immediately"><span>Immediately</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="tf2" class="img-radio" type="radio" name="time_frame_radio" value="1_6_months" required>
-                        <label class="radio-label" for="tf2"><span>1-6 months</span></label>
+                        <label class="radio-label" for="tf2" id="tfr_1-6"><span>1-6 months</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="tf3" class="img-radio" type="radio" name="time_frame_radio" value="not_sure" required>
-                        <label class="radio-label" for="tf3"><span>Not sure</span></label>
+                        <label class="radio-label" for="tf3" id="tfr_not-sure"><span>Not sure</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>
@@ -221,15 +221,15 @@ $page = 'o7';
                 <div class="form-group radio-next">
                     <div class="radio-btn">
                         <input id="oh1" class="img-radio" type="radio" name="home_ownership_radio" value="yes" required>
-                        <label class="radio-label" for="oh1"><span>Yes I do</span></label>
+                        <label class="radio-label" for="oh1" id="hor_yes"><span>Yes I do</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="oh2" class="img-radio" type="radio" name="home_ownership_radio" value="authorized" required>
-                        <label class="radio-label" for="oh2"><span>No, but I'm allowed to make changes	</span></label>
+                        <label class="radio-label" for="oh2" id="hor_no-but-authorized"><span>No, but I'm allowed to make changes	</span></label>
                     </div>
                     <div class="radio-btn">
                         <input id="oh3" class="img-radio" type="radio" name="home_ownership_radio" value="no" required>
-                        <label class="radio-label" for="oh3"><span>No I don't</span></label>
+                        <label class="radio-label" for="oh3" id="hor_no"><span>No I don't</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>

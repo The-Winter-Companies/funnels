@@ -429,6 +429,102 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->assertPathIs('/thank-you');
         });
 
+        // WINDOWS MAIN
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/windows/?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->assertSee('Enter your zip code')
+                ->type("zip_code", "55442")
+                ->click("#btn-zip")
+                ->pause(2000)
+                ->click('#replace-label')
+                ->pause(2000)
+                ->click('#nowr_6-9')
+                ->pause(2000)
+                ->click('#tfr_1-6')
+                ->pause(2000)
+                ->click('#hor_no-but-authorized')
+                ->pause(2000)
+                ->assertSee('Where will this project')
+                ->type("address", "123 Main St")
+                ->click("#address-next")
+                ->pause(2000)
+                ->assertSee('Who are these free quotes for?')
+                ->type("#first_name", 'test')
+                ->type("#last_name", 'test')
+                ->click("#btn-name")
+                ->pause(2000)
+                ->waitForText('Where should your free quotes')
+                ->assertSee('Where should your free quotes')
+                ->type("#email", 'test@fail.com')
+                ->click('#btn-email')
+                ->pause(2000)
+                ->waitForText('What\'s the best number to reach you at if you qualify?')
+                ->assertSee('What\'s the best number to reach you at if you qualify?')
+                ->type("#phone", '1111111111')
+                ->click('#form_submit')
+                ->pause(2000)
+                ->assertPathIs('/thank-you');
+        });
+
+        // WINDOWS F1
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/windows/f1?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->assertSee('Where would this project take place?')
+                ->type("zip_code", "55442")
+                ->click("#btn-zip")
+                ->pause(2000)
+                ->assertSee('Who is this project for?')
+                ->type("#first_name", 'test')
+                ->type("#last_name", 'test')
+                ->click("#btn-name")
+                ->pause(2000)
+                ->click('#repair-label')
+                ->pause(2000)
+                ->click('#nowr_6-9')
+                ->pause(2000)
+                ->click('#tfr_1-6')
+                ->pause(2000)
+                ->click('#hor_no-but-authorized')
+                ->pause(2000)
+                ->assertSee('Where will this project take place?')
+                ->type("address", "123 Main St")
+                ->click("#address-next")
+                ->pause(2000)
+                ->assertSee('Congratulations!')
+                ->type("#phone", '1111111111')
+                ->type("#email", 'test@fail.com')
+                ->click('#form_submit')
+                ->assertPathIs('/thank-you');
+        });
+
+        // WINDOWS O7
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/windows/o7?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->assertSee('What is your zip code?')
+                ->type("zip_code", "55442")
+                ->click("#btn-zip")
+                ->pause(2000)
+                ->click('#replace-label')
+                ->pause(2000)
+                ->click('#nowr_6-9')
+                ->pause(2000)
+                ->click('#tfr_1-6')
+                ->pause(2000)
+                ->click('#hor_no-but-authorized')
+                ->pause(2000)
+                ->assertSee('Final Step!')
+                ->type("#first_name", 'test')
+                ->type("#last_name", 'test')
+                ->type("#email", 'test@fail.com')
+                ->type("#phone", '1111111111')
+                ->type("address", "123 Main St")
+                ->click('#form_submit')
+                ->assertPathIs('/thank-you');
+        });
+
         // Astrology Funnel
         $this->browse(function (Browser $browser) {
 

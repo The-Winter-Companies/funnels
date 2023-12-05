@@ -136,16 +136,16 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
             <div class="container" style="max-width:500px;">
                 <div class="form-group">
                     <label style="visibility: hidden; position: absolute;" for="firstName">FirstName</label>
-                    <input id="firstName" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="first_name" placeholder="First Name" required autofocus tabindex="1">
+                    <input id="first_name" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="first_name" placeholder="First Name" required autofocus tabindex="1">
                     <div class="form-error-message">Don't forget to tell us your first name.</div>
                 </div>
                 <div class="form-group">
                     <label style="visibility: hidden; position: absolute;" for="lastName">Last Name</label>
-                    <input id="lastName" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="last_name" placeholder="Last Name" required tabindex="2">
+                    <input id="last_name" pattern="[a-zA-Z0-9]+" minlength="3" class="form-control" type="text" name="last_name" placeholder="Last Name" required tabindex="2">
                     <div class="form-error-message">Don't forget to tell us your last name.</div>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-name"><span class="btn-text">Continue</span>
                     </button>
                     <center>
                         <div class="secure-text">
@@ -163,10 +163,10 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     <div class="form-group parent-error">
                         <div class="radio-colored">
                             <input id="repair-repairno" type="radio" name="project_type_radio" value="Replace Unit" checked="checked" data-required="nonempty">
-                            <label for="repair-repairno">Replace</label> <span></span></div>
+                            <label for="repair-repairno" id="replace-label">Replace</label> <span></span></div>
                         <div class="radio-colored">
                             <input id="repair-repairyes" type="radio" name="project_type_radio" value="Repair" data-required="nonempty">
-                            <label for="repair-repairyes">Repair</label> <span></span></div>
+                            <label for="repair-repairyes"id="repair-label">Repair</label> <span></span></div>
                         <div class="form-error-message">Pros need this information to generate a quote.</div>
                     </div>
                 </div>
@@ -184,23 +184,23 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     <ul class="step__options step__options-vertical step__options-vertical--amount row no-gutters" style="list-style: none;">
                         <li class="col">
                             <input id="10windows" class="img-radio" type="radio" name="number_of_windows_radio" value="10+ windows" required>
-                            <label class="radio-label" for="10windows"><span>10+</span></label>
+                            <label class="radio-label" for="10windows" id="nowr_10"><span>10+</span></label>
                         </li>
                         <li class="col">
                             <input id="69windows" class="img-radio" type="radio" name="number_of_windows_radio" value="6 to 9 windows" required>
-                            <label class="radio-label" for="69windows"><span>6-9</span></label>
+                            <label class="radio-label" for="69windows" id="nowr_6-9"><span>6-9</span></label>
                         </li>
                         <li class="col">
                             <input id="35windows" class="img-radio" type="radio" name="number_of_windows_radio" value="3 to 5 windows" checked="checked" required>
-                            <label class="radio-label" for="35windows"><span>3-5</span></label>
+                            <label class="radio-label" for="35windows" id="nowr_3-5"><span>3-5</span></label>
                         </li>
                         <li class="col">
                             <input id="2windows" class="img-radio" type="radio" name="number_of_windows_radio" value="2 windows" required>
-                            <label class="radio-label" for="2windows"><span>2</span></label>
+                            <label class="radio-label" for="2windows" id="nowr_2"><span>2</span></label>
                         </li>
                         <li class="col">
                             <input id="1window" class="img-radio" type="radio" name="number_of_windows_radio" value="1 window" required>
-                            <label class="radio-label" for="1window"><span>1</span></label>
+                            <label class="radio-label" for="1window" id="nowr_1"><span>1</span></label>
                         </li>
                     </ul>
                     <div class="form-error-message">Pros need this information to generate a quote.</div>
@@ -219,15 +219,15 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     <ul class="step__options step__options-vertical step__options-vertical--amount row no-gutters" style="list-style: none;">
                         <li class="col-md-4 col-12">
                             <input id="t1" class="img-radio" type="radio" name="time_frame_radio" value="Immediately" checked="checked" required>
-                            <label class="radio-label" for="t1"><span>Immediately</span></label>
+                            <label class="radio-label" for="t1" id="tfr_immediately"><span>Immediately</span></label>
                         </li>
                         <li class="col-md-4 col-12">
                             <input id="t2" class="img-radio" type="radio" name="time_frame_radio" value="Within 6 months" required>
-                            <label class="radio-label" for="t2"><span>Within 6 months</span></label>
+                            <label class="radio-label" for="t2" id="tfr_1-6"><span>Within 6 months</span></label>
                         </li>
                         <li class="col-md-4 col-12">
                             <input id="t3" class="img-radio" type="radio" name="time_frame_radio" value="Not sure" required>
-                            <label class="radio-label" for="t3"><span>Not sure</span></label>
+                            <label class="radio-label" for="t3" id="tfr_not-sure"><span>Not sure</span></label>
                         </li>
                     </ul>
                     <div class="form-error-message col-12">Pros need this information to generate a quote.</div>
@@ -246,15 +246,15 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     <ul class="step__options step__options-vertical step__options-vertical--amount row no-gutters" style="list-style: none;">
                         <li class="col-12 mb-0">
                             <input id="h1" class="img-radio" type="radio" name="home_ownership_radio" value="Yes" checked="checked" required>
-                            <label class="radio-label" for="h1"><span>Yes I do</span></label>
+                            <label class="radio-label" for="h1" id="hor_yes"><span>Yes I do</span></label>
                         </li>
                         <li class="col-12 mb-0">
                             <input id="h2" class="img-radio" type="radio" name="home_ownership_radio" value="No, but im allowed to make changes" required>
-                            <label class="radio-label" for="h2"><span>No, but im allowed to make changes</span></label>
+                            <label class="radio-label" for="h2" id="hor_no-but-authorized"><span>No, but im allowed to make changes</span></label>
                         </li>
                         <li class="col-12 mb-0">
                             <input id="h3" class="img-radio" type="radio" name="home_ownership_radio" value="No" required>
-                            <label class="radio-label" for="h3"><span>No I don't</span></label>
+                            <label class="radio-label" for="h3" id="hor_no"><span>No I don't</span></label>
                         </li>
                     </ul>
                     <div class="form-error-message col-12">Pros need this information to generate a quote.</div>
@@ -285,7 +285,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     </div>
                 </div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span>
+                    <button class="btn btn-primary btn-next" type="button" id="address-next"><span class="btn-text">Continue</span>
                     </button>
                 </div>
             </div>
