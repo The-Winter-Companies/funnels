@@ -55,7 +55,6 @@ class AllFunnelPagesTest extends DuskTestCase
         //test failing winterbot and LP submit
         //check we have trusted form and jornaya scripts on all pages and rollbar
         //Do one for the thank you page clicking on those links too to make sure they pass through the offers
-
         // Roofing F1 test
 
         $this->browse(function (Browser $browser) {
@@ -429,8 +428,48 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->pause(2000)
                 ->assertPathIs('/thank-you');
         });
+
+        // Astrology Funnel
+        $this->browse(function (Browser $browser) {
+
+            $testUrl = 'https://signup.astrologyspark.com';
+            $environment = env('APP_ENV');
+            if(!empty($environment)){
+                if($environment == 'local'){
+                    $testUrl = 'http://signup.astrologyspark.local';
+                }else if($environment == 'staging'){
+                    $testUrl = 'https://staging-signup.astrologyspark.com';
+                }
+            }
+
+            $browser
+                ->visit($testUrl)
+                ->pause(1000)
+                ->assertSee('SELECT YOUR SIGN')
+                ->click("#cancer-sign")
+                ->pause(1000)
+                ->assertSee('WHERE SHOULD WE SEND YOUR FREE HOROSCOPE?')
+                ->type("#email", 'test@test.com')
+                ->click('#email-next')
+                ->pause(1000)
+                ->assertSee('BIRTH DETAILS')
+                ->click("#gender")
+                ->click('#gender > option:nth-child(2)')
+                ->pause(1000)
+                ->type("#first_name", 'test')
+                ->type("#last_name", 'test')
+                ->click('#bday-year')
+                ->click('#bday-year > option:nth-child(3)')
+                ->click('#birth-next')
+                ->pause(1000)
+                ->click("#relationship_status")
+                ->click('#relationship_status > option:nth-child(4)')
+                ->click('#employment_status')
+                ->click('#employment_status > option:nth-child(6)')
+                ->click('#greatest_wish')
+                ->click('#greatest_wish > option:nth-child(4)')
+                ->pause(1000)
+                ->click('#form_submit');
+        });
     }
-
-
-
 }

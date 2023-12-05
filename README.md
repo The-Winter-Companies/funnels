@@ -14,7 +14,7 @@ When developing on localhost, make sure that Winterbot is running and accessbile
 http://localhost
 
 Pages Example:
-http://127.0.0.1:8000/solar/f1?ef_aff_id=test&ef_tx_id=test
+http://quotes.foreverhomehub.local/solar/f1?ef_aff_id=test&ef_tx_id=test&ef_offer_id=z&dummyTest=1
 
 When making changes to PHP files -
 composer dump-autoload
