@@ -5,7 +5,6 @@
             <li><a href="https://astrologyspark.com/privacy-policy/">Privacy Policy</a></li>
             <li><a href="https://astrologyspark.com/terms-and-conditions/">Terms & Conditions</a></li>
             <li><a href="https://astrologyspark.com/contact-us/">Contact</a></li>
-            <li><a href="https://astrologyspark.com/email-preferences/">Email Preferences</a></li>
             <li><a href="https://astrologyspark.com/please-do-not-sell-my-personal-information/">Do Not Sell My Personal Information</a></li>
         </ul>
 
