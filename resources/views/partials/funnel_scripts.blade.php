@@ -16,59 +16,80 @@
 
     "use strict";
     $.token = $.makeid(8);
+    $.ebook = getUrlParameter('ebook');
 
     /**
      *
      * @param formData
+     * @param vertical
      */
-    function submitLead(formData){
+    function submitLead(formData, vertical){
         stl(formData);
         let lpResult = false;
-        let winterbotResult = submitToWinterbot(formData);
+        let winterbotResult = submitToWinterbot(formData, vertical);
 
-        if(winterbotResult === false && isTestLead(formData) === false) {
-            lpResult = submitToLP(formData);
-            if(lpResult === true){
-                Rollbar.warning('WARNING: Failed to submit the lead through Winterbot, but sent successfully directly to LP.',
-                    {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
-                );
-            } else {
-                Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! User stuck on page.',
-                    {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
-                );
+        if(vertical !== 'astrology'){
+            if(winterbotResult === false && isTestLead(formData) === false) {
+                lpResult = submitToLP(formData);
+                if(lpResult === true){
+                    Rollbar.warning('WARNING: Failed to submit the lead through Winterbot, but sent successfully directly to LP.',
+                        {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
+                    );
+                } else {
+                    Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! User stuck on page.',
+                        {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
+                    );
+                }
             }
-        }
-
-        if(winterbotResult || lpResult) {
-            window.location.replace(getThankYouPageUrl('{{$vertical}}'));
-        } else {
-            alert("There was an issue, please try again or contact us at info@foreverhomehub.com");
+            if(winterbotResult || lpResult) {
+                window.location.replace(getThankYouPageUrl('{{$vertical}}'));
+            } else {
+                alert("There was an issue, please try again or contact us at info@foreverhomehub.com");
+            }
         }
     }
 
     /**
      * Submits data to Winterbot
      * @param formData
+     * @param vertical
      * @returns {boolean}
      */
-    function submitToWinterbot(formData){
+    function submitToWinterbot(formData, vertical){
+        let asyncRequest = false;
         let result = false;
+        if(vertical === 'astrology'){
+            asyncRequest = true;
+        }
         $.ajax({
             type: 'POST',
             url: '{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}/ingest.php',
             data: formData,
-            async: false,
+            async: asyncRequest,
             dataType: "text",
             success: function (response) {
                 response = JSON.parse(response);
-                if(response.status === 200){
-                    result = true;
+                if(vertical === 'astrology'){
+                    if(response.result === true && (formData['currentStep'] == formData['totalSteps'])){
+                        let append = "";
+                        if(formData['ebook'] === true || formData['ebook'] === 1  || formData['ebook'] === "1" ){
+                            append = "&ebook=1";
+                        }
+                        location.href = "https://astrologyspark.com/thank-you?sign="+formData['horoscope']+"&uid="+response.uniqueId+append;
+                    }
                 } else {
-                    result = false;
-                    Rollbar.error('Winterbot Submit - Error', {formData: formData, formSubmitResponse: response});
+                    if(response.status === 200){
+                        result = true;
+                    } else {
+                        result = false;
+                        Rollbar.error('Winterbot Submit - Error', {formData: formData, formSubmitResponse: response});
+                    }
                 }
             }, error: function (jqXHR, textStatus, errorThrown) {
                 Rollbar.error('Winterbot - AJAX error: ' + textStatus + ', ' + errorThrown, {jqXHR: jqXHR, textStatus: textStatus, errorThrown: errorThrown, formData: formData});
+                if(vertical === 'astrology'){
+                    alert("There was an issue, please try again or contact us at info@astrologyspark.com");
+                }
                 result = false;
             }
         });
@@ -230,21 +251,25 @@
         var formData = getAllInputFieldsAsObject();
 
         formData['vertical'] = vertical;
-        formData['s1'] = getUrlParameter('s1');
-        formData['s2'] = getUrlParameter('s2');
-        formData['s3'] = getUrlParameter('s3');
-        formData['s4'] = getUrlParameter('s4');
-        formData['s5'] = getUrlParameter('s5');
-        formData['ef_aff_id'] = getUrlParameter('ef_aff_id');
-        formData['ef_tx_id'] = getUrlParameter('ef_tx_id');
-        formData['ef_aid'] = getUrlParameter('ef_aid');
-        formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
-        formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
+        if(vertical !== 'astrology'){
+            formData['s1'] = getUrlParameter('s1');
+            formData['s2'] = getUrlParameter('s2');
+            formData['s3'] = getUrlParameter('s3');
+            formData['s4'] = getUrlParameter('s4');
+            formData['s5'] = getUrlParameter('s5');
+            formData['ef_aff_id'] = getUrlParameter('ef_aff_id');
+            formData['ef_tx_id'] = getUrlParameter('ef_tx_id');
+            formData['ef_aid'] = getUrlParameter('ef_aid');
+            formData['ef_adv_event_id'] = getUrlParameter('ef_adv_event_id');
+            formData['ef_offer_id'] = getUrlParameter('ef_offer_id');
+            formData['phone'] = stripPhoneNumber($('#phone').val());
+            formData['complete'] = 1;
+            formData['home_owner'] = "Yes";
+        }
         formData['trustedform_cert_url'] = $("input[name='xxTrustedFormToken']").val();
         formData['jornaya_leadid'] = $('#leadid_token').val();
         formData['user_agent'] = window.navigator.userAgent;
         formData['landing_page_url'] = window.location.href;
-        formData['phone'] = stripPhoneNumber($('#phone').val());
         formData['session_length'] = finalSessionLength();
 
         if (formData['landing_page_url'].includes('127.0.0.1') || formData['landing_page_url'].includes('localhost')) {
@@ -254,10 +279,8 @@
         formData['url'] = window.location.href;
         formData['getParams'] = getURLParams();
         formData['lead'] = 1;
-        formData['complete'] = 1;
         formData['token'] = $.token;
         formData['healthchecks_slug'] = vertical + '-' + pageKey;
-        formData['home_owner'] = "Yes";
 
         if(vertical === 'solar'){
             formData['lp_campaign_id'] = "17604";
@@ -283,6 +306,12 @@
             formData['roof_type'] = $('#roofing_type').val();
             formData['time_frame'] = $('#time_frame').val();
             formData['project_type'] = $('#project_type').val();
+        } else if(vertical === 'astrology'){
+            formData['email_address'] = $('#email').val();
+            formData['ef_tx_id'] = $('#ef_tx_id').val();
+            formData['currentStep'] = $('form fieldset:visible').data('step');
+            formData['totalSteps'] = $('form fieldset').length;
+            formData['ebook'] = $.ebook;
         }
 
         if(isTestLead(formData)){
@@ -333,7 +362,7 @@
         populateFormWithDummyData();
 
         let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
-        submitLead(formData);
+        submitLead(formData, '{{$vertical}}');
     }
 
     @if(!empty($_GET['dummyTest']) && ($_GET['dummyTest'] == 'true' || $_GET['dummyTest'] == 1))

@@ -94,17 +94,10 @@ session_start();
 <main>
 
     <form id="horoscopeform" class="container">
-        <input id="xxTrustedFormCertUrl" style="display:none;" type="text"  name="xxTrustedFormCertUrl">
-        <input id="ip_address" style="display:none;" type="text"  name="ip_address">
-        <input id="ip_city" style="display:none;" type="text"  name="ip_city">
-        <input id="ip_country" style="display:none;" type="text"  name="ip_country">
-        <input id="ip_loc" style="display:none;" type="text"  name="ip_loc">
-        <input id="ip_org" style="display:none;" type="text"  name="ip_org">
-        <input id="ip_postal" style="display:none;" type="text"  name="ip_postal">
-        <input id="ip_region" style="display:none;" type="text"  name="ip_region">
-        <input id="ip_timezone" style="display:none;" type="text"  name="ip_timezone">
+
+        @include('partials.hidden-inputs')
+
         <input id="ebook" style="display:none;" type="text"  name="ebook">
-        <input id="ef_tx_id" style="display:none;" type="text"  name="ef_tx_id">
 
         <fieldset><legend style="visibility:hidden;" hidden="true">Zodiac Sign</legend>
 
@@ -725,57 +718,16 @@ session_start();
                 $("#bday-day").html(day_options);
             });
 
-
             $('form').submit(function (e) {
                 var form = this;
                 e.preventDefault();
 
-                var currentStep = $('fieldset:visible').attr('data-step');
-
-                // prepare form for lead post
-
-                var formdata = $(form).serializeArray().reduce(function (m, o) {
-                    m[o.name] = o.value;
-                    return m;
-                }, {});
-
-                formdata['email_address'] = $('#email').val();
-                formdata['ef_tx_id'] = $('#ef_tx_id').val();
-                formdata['lead'] = "true";
-                formdata['vertical'] = "astrology";
-                formdata['token'] = token;
-
-                formdata['currentStep'] = currentStep;
-                formdata['totalSteps'] = totalStep;
-                formdata['getParams'] = getUrlVars();
-                formdata['url'] = window.location.href;
-
-                window.formdata = formdata;
-
-                $.ajax({
-                    type: 'POST',
-                    url: '<?php echo (env("WINTERBOT_LEAD_SUBMIT_URL")); ?>/ingest.php',
-                    data: formdata,
-                    //async: false,
-                    dataType: "text",
-                    success: function (data) {
-                        var result = JSON.parse(data);
-
-                        if(result.result === true && (currentStep == totalStep)){
-
-                            var ebook = window.formdata['ebook'];
-                            if(ebook === true || ebook === 1  || ebook === "1" ) {
-                                var append = "&ebook=1";
-                            } else {
-                                var append = "";
-                            }
-
-                            location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
-                        }
-                    }, error: function(data) {
-                        alert("There was an issue, please try again or contact us at info@astrologyspark.com");
-                    }
-                });
+                if (!$(form).validate().form()){
+                    return;
+                } else {
+                    let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
+                    submitLead(formData, '{{$vertical}}');
+                }
             });
 
             $("#ebook").val(getUrlParameter('ebook'));
