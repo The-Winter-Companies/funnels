@@ -90,10 +90,10 @@
             success: function (data) {
                 // Handle success if needed
             },
-            error: function (data) {
-                var errorMessage = "Lead Backup(STL) - Ajax Error : " + data;
-                // Send error to Rollbar
-                Rollbar.error(errorMessage, {data : data});
+            error: function (xhr, status, error) {
+                var errorMessage = "Lead Backup(STl) error : [Status] :" + status + " [Error] : " + error;
+
+                Rollbar.error(errorMessage);
             }
         });
     }
