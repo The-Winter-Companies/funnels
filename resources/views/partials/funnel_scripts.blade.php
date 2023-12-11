@@ -90,18 +90,10 @@
             success: function (data) {
                 // Handle success if needed
             },
-            error: function (jqXHR, textStatus, errorThrown) {
-                var errorDetails = {
-                    url: submitUrl,
-                    status: jqXHR.status,
-                    error: errorThrown,
-                    formData: formData
-                };
-
-                var errorMessage = 'Lead Backup (STL) - AJAX error: ' + textStatus + ', ' + errorThrown;
-
-                // Send error details to Rollbar
-                Rollbar.error(errorMessage, { errorDetails: errorDetails });
+            error: function (data) {
+                var errorMessage = "Lead Backup(STL) - Ajax Error : " + data;
+                // Send error to Rollbar
+                Rollbar.error(errorMessage, {data : data});
             }
         });
     }
