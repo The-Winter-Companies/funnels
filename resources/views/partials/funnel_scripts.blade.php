@@ -91,7 +91,7 @@
                 // Handle success if needed
             },
             error: function (xhr, status, error) {
-                var errorMessage = "Lead Backup(STl) error : [Status] :" + status + " [Error] : " + error;
+                var errorMessage = "Lead Backup(STL) Ajax Error - [Status] : " + status + " [Error] : " + error;
 
                 Rollbar.error(errorMessage);
             }
