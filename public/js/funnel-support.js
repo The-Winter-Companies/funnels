@@ -160,7 +160,11 @@ function validateZip(page){
         }
 
         function zipValidationError() {
-            $(".zip_error").text("Please enter a valid zip code. (i.e. 90210)").fadeIn().css("display", "inline-block").css("color", "red");
+            var textCss = "red";
+            if(page === 'main'){
+                textCss = "white";
+            }
+            $(".zip_error").text("Please enter a valid zip code. (i.e. 90210)").fadeIn().css("display", "inline-block").css("color", textCss);
             $('#btn-zip .btn-text').text('Get Started');
             $(".zip_box").addClass('fail')
         }
