@@ -33,16 +33,14 @@
                     {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
                 );
             } else {
-                Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! User stuck on page.',
+                Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! Inspect urgently !',
                     {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
                 );
             }
         }
 
-        if(winterbotResult || lpResult) {
+        if((winterbotResult || lpResult) || (!winterbotResult && !lpResult)) {
             window.location.replace(getThankYouPageUrl('{{$vertical}}'));
-        } else {
-            alert("There was an issue, please try again or contact us at info@foreverhomehub.com");
         }
     }
 
