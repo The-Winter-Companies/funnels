@@ -361,13 +361,49 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
 
     $(document).ready(function() {
 
+        document.getElementById('email').addEventListener('blur', function() {
+            console.log('entered blur');
+            const email = $('#email').val();
+            const ipAddress = $('#ip_address').val();
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailPattern.test(email)) {
+                console.log('email is ok');
+                validateEmail(email, ipAddress)
+                    .then((isValid) => {
+                        if(isValid === true){
+                            $.isEmailValid = true;
+                        }
+                        // Handle the result if needed
+                        console.log('Email validation result:', isValid);
+                    })
+                    .catch((error) => {
+                        $.isEmailValid = false;
+                        // Handle errors if any
+                        console.error('Validation error:', error);
+                    });
+            }
+
+        });
+
         $.sessionStartTime = new Date();
 
         $('form').submit(function (e) {
             var form = this;
             e.preventDefault();
 
-            if (!$(form).validate().form()){
+            if(!$.isEmailValid){
+                (async function(){
+                    var emailValid = await emailIsValid();
+                    if(emailValid === false){
+                        return;
+                    }else{
+
+                    }
+                })()
+            }
+            if (!$(form).validate().form() || $("#email-custom-error").is(":visible") || !$.isPhoneValid || !$.isEmailValid){
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
@@ -421,13 +457,14 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
 
                     if(current_step+1 === $('#phoneContainer').data('step')){
                         (async function(){
-                            var emailValid = await emailIsValid();
+                            //var emailValid = await emailIsValid();
                             var phoneValid = await phoneIsValid();
-                            if(phoneValid === false || emailValid === false){
+                            if(phoneValid === false){
                                 return;
                             }else{
+                                $.isPhoneValid = true;
                                 $('form').submit();
-                                $('#form_submit').attr('disabled', 'disabled');
+                                // $('#form_submit').attr('disabled', 'disabled');
                             }
                         })()
                     }
