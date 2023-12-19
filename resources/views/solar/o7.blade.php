@@ -245,18 +245,6 @@ $page = 'o7';
                     <input id="last_name" pattern="[a-zA-Z]+" minlength="3" class="form-control" type="text" name="last_name" placeholder="Enter Last Name" required>
                     <div class="form-error-message"> Please complete this field</div>
                 </div>
-                <div class="form-group ">
-                    <label class="label" for="phone">Phone*</label>
-                    <input id="phone" class="form-control" type="tel" name="phone" pattern="\d?[\(]\d{3}[\)][\-]\d{3}[\-]\d{4}" placeholder="Enter Phone Number" required>
-                    <div class="form-error-message phone-valid-error">Please enter a valid phone.</div>
-                    <label id="phone-custom-error" class="mt-3" for="phone" style="    display:none; width: 100%;
-     color: red;
-    font-size: 12px;
-    transform: translateY(-10px);
-    background: #fff;
-    padding: 1px;text-align: center;
-    font-weight: 600;">Please enter a valid email address.</label>
-                </div>
                 <div class="form-group">
                     <label for="email">Email Address*</label>
                     <input id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" type="email" name="email_address" placeholder="Email Address" required>
@@ -266,6 +254,18 @@ $page = 'o7';
     font-size: 12px;
     transform: translateY(-10px);
     background: #ffffff;
+    padding: 1px;text-align: center;
+    font-weight: 600;">Please enter a valid email address.</label>
+                </div>
+                <div class="form-group ">
+                    <label class="label" for="phone">Phone*</label>
+                    <input id="phone" class="form-control" type="tel" name="phone" pattern="\d?[\(]\d{3}[\)][\-]\d{3}[\-]\d{4}" placeholder="Enter Phone Number" required>
+                    <div class="form-error-message phone-valid-error">Please enter a valid phone.</div>
+                    <label id="phone-custom-error" class="mt-3" for="phone" style="    display:none; width: 100%;
+     color: red;
+    font-size: 12px;
+    transform: translateY(-10px);
+    background: #fff;
     padding: 1px;text-align: center;
     font-weight: 600;">Please enter a valid email address.</label>
                 </div>
@@ -405,19 +405,53 @@ $page = 'o7';
 
     $(document).ready(function() {
 
+        document.getElementById('email').addEventListener('blur', function () {
+            const email = $('#email').val();
+            const ipAddress = $('#ip_address').val();
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailPattern.test(email)) {
+                validateEmail(email, ipAddress)
+                    .then((isValid) => {
+                        if (isValid === true) {
+                            $.isEmailValid = true;
+                        } else {
+                            $.isEmailValid = false;
+                        }
+                    })
+                    .catch((error) => {
+                        $.isEmailValid = false;
+                    });
+            }
+
+        });
+
+        document.getElementById('email').addEventListener('input', function(event) {
+            $.isEmailValid = false;
+        });
+
         $.sessionStartTime = new Date();
 
+        //Custom submission for the pages with phone and email on the same fieldset
         $('form').submit(function (e) {
             var form = this;
             e.preventDefault();
 
-            if (!$(form).validate().form()){
+            if(!$.isEmailValid){
+                (async function(){
+                    var emailValid = await emailIsValid();
+                    if(emailValid === false){
+                        return;
+                    }
+                })()
+            }
+            if (!$(form).validate().form() || $("#email-custom-error").is(":visible") || !$.isEmailValid){
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
                 submitLead(formData, '{{$vertical}}');
             }
-            $('#form_submit').removeAttr('disabled');
         });
 
 
@@ -538,13 +572,11 @@ $page = 'o7';
                 if( next_step ) {
                     if(current_step === $('#phoneContainer').data('step')){
                         (async function(){
-                            var emailValid = await emailIsValid();
                             var phoneValid = await phoneIsValid();
-                            if(phoneValid === false || emailValid === false){
+                            if(phoneValid === false){
                                 return;
                             }else{
                                 $('form').submit();
-                                $('#form_submit').attr('disabled', 'disabled');
                             }
                         })()
                     }

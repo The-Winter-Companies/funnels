@@ -16,6 +16,7 @@
 
     "use strict";
     $.token = $.makeid(8);
+    $.isEmailValid = false;
     $.ebook = getUrlParameter('ebook');
 
     /**
@@ -111,18 +112,10 @@
             success: function (data) {
                 // Handle success if needed
             },
-            error: function (jqXHR, textStatus, errorThrown) {
-                var errorDetails = {
-                    url: submitUrl,
-                    status: jqXHR.status,
-                    error: errorThrown,
-                    formData: formData
-                };
+            error: function (xhr, status, error) {
+                var errorMessage = "Lead Backup(STL) Ajax Error - [Status] : " + status + " [Error] : " + error;
 
-                var errorMessage = 'Lead Backup (STL) - AJAX error: ' + textStatus + ', ' + errorThrown;
-
-                // Send error details to Rollbar
-                Rollbar.error(errorMessage, { errorDetails: errorDetails });
+                Rollbar.error(errorMessage);
             }
         });
     }
@@ -167,44 +160,66 @@
         return result;
     }
 
-    function phoneIsValid(){
+    function phoneIsValid() {
 
         var response = true;
 
         var phone = $("#phone").val();
 
-        if(phone === '(111) 111-1111' || phone === '(612) 842-0000'){
+        if (phone === '(111) 111-1111' || phone === '(612) 842-0000') {
             return true;
         }
 
         const phoneValidation = $.ajax({
             type: "POST",
             url: "{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}/validatePhone.php",
-            data: {"phone":phone, "token": $.token},
+            data: {"phone": phone, "token": $.token},
             async: false,
             dataType: 'json'
         }).then((fullResponse) => {
             return fullResponse;
         });
 
-        const promiseFunction =
-            phoneValidation.then((a) => {
-                if(a.valid === false){
-                    $("#phone").addClass(" .form-control .error")
-                    $("#phone-custom-error").html("Please provide a valid phone number to proceed.");
-                    $("#phone-custom-error").fadeIn('fast');
-                    response = false;
-                }
-                return response;
-            });
-
-        return promiseFunction.then(function (response){
+        return phoneValidation.then((a) => {
+            if (a.valid === false) {
+                $("#phone").addClass(" .form-control .error")
+                $("#phone-custom-error").html("Please provide a valid phone number to proceed.");
+                $("#phone-custom-error").fadeIn('fast');
+                response = false;
+            }
             return response;
         });
+    }
 
+    function validateEmail(email, ipAddress) {
+
+        if (isTestEmail(email)) {
+            return Promise.resolve(true);
+        }
+
+        return $.ajax({
+            type: "POST",
+            url: "{{ env('WINTERBOT_LEAD_SUBMIT_URL') }}/validateEmail.php",
+            data: {"email": email, "ip_address": ipAddress, "token": $.token},
+            async: true,
+            dataType: 'json'
+        }).then((fullResponse) => {
+            if(fullResponse.valid === false){
+                $("#email").addClass(" .form-control .error")
+                $("#email-custom-error").html("Please provide a valid email address to proceed.");
+                $("#email-custom-error").fadeIn('fast');
+            }
+            return fullResponse.valid;
+        });
+    }
+
+    function isTestEmail(email) {
+        return email === 'test@test.com' || email === 'pingdom@test.com';
     }
 
     function emailIsValid() {
+
+        $.isEmailValid = false;
 
         function isTestEmail(email){
             return email === 'test@test.com' || email === 'pingdom@test.com';
@@ -226,19 +241,18 @@
                 return fullResponse;
             });
 
-            const promiseFunction = emailValidation.then((a) => {
+            return emailValidation.then((a) => {
                 if(a.valid === false){
                     $("#email").addClass(" .form-control .error")
                     $("#email-custom-error").html("Please provide a valid email address to proceed.");
                     $("#email-custom-error").fadeIn('fast');
                     response = false;
+                }else{
+                    $.isEmailValid = true;
                 }
                 return response;
             });
 
-            return promiseFunction.then(function (response){
-                return response;
-            });
         }
     }
 

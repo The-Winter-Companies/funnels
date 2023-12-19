@@ -93,7 +93,7 @@ session_start();
             <input type="hidden" id="credit_rating" name="credit_rating" value="Good">
             <input type="hidden" id="roof_type" name="roof_type" value="Tile">
 
-            <fieldset id="zip-container"><legend hidden="true">zip</legend>
+            <fieldset id="zip-container" data-step="1"><legend hidden="true">zip</legend>
 
                 <h4 class="form-question">Enter your zip code<br class="d-none d-md-block"> to get started:</h4>
                 <div class="form-cont">
@@ -105,11 +105,12 @@ session_start();
 
                             </div>
                             <div class="col-auto form-btns text-center mb-0">
-                                <button class="btn form-btn mb-0 solar-btn" id="btn-zip"  type="button" ><span class="btn-text">Get Started</span></button>
+                                <button class="btn form-btn mb-0 solar-btn" id="btn-zip"  type="button" disabled><span class="btn-text">Get Started</span></button>
                             </div>
                         </div>
                     </div>
                     <div class="zip_error" style="display: none">Please enter a valid zip code. (i.e. 90210)</div>
+                    <div class="form-error-message"></div>
                 </div>
 
             </fieldset>
@@ -618,11 +619,18 @@ session_start();
         messages: validationMessages,
         errorElement : 'span',
         errorPlacement: function(error, element) {
-            $(element).closest('.form-group').children('.form-error-message').html(error).show();
+            if($('form fieldset:visible').data('step') === 1){
+                $(".form-error-message").html(error).fadeIn().css("display", "inline-block").css("color", "red");
+
+                $(".form-error-message").html(error).fadeIn().css({
+                    "display": "",
+                    "color": ""
+                });
+
+            }else{
+                $(element).closest('.form-group').children('.form-error-message').html(error).show();
+            }
         },
-        showErrors: function(errorMap, errorList) {
-            this.defaultShowErrors();
-        }
     });
 
         $(document).ready(function() {
@@ -718,6 +726,16 @@ session_start();
                     })
                 })
             }
+
+            $("#zip_code").on('keyup change', function (e) {
+                var el = $("[name='zip_code']");
+                if (el.val().length === 5){
+                    $('#btn-zip').removeAttr('disabled');
+                }else{
+                    $('#btn-zip').attr('disabled', 'disabled');
+                }
+                $(".zip_error").hide();
+            });
 
             $(document).on('click', ".radio-next input[type=radio],.btn-next", function () {
                 goNext($(this));

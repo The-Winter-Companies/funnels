@@ -88,7 +88,7 @@ $page = 'main';
             <input type="hidden" id="time_frame" name="time_frame" value>
 
             <input type="hidden" id="state" name="state" value>
-            <fieldset id="zip-container"><legend hidden="true">zip</legend>
+            <fieldset data-step="1" id="zip-container"><legend hidden="true">zip</legend>
 
                 <h4 class="form-question">Enter your zip code<br class="d-none d-md-block"> to get started:</h4>
                 <div class="form-cont">
@@ -100,11 +100,12 @@ $page = 'main';
 
                             </div>
                             <div class="col-auto form-btns text-center mb-0">
-                                <button class="btn form-btn mb-0" id="btn-zip" type="button" ><span class="btn-text">Get Started</span></button>
+                                <button class="btn form-btn mb-0" id="btn-zip" type="button" disabled><span class="btn-text">Get Started</span></button>
                             </div>
                         </div>
                     </div>
                     <div class="zip_error" style="display: none">Please enter a valid zip code. (i.e. 90210)</div>
+                    <div class="form-error-message">Please select an option.</div>
                 </div>
 
             </fieldset>
@@ -582,11 +583,16 @@ $page = 'main';
         messages: validationMessages,
         errorElement : 'span',
         errorPlacement: function(error, element) {
-            $(element).closest('.form-group').children('.form-error-message').html(error).show();
+            if($('form fieldset:visible').data('step') === 1){
+                $(".form-error-message").html(error).fadeIn().css("display", "inline-block").css("color", "red");
+                $(".form-error-message").html(error).fadeIn().css({
+                    "display": "",
+                    "color": ""
+                });
+            }else{
+                $(element).closest('.form-group').children('.form-error-message').html(error).show();
+            }
         },
-        showErrors: function(errorMap, errorList) {leadid_tcpa_disclosure
-            this.defaultShowErrors();
-        }
     });
 
     $(document).ready(function() {
@@ -676,11 +682,21 @@ $page = 'main';
 
         $("#email").enterKey(function () {
             goNext($(this));
-        })
+        });
 
         $("#zip").enterKey(function () {
             goNext($(this));
-        })
+        });
+
+        $("#zip_code").on('keyup change', function (e) {
+            var el = $("[name='zip_code']");
+            if (el.val().length === 5){
+                $('#btn-zip').removeAttr('disabled');
+            }else{
+                $('#btn-zip').attr('disabled', 'disabled');
+            }
+            $(".zip_error").hide();
+        });
 
         $('input[type=radio][name=time_frame_radio]').click(function(){
             $('#time_frame').val($(this).val());

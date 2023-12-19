@@ -392,19 +392,53 @@ $page = 'o7';
 
     $(document).ready(function () {
 
+        document.getElementById('email').addEventListener('blur', function () {
+            const email = $('#email').val();
+            const ipAddress = $('#ip_address').val();
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailPattern.test(email)) {
+                validateEmail(email, ipAddress)
+                    .then((isValid) => {
+                        if (isValid === true) {
+                            $.isEmailValid = true;
+                        } else {
+                            $.isEmailValid = false;
+                        }
+                    })
+                    .catch((error) => {
+                        $.isEmailValid = false;
+                    });
+            }
+
+        });
+
+        document.getElementById('email').addEventListener('input', function(event) {
+            $.isEmailValid = false;
+        });
+
         $.sessionStartTime = new Date();
 
+        //Custom submission for the pages with phone and email on the same fieldset
         $('form').submit(function (e) {
             var form = this;
             e.preventDefault();
 
-            if (!$(form).validate().form()){
+            if(!$.isEmailValid){
+                (async function(){
+                    var emailValid = await emailIsValid();
+                    if(emailValid === false){
+                        return;
+                    }
+                })()
+            }
+            if (!$(form).validate().form() || $("#email-custom-error").is(":visible") || !$.isEmailValid){
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
                 submitLead(formData, '{{$vertical}}');
             }
-            $('#form_submit').removeAttr('disabled');
         });
 
         var s = 1;
@@ -453,13 +487,11 @@ $page = 'o7';
 
                     if(current_step+1 === $('#phoneContainer').data('step')){
                         (async function(){
-                            var emailValid = await emailIsValid();
                             var phoneValid = await phoneIsValid();
-                            if(phoneValid === false || emailValid === false){
+                            if(phoneValid === false){
                                 return;
                             }else{
                                 $('form').submit();
-                                $('#form_submit').attr('disabled', 'disabled');
                             }
                         })()
                     }
