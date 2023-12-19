@@ -16,7 +16,6 @@
 
     "use strict";
     $.token = $.makeid(8);
-    $.isPhoneValid = false;
     $.isEmailValid = false;
 
     /**
@@ -138,63 +137,34 @@
         return result;
     }
 
-    function phoneIsValid(){
-
-        console.log('phone started');
+    function phoneIsValid() {
 
         var response = true;
 
         var phone = $("#phone").val();
 
-        if(phone === '(111) 111-1111' || phone === '(612) 842-0000'){
+        if (phone === '(111) 111-1111' || phone === '(612) 842-0000') {
             return true;
         }
 
         const phoneValidation = $.ajax({
             type: "POST",
             url: "{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}/validatePhone.php",
-            data: {"phone":phone, "token": $.token},
+            data: {"phone": phone, "token": $.token},
             async: false,
             dataType: 'json'
         }).then((fullResponse) => {
             return fullResponse;
         });
 
-        const promiseFunction =
-            phoneValidation.then((a) => {
-                if(a.valid === false){
-                    $("#phone").addClass(" .form-control .error")
-                    $("#phone-custom-error").html("Please provide a valid phone number to proceed.");
-                    $("#phone-custom-error").fadeIn('fast');
-                    response = false;
-                }
-                return response;
-            });
-
-        return promiseFunction.then(function (response){
-            return response;
-        });
-
-    }
-
-    function validatePhone(phone) {
-        if (phone === '(111) 111-1111' || phone === '(612) 842-0000') {
-            return Promise.resolve(true);
-        }
-
-        return $.ajax({
-            type: "POST",
-            url: "{{ env('WINTERBOT_LEAD_SUBMIT_URL') }}/validatePhone.php",
-            data: {"phone": phone, "token": $.token},
-            async: true,
-            dataType: 'json'
-        }).then((fullResponse) => {
-            if(fullResponse.valid === false){
+        return phoneValidation.then((a) => {
+            if (a.valid === false) {
                 $("#phone").addClass(" .form-control .error")
                 $("#phone-custom-error").html("Please provide a valid phone number to proceed.");
                 $("#phone-custom-error").fadeIn('fast');
+                response = false;
             }
-            return fullResponse.valid;
+            return response;
         });
     }
 
@@ -224,44 +194,9 @@
         return email === 'test@test.com' || email === 'pingdom@test.com';
     }
 
-    function validateFields() {
-        var phone = $("#phone").val();
-        var email = $('#email').val();
-        var ipAddress = $("#ip_address").val();
-
-        var phoneValidation = validatePhone(phone);
-        var emailValidation = validateEmail(email, ipAddress);
-
-        return Promise.all([phoneValidation, emailValidation])
-            .then((responses) => {
-                // Check if both responses are positive (true)
-                if (responses.every(response => response === true)) {
-                    return true;
-                } else {
-                    // At least one validation failed, return false
-                    return false;
-                }
-            })
-            .catch((error) => {
-                console.error("Validation error:", error);
-                return false; // Handle errors during validation
-            });
-    }
-
-    function combine(){
-
-        // Usage
-        return validateFields().then((combinedResponse) => {
-            console.log("Combined response:", combinedResponse);
-            // Use the combined response as needed
-        });
-
-    }
-
     function emailIsValid() {
 
         $.isEmailValid = false;
-        console.log('email started');
 
         function isTestEmail(email){
             return email === 'test@test.com' || email === 'pingdom@test.com';

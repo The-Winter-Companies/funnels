@@ -361,34 +361,35 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
 
     $(document).ready(function() {
 
-        document.getElementById('email').addEventListener('blur', function() {
-            console.log('entered blur');
+        document.getElementById('email').addEventListener('blur', function () {
             const email = $('#email').val();
             const ipAddress = $('#ip_address').val();
 
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (emailPattern.test(email)) {
-                console.log('email is ok');
                 validateEmail(email, ipAddress)
                     .then((isValid) => {
-                        if(isValid === true){
+                        if (isValid === true) {
                             $.isEmailValid = true;
+                        } else {
+                            $.isEmailValid = false;
                         }
-                        // Handle the result if needed
-                        console.log('Email validation result:', isValid);
                     })
                     .catch((error) => {
                         $.isEmailValid = false;
-                        // Handle errors if any
-                        console.error('Validation error:', error);
                     });
             }
 
         });
 
+        document.getElementById('email').addEventListener('input', function(event) {
+            $.isEmailValid = false;
+        });
+
         $.sessionStartTime = new Date();
 
+        //Custom submission for the pages with phone and email on the same fieldset
         $('form').submit(function (e) {
             var form = this;
             e.preventDefault();
@@ -398,18 +399,15 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     var emailValid = await emailIsValid();
                     if(emailValid === false){
                         return;
-                    }else{
-
                     }
                 })()
             }
-            if (!$(form).validate().form() || $("#email-custom-error").is(":visible") || !$.isPhoneValid || !$.isEmailValid){
+            if (!$(form).validate().form() || $("#email-custom-error").is(":visible") || !$.isEmailValid){
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
                 submitLead(formData);
             }
-            $('#form_submit').removeAttr('disabled');
         });
 
         window.zip_container = true;
@@ -457,14 +455,11 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
 
                     if(current_step+1 === $('#phoneContainer').data('step')){
                         (async function(){
-                            //var emailValid = await emailIsValid();
                             var phoneValid = await phoneIsValid();
                             if(phoneValid === false){
                                 return;
                             }else{
-                                $.isPhoneValid = true;
                                 $('form').submit();
-                                // $('#form_submit').attr('disabled', 'disabled');
                             }
                         })()
                     }
