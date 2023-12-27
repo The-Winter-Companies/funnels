@@ -33,16 +33,14 @@
                     {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
                 );
             } else {
-                Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! User stuck on page.',
+                Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! Inspect urgently !',
                     {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
                 );
             }
         }
 
-        if(winterbotResult || lpResult) {
+        if((winterbotResult || lpResult) || (!winterbotResult && !lpResult)) {
             window.location.replace(getThankYouPageUrl('{{$vertical}}'));
-        } else {
-            alert("There was an issue, please try again or contact us at info@foreverhomehub.com");
         }
     }
 
@@ -90,18 +88,10 @@
             success: function (data) {
                 // Handle success if needed
             },
-            error: function (jqXHR, textStatus, errorThrown) {
-                var errorDetails = {
-                    url: submitUrl,
-                    status: jqXHR.status,
-                    error: errorThrown,
-                    formData: formData
-                };
+            error: function (xhr, status, error) {
+                var errorMessage = "Lead Backup(STL) Ajax Error - [Status] : " + status + " [Error] : " + error;
 
-                var errorMessage = 'Lead Backup (STL) - AJAX error: ' + textStatus + ', ' + errorThrown;
-
-                // Send error details to Rollbar
-                Rollbar.error(errorMessage, { errorDetails: errorDetails });
+                Rollbar.error(errorMessage);
             }
         });
     }
