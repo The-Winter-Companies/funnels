@@ -44,7 +44,6 @@ $page = 'o7';
     <link href="{{ asset('css/roofing-o7.css') }}" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="{{ asset('css/funnels-footer.css') }}" rel="stylesheet">
-    <script type="text/javascript">if(typeof window.jQuery === 'undefined') {document.write('<script src="{{ asset('js/jquery/jquery-3.4.1.min.js') }}"><\/script>');}</script>
     <!--[if (gte IE 6)&(lte IE 8)]>
     <script type="text/javascript" src="js/selectivizr.js"></script>
     <script type="text/javascript">
