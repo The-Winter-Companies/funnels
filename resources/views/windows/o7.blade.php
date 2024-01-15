@@ -97,8 +97,8 @@ $page = 'o7';
             <input type="hidden" id="state" name="state" value>
             <input type="hidden" id="address_short" value>
             <input type="hidden" id="project_type" name="project_type" value="Replace">
-            <input type="hidden" id="number_of_windows" name="number_of_windows" value="3 to 5 windows">
-            <input type="hidden" name="home_ownership" id="home_ownership" value="Yes">
+            <input type="hidden" id="number_of_windows" name="number_of_windows" value="3-5">
+            <input type="hidden" name="own_rented" id="own_rented" value="Yes">
             <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
 
             <fieldset>
@@ -123,11 +123,15 @@ $page = 'o7';
 
                 <div class="form-group radio-next">
                     <div class="radio-btn">
-                        <input id="st2" class="img-radio" type="radio" name="project_type_radio" value="replace" required>
+                        <input id="st1" class="img-radio" type="radio" name="project_type_radio" value="Install" required>
+                        <label class="radio-label" for="st1"><span>Install </span></label>
+                    </div>
+                    <div class="radio-btn">
+                        <input id="st2" class="img-radio" type="radio" name="project_type_radio" value="Replace" required>
                         <label class="radio-label" for="st2"><span>Replace</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="st3" class="img-radio" type="radio" name="project_type_radio" value="repair" required>
+                        <input id="st3" class="img-radio" type="radio" name="project_type_radio" value="Repair" required>
                         <label class="radio-label" for="st3"><span>Repair</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
@@ -189,15 +193,15 @@ $page = 'o7';
 
                 <div class="form-group radio-next">
                     <div class="radio-btn ">
-                        <input id="tf1" class="img-radio" type="radio" name="time_frame_radio" value="immediately" required>
+                        <input id="tf1" class="img-radio" type="radio" name="time_frame_radio" value="Immediately" required>
                         <label class="radio-label" for="tf1"><span>Immediately</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="tf2" class="img-radio" type="radio" name="time_frame_radio" value="1_6_months" required>
+                        <input id="tf2" class="img-radio" type="radio" name="time_frame_radio" value="1-6 months" required>
                         <label class="radio-label" for="tf2"><span>1-6 months</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="tf3" class="img-radio" type="radio" name="time_frame_radio" value="not_sure" required>
+                        <input id="tf3" class="img-radio" type="radio" name="time_frame_radio" value="Not sure" required>
                         <label class="radio-label" for="tf3"><span>Not sure</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
@@ -214,22 +218,18 @@ $page = 'o7';
             </fieldset>
             <fieldset data-step="4">
 
-                <legend hidden="true">home_ownership</legend>
+                <legend hidden="true">own_rented</legend>
 
                 <h3 class="form_box-question">Do you own your home?</h3>
 
                 <div class="form-group radio-next">
                     <div class="radio-btn">
-                        <input id="oh1" class="img-radio" type="radio" name="home_ownership_radio" value="yes" required>
-                        <label class="radio-label" for="oh1"><span>Yes I do</span></label>
+                        <input id="oh1" class="img-radio" type="radio" name="own_rented_radio" value="Yes" required>
+                        <label class="radio-label" for="oh1"><span>Yes</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="oh2" class="img-radio" type="radio" name="home_ownership_radio" value="authorized" required>
-                        <label class="radio-label" for="oh2"><span>No, but I'm allowed to make changes	</span></label>
-                    </div>
-                    <div class="radio-btn">
-                        <input id="oh3" class="img-radio" type="radio" name="home_ownership_radio" value="no" required>
-                        <label class="radio-label" for="oh3"><span>No I don't</span></label>
+                        <input id="oh2" class="img-radio" type="radio" name="own_rented_radio" value="No" required>
+                        <label class="radio-label" for="oh2"><span>No</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
                 </div>
@@ -527,8 +527,8 @@ $page = 'o7';
             $('#number_of_windows').val($(this).val());
         });
 
-        $('input[type=radio][name=home_ownership_radio]').click(function(){
-            $('#home_ownership').val($(this).val());
+        $('input[type=radio][name=own_rented_radio]').click(function(){
+            $('#own_rented').val($(this).val());
         });
 
         $('input[type=radio][name=time_frame_radio]').click(function(){

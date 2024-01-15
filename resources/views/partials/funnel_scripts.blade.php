@@ -279,6 +279,7 @@
             formData['lp_key'] = "pqephnvmzfpvy0";
             formData['time_frame'] = $('#time_frame').val();
             formData['project_type'] = $('#project_type').val();
+            formData['number_of_windows'] = $('#number_of_windows').val();
         }
 
         if(isTestLead(formData)){

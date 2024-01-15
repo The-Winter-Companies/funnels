@@ -97,8 +97,8 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
     <input type="hidden" id="state" name="state" value>
     <input type="hidden" id="address_short" value>
     <input type="hidden" id="project_type" name="project_type" value="Replace">
-    <input type="hidden" id="number_of_windows" name="number_of_windows" value="3 to 5 windows">
-    <input type="hidden" name="home_ownership" id="home_ownership" value="Yes">
+    <input type="hidden" id="number_of_windows" name="number_of_windows" value="3-5">
+    <input type="hidden" name="own_rented" id="own_rented" value="Yes">
     <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
     <section id="progress">
         <div class="progress-value">
@@ -113,7 +113,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
         </svg>
     </section>
     <div class="container-fluid">
-        <fieldset id="zip-container" data-step="1" class="fadeIn">
+        <fieldset id="zip-container">
             <legend style="visibility: hidden; position: absolute;">Zip Code</legend>
             <h3 class="step-title"><b>Where</b> would this project take place?</h3>
             <p class="step-desc">Enter your zip code and we will help you compare free quotes!</p>
@@ -127,12 +127,12 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
                 <div class="zip_error mb-2" style="display: none">Please enter a valid zip code. (i.e. 90210)</div>
                 <div class="form-btns">
-                    <button class="btn btn-primary btn-next" type="button" id="btn-zip"><span class="btn-text">Continue</span>
+                    <button class="btn btn-primary btn-next" type="button" id="btn-zip" disabled><span class="btn-text">Continue</span>
                     </button>
                 </div>
             </div>
         </fieldset>
-        <fieldset data-step="3" class="fadeInRight">
+        <fieldset data-step="1">
             <legend style="visibility: hidden; position: absolute;">Full name</legend>
             <h3 class="step-title mb-4"><b>Who</b> is this project for?</h3>
             <div class="container" style="max-width:500px;">
@@ -157,14 +157,17 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
             </div>
         </fieldset>
-        <fieldset data-step="4" class="fadeInRight" style="min-height: 238px;">
+        <fieldset data-step="2" style="min-height: 238px;">
             <legend style="visibility: hidden; position: absolute;">Project Type</legend>
             <h3 class="step-title">Do you need to <b>replace</b> or <b>repair</b> an existing windows?</h3>
             <div class="container">
                 <div class="form-group parent-error radio-next">
                     <div class="form-group parent-error">
                         <div class="radio-colored">
-                            <input id="repair-repairno" type="radio" name="project_type_radio" value="Replace Unit" checked="checked" data-required="nonempty">
+                            <input id="install" type="radio" name="project_type_radio" value="Install" checked="checked" data-required="nonempty">
+                            <label for="install">Install</label> <span></span></div>
+                        <div class="radio-colored">
+                            <input id="repair-repairno" type="radio" name="project_type_radio" value="Replace" data-required="nonempty">
                             <label for="repair-repairno">Replace</label> <span></span></div>
                         <div class="radio-colored">
                             <input id="repair-repairyes" type="radio" name="project_type_radio" value="Repair" data-required="nonempty">
@@ -178,30 +181,30 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
             </div>
         </fieldset>
-        <fieldset data-step="5" class="fadeInRight" style="min-height: 238px;">
+        <fieldset data-step="3" style="min-height: 238px;">
             <legend style="visibility: hidden; position: absolute;">Number of Windows</legend>
             <h3 class="step-title">How many <b>windows</b> are involved in the project? </h3>
             <div class="container">
                 <div class="form-group radio-next">
                     <ul class="step__options step__options-vertical step__options-vertical--amount row no-gutters" style="list-style: none;">
                         <li class="col">
-                            <input id="10windows" class="img-radio" type="radio" name="number_of_windows_radio" value="10+ windows" required>
+                            <input id="10windows" class="img-radio" type="radio" name="number_of_windows_radio" value="10+" required>
                             <label class="radio-label" for="10windows"><span>10+</span></label>
                         </li>
                         <li class="col">
-                            <input id="69windows" class="img-radio" type="radio" name="number_of_windows_radio" value="6 to 9 windows" required>
+                            <input id="69windows" class="img-radio" type="radio" name="number_of_windows_radio" value="6-9" required>
                             <label class="radio-label" for="69windows"><span>6-9</span></label>
                         </li>
                         <li class="col">
-                            <input id="35windows" class="img-radio" type="radio" name="number_of_windows_radio" value="3 to 5 windows" checked="checked" required>
+                            <input id="35windows" class="img-radio" type="radio" name="number_of_windows_radio" value="3-5" checked="checked" required>
                             <label class="radio-label" for="35windows"><span>3-5</span></label>
                         </li>
                         <li class="col">
-                            <input id="2windows" class="img-radio" type="radio" name="number_of_windows_radio" value="2 windows" required>
+                            <input id="2windows" class="img-radio" type="radio" name="number_of_windows_radio" value="2" required>
                             <label class="radio-label" for="2windows"><span>2</span></label>
                         </li>
                         <li class="col">
-                            <input id="1window" class="img-radio" type="radio" name="number_of_windows_radio" value="1 window" required>
+                            <input id="1window" class="img-radio" type="radio" name="number_of_windows_radio" value="1" required>
                             <label class="radio-label" for="1window"><span>1</span></label>
                         </li>
                     </ul>
@@ -213,7 +216,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
             </div>
         </fieldset>
-        <fieldset class="fadeInRight" data-step="6">
+        <fieldset data-step="4">
             <legend style="visibility: hidden; position: absolute;">Timeline</legend>
             <h3 class="step-title"><b>How soon</b> do you want to begin this project?</h3>
             <div class="container" style="max-width:640px;">
@@ -224,7 +227,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                             <label class="radio-label" for="t1"><span>Immediately</span></label>
                         </li>
                         <li class="col-md-4 col-12">
-                            <input id="t2" class="img-radio" type="radio" name="time_frame_radio" value="Within 6 months" required>
+                            <input id="t2" class="img-radio" type="radio" name="time_frame_radio" value="1-6 months" required>
                             <label class="radio-label" for="t2"><span>Within 6 months</span></label>
                         </li>
                         <li class="col-md-4 col-12">
@@ -240,23 +243,19 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
             </div>
         </fieldset>
-        <fieldset class="fadeInRight" data-step="7">
+        <fieldset data-step="5">
             <legend style="visibility: hidden; position: absolute;">Home</legend>
             <h3 class="step-title">Do you own your <b>home</b>?</h3>
             <div class="container" style="max-width:640px;">
                 <div class="form-group radio-next">
                     <ul class="step__options step__options-vertical step__options-vertical--amount row no-gutters" style="list-style: none;">
                         <li class="col-12 mb-0">
-                            <input id="h1" class="img-radio" type="radio" name="home_ownership_radio" value="Yes" checked="checked" required>
-                            <label class="radio-label" for="h1"><span>Yes I do</span></label>
+                            <input id="h1" class="img-radio" type="radio" name="own_rented_radio" value="Yes" checked="checked" required>
+                            <label class="radio-label" for="h1"><span>Yes</span></label>
                         </li>
                         <li class="col-12 mb-0">
-                            <input id="h2" class="img-radio" type="radio" name="home_ownership_radio" value="No, but im allowed to make changes" required>
-                            <label class="radio-label" for="h2"><span>No, but im allowed to make changes</span></label>
-                        </li>
-                        <li class="col-12 mb-0">
-                            <input id="h3" class="img-radio" type="radio" name="home_ownership_radio" value="No" required>
-                            <label class="radio-label" for="h3"><span>No I don't</span></label>
+                            <input id="h2" class="img-radio" type="radio" name="own_rented_radio" value="No" required>
+                            <label class="radio-label" for="h2"><span>No</span></label>
                         </li>
                     </ul>
                     <div class="form-error-message col-12">Pros need this information to generate a quote.</div>
@@ -267,7 +266,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
             </div>
         </fieldset>
-        <fieldset data-step="8" class="fadeInRight">
+        <fieldset data-step="6" >
             <legend style="visibility: hidden; position: absolute;">Address</legend>
             <h3 class="step-title"><b>Where</b> will this project take place?</h3>
             <p class="step-desc">This helps us find and compare contractors in your area.</p>
@@ -292,7 +291,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 </div>
             </div>
         </fieldset>
-        <fieldset id="phoneContainer" data-step="9" class="fadeInRight">
+        <fieldset id="phoneContainer" data-step="7">
             <legend style="visibility: hidden; position: absolute;">Phone</legend>
             <center>
                 <h3 class="step-title step-ready"><b>Congratulations!</b><br>We found matching pros in your area!</h3>
@@ -509,7 +508,6 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 }
 
                 if(next_step){
-
                     if(current_step+1 === $('#phoneContainer').data('step')){
                         (async function(){
                             var emailValid = await emailIsValid();
@@ -573,8 +571,8 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
             $('#time_frame').val($(this).val());
         });
 
-        $('input[type=radio][name=home_ownership_radio]').click(function(){
-            $('#home_ownership').val($(this).val());
+        $('input[type=radio][name=own_rented_radio]').click(function(){
+            $('#own_rented').val($(this).val());
         });
 
         $('form input, form select').on('keyup keypress', function(e) {
