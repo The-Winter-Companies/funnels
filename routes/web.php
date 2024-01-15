@@ -79,6 +79,10 @@ Route::get('/windows', function () {
     return view('windows/index');
 });
 
+Route::get('/windows/o7', function () {
+    return view('windows/o7');
+});
+
 Route::get('/thank-you', function () {
     return view('thank-you/thank-you');
 });
