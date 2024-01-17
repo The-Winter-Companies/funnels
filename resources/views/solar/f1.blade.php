@@ -62,6 +62,7 @@ $page = 'f1';
     <input type="hidden" id="property_type" name="property_type" value="Single Family">
     <input type="hidden" id="credit_rating" name="credit_rating" value="Good">
     <input type="hidden" id="roof_type" name="roof_type" value="Tile">
+    <input type="hidden" id="home_owner" name="home_owner" value="Yes">
     <section class="main solar text-center text-white">
         <h1 class="main_heading ">
             Save BIG On a New Roof!
@@ -450,6 +451,15 @@ $page = 'f1';
 
         $("input:radio").click(function() {
             $(this).closest("fieldset").find(".btn-next").trigger("click");
+        });
+
+        $('#homeowner').change(function() {
+            if(this.checked) {
+                $("#home_owner").val('Yes');
+            }
+            else {
+                $("#home_owner").val('No');
+            }
         });
 
         let fieldset = $("form fieldset");
