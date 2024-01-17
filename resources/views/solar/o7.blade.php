@@ -68,16 +68,17 @@ $page = 'o7';
             <input type="hidden" id="property_type" name="property_type" value="Single Family">
             <input type="hidden" id="roof_type" name="roof_type" value="Tile">
             <input type="hidden" name="credit_rating" id="credit_rating" value="Good">
+            <input type="hidden" id="home_owner" name="home_owner" value="Yes">
             <fieldset data-step="1">
                 <legend hidden="true">homeowner</legend>
                 <h3 class="form_box-question">Are you a homeowner?</h3>
                 <div class="form-group ">
                     <div class="radio-btn radio-next">
-                        <input id="pc01" type="radio" name="own_rented" value="Own" required>
+                        <input id="pc01" type="radio" name="home_owner_radio" value="Yes" required>
                         <label for="pc01"><span>Yes</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="pc02" type="radio" name="own_rented" value="Rented" required>
+                        <input id="pc02" type="radio" name="home_owner_radio" value="No" required>
                         <label for="pc02"><span>No</span></label>
                     </div>
                 </div>
@@ -515,6 +516,10 @@ $page = 'o7';
 
         $("input:radio").click(function() {
             $(this).closest("fieldset").find(".btn-next").trigger("click");
+        });
+
+        $('input[type=radio][name=home_owner_radio]').click(function(){
+            $('#home_owner').val($(this).val());
         });
 
         $(".btn-next").click(function(){

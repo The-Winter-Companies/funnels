@@ -92,7 +92,7 @@ session_start();
             <input type="hidden" id="property_type" name="property_type" value="Single Family">
             <input type="hidden" id="credit_rating" name="credit_rating" value="Good">
             <input type="hidden" id="roof_type" name="roof_type" value="Tile">
-
+            <input type="hidden" id="home_owner" name="home_owner" value="Yes">
             <fieldset id="zip-container" data-step="1"><legend hidden="true">zip</legend>
 
                 <h4 class="form-question">Enter your zip code<br class="d-none d-md-block"> to get started:</h4>
@@ -190,12 +190,12 @@ session_start();
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input id="home_owner" class="img-radio" type="radio" name="home_owner" value="Yes" required>
-                            <label class="radio-label" for="home_owner" id="yes"><span>Yes</span></label>
+                            <input id="ho1" class="img-radio" type="radio" name="home_owner_radio" value="Yes" required>
+                            <label class="radio-label" for="ho1" id="yes"><span>Yes</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="home_owner" class="img-radio" type="radio" name="home_owner" value="No" required>
-                            <label class="radio-label" for="home_owner" id="no"><span>No</span></label>
+                            <input id="ho2" class="img-radio" type="radio" name="home_owner_radio" value="No" required>
+                            <label class="radio-label" for="ho2" id="no"><span>No</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -744,6 +744,10 @@ session_start();
             $("#email").enterKey(function () {
                 goNext($(this));
             })
+
+            $('input[type=radio][name=home_owner_radio]').click(function(){
+                $('#home_owner').val($(this).val());
+            });
 
             $("#zip").enterKey(function () {
                 goNext($(this));

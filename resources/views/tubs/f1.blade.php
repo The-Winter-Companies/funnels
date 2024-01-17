@@ -56,7 +56,7 @@ $page = 'f1';
         <input type="hidden" id="address_short" value>
         <input type="hidden" id="time_frame" name="time_frame" value>
         <input type="hidden" id="project_reason" name="project_reason" value>
-        <input type="hidden" name="own_rented" id="own_rented" value="Own">
+        <input type="hidden" name="home_owner" id="home_owner" value="Yes">
 
         <section class="main tubs text-center text-white">
             <h1 class="main_heading ">Save BIG On Walk-In Bathtubs</h1>
@@ -181,16 +181,16 @@ $page = 'f1';
                 <button class="btn form-btn btn-next" type="button"><span class="btn-text">Continue</span></button>
             </div>
         </fieldset>
-        <fieldset data-step="5"><legend hidden="true">own_rented</legend>
+        <fieldset data-step="5"><legend hidden="true">home_owner_radio</legend>
             <h3 class="form_box-question">Do you <b>own</b> the home?</h3>
             <div class="form-cont">
                 <div class="form-group radio-next ">
                     <div class="radio-btn">
-                        <input id="or01" type="radio" name="own_rented" value="Yes" required="">
+                        <input id="or01" type="radio" name="home_owner_radio" value="Yes" required="">
                         <label for="or01" id="yes"><span>Yes</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="or02" type="radio" name="own_rented" value="No" required="">
+                        <input id="or02" type="radio" name="home_owner_radio" value="No" required="">
                         <label for="or02" id="no"><span>No</span></label>
                     </div>
                     <div class="form-error-message">Please select an option.</div>
@@ -478,13 +478,8 @@ $page = 'f1';
             }
         });
 
-        $('#homeowner').change(function() {
-            if(this.checked) {
-                $("#own_rented").val('Own');
-            }
-            else {
-                $("#own_rented").val('Rented');
-            }
+        $('input[type=radio][name=home_owner_radio]').click(function(){
+            $('#home_owner').val($(this).val());
         });
 
         $('input[type=radio][name=project_reason_radio]').click(function(){

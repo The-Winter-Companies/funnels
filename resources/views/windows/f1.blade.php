@@ -98,8 +98,8 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
     <input type="hidden" id="address_short" value>
     <input type="hidden" id="project_type" name="project_type" value="Replace">
     <input type="hidden" id="number_of_windows" name="number_of_windows" value="3-5">
-    <input type="hidden" name="own_rented" id="own_rented" value="Yes">
     <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
+    <input type="hidden" name="home_owner" id="home_owner" value="Yes">
     <section id="progress">
         <div class="progress-value">
             <div class="progress-content">
@@ -250,11 +250,11 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                 <div class="form-group radio-next">
                     <ul class="step__options step__options-vertical step__options-vertical--amount row no-gutters" style="list-style: none;">
                         <li class="col-12 mb-0">
-                            <input id="h1" class="img-radio" type="radio" name="own_rented_radio" value="Yes" checked="checked" required>
+                            <input id="h1" class="img-radio" type="radio" name="home_owner_radio" value="Yes" checked="checked" required>
                             <label class="radio-label" for="h1"><span>Yes</span></label>
                         </li>
                         <li class="col-12 mb-0">
-                            <input id="h2" class="img-radio" type="radio" name="own_rented_radio" value="No" required>
+                            <input id="h2" class="img-radio" type="radio" name="home_owner_radio" value="No" required>
                             <label class="radio-label" for="h2"><span>No</span></label>
                         </li>
                     </ul>
@@ -278,12 +278,6 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     <input type="hidden" id="address_short" value="">
                     <p class="address_loc mb-3" style="display: none;" id="add-change"><b><span class="street_span"></span> <span class="city_span"></span>&nbsp;<span class="state_span"></span> </b>
                     </p>
-                </div>
-                <div class="form-group parent-error" id="div-homeowner">
-                    <div class="checkbox checkbox--no-border">
-                        <label>
-                            <input id="homeowner" type="checkbox" checked="checked"> I am the homeowner</label>
-                    </div>
                 </div>
                 <div class="form-btns">
                     <button class="btn btn-primary btn-next" type="button"><span class="btn-text">Continue</span>
@@ -552,10 +546,10 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
 
         $('#homeowner').change(function() {
             if(this.checked) {
-                $("#own_rented").val('Own');
+                $("#home_owner").val('Yes');
             }
             else {
-                $("#own_rented").val('Rented');
+                $("#home_owner").val('No');
             }
         });
 
@@ -571,8 +565,8 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
             $('#time_frame').val($(this).val());
         });
 
-        $('input[type=radio][name=own_rented_radio]').click(function(){
-            $('#own_rented').val($(this).val());
+        $('input[type=radio][name=home_owner_radio]').click(function(){
+            $('#home_owner').val($(this).val());
         });
 
         $('form input, form select').on('keyup keypress', function(e) {

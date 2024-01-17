@@ -77,6 +77,7 @@ $page = 'main';
         <input type="hidden" id="time_frame" name="time_frame" value>
         <input type="hidden" id="project_type" name="project_type" value>
         <input type="hidden" id="roofing_type" name="roofing_type" value>
+        <input type="hidden" id="home_owner" name="home_owner" value="Yes">
         <div class="progress-box" style="display: none;">
             <div class="progress" >
                 <div class="progress-bar " role="progressbar" aria-valuenow="10" style="width: 12%" aria-valuemin="0" aria-valuemax="100"></div>
@@ -215,11 +216,11 @@ $page = 'main';
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input id="oh1" class="img-radio" type="radio" name="homeowner" value="Yes" required>
+                            <input id="oh1" class="img-radio" type="radio" name="home_owner_radio" value="Yes" required>
                             <label class="radio-label" for="oh1"><span id="ohs1">Yes, I am the homeowner</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="oh2" class="img-radio" type="radio" name="homeowner" value="No" required>
+                            <input id="oh2" class="img-radio" type="radio" name="home_owner_radio" value="No" required>
                             <label class="radio-label" for="oh2"><span id="ohs2">No, I am not the homeowner</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
@@ -779,6 +780,10 @@ $page = 'main';
                 {
                     $("#phone-custom-error").hide();
                 }
+            });
+
+            $('input[type=radio][name=home_owner_radio]').click(function(){
+                $('#home_owner').val($(this).val());
             });
 
 

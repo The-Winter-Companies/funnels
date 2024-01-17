@@ -63,8 +63,9 @@ $page = 'o7';
             <input type="hidden" id="state" name="state" value>
             <input type="hidden" id="address_short" value>
             <input type="hidden" id="time_frame" name="time_frame" value>
-            <input type="hidden" name="own_rented" id="own_rented" value="Own">
             <input type="hidden" id="project_reason" name="project_reason" value>
+            <input type="hidden" id="home_owner" name="home_owner" value="Yes">
+
             <fieldset id="zip-container">
                 <legend hidden="true">homeowner</legend>
                 <h3 class="form_box-question">What is your zip code?</h3>
@@ -195,6 +196,12 @@ $page = 'o7';
                     <input type="hidden" id="address_short" value="">
                     <p class="address_loc mb-3" style="display: none;" id="add-change"><b><span class="street_span"></span> <span class="city_span"></span>&nbsp;<span class="state_span"></span> </b>
                     </p>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <input id="homeowner" type="checkbox" checked="checked">
+                        <label for="homeowner">I am the homeowner</label>
+                    </div>
                 </div>
                 <div class="form-btns mx-auto sbmt">
                     <button class="btn form-btn btn-next" type="button" id="form_submit"><span class="btn-text">Continue</span>
@@ -446,6 +453,15 @@ $page = 'o7';
             if ($("#email-custom-error").is(":visible"))
             {
                 $("#email-custom-error").hide();
+            }
+        });
+
+        $('#homeowner').change(function() {
+            if(this.checked) {
+                $("#home_owner").val('Yes');
+            }
+            else {
+                $("#home_owner").val('No');
             }
         });
 

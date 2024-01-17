@@ -97,6 +97,7 @@ $page = 'o7';
             <input type="hidden" id="roofing_type" name="roofing_type" value>
             <input type="hidden" id="time_frame" name="time_frame" value>
             <input type="hidden" id="project_type" name="project_type" value="New roof for new home">
+            <input type="hidden" id="home_owner" name="home_owner" value="Yes">
             <fieldset data-step="2">
                 <legend hidden="true">homeowner</legend>
                 <h3 class="form_box-question">What is your zip code?</h3>
@@ -194,6 +195,12 @@ $page = 'o7';
                             <div class="address_string address_change d-inline " style=" font-weight: 700;">
                                 <span class="street_span"></span> <span class="city_span"></span> <span class="state_span"></span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <input id="homeowner" type="checkbox" checked="checked">
+                            <label for="homeowner">I am the homeowner</label>
                         </div>
                     </div>
                 </div>
@@ -484,6 +491,15 @@ $page = 'o7';
 
         $('input[type=radio][name=time_frame_radio]').click(function(){
             $('#time_frame').val($(this).val());
+        });
+
+        $('#homeowner').change(function() {
+            if(this.checked) {
+                $("#home_owner").val('Yes');
+            }
+            else {
+                $("#home_owner").val('No');
+            }
         });
 
         $('#email').on('input', function() {

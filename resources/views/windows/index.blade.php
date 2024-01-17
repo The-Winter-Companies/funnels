@@ -76,8 +76,8 @@ $page = 'main';
         <input type="hidden" id="address_short" value>
         <input type="hidden" id="project_type" name="project_type" value="Replace">
         <input type="hidden" id="number_of_windows" name="number_of_windows" value="3-5">
-        <input type="hidden" name="own_rented" id="own_rented" value="Yes">
         <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
+        <input type="hidden" name="home_owner" id="home_owner" value="Yes">
 
         <div class="progress-box" style="display: none;">
             <div class="progress" >
@@ -212,11 +212,11 @@ $page = 'main';
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input id="oh1" class="img-radio" type="radio" name="own_rented_radio" value="Yes" required>
+                            <input id="oh1" class="img-radio" type="radio" name="home_owner_radio" value="Yes" required>
                             <label class="radio-label" for="oh1"><span>Yes</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="oh2" class="img-radio" type="radio" name="own_rented_radio" value="No" required>
+                            <input id="oh2" class="img-radio" type="radio" name="home_owner_radio" value="No" required>
                             <label class="radio-label" for="oh2"><span>No</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
@@ -735,8 +735,8 @@ $page = 'main';
                 $('#time_frame').val($(this).val());
             });
 
-            $('input[type=radio][name=own_rented_radio]').click(function(){
-                $('#own_rented').val($(this).val());
+            $('input[type=radio][name=home_owner_radio]').click(function(){
+                $('#home_owner').val($(this).val());
             });
             $('#email').on('input', function() {
                 if ($("#email-custom-error").is(":visible"))

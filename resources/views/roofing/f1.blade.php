@@ -115,6 +115,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
             <input type="hidden" id="roofing_type" name="roofing_type" value>
             <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
             <input type="hidden" id="project_type" name="project_type" value="New roof for new home">
+            <input type="hidden" id="home_owner" name="home_owner" value="Yes">
             <h3 class="form_box-question mb-2"><b>Where</b> would this project take place?</h3>
             <p class="form_box-desc">Enter your zip code and we will help you compare free quotes!</p>
             <div class="form-cont mxwdth">
@@ -463,10 +464,10 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
 
         $('#homeowner').change(function() {
             if(this.checked) {
-                $("#own_rented").val('Own');
+                $("#home_owner").val('Yes');
             }
             else {
-                $("#own_rented").val('Rented');
+                $("#home_owner").val('No');
             }
         });
 

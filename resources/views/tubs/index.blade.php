@@ -86,7 +86,7 @@ $page = 'main';
             <input type="hidden" id="ip_address" name="ip_address" value>
             <input type="hidden" id="project_reason" name="project_reason" value>
             <input type="hidden" id="time_frame" name="time_frame" value>
-
+            <input type="hidden" id="home_owner" name="home_owner" value="Yes">
             <input type="hidden" id="state" name="state" value>
             <fieldset data-step="1" id="zip-container"><legend hidden="true">zip</legend>
 
@@ -170,12 +170,12 @@ $page = 'main';
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input id="oh1" class="img-radio" type="radio" name="homeowner" value="Yes" required>
-                            <label class="radio-label" for="oh1" id="yes"><span>Yes, I am the homeowner</span></label>
+                            <input id="oh1" class="img-radio" type="radio" name="home_owner_radio" value="Yes" required>
+                            <label class="radio-label" for="oh1" id="yes"><span>Yes</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="oh2" class="img-radio" type="radio" name="homeowner" value="No" required>
-                            <label class="radio-label" for="oh2" id="no"><span>No, I am not the homeowner</span></label>
+                            <input id="oh2" class="img-radio" type="radio" name="home_owner_radio" value="No" required>
+                            <label class="radio-label" for="oh2" id="no"><span>No</span></label>
                         </div>
                         <div class="form-error-message">Please select an option.</div>
                     </div>
@@ -624,6 +624,10 @@ $page = 'main';
 
         $("#btn-zip").on("click", function () {
             validateZip("main");
+        });
+
+        $('input[type=radio][name=home_owner_radio]').click(function(){
+            $('#home_owner').val($(this).val());
         });
 
         function goNext(ele) {

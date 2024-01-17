@@ -247,7 +247,7 @@
         formData['complete'] = 1;
         formData['token'] = $.token;
         formData['healthchecks_slug'] = vertical + '-' + pageKey;
-        formData['home_owner'] = "Yes";
+        formData['home_owner'] = $('#home_owner').val();
 
         if(vertical === 'solar'){
             formData['lp_campaign_id'] = "17604";
