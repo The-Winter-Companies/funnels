@@ -43,7 +43,17 @@ $page = 'o7';
 <body>
 <main class="container">
     <header>
-        <h1>Forever Home Hub</h1>
+        <h1>Forever Home
+            @if($mainDomain == "foreverhomeplus")
+                Plus
+            @else
+                @if($mainDomain == "foreverhomequotes")
+                    Quotes
+                @else
+                    Hub
+                @endif
+            @endif
+        </h1>
         <span id="subHead">
 <h2>Get Your Free Solar Quotes</h2>
 <p> Take this survey to find out if you qualify. Only takes 30 seconds!</p>
