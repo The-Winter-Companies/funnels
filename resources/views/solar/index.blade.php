@@ -338,7 +338,16 @@ session_start();
 <section class="page-content">
     <div class="container">
 
-        <h2 class="page-desc text-center">Why Use Forever Home Hub </h2>
+        <h2 class="page-desc text-center">Why Use Forever Home
+            @if($mainDomain == "foreverhomeplus")
+                Plus
+            @else
+                @if($mainDomain == "foreverhomequotes")
+                    Quotes
+                @else
+                    Hub
+                @endif
+            @endif</h2>
         <p class="page-title text-center">Get multiple quotes quickly and without any pressure</p>
 
 
@@ -418,7 +427,16 @@ session_start();
 <section class="page-content bl">
     <div class="container">
 
-        <h2 class="page-desc text-center">How Forever Home Hub Works</h2>
+        <h2 class="page-desc text-center">How Forever Home
+            @if($mainDomain == "foreverhomeplus")
+                Plus
+            @else
+                @if($mainDomain == "foreverhomequotes")
+                    Quotes
+                @else
+                    Hub
+                @endif
+            @endif Works </h2>
         <p class="page-title text-center">3 Easy Steps To Saving Big on New Windows:</p>
 
         <div class="row">
