@@ -15,10 +15,9 @@ class MainDomainProvider extends ServiceProvider
 
         $parts = explode('.', $host);
 
-        if (count($parts) > 2) {
+        if (count($parts) > 1) {
             $mainDomain = $parts[count($parts) - 2];
         } else {
-
             $mainDomain = $host;
         }
 
