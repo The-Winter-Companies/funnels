@@ -33,8 +33,6 @@ $page = 'main';
     <meta name="twitter:description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
     <meta name="twitter:image" content="{{ asset('img/logo.png') }}">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
-
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
     @include('partials.lead_id')

@@ -45,7 +45,6 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/windows-f1.css') }}" rel="stylesheet">
     <link href="{{ asset('css/funnels-footer.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <script type="text/javascript">if(typeof window.jQuery === 'undefined') {document.write('<script src=""{{ asset('s/jquery/jquery-3.4.1.min.js') }}"><\/script>');}</script>
     <!--[if (gte IE 6)&(lte IE 8)]>
     <script type="text/javascript">

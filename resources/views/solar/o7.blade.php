@@ -20,7 +20,6 @@ $page = 'o7';
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Lower your electric bill up to 80%">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;display=swap" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">

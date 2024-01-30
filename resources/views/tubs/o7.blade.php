@@ -30,7 +30,6 @@ $page = 'o7';
     @include('partials.trusted_form')
     @include('partials.lead_id')
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;display=swap" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
