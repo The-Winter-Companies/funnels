@@ -15,7 +15,6 @@ $page = 'main';
     <meta name="description" content="Discover the best solutions for your forever home with our trusted network and insightful resources."/>
     <meta name="author" content="">
     <meta name="keywords" content=""/>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="">

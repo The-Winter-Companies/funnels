@@ -24,7 +24,7 @@
                 <a href="https://foreverhomehub.com/contact-us/">Contact</a>
             </span>
         </div>
-        @if($mainDomain == "foreverhomehublocal")
+        @if($mainDomain == "foreverhomeplus")
             <span class="copyright">© Copyright <script>document.write(new Date().getFullYear())</script> Forever Home Plus. All Rights Reserved.</span>
         @else
             @if($mainDomain == "foreverhomequotes")

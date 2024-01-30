@@ -1,3 +1,4 @@
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" onerror="this.href='{{ asset('img/favicon.png') }}'">
 @if($mainDomain == "foreverhomeplus")
     @if($page !== 'o7')
         <header>

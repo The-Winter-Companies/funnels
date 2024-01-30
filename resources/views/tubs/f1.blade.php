@@ -32,7 +32,6 @@ $page = 'f1';
     @include('partials.trusted_form')
     @include('partials.lead_id')
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,800" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/tubs-f1.css') }}" rel="stylesheet">
