@@ -9,7 +9,7 @@ $page = 'o7';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
-    <title>Solar - ForeverHomeHub</title>
+    @include('partials.domain-particularities', ['mainDomain' => $mainDomain])
     <meta name="description" content="Lower your electric bill up to 80%">
     <meta name="author" content>
     <meta name="keywords" content>
@@ -292,44 +292,7 @@ $page = 'o7';
     </div>
     <center><img src="{{ asset('img/trusted.svg') }}" alt="trusted site" class="trusted mt-3"></center>
 </main>
-<footer>
-    <div class="container text-center">
-        <div class="footer-disclaimer">This Website is an advertising marketplace for individuals and companies who are seeking consumer referrals for services or products. We are not a provider, manufacturer, or installer. The information provided by you to us will be sent to a manufacturer and/or installer in your area. We do not endorse, warrant, or guarantee any service or products of any individual or company you choose. While any information shared with you is believed to be accurate and reliable, the owners/operators of this Website specifically disclaim all warranties, express, implied or statutory, regarding the accuracy, timeliness, and/or completeness of the information provided. The content of any information or service contained thereon (the “Content”) are provided on an "as is" basis. Federal and State tax credits or incentives are not available in all locations and not available to all individuals.</div>
-
-        <div class="sub-footer-links">
-            <span>
-                <a href="https://foreverhomehub.com/privacy-policy/">Privacy Policy&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-            </span>
-            <span>
-                <a href="https://foreverhomehub.com/terms-and-conditions">Terms Of Use&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-            </span>
-            <span>
-                <a href="https://foreverhomehub.com/disclaimer">Disclaimer&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-            </span>
-            <span>
-                <a href="https://foreverhomehub.com/please-do-not-sell-my-personal-information/" target="_blank">Do Not Sell My Information&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-            </span>
-            <span>
-                <a href="https://foreverhomehub.com/contact-us/">Contact</a>
-            </span>
-        </div>
-
-        <span class="copyright">© Copyright <script>document.write(new Date().getFullYear())</script> Forever Home Hub. All Rights Reserved.</span>
-    </div>
-</footer>
-<style type="text/css" id="wp-custom-css">
-    /* Footer styles */
-    .footer-disclaimer {
-        width: 100%;
-        display: inline-block;
-        font-size: 12px;
-        margin-bottom: 20px;
-        line-height: 1.5;
-    }
-    .sub-footer-links {
-        margin-bottom: 20px;
-    }
-</style>
+@include('partials/footer', ['mainDomain' => $mainDomain])
 <div id="loading" style="display: none;">
     <div class="loading">
         <div class="loading_inner">

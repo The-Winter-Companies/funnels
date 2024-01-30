@@ -11,7 +11,7 @@ $page = 'main';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Windows - ForeverHomeHub</title>
+    @include('partials.domain-particularities', ['mainDomain' => $mainDomain])
     <meta name="description" content="Description"/>
     <meta name="author" content="">
     <meta name="keywords" content=""/>
@@ -56,15 +56,6 @@ $page = 'main';
 
 </head>
 <body>
-
-<header>
-    <nav class="navbar justify-content-between mx-auto">
-				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
-					<img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="240" alt="Forever Home Hub" class="img-fluid" draggable="false">
-				</span>
-    </nav>
-</header>
-
 
 <main class="window">
     <section id="formSec" class="formSec">
@@ -537,7 +528,7 @@ $page = 'main';
     </div>
 </section>
 
-@include('partials/footer')
+@include('partials/footer', ['mainDomain' => $mainDomain])
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
