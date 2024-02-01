@@ -39,6 +39,30 @@ Route::get('/roofing', function () {
     return view('roofing/index');
 });
 
+Route::get('/tudor', function () {
+    return view('tudor');
+});
+
+Route::get('/terms', function () {
+    return view('footer-terms');
+});
+
+Route::get('/privacy-policy', function () {
+    return view('footer-privacy');
+});
+
+Route::get('/disclaimer', function () {
+    return view('footer-disclaimer');
+});
+
+Route::get('/contact-us', function () {
+    return view('footer-contact');
+});
+
+Route::get('/do-not-sell-my-personal-information', function () {
+    return view('footer-do-not-sell-my-personal-information');
+});
+
 Route::get('/roofing/o7', function () {
     return view('roofing/o7');
 });
