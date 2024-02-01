@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$astrologySparkDomains = [
-    'signup.astrologyspark.local',
-    'signup.astrologyspark.com',
-    'staging-signup-1.astrologyspark.com',
-    'staging-signup-2.astrologyspark.com',
-    'staging-signup.astrologyspark.com',
-    'web-server-2.astrologyspark.com',
-    'web-server-1.astrologyspark.com/'
-];
+$astrologySparkDomains = config('domains.astrology_spark');
 
 foreach ($astrologySparkDomains as $astrologySparkDomain){
     Route::domain($astrologySparkDomain)->group(function () {
         Route::get('/', function () {
             return view('astrology/index');
+        });
+    });
+}
+
+$smartConsumerInsightsDomains = config('domains.smart_consumer_insights');
+
+
+foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
+    Route::domain($smartConsumerInsightsDomain)->group(function () {
+        Route::get('/solar', function () {
+            $cookie = Cookie::make('visited_page', 'solar', 60 * 24 * 5);
+            return response(view('/smart_consumer_insights/solar'))->cookie($cookie);
+        });
+        Route::get('/', function () {
+            return "home_page";
         });
     });
 }
