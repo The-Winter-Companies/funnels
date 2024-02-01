@@ -13,6 +13,7 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="{{asset('css/new_page.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('css/oub.new_page.css')}}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" onerror="this.href='{{ asset('img/favicon.png') }}'">
     <script type="text/javascript">
         function getDate(days) {
             var monthNames = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
@@ -69,16 +70,16 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
                <p class="commontxt">Since  homeowners can save up to 70%, it’s no wonder services like these are growing rapidly. Our research concluded that <a href="{{$finalURL}}" target="_blank"><strong>Forever Home Hub</strong></a> is one of the most reliable, trusted services and highly effective tools to help consumers start saving.  </p>
 
 			  <h2 class="heading1">Want To See How Much You Can Save? Here's How...</h2>
-                <p class="commontxt"><b><u>Step 1</u>:</b> <a href="" target="_blank">Click your state on the map below to instantly check your zip code for free.</a></p>
-				<p class="commontxt"><b><u>Step 2</u>:</b>Once you enter your zip code and enter your home info, you will be able to see how much you can save based on where you live! It's really that easy!</p>
-				<p class="commontxt"><a href="" target="_blank"><img src="{{asset('img/statemap.png')}}" border="0"><br><img src="{{asset('img/button.jpg')}}"></a><br><br><br><br><br><br><br></p>
+                <p class="commontxt"><b><u>Step 1</u>:</b> <a href="{{$finalURL}}" target="_blank">Click your state on the map below to instantly check your zip code for free.</a></p>
+				<p class="commontxt"><b><u>Step 2</u>:</b> Once you enter your zip code and enter your home info, you will be able to see how much you can save based on where you live! It's really that easy!</p>
+				<p class="commontxt"><a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/statemap.png')}}" border="0"><br><img src="{{asset('img/button.jpg')}}"></a><br><br><br><br><br><br><br></p>
             </div>
             <div class="rgtPart">
             	<div class="rgt-content">
                 	<div class="rgtHeading">Market Update</div>
-                    <img src="{{asset('img/rt1.jpg')}}" alt="" width="299" height="173"><br>
-                    <img src="{{asset('img/rt2.jpg')}}"><br><br>
-                    <img src="{{asset('img/sb.jpg')}}"><br><br>
+                    <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/rt1.jpg')}}" alt="" width="299" height="173"><br></a>
+                    <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/rt2.jpg')}}"><br><br></a>
+                    <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/sb.jpg')}}"><br><br></a>
             </div>
         </div>
     </div>
