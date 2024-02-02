@@ -1,9 +1,3 @@
-<?php
-if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'windows'])){
-    header("Location: https://foreverhomehub.com", true, 302);
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,13 +54,28 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <nav class="navbar text-center">
-            <h1 class="navbar-brand mx-auto"><img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="180" height="47" alt="Logo" class="img-fluid"></h1>
+@if($mainDomain == "foreverhomeplus")
+    <header>
+        <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/foreverhomeplus_logo.png') }}"
+                         onerror="this.src='{{ asset('img/foreverhomeplus_logo.png') }}'" width="320"
+                         alt="Forever Home Plus" class="img-fluid" draggable="false">
+				</span>
         </nav>
-    </div>
-</header>
+    </header>
+@else
+    @if($mainDomain == "foreverhomehub")
+        <header>
+            <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="320"
+                         alt="Smart Consumer Insights" class="img-fluid" draggable="false">
+				</span>
+            </nav>
+        </header>
+    @endif
+@endif
 
 
 <main>
@@ -75,7 +84,6 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 
         <div class="nextsteps container text-center" style="display: none;">
             <h2 class="nextstepHead">Your Info Has Been Received! </h2>
-            <!--				<h2 class="nextstepHead"></h2>-->
             <p style="color: #545253;font-size: 20px ;font-weight: 700">You will receive a call shortly.</p><br>
         </div>
 
@@ -119,7 +127,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'solar')
 
-                    <a class="partner featured" href="https://quotes.foreverhomehub.com/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a class="partner featured" href="https://{{$domainFullDomain}}/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Rise Above with Our Roofing Excellence: Elevate Your Home Today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -139,7 +147,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
                         </div>
                     </a>
 
-                    <a class="partner featured" href="https://quotes.foreverhomehub.com/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a class="partner featured" href="https://{{$domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -163,7 +171,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'roofing')
 
-                    <a class="partner featured" href="https://quotes.foreverhomehub.com/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a class="partner featured" href="https://{{$domainFullDomain}}/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -183,7 +191,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
                         </div>
                     </a>
 
-                    <a class="partner featured" href="https://quotes.foreverhomehub.com/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a class="partner featured" href="https://{{$domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -207,7 +215,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'tubs')
 
-                    <a class="partner featured" href="https://quotes.foreverhomehub.com/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a class="partner featured" href="https://{{$domainFullDomain}}/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Rise Above with Our Roofing Excellence: Elevate Your Home Today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -227,7 +235,7 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
                         </div>
                     </a>
 
-                    <a class="partner featured" href="https://quotes.foreverhomehub.com/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a class="partner featured" href="https://{{$domainFullDomain}}/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -304,8 +312,8 @@ if(!isset($_GET['v']) || !in_array($_GET['v'], ['roofing', 'tubs', 'solar', 'win
                 <div class="row">
                     <div class="col col-seal text-center"><img class="img-fluid" src="{{ asset('img/seal.png') }}" alt="seal"></div>
                     <div class="col">
-                        <h4>The Forever Home Hub Promise</h4>
-                        <p>At ForeverHomeHub.com, our mission is to ensure your home improvement projects are completed to perfection. We connect you with top-rated, licensed, and pre-screened contractors in your area, absolutely FREE of charge. Our cutting-edge technology, combined with a thorough screening process, guarantees that we recommend only the finest installers at the most competitive prices.</p>
+                        <h4>The {{$domainTitle}} Promise</h4>
+                        <p>At {{$domainFullDomain}}, our mission is to ensure your home improvement projects are completed to perfection. We connect you with top-rated, licensed, and pre-screened contractors in your area, absolutely FREE of charge. Our cutting-edge technology, combined with a thorough screening process, guarantees that we recommend only the finest installers at the most competitive prices.</p>
                     </div>
                 </div>
             </div>

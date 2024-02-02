@@ -300,7 +300,7 @@ $page = 'o7';
     </div>
     <center><img src="{{ asset('img/trusted.svg') }}" alt="trusted site" class="trusted mt-3"></center>
 </main>
-@include('partials/footer', ['mainDomain' => $mainDomain])
+@include('partials/footer', ['domainTitle' => $domainTitle, 'domainFullDomain' => $domainFullDomain, 'domainInfoEmail' => $domainInfoEmail])
 <div id="loading" style="display: none;">
     <div class="loading">
         <div class="loading_inner">

@@ -2,35 +2,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QuoteWallet | Terms</title>
-    <meta name="description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" onerror="this.href='{{ asset('img/favicon.png') }}'">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="">
-    <meta itemprop="description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta itemprop="description" content="">
     <meta itemprop="image" content="">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="#">
     <meta property="og:type" content="website">
     <meta property="og:title" content="">
-    <meta property="og:description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta property="og:description" content="">
     <meta property="og:image" content="">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
 
 
     <!-- Bootstrap -->
-    <link href="{{asset('css/style-funnels-footer.css')}}" rel="stylesheet">
     <link href="{{asset('css/bootstrap-v4.0.0.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style-funnels-footer.css')}}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,13 +100,30 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <nav class="navbar text-center">
-            <div class="navbar-nav mx-auto"><img src="{{asset('img/logo.png')}}" onerror="this.src='img/logo.png'" width="240" alt="QuoteWallet" class="img-fluid"></div>
+@if($mainDomain == "foreverhomeplus")
+    <header>
+        <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/foreverhomeplus_logo.png') }}"
+                         onerror="this.src='{{ asset('img/foreverhomeplus_logo.png') }}'" width="320"
+                         alt="Forever Home Plus" class="img-fluid" draggable="false">
+				</span>
         </nav>
-    </div>
-</header>
+    </header>
+    <title>Forever Home Plus | Contact</title>
+@else
+    @if($mainDomain == "smartconsumerinsights")
+        <header>
+            <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="320"
+                         alt="Smart Consumer Insights" class="img-fluid" draggable="false">
+				</span>
+            </nav>
+        </header>
+        <title>Smart Consumer Insights | Contact</title>
+    @endif
+@endif
 
 
 <main>
@@ -119,7 +135,7 @@
         <div class="content">
             <section>
                 <p>
-                    ForeverHomeHub, and its brands, and related entities may share, lease, or sell your data. You have the right to direct us to opt-out of the sale of your personal information below, or contact us by email at support@foreverhomehub.com. For additional information regarding how we utilize your data as well as your rights, please review our Privacy Policy and any brand specific Terms and Conditions.
+                    {{$domainTitle}}, and its brands, and related entities may share, lease, or sell your data. You have the right to direct us to opt-out of the sale of your personal information below, or contact us by email at {{$domainInfoEmail}}. For additional information regarding how we utilize your data as well as your rights, please review our Privacy Policy and any brand specific Terms and Conditions.
                 </p>
 
                 <form id="optOutForm">

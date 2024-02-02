@@ -332,7 +332,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
         <center><img src="{{ asset('img/trusted.svg') }}" alt="trusted site" class="trusted mt-3"></center>
     </div>
 </form>
-@include('partials/footer', ['mainDomain' => $mainDomain])
+@include('partials/footer', ['domainTitle' => $domainTitle, 'domainFullDomain' => $domainFullDomain, 'domainInfoEmail' => $domainInfoEmail])
 <script src="{{ asset('js/jquery/jquery-3.4.1.min.js') }}"></script>
 <!--[if lte IE 8]>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

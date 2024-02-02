@@ -283,7 +283,7 @@ $page = 'o7';
         </script>
     </div>
 </main>
-@include('partials/footer', ['mainDomain' => $mainDomain])
+@include('partials/footer', ['domainTitle' => $domainTitle, 'domainFullDomain' => $domainFullDomain, 'domainInfoEmail' => $domainInfoEmail])
 <div id="loading" style="display: none;">
     <div class="loading">
         <div class="loading_inner">

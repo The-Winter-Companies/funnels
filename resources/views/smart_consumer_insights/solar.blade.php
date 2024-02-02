@@ -1,8 +1,6 @@
 <?php
 $requestParams = $_GET;
-
 $baseURL = "https://quotes.foreverhomehub.com/solar/o7";
-
 $finalURL = $baseURL . '?' . http_build_query($requestParams);
 ?>
 <!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head>
@@ -58,7 +56,7 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
                 <p class="commontxt">Power companies are fighting an uphill battle they are sure to lose and they’re blaming customers who are taking advantage of massive savings programs. Specifically, they are blaming State Rebates that incentivize homeowners to use clean energy <strong>by reducing solar power installation costs.</strong></p>
 				<p class="commontxt">Until now, solar panels were less about saving money and more about environmental protection. In order to get more people to switch to clean solar energy companies are highly incentivizing homeowners who live in specific zip codes to go solar with <strong><a href="{{$finalURL}}" target="_blank">$1000’s of dollars in savings</a> and incentives that can cover the large costs</strong> associated with a new solar panel installation.</p>
 
-              <p class="commontxt"> When  homeowners visit the <a href="{{$finalURL}}" target="_blank"><strong>Forever Home Hub Website</strong></a> to see if they qualify, many are shocked to learn that <strong>solar panels can be installed on their home with no upfront costs</strong> after rebates and solar incentives. You can find out which solar incentives are offered in your area by using your zip code. You can even use this tool to help calculate your savings by entering your utility provider and your average power bill. In many cases, customers are saving up to 50% on the cost of powering their home each year.</p>
+              <p class="commontxt"> When  homeowners visit the <a href="{{$finalURL}}" target="_blank"><strong>{{$domainTitle}} Website</strong></a> to see if they qualify, many are shocked to learn that <strong>solar panels can be installed on their home with no upfront costs</strong> after rebates and solar incentives. You can find out which solar incentives are offered in your area by using your zip code. You can even use this tool to help calculate your savings by entering your utility provider and your average power bill. In many cases, customers are saving up to 50% on the cost of powering their home each year.</p>
 
 <h2>How Do Solar Programs Work?</h2>
 
@@ -67,7 +65,7 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
 
 
                <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/sp.jpg')}}" align="center"></a>
-               <p class="commontxt">Since  homeowners can save up to 70%, it’s no wonder services like these are growing rapidly. Our research concluded that <a href="{{$finalURL}}" target="_blank"><strong>Forever Home Hub</strong></a> is one of the most reliable, trusted services and highly effective tools to help consumers start saving.  </p>
+               <p class="commontxt">Since  homeowners can save up to 70%, it’s no wonder services like these are growing rapidly. Our research concluded that <a href="{{$finalURL}}" target="_blank"><strong>{{$domainTitle}}</strong></a> is one of the most reliable, trusted services and highly effective tools to help consumers start saving.  </p>
 
 			  <h2 class="heading1">Want To See How Much You Can Save? Here's How...</h2>
                 <p class="commontxt"><b><u>Step 1</u>:</b> <a href="{{$finalURL}}" target="_blank">Click your state on the map below to instantly check your zip code for free.</a></p>
@@ -86,10 +84,10 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
 </div>
 <div class="footer">
 	<div class="container">
-    	<p class="ft-left"><a href="https://insidershoppersdaily.com/terms.html" target="_blank">Terms&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;
-                <a href="https://insidershoppersdaily.com/privacy.html" target="_blank">Privacy&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://insidershoppersdaily.com/contactus.html" target="_blank">Contact Us&nbsp;&nbsp;&nbsp;</a>
-                <a href="https://pushint.com/manage-my-data" target="_blank">DO NOT SELL MY INFORMATION</a>
+    	<p class="ft-left"><a href="https://smartconsumerinsights.com/terms-and-conditions" target="_blank">Terms&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;
+                <a href="https://smartconsumerinsights.com/privacy-policy" target="_blank">Privacy&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://smartconsumerinsights.com/contact-us" target="_blank">Contact Us&nbsp;&nbsp;&nbsp;</a>
+                <a href="https://smartconsumerinsights.com/please-do-not-sell-my-personal-information" target="_blank">DO NOT SELL MY INFORMATION</a>
             </p>
 
         <p>&nbsp; </p>

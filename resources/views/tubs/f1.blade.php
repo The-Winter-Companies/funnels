@@ -252,7 +252,7 @@ $page = 'f1';
         <center><img src="{{ asset('img/trusted.svg') }}" onerror="this.src='{{ asset('img/trusted.svg') }}'" width="110" height="45" alt="Trusted Site"  class="trusted"></center>
     </form>
 </main>
-@include('partials/footer', ['mainDomain' => $mainDomain])
+@include('partials/footer', ['domainTitle' => $domainTitle, 'domainFullDomain' => $domainFullDomain, 'domainInfoEmail' => $domainInfoEmail])
 <script src="{{ asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('js/jquery/jquery-ui.custom.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
