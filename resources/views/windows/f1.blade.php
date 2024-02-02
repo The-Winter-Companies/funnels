@@ -5,7 +5,6 @@ $vertical = 'windows';
 $page = 'f1';
 $sessionStartTime = \Illuminate\Support\Carbon::now();
 ?>
-@include('partials.redirect_if_missing_vars')
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">

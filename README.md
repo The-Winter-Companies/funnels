@@ -37,6 +37,6 @@ populateDummyData
 To run tests: 
 1. Install Dusk
 2. Make sure the .env APP_URL is correct for your local
-3. run laravel dusk
+3. run laravel dusk: php artisan dusk
 
 Docs: https://laravel.com/docs/10.x/dusk

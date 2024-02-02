@@ -5,7 +5,6 @@ $vertical = 'roofing';
 $page = 'f1';
 $sessionStartTime = \Illuminate\Support\Carbon::now();
 ?>
-@include('partials.redirect_if_missing_vars')
 
     <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 "> <![endif]-->

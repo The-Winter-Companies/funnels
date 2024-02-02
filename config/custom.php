@@ -17,6 +17,12 @@ return [
             'domain' => "smartconsumerinsights.com",
             'info_email' => "info@smartconsumerinsights.com"
         ]
+    ],
+    'verticals' => [
+        'solar',
+        'roofing',
+        'tubs',
+        'windows'
     ]
 ];
 

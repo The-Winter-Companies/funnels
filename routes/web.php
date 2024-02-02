@@ -47,6 +47,14 @@ Route::get('/roofing', function () {
     return view('roofing/index');
 });
 
+Route::get('/tubs', function () {
+    return view('tubs/index');
+});
+
+Route::get('/solar', function () {
+    return view('solar/index');
+});
+
 Route::get('/tudor', function () {
     return view('tudor');
 });
@@ -71,48 +79,43 @@ Route::get('/do-not-sell-my-personal-information', function () {
     return view('footer-do-not-sell-my-personal-information');
 });
 
-Route::get('/roofing/o7', function () {
-    return view('roofing/o7');
-});
+Route::middleware(['check_everflow_params_or_redirect'])->group(function () {
 
-Route::get('/roofing/f1', function () {
-    return view('roofing/f1');
-});
+    Route::get('/solar/o7', function () {
+        return view('solar/o7');
+    });
 
-Route::get('/solar', function () {
-    return view('solar/index');
-});
+    Route::get('/solar/f1', function () {
+        return view('solar/f1');
+    });
 
-Route::get('/solar/o7', function () {
-    return view('solar/o7');
-});
+    Route::get('/tubs/o7', function () {
+        return view('tubs/o7');
+    });
 
-Route::get('/solar/f1', function () {
-    return view('solar/f1');
-});
+    Route::get('/tubs/f1', function () {
+        return view('tubs/f1');
+    });
 
-Route::get('/tubs', function () {
-    return view('tubs/index');
-});
+    Route::get('/windows/f1', function () {
+        return view('windows/f1');
+    });
 
-Route::get('/tubs/o7', function () {
-    return view('tubs/o7');
-});
+    Route::get('/windows', function () {
+        return view('windows/index');
+    });
 
-Route::get('/tubs/f1', function () {
-    return view('tubs/f1');
-});
+    Route::get('/windows/o7', function () {
+        return view('windows/o7');
+    });
 
-Route::get('/windows/f1', function () {
-    return view('windows/f1');
-});
+    Route::get('/roofing/o7', function () {
+        return view('roofing/o7');
+    });
 
-Route::get('/windows', function () {
-    return view('windows/index');
-});
-
-Route::get('/windows/o7', function () {
-    return view('windows/o7');
+    Route::get('/roofing/f1', function () {
+        return view('roofing/f1');
+    });
 });
 
 Route::get('/thank-you', function () {

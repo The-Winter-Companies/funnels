@@ -4,7 +4,6 @@ session_start();
 $vertical = 'solar';
 $page = 'o7';
 ?>
-@include('partials.redirect_if_missing_vars')
     <!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
