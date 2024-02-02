@@ -4,7 +4,7 @@ b,strong{font-weight: 700;}
 .container>.row {clear:both}
 a{color: #3262ff; font-weight: 400}
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
 	font-size: 16px;
     line-height: 1.428571429;
@@ -137,7 +137,7 @@ header .navbar-nav .nav-link:not(.btn ){color: black;font-weight: 500;}
 .scroller-btn{border-left: solid 1px #e9e9e9;text-align: center; max-width: 150px; padding: 10px; cursor: pointer}
 
 .scroller-btn i{width: 60px; height: 60px; background: #eaefff; display: block;border-radius: 50%; margin-bottom: .5rem; margin-left: auto; margin-right:auto}
-main{padding: 5rem 0;}
+main{padding: 2rem 0;}
 
 h1,h2,h3,h4{color: black;font-family: 'Montserratfont','Poppins', sans-serif;}
 
@@ -325,7 +325,7 @@ article { -ms-word-break: break-all;
         hyphens: auto;}
 article.container {max-width: 980px;}
 article .heading {margin-bottom: 2rem}
-article .heading h1{color: #000;font-size: 2.8rem; font-weight: 800; line-height: 1.2em;letter-spacing: 2px; margin-bottom: 2rem; color: #3262ff;}
+article .heading h1{color: #000;font-size: 2.8rem; font-weight: 800; line-height: 1.2em;letter-spacing: 2px; margin-bottom: 2rem; margin-top: 1rem; color: #024B9D;}
 article .heading hr {background: #007cff; width: 100%; height: 1px; border: none; outline: none}
 article .heading hr:last-of-type{height: 2px; background: #14274d}
 article .heading p {margin: 2rem 0}

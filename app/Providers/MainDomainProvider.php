@@ -21,6 +21,17 @@ class MainDomainProvider extends ServiceProvider
             $mainDomain = $host;
         }
 
+        $defaultTitle = config("custom.dynamic_domain_content.foreverhomehub.title");
+        $defaultFullDomain = config("custom.dynamic_domain_content.foreverhomehub.domain");
+        $defaultInfoEmail = config("custom.dynamic_domain_content.foreverhomehub.info_email");
+
+        $domainTitle = config("custom.dynamic_domain_content.$mainDomain.title");
+        $domainFullDomain = config("custom.dynamic_domain_content.$mainDomain.domain");
+        $domainInfoEmail = config("custom.dynamic_domain_content.$mainDomain.info_email");
+
+        View::share('domainTitle', $domainTitle ?? $defaultTitle);
+        View::share('domainFullDomain', $domainFullDomain ?? $defaultFullDomain);
+        View::share('domainInfoEmail', $domainInfoEmail ?? $defaultInfoEmail);
         View::share('mainDomain', $mainDomain);
     }
 

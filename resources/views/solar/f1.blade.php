@@ -279,7 +279,7 @@ $page = 'f1';
         </div>
     </div>
 </form>
-@include('partials/footer', ['mainDomain' => $mainDomain])
+@include('partials/footer', ['domainTitle' => $domainTitle, 'domainFullDomain' => $domainFullDomain, 'domainInfoEmail' => $domainInfoEmail])
 <script src="{{ asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap-4.0.0.js') }}"></script>

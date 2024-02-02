@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CheckThankYouPageParameters;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -68,5 +69,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'check_everflow_params_or_redirect' => \App\Http\Middleware\CheckEverflowParamsoOrRedirect::class,
+        'check_thank_you_page_params' => \App\Http\Middleware\CheckThankYouPageParameters::class,
     ];
 }

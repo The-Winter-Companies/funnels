@@ -2,35 +2,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QuoteWallet | Terms</title>
-    <meta name="description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" onerror="this.href='{{ asset('img/favicon.png') }}'">
 
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="">
-    <meta itemprop="description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta itemprop="description" content="">
     <meta itemprop="image" content="">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="#">
     <meta property="og:type" content="website">
     <meta property="og:title" content="">
-    <meta property="og:description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta property="og:description" content="">
     <meta property="og:image" content="">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
 
 
     <!-- Bootstrap -->
-    <link href="{{asset('css/style-funnels-footer.css')}}" rel="stylesheet">
     <link href="{{asset('css/bootstrap-v4.0.0.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style-funnels-footer.css')}}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -41,13 +40,30 @@
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <nav class="navbar text-center">
-            <div class="navbar-nav mx-auto"><img src="{{asset('img/logo.png')}}" onerror="this.src='img/logo.png'" width="240" alt="QuoteWallet" class="img-fluid"></div>
+@if($mainDomain == "foreverhomeplus")
+    <header>
+        <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/foreverhomeplus_logo.png') }}"
+                         onerror="this.src='{{ asset('img/foreverhomeplus_logo.png') }}'" width="320"
+                         alt="Forever Home Plus" class="img-fluid" draggable="false">
+				</span>
         </nav>
-    </div>
-</header>
+    </header>
+    <title>Forever Home Plus | Contact</title>
+@else
+    @if($mainDomain == "smartconsumerinsights")
+        <header>
+            <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="320"
+                         alt="Smart Consumer Insights" class="img-fluid" draggable="false">
+				</span>
+            </nav>
+        </header>
+        <title>Smart Consumer Insights | Contact</title>
+    @endif
+@endif
 
 
 <main>
@@ -55,9 +71,7 @@
     <article class="container">
         <div class="heading">
             <h1 class="text-center">Disclaimer</h1>
-            <hr>
-            <p><b>Last updated: June 10, 2023</b></p>
-            <hr>
+            <p><b>Last updated: February 2, 2024</b></p>
         </div>
         <div class="content">
             <h4>Interpretation and Definitions</h4>
@@ -68,10 +82,10 @@
             <h6>Definitions </h6>
             <p>
                 For the purposes of this Disclaimer:<br><br>
-                <b>1.</b> Company (referred to as either “the Company”, “We”, “Us” or “Our” in this Disclaimer) refers to Forever Home Hub, 224 West 35th Street, New City, NY, United States, New York.<br>
+                <b>1.</b> Company (referred to as either “the Company”, “We”, “Us” or “Our” in this Disclaimer) refers to {{$domainTitle}}, 224 West 35th Street, New City, NY, United States, New York.<br>
                 <b>2.</b> Service refers to the Website.<br>
                 <b>3.</b> You means the individual accessing the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.<br>
-                <b>4.</b> Website refers to Forever Home Hub, accessible from https://foreverhomehub.com/
+                <b>4.</b> Website refers to {{$domainTitle}}, accessible from https://foreverhomehub.com/
             </p>
             <h4>Disclaimer</h4>
             <p>
@@ -114,9 +128,9 @@
             <h4>Contact Information</h4>
             <p>
                 If you have any questions regarding these Terms or the Site, please contact Company at:<br><br>
-                info@foreverhomehub.com<br><br>
+                {{$domainInfoEmail}}<br><br>
                 or<br><br>
-                Forever Home Hub<br><br>
+                {{$domainTitle}}<br><br>
                 224 West 35th Street<br><br>
                 New City, NY, United States, New York
             </p>

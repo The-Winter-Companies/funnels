@@ -2,35 +2,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QuoteWallet | Terms</title>
-    <meta name="description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+    <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" onerror="this.href='{{ asset('img/favicon.png') }}'">
 
 	<!-- Google / Search Engine Tags -->
 	<meta itemprop="name" content="">
-	<meta itemprop="description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+	<meta itemprop="description" content="">
 	<meta itemprop="image" content="">
 
 	<!-- Facebook Meta Tags -->
 	<meta property="og:url" content="#">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="">
-	<meta property="og:description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+	<meta property="og:description" content="">
 	<meta property="og:image" content="">
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="">
-	<meta name="twitter:description" content="Explore the terms and conditions at QuoteWallet: Detailed guidelines on site usage, user responsibilities, and legal agreements.">
+	<meta name="twitter:description" content="">
 	<meta name="twitter:image" content="">
 
 
 
     <!-- Bootstrap -->
-    <link href="{{asset('css/style-funnels-footer.css')}}" rel="stylesheet">
     <link href="{{asset('css/bootstrap-v4.0.0.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style-funnels-footer.css')}}" rel="stylesheet">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -41,13 +40,30 @@
   </head>
   <body>
 
-	<header>
-		<div class="container">
-		  <nav class="navbar text-center">
-			  <div class="navbar-nav mx-auto"><img src="{{asset('img/logo.png')}}" onerror="this.src='img/logo.png'" width="240" alt="QuoteWallet" class="img-fluid"></div>
-		  </nav>
-		</div>
-	</header>
+  @if($mainDomain == "foreverhomeplus")
+      <header>
+          <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/foreverhomeplus_logo.png') }}"
+                         onerror="this.src='{{ asset('img/foreverhomeplus_logo.png') }}'" width="320"
+                         alt="Forever Home Plus" class="img-fluid" draggable="false">
+				</span>
+          </nav>
+      </header>
+      <title>Forever Home Plus | Contact</title>
+  @else
+      @if($mainDomain == "smartconsumerinsights")
+          <header>
+              <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="320"
+                         alt="Smart Consumer Insights" class="img-fluid" draggable="false">
+				</span>
+              </nav>
+          </header>
+          <title>Smart Consumer Insights | Contact</title>
+      @endif
+  @endif
 
 
 	<main>
@@ -55,17 +71,15 @@
 		<article class="container">
 			<div class="heading">
 				<h1 class="text-center">Terms and Conditions</h1>
-				<hr>
-				<p><b>Last updated: June 11, 2023</b></p>
-				<hr>
+				<p><b>Last updated: February 2, 2024</b></p>
 			</div>
 			<div class="content">
 					<h4>Terms and Conditions</h4>
 
-					<p>Welcome to foreverhomehub.com (the “Site”). Please read these Terms and Conditions carefully. If you are unwilling to accept the terms and conditions herein, please do not use the Site. By using the Site, you are agreeing to abide and be bound by the following Terms and Conditions (“Terms”).</p>
+					<p>Welcome to {{$domainFullDomain}} (the “Site”). Please read these Terms and Conditions carefully. If you are unwilling to accept the terms and conditions herein, please do not use the Site. By using the Site, you are agreeing to abide and be bound by the following Terms and Conditions (“Terms”).</p>
 					<h4>Use of Site Content</h4>
 					<p><b>1.</b> Content, including but not limited to text, software, music, sound, photographs, trademarks, service marks, logos, video, graphics or other material contained on this Site or presented to you through this Site (“Content”), is protected by copyright, trademarks, service marks, Site marks, patents or other proprietary agreements and laws (collectively, “Intellectual Property Rights”). You are only permitted to use Content as expressly authorized herein or in writing by the Site owner (“Company”). These Terms do not transfer any right, title, or interest in the Site or the Content to you, and Company and its third party advertisers and affiliates retain all of its and their respective right, title and interest to the Site and Content. <br><br>
-                        <b>2.</b> Except as provided in these Terms, you may not use, download, upload, copy, modify, print, display, perform, reproduce, publish, license, rent, lease, loan, sell, assign, post, transmit, distribute, reverse engineer, create derivative works from, or otherwise exploit any Content or information from the Site, in whole or in part, including without limitation by way of framing or hyper-linking, without Company’s permission. Requests for such permission should be made to info@foreverhomehub.com. <br><br>
+                        <b>2.</b> Except as provided in these Terms, you may not use, download, upload, copy, modify, print, display, perform, reproduce, publish, license, rent, lease, loan, sell, assign, post, transmit, distribute, reverse engineer, create derivative works from, or otherwise exploit any Content or information from the Site, in whole or in part, including without limitation by way of framing or hyper-linking, without Company’s permission. Requests for such permission should be made to {{$domainInfoEmail}}. <br><br>
                         <b>3.</b> Except as expressly provided in these Terms, nothing contained in these Terms or on the Site shall be construed as conferring any other license or right, expressly, by implication, by estoppel or otherwise, under any of our Intellectual Property Rights or under any third party’s Intellectual Property Rights. All rights not expressly granted herein are reserved.</p>
 					<h4>General</h4>
 					<p>This Site is not affiliated with, endorsed by, authorized by, or associated in any way with any government (whether federal or state), government agency, military, or country. The Site and Content have been prepared for general information purposes only. By using this Site, you expressly agree that any such use is solely for personal, non-commercial use. The Site provides links to other websites and access to content, products and services of third parties, including without limitation, Company’s third party advertisers, affiliates and strategic partners (“Third Party Sites”). You should refer to the separate terms of use, privacy policies, and other rules posted on Third Party Sites before you use them. Company is not responsible for and expressly disclaims responsibility for (a) the availability of, or content provided on, Third Party Sites; (b) third party content accessible through the Site, including opinions, advice, or statements (and you understand that you bear all risks associated with the use of such content); (c) any loss or damage of any sort you may incur from dealing with any third party; or (d) your dealings with any third parties found on or through the Site, including your participation in promotions, the payment for and delivery of goods if any, and any terms, conditions, warranties, or representations associated with such dealings. Company’s inclusion of a link to a Third Party Site does not imply that Company endorses the Third Party Site or any content or statements made therein, or vice versa. You are under no obligation to transact business with any of the Third Party Sites.</p>
@@ -87,7 +101,7 @@
                 <br><br> Privacy <br><br>
                         Company will treat any information it collects from you in accordance with its Privacy Policy, which is incorporated by reference herein.
                 <h4>Copyright Infringement</h4>
-					<p>In accordance with the Digital Millennium Copyright Act (“DMCA”), https://lcweb.loc.gov/copyright/, Company has designated an agent to receive notifications of alleged copyright infringement associated with the Site. Company will, upon receiving proper notice as set forth below, use commercially reasonable efforts to remove or disable access to any such material as set forth in the DMCA. If you believe that your copyrighted work or the copyrighted work of another party is being infringed, please notify our copyright agent: info@foreverhomehub.com. When notifying Company of the alleged copyright infringement, please include all of the following information: <br><br>
+					<p>In accordance with the Digital Millennium Copyright Act (“DMCA”), https://lcweb.loc.gov/copyright/, Company has designated an agent to receive notifications of alleged copyright infringement associated with the Site. Company will, upon receiving proper notice as set forth below, use commercially reasonable efforts to remove or disable access to any such material as set forth in the DMCA. If you believe that your copyrighted work or the copyrighted work of another party is being infringed, please notify our copyright agent: {{$domainInfoEmail}}. When notifying Company of the alleged copyright infringement, please include all of the following information: <br><br>
                         <b>1.</b> A physical or electronic signature of a person authorized to act on behalf of the copyright owner; <br><br>
                         <b>2.</b> Identification of the copyrighted work claimed to have been infringed; <br><br>
                         <b>3.</b> Identification of the material that is claimed to be infringing and information reasonably sufficient to locate the material; <br><br>
@@ -114,8 +128,8 @@
 					<h4>Acknowledgment</h4>
 					<p>You acknowledge (a) that you have read and understood these Terms; and (b) that these Terms have the same force and effect as a signed agreement.</p>
 					<h4>Contact Information</h4>
-					<p>If you have any questions regarding these Terms or the Site, please contact Forever Home Hub at:<br><br>
-                        info@foreverhomehub.com</p>
+					<p>If you have any questions regarding these Terms or the Site, please contact {{$domainTitle}} at:<br><br>
+                        {{$domainInfoEmail}}</p>
 				</div>
 		</article>
 
