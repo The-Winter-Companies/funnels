@@ -29,7 +29,7 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
 </div>
 <div class="logo-bar">
 	<div class="container">
-    	<a href="" target="_blank"><img src="{{asset('img/logo.png')}}"></a>
+    	<a href="" target="_blank"><img src=""></a>
     </div>
 </div>
 <div class="navBar">

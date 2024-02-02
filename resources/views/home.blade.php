@@ -47,6 +47,7 @@
 <nav class="navbar fixed-top  navbar-expand-md">
 <div class="container">
 <div class="navbar-header">
+    <a class="navbar-brand logo-img logo-img-a pix-adjust-height" href="https://foreverhomeplus.com">Forever Home Plus</a>
 </div>
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 <span class="sr-only">Toggle Nav</span>
@@ -173,13 +174,13 @@
 </section>
 <footer class="footer-sec">
 <div class="container">
-<img src="{{asset('img/logo.png')}}" width="171" height="51" alt="" class="img-fluid ftr-logo">
+<a href="https://{{$domainFullDomain}}" target="_blank"><img src="{{asset('img/foreverhomeplus_logo.png')}}" width="171" height="51" alt="" class="img-fluid ftr-logo"></a>
 <div class="row">
 <div class="col cpy"><p class="copyright">Copyright © 2022 Forever Home Plus</p></div>
 <div class="col">
 <div class="footer-links">
 <ul>
-<li><a href="https://foreverhomeplus.com/" title="Homepage">Homepage</a></li><li><a href="https://thesimplehomequotes.com/privacy" title="Privacy Policy">Privacy Policy</a></li><li><a href="https://thesimplehomequotes.com/contact" title="Contact">Contact</a></li><li><a href="https://thesimplehomequotes.com/terms" title="Terms And Conditions">Terms And Conditions</a></li><li><a href="https://compliance.logiq.com/manage-my-data/" title="Do Not Sell My Information">Do Not Sell My Information</a></li> </ul>
+<li><a href="https://foreverhomeplus.com/" title="Homepage">Homepage</a></li><li><a href="https://foreverhomeplus.com/privacy-policy" title="Privacy Policy">Privacy Policy</a></li><li><a href="https://foreverhomeplus.com/contact-us" title="Contact">Contact</a></li><li><a href="https://foreverhomeplus.com/terms-and-conditions" title="Terms And Conditions">Terms And Conditions</a></li><li><a href="https://foreverhomeplus.com/please-do-not-sell-my-personal-information" title="Do Not Sell My Information">Do Not Sell My Information</a></li> </ul>
 </div>
 </div>
 </div>
