@@ -26,7 +26,6 @@ foreach ($astrologySparkDomains as $astrologySparkDomain){
 
 $smartConsumerInsightsDomains = config('domains.smart_consumer_insights');
 
-
 foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
     Route::domain($smartConsumerInsightsDomain)->group(function () {
         Route::get('/solar', function () {

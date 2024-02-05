@@ -19,8 +19,7 @@ class CheckEverflowParamsoOrRedirect
     public function handle(Request $request, Closure $next): Response
     {
         if (empty($request->get('ef_aff_id')) || empty($request->get('ef_tx_id')) || empty($request->get('ef_offer_id'))) {
-            Log::error('Required Everflow Parameters were not in URL.');
-
+//            Log::error('Required Everflow Parameters were not in URL.');
             foreach(config('custom.verticals') as $vertical){
                 if (str_contains($request->getRequestUri(), $vertical)) {
                     return redirect('/' . $vertical . '?' . http_build_query($request->query()));
