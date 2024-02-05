@@ -101,6 +101,10 @@ foreach ($mergedFHHAndFHPDomains as $mergedFHHAndFHPDomain){
             return view('solar/index');
         });
 
+        Route::get('/windows', function () {
+            return view('windows/index');
+        });
+
         Route::middleware(['check_everflow_params_or_redirect'])->group(function () {
 
             Route::get('/solar/o7', function () {
@@ -121,10 +125,6 @@ foreach ($mergedFHHAndFHPDomains as $mergedFHHAndFHPDomain){
 
             Route::get('/windows/f1', function () {
                 return view('windows/f1');
-            });
-
-            Route::get('/windows', function () {
-                return view('windows/index');
             });
 
             Route::get('/windows/o7', function () {
