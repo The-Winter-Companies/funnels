@@ -185,11 +185,11 @@
 <div class="container">
 {{--<a href="/" target="_blank"><img src="{{asset('img/foreverhomeplus_logo.png')}}" width="320" height="51" alt="" class="img-fluid ftr-logo"></a>--}}
 <div class="row">
-<div class="col-lg-4 cpy"><p class="copyright">Copyright © <script>document.write(new Date().getFullYear());</script>. Forever Home Plus. All rights reserved.</p></div>
+<div class="col-lg-4 cpy"><p class="copyright">Copyright © <script>document.write(new Date().getFullYear());</script> Forever Home Plus. All rights reserved.</p></div>
 <div class="col-lg-8">
 <div class="footer-links">
 <ul>
-<li><a href="/" title="Homepage">Homepage</a></li><li><a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li><li><a href="/contact-us" title="Contact">Contact</a></li><li><a href="/terms-and-conditions" title="Terms And Conditions">Terms And Conditions</a></li><li><a href="/please-do-not-sell-my-personal-information" title="Do Not Sell My Information">Do Not Sell My Information</a></li> </ul>
+<li><a href="/" title="Homepage">Homepage</a></li> | <li><a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li> | <li><a href="/contact-us" title="Contact">Contact</a></li> | <li><a href="/terms-and-conditions" title="Terms And Conditions">Terms And Conditions</a></li> | <li><a href="/please-do-not-sell-my-personal-information" title="Do Not Sell My Information">Do Not Sell My Information</a></li> </ul>
 </div>
 </div>
 </div>
