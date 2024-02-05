@@ -28,11 +28,14 @@ class AllFunnelPagesTest extends DuskTestCase
     public function testMissingEFURLParamsRedirect(){
         foreach($this->pages as $page){
             if(!str_ends_with($page, '/')){
+
                 $this->browse(function (Browser $browser) use ($page) {
+                    $rootVerticalPath = $this->stripAfterLastSlash($page);
                     $browser
                         ->visit($page)
-                        ->assertUrlIs('https://foreverhomehub.com/');
+                        ->assertPathIs($rootVerticalPath);
                 });
+
                 $this->browse(function (Browser $browser) use ($page) {
                     $browser
                         ->visit($page . '?ef_tx_id=X&ef_aff_id=Y&ef_offer_id=Z')
@@ -40,6 +43,19 @@ class AllFunnelPagesTest extends DuskTestCase
                 });
             }
         }
+    }
+
+    function stripAfterLastSlash($url) {
+        // Find the last occurrence of '/'
+        $lastSlashPosition = strrpos($url, '/');
+
+        // If the '/' was found, strip everything after it
+        if ($lastSlashPosition !== false) {
+            return substr($url, 0, $lastSlashPosition);
+        }
+
+        // If there's no '/', return the original URL
+        return $url;
     }
 
 
