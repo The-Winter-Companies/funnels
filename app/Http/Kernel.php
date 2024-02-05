@@ -24,6 +24,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\RedirectIfVisited::class,
+        \App\Http\Middleware\NoIndexMiddleware::class,
     ];
 
     /**
