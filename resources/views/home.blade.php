@@ -104,7 +104,8 @@
 
  $(window).scroll(function() {
  var nav = $('nav');
- var top = $('.hero').outerHeight()-50;
+ // var top = $('.hero').outerHeight()-50;
+ var top = 50;
  if ($(window).scrollTop() >= top) {
  nav.addClass('scroll');
  } else {
@@ -189,7 +190,7 @@
 <div class="col-lg-8">
 <div class="footer-links">
 <ul>
-<li><a href="/" title="Homepage">Homepage</a></li> | <li><a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li> | <li><a href="/contact-us" title="Contact">Contact</a></li> | <li><a href="/terms-and-conditions" title="Terms And Conditions">Terms And Conditions</a></li> | <li><a href="/please-do-not-sell-my-personal-information" title="Do Not Sell My Information">Do Not Sell My Information</a></li> </ul>
+<li><a href="/" title="Homepage">Home</a></li> | <li><a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a></li> | <li><a href="/contact-us" title="Contact">Contact</a></li> | <li><a href="/terms-and-conditions" title="Terms And Conditions">Terms And Conditions</a></li> | <li><a href="/please-do-not-sell-my-personal-information" title="Do Not Sell My Information">Do Not Sell My Information</a></li> </ul>
 </div>
 </div>
 </div>
