@@ -40,7 +40,6 @@
  }
  </style>
 <link rel="stylesheet" id="wp-block-library-css" href="{{asset('css/style-fhp-homepage.min.css')}}" type="text/css" media="all">
-<script type="text/javascript" src="{{asset('js/jquery/jquery-3.2.1.min.js')}}"></script>
 </head>
 
 <body class="home page-template page-template-home page-template-home-php page page-id-31">
