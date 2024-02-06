@@ -34,6 +34,7 @@ $page = 'o7';
 
     <link rel="manifest" href={{ asset('manifest.json') }}>
 
+    @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
     @include('partials.lead_id')

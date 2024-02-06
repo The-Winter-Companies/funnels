@@ -66,6 +66,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
     <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
     <![endif]-->
 
+    @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
     @include('partials.lead_id')

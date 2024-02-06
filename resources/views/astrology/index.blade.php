@@ -17,6 +17,7 @@ session_start();
     <!-- validation block start !-->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 
+    @include('partials.meta_script')
     @include('partials.astrology_head_scripts')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')

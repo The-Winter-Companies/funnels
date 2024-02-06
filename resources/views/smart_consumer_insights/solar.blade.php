@@ -21,6 +21,8 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
             document.write(nowString);
         }
     </script>
+
+    @include('partials.meta_script')
 </head>
 
 <body>
