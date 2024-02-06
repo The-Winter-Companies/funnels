@@ -25,11 +25,12 @@ nav.scroll .navbar-header{background:none; padding: 0;}
 }
 .headline h2 {font-size: 40px; font-weight: 800; line-height: 1.2; margin-bottom: 15px;}
 .headline p {font-size: 24px;}
-.searbox {max-width: 520px;}
+.searbox {max-width: 520px; }
 .searbox select.form-control:not([size]):not([multiple]){height: 50px !important; padding: 0 0 0 20px;letter-spacing: 0.04em; pointer-events: auto;color: #182933;font-weight: 700;-webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;}
 .searbox .btn {background: #aed24c;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
 /*background: -moz-linear-gradient(top,  #ff8900 0%, #ff6100 99%);*/
 /*background: -webkit-linear-gradient(top,  #ff8900 0%,#ff6100 99%);*/
 /*background: linear-gradient(to bottom,  #ff8900 0%,#ff6100 99%);*/
@@ -48,11 +49,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6100', end
 
 .project {background:#f8f8f8; padding-top: 40px; padding-bottom: 40px;}
 .project h2 {font-size: 40px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; text-align: center;}
-.project li a{min-height: 175px;background-color: #fff;outline: solid 1px #0070bb;border: 5px solid #fff;text-align: center;padding: 4px;overflow: hidden; display: block; margin-bottom: 30px;}
+.project li a{min-height: 175px;background-color: #fff;outline: solid 1px #0070bb;border: 5px solid #fff;text-align: center;padding: 4px;overflow: hidden; display: block; margin-bottom: 30px; transition: outline-color 0.15s ease, transform 0.3s ease;  transform: scale(1); /* Start at normal size */
+}
 
-.project li h3{font-family:'Montserrat',sans-serif;width:100%;height:auto;font-weight:800;text-align:center;color:#2d3134;font-size:20px;position:relative;padding-bottom:4px;display:inline;     color: #0085de;}
-.project li h3:after{content:"";width:40px;height:3px;background:#0070bb;position:absolute;bottom:0;left:50%;margin-left:-20px;display:inline}
-
+.project li h3{font-family:'Montserrat',sans-serif;width:100%;height:auto;font-weight:800;text-align:center;color:#2d3134;font-size:20px;position:relative;padding-bottom:4px;display:inline;     color: #0085de;transition: color 0.15s ease, transform 0.3s ease;}
+/*.project li h3:after{content:"";width:40px;height:3px;background:#0070bb;position:absolute;bottom:0;left:50%;margin-left:-20px;display:inline;transition: background 0.15s ease, transform 0.3s ease;}*/
+.project li svg {
+    transition: fill 0.15s ease, transform 0.3s ease !important; /* Use !important with caution */
+}
 .projImg {min-height: 80px; line-height: 80px;}
 .projImg svg{display: inline-block;vertical-align: middle; margin-top:20px; margin-bottom: 20px; fill:#0070bb !important;}
 .roofing svg {padding-top: .5px;}
@@ -61,7 +65,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6100', end
 .security svg {padding-top: 6px;}
 .hvac svg {padding-top: 3px;}
 
-.project li a:hover {outline-color: #8cc543;}
+.project li a:hover {outline-color: #8cc543;   transform: scale(1.05);}
 .project li a:hover h3 {color: #8cc543;}
 .project li a:hover h3:after {background: #8cc543;}
 .project li:hover svg {fill:#8cc543 !important;}
