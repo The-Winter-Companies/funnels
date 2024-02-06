@@ -1,12 +1,15 @@
 <?php
 
-$solarLink = "https://foreverhomeplus.com/solar";
-$roofingLink = "foreverhomeplus.com/roofing";
-$tubsLink = "foreverhomeplus.com/tubs";
-$windowsLink = "foreverhomeplus.com/windows";
-$astrologyLink = "signup.astrologyspark.com";
-$homeServicesLink = "foreverhomeplus.com";
+$solarLink = "https://www.twck93j.com/QL3F2/3QQG7/?uid=10&sub1=smartconsumerinsights";
+$roofingLink = "https://www.twck93j.com/QL3F2/2CTPL/?uid=9&sub1=smartconsumerinsights";
+$tubsLink = "https://www.twck93j.com/QL3F2/D42TT/?uid=11&sub1=smartconsumerinsights";
+$windowsLink = "https://www.twck93j.com/QL3F2/55M6S/?sub1=smartconsumerinsights";
+$astrologyLink = "https://www.twck93j.com/QL3F2/FGXLG/?uid=7&sub1=smartconsumerinsights";
+$homeServicesLink = "https://foreverhomeplus.com";
 
+function carbonDate($daysToSubtract){
+    return \Carbon\Carbon::now()->subDays($daysToSubtract)->format('F j, Y');
+}
 ?>
 <!DOCTYPE html><html lang="en"><head>
    <meta charset="utf-8">
@@ -41,12 +44,15 @@ $homeServicesLink = "foreverhomeplus.com";
             <nav class="navbar navbar-expand-lg">
                <div class="collapse navbar-collapse" id="main_nav">
                   <ul class="navbar-nav me-auto">
-                     <li class="nav-item"><a class="nav-link" href="/blog">Solar</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$solarLink}}">Solar</a></li>
                      <li class="nav-item"><a class="nav-link" href="/blog">Roofing</a></li>
                      <li class="nav-item"><a class="nav-link" href="/blog">Windows</a></li>
                      <li class="nav-item"><a class="nav-link" href="/blog">Tubs</a></li>
                      <li class="nav-item"><a class="nav-link" href="/contact">Horoscopes</a></li>
-					 <li class="nav-item"><a class="nav-link" href="https://themeix.com/product/newsfeed-news-magazine-website-html-site-template/">FREE Quotes<span>NEW</span></a></li>
+                     <li class="nav-item"><a class="nav-link" href="/contact">Mortgage Refinance</a></li>
+                     <li class="nav-item"><a class="nav-link" href="/contact">Dish</a></li>
+                     <li class="nav-item"><a class="nav-link" href="/contact">Home Security</a></li>
+					 <li class="nav-item"><a class="nav-link" href="">FREE Quotes<span>NEW</span></a></li>
                   </ul>
                </div>
             </nav>
@@ -81,18 +87,18 @@ $homeServicesLink = "foreverhomeplus.com";
                        </div>
                        <div class="card-body">
                            <a class="badge bg-danger" href="">Home Services</a>
-                           <h2><a href="foreverhomeplus.com/solar">Homeowners: Switch to Solar for Zero Down and Save Big</a>
+                           <h2><a href="{{$solarLink}}">Homeowners: Switch to Solar for Zero Down and Save Big</a>
                            </h2>
                            <div class="row">
                                <div class="col-lg-6">
                                    <div class="author-block">
                                        <ul class="avatar list-inline mb-0">
-                                           <li class="list-inline-item"><a class="small" href="foreverhomeplus.com/solar"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                           <li class="list-inline-item"><a class="small" href="{{$solarLink}}"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                        </ul>
                                    </div>
                                </div>
                                <div class="col-lg-6"> <span class="date-info small  float-lg-end">
-                              <span>{{ \Carbon\Carbon::now()->subDays(0)->format('F j, Y')}}</span>
+                              <span>{{carbonDate(0)}}</span>
                               <span>1 mins to read</span>
                               </span>
                                </div>
@@ -104,11 +110,10 @@ $homeServicesLink = "foreverhomeplus.com";
                    <article class="blog-style4 ">
                        <div class="card border-0">
                            <div class="blog-post-image image-hover-style-1">
-                               <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img3.jpg')}}" alt="image"></a>
+                               <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp5.jpg')}}" alt="image"></a>
                            </div>
                            <div class="card-body  px-0">
-                               <h6><a href="/single"> I will tell you the truth about food in the next 60
-                                       seconds</a>
+                               <h6><a href="/single">Unlock Significant Savings: Upgrade to Stylish Windows with No Initial Investment</a>
                                </h6>
                            </div>
                        </div>
@@ -116,10 +121,10 @@ $homeServicesLink = "foreverhomeplus.com";
                    <article class="blog-style4 ">
                        <div class="card border-0">
                            <div class="blog-post-image image-hover-style-1">
-                               <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img4.jpg')}}" alt="image"></a>
+                               <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp4.jpg')}}" alt="image"></a>
                            </div>
                            <div class="card-body px-0">
-                               <h6><a href="/single">10 things your boss needs to know about</a>
+                               <h6><a href="/single">Shield Your Home with $0 Down Roofing Solutions for Ultimate Protection</a>
                                </h6>
                            </div>
                        </div>
@@ -130,36 +135,34 @@ $homeServicesLink = "foreverhomeplus.com";
                        <ul class="list-group">
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">7 things your boss needs to know about
-                                           food</a>
+                                   <h6 class="mb-1"><a href="{{$solarLink}}">7 Surprising Benefits of Solar Energy for Your Home</a>
                                    </h6>
                                    <time datetime="2021-02-14 20:00" class="small">1 hour ago</time>
                                </article>
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">10 facts that nobody told you about you </a>
+                                   <h6 class="mb-1"><a href="/single">New Beginnings Aligned: Introduce Astrology into Your Daily Life</a>
                                    </h6>
                                    <time datetime="2021-02-14 20:00" class="small">2 hours ago</time>
                                </article>
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">How to leave sports without being noticed</a>
+                                   <h6 class="mb-1"><a href="/single">Immerse Yourself in Luxury: The Tubs You Deserve</a>
                                    </h6>
                                    <time datetime="2021-02-14 20:00" class="small">1 day ago</time>
                                </article>
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">New way to introduce business</a></h6>
+                                   <h6 class="mb-1"><a href="/single">10 Facts That Will Make You Rethink Your Home's Roof</a></h6>
                                    <time datetime="2021-02-14 20:00" class="small">3 days ago</time>
                                </article>
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">In for the now propitiously beginning
-                                           everything bright it they you</a>
+                                   <h6 class="mb-1"><a href="/single">Quietly Elegant: How to Transform Your Home with New Windows</a>
                                    </h6>
                                    <time datetime="2021-02-14 20:00" class="small">3 days ago</time>
                                </article>
@@ -173,7 +176,7 @@ $homeServicesLink = "foreverhomeplus.com";
    <!--/// Ads Area /// -->
    <div class="ads-area">
       <div class="container">
-         <div class="text-center  themeix-ads"><a href="#"><img class="lazyload" src="{{asset('img/blog-ads.png')}}" alt="image"></a>
+         <div class="text-center  themeix-ads"><a href="#"><img class="lazyload" src="{{asset('img/sci-hp37.jpg')}}" alt="image"></a>
          </div>
       </div>
    </div>
@@ -184,36 +187,27 @@ $homeServicesLink = "foreverhomeplus.com";
             <div class="col-lg-8 col-md-7">
                <div class="col-md-12">
                   <div class="section-title-block d-flex pb-3">
-                     <h3 class="section-widget-title">Political News</h3>
-                     <a class="text-uppercase section-title-link" href="/category">
-                        See all
-                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
-                           </path>
-                        </svg>
-                     </a>
+                     <h3 class="section-widget-title">News</h3>
                   </div>
                </div>
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img5.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp6.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Lifestyle</a>
-                        <h4><a href="/single">Every household to get prepaid blank postcard courtesy of News
-                              Post</a>
+                        <a class="badge bg-primary" href="/category">Horoscope</a>
+                        <h4><a href="/single">Unlock Your Celestial Path with a Free Horoscope</a>
                         </h4>
-                        <p>The and room. Know and nation question would the to copy. And leather and eyes human
-                           would collection.
+                        <p>Discover the cosmic secrets that shape your destiny. Navigate life with celestial insights tailored just for you.
                         </p>
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -229,21 +223,21 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img//blog-img6.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp7.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Lifestyle</a>
-                        <h4><a href="/single">What you need to know about COVID-19 in Ottawa on Sunday</a>
+                        <a class="badge bg-primary" href="/category">Walk-In Tubs</a>
+                        <h4><a href="/single">Escape to Tranquility: Tub Makeover for Your Home Retreat</a>
                         </h4>
-                        <p>The can my after he cache by more name out it of differentiates we each were food, attentive
+                        <p>Create a retreat within your home. Transform your bathroom into a sanctuary of tranquility
                         </p>
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href=""><img src="{{asset('img//author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href=""><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -259,21 +253,20 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img//blog-img7.jpg')}}" alt="image"></a>
+                        <a href="{{$solarLink}}"> <img class="lazyload" src="{{asset('img/sci-hp8.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Lifestyle</a>
-                        <h4><a href="/single">Health Canada approves AstraZeneca's COVID-19 vaccine</a>
+                        <a class="badge bg-primary" href="{{$solarLink}}">Solar</a>
+                        <h4><a href="{{$solarLink}}">Power Up Your Home</a>
                         </h4>
-                        <p>Also in project the way brief hills we secretly at in tones. Past person, a he cheerful, hollow never.
-                        </p>
+                        <p>Uncover the brilliance of sustainable energy and power up your home with the sun's rays</p>
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -289,21 +282,21 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img8.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp10.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Lifestyle</a>
-                        <h4><a href="/single">Potato Head goes gender neutral</a>
+                        <a class="badge bg-primary" href="/category">Roofing</a>
+                        <h4><a href="/single">Sheltered Elegance: Your Home, Your Roofing Upgrade</a>
                         </h4>
-                        <p>At window it value do name not state would any not survey needed would the at wish phase on been to biases.
+                        <p>Give your home the care it deserves with a thorough roofing analysis. Elevate your living space with insights that transform your roof into a masterpiece
                         </p>
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -319,21 +312,21 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img9.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp9.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Lifestyle</a>
-                        <h4><a href="/single">5 Africa-born designers open digital Milan Fashion Week</a>
+                        <a class="badge bg-primary" href="/category">Windows</a>
+                        <h4><a href="/single">Panoramic Elegance: Elevate Your Home with Expert Window Makeovers</a>
                         </h4>
-                        <p>Chosen the long the coast right it aside, moving how feel in way. On supplies employed is the new room.
+                        <p>Transform your view with expert window makeovers. Elevate your home's elegance and create a panoramic vista from within with insightful enhancements
                         </p>
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -349,21 +342,21 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img10.jpg')}}" alt="image"></a>
+                        <a href="{{$solarLink}}"> <img class="lazyload" src="{{asset('img/sci-hp11.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Lifestyle</a>
-                        <h4><a href="/single">Golden Globes: Wildest looks through the years</a>
+                        <a class="badge bg-primary" href="{{$solarLink}}">Solar</a>
+                        <h4><a href="{{$solarLink}}">Sun-Driven Savings: Elevate Your Home with Expert Solar Upgrades</a>
                         </h4>
-                        <p>Somewhere, even and the according walls analyzed way or have shortcuts. We it horses clearly, unrecognisable.
+                        <p>Experience the future of energy with expert solar upgrades. Transform your home and enjoy significant savings on your energy bills with insightful guidance
                         </p>
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -379,22 +372,21 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img11.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp12.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Lifestyle</a>
-                        <h4><a href="/single">Deep Nostalgia uses video reenactment technology to animate
-                              faces in still photos</a>
+                        <a class="badge bg-primary" href="/category">Roofing</a>
+                        <h4><a href="/single">Above and Beyond: Explore Insightful Roofing Assessments</a>
                         </h4>
-                        <p>Between chooses declined, merely and should will hundred of meals nation team- that he the contrast, casting.
+                        <p>Redefine your living experience with insightful roofing assessments. Elevate your home's protection and aesthetics with expert insights delivered to your doorstep
                         </p>
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -414,27 +406,18 @@ $homeServicesLink = "foreverhomeplus.com";
                      <div class="row">
                         <div class="col-md-12">
                            <div class="section-title-block d-flex pb-3">
-                              <h3 class="section-widget-title">Trending</h3>
-                              <a class="text-uppercase section-title-link" href="/category">
-                                 See all
-                                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
-                                    </path>
-                                 </svg>
-                              </a>
+                              <h3 class="section-widget-title">Did you know..</h3>
                            </div>
                         </div>
                      </div>
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
                         <a aria-label="Post Title Here" href="/single">
                            <div class="post-img-wrap position-relative overflow-hidden">
-                              <img class="lazyload post-img" src="{{asset('img/blog-img12.jpg')}}" data-src="" alt="Post Title Here">
+                              <img class="lazyload post-img" src="{{asset('img/sci-hp13.jpg')}}" data-src="" alt="Post Title Here">
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Build a covid-19 self assessment tool
-                                 with
-                                 google forms</a>
+                           <h6 class="post-title"><a href="/single">Dive into the mysteries of the cosmos with our Astrology Horoscopes</a>
                            </h6>
                            <div class="post-meta">
                               <span class="date-info small">
@@ -447,11 +430,11 @@ $homeServicesLink = "foreverhomeplus.com";
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
                         <a aria-label="Post Title Here" href="/single">
                            <div class="post-img-wrap position-relative overflow-hidden">
-                              <img class="lazyload post-img" src="{{asset('img/blog-img13.jpg')}}">
+                              <img class="lazyload post-img" src="{{asset('img/sci-hp14.jpg')}}">
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Master chrome developer tools</a></h6>
+                           <h6 class="post-title"><a href="/single">Pamper yourself with Tub upgrades – because a little luxury goes a long way</a></h6>
                            <div class="post-meta">
                               <span class="date-info small">
 
@@ -463,12 +446,28 @@ $homeServicesLink = "foreverhomeplus.com";
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
                         <a aria-label="Post Title Here" href="/single">
                            <div class="post-img-wrap position-relative overflow-hidden">
-                              <img class="lazyload post-img" src="{{asset('img/blog-img14.jpg')}}" >
+                              <img class="lazyload post-img" src="{{asset('img/sci-hp15.jpg')}}" >
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Find out how much traffic a website
-                                 gets</a>
+                           <h6 class="post-title"><a href="/single">Redefine living with Window enhancements – style meets energy efficiency</a>
+                           </h6>
+                           <div class="post-meta">
+                              <span class="date-info small">
+
+                                 <span>2 mins to read</span>
+                              </span>
+                           </div>
+                        </div>
+                     </article>
+                     <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
+                        <a aria-label="Post Title Here" href="{{$solarLink}}">
+                           <div class="post-img-wrap position-relative overflow-hidden">
+                              <img class="lazyload post-img" src="{{asset('img/sci-hp16.jpg')}}">
+                           </div>
+                        </a>
+                        <div class="post-content pt-md-2 pt-xl-0 pt-0">
+                           <h6 class="post-title"><a href="{{$solarLink}}">Amp up your home with our Solar solutions – turning sunlight into savings</a>
                            </h6>
                            <div class="post-meta">
                               <span class="date-info small">
@@ -481,12 +480,11 @@ $homeServicesLink = "foreverhomeplus.com";
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
                         <a aria-label="Post Title Here" href="/single">
                            <div class="post-img-wrap position-relative overflow-hidden">
-                              <img class="lazyload post-img" src="{{asset('img/blog-img15.jpg')}}">
+                              <img class="lazyload post-img" src="{{asset('img/sci-hp17.jpg')}}">
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Write your name in different languages
-                                 and styles</a>
+                           <h6 class="post-title"><a href="/single">Give your home a royal crown with our Roofing solutions – it's a game-changer</a>
                            </h6>
                            <div class="post-meta">
                               <span class="date-info small">
@@ -496,24 +494,40 @@ $homeServicesLink = "foreverhomeplus.com";
                            </div>
                         </div>
                      </article>
-                     <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
-                        <a aria-label="Post Title Here" href="/single">
-                           <div class="post-img-wrap position-relative overflow-hidden">
-                              <img class="lazyload post-img" src="{{asset('img/blog-img16.jpg')}}">
-                           </div>
-                        </a>
-                        <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">The 101 most useful websites on the
-                                 internet</a>
-                           </h6>
-                           <div class="post-meta">
+                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
+                          <a aria-label="Post Title Here" href="/single">
+                              <div class="post-img-wrap position-relative overflow-hidden">
+                                  <img class="lazyload post-img" src="{{asset('img/sci-hp38.jpg')}}">
+                              </div>
+                          </a>
+                          <div class="post-content pt-md-2 pt-xl-0 pt-0">
+                              <h6 class="post-title"><a href="/single">Crown Your Home Entertainment – Satellite Dish Solutions, a Majestic Game-Changer</a>
+                              </h6>
+                              <div class="post-meta">
                               <span class="date-info small">
 
                                  <span>2 mins to read</span>
                               </span>
-                           </div>
-                        </div>
-                     </article>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
+                          <a aria-label="Post Title Here" href="/single">
+                              <div class="post-img-wrap position-relative overflow-hidden">
+                                  <img class="lazyload post-img" src="{{asset('img/sci-hp39.jpg')}}">
+                              </div>
+                          </a>
+                          <div class="post-content pt-md-2 pt-xl-0 pt-0">
+                              <h6 class="post-title"><a href="/single">Discover Savings Sovereignty: Mortgage Refinance – A Home Finance Revolution</a>
+                              </h6>
+                              <div class="post-meta">
+                              <span class="date-info small">
+
+                                 <span>2 mins to read</span>
+                              </span>
+                              </div>
+                          </div>
+                      </article>
                   </div>
                </div>
                <div class="sidebar-widget mb-3 border border-light rounded">
@@ -522,37 +536,33 @@ $homeServicesLink = "foreverhomeplus.com";
                         <li class="nav-item">
                            <a class="   active" data-bs-toggle="tab" href="#tab1">Most Viewed</a>
                         </li>
-                        <li class="nav-item">
-                           <a class=" " data-bs-toggle="tab" href="#tab2">Most Recent </a>
-                        </li>
                      </ul>
                      <div class="tab-content" id="tab-content">
                         <div class="tab-pane fade show active" id="tab1">
                            <ul class="counter-post list-inline">
                               <li class="counter-post-item">
-                                 <a href="/single">How to play youtube videos at custom speed</a>
+                                 <a href="/single">How can I understand my zodiac sign's potential?</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="/single">How to search emails in gmail by specific time</a>
+                                 <a href="/single">How do I add a bit of luxury to my bathroom?</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="/single">How to search emails in gmail by specific time</a>
+                                 <a href="{{$solarLink}}">How do I save money by using solar power at home?</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="/single">Let others upload videos to your youtube channel</a>
+                                 <a href="/single">How do I make my home look nicer with new windows?</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="/single">How to search emails in gmail by specific time</a>
+                                 <a href="/single">How can I give my house a quick facelift with a new roof?</a>
                               </li>
-                           </ul>
-                        </div>
-                        <div class="tab-pane fade" id="tab2">
-                           <ul class="counter-post list-inline">
-                              <li class="list-inline-item">
-                                 <a href="/single">How to add an xml sitemap to your blogger blog</a>
+                               <li class="counter-post-item">
+                                 <a href="/single">What are the quickest steps to bolster my home's security for peace of mind?</a>
                               </li>
-                              <li class="list-inline-item m-0">
-                                 <a href="/single">The best twitter search tricks</a>
+                               <li class="counter-post-item">
+                                 <a href="/single">What's the fastest route to a superior TV setup with a new satellite dish?</a>
+                              </li>
+                               <li class="counter-post-item">
+                                 <a href="/single">Looking for a rapid financial facelift – any advice on mortgage refinance options?</a>
                               </li>
                            </ul>
                         </div>
@@ -564,36 +574,22 @@ $homeServicesLink = "foreverhomeplus.com";
                      <div class="row">
                         <div class="col-md-12">
                            <div class="section-title-block d-flex pb-3">
-                              <h3 class="section-widget-title">Tag Cloud</h3>
-                              <a class="text-uppercase section-title-link" href="/category">
-                                 See all
-                                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
-                                    </path>
-                                 </svg>
-                              </a>
+                              <h3 class="section-widget-title">Check</h3>
                            </div>
                         </div>
                      </div>
                      <ul class="tag-cloud list-inline">
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Nature</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$solarLink}}">Solar</a>
                         </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Fashion</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Roofing</a>
                         </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Wordpress</a></li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Photo</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Walk-In Tubs</a></li>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Windows</a>
                         </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Travel</a>
-                        </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Hotel</a>
-                        </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Business</a>
-                        </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Culture</a>
-                        </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Sports</a>
-                        </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Design</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Astrology</a>
+                         <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Dish</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Mortgage Refinance</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Home Security</a>
                         </li>
                      </ul>
                   </div>
@@ -601,33 +597,19 @@ $homeServicesLink = "foreverhomeplus.com";
                <div class="sidebar-widget mb-3 border border-light rounded">
                   <div class="wrapper">
                      <h3>Poll / Vote</h3>
-                     <p>Who will win this cricket match today in ICC World T20?</p>
+                     <p>Who do you think is the smartest zodiac sign?</p>
                      <form action="#" class="forms">
                         <div class="form-check">
                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
                            <label class="form-check-label" for="exampleRadios1">
-                              Australia
+                              Cancer
                            </label>
                         </div>
                         <div class="form-check">
                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                            <label class="form-check-label" for="exampleRadios2">
-                              India
+                              Pisces
                            </label>
-                        </div>
-                     </form>
-                  </div>
-               </div>
-               <div class="sidebar-widget border border-light rounded">
-                  <div class="wrapper">
-                     <h3>Subscribe Now</h3>
-                     <p>Keep updated with the latest news!</p>
-                     <form action="#" class="subscription-from">
-                        <div class="input-group">
-                           <input type="text" class="form-control" placeholder="Email Address">
-                           <div class="input-group-append">
-                              <button class="btn btn-secondary" type="button">Subscribe</button>
-                           </div>
                         </div>
                      </form>
                   </div>
@@ -642,14 +624,7 @@ $homeServicesLink = "foreverhomeplus.com";
          <div class="row">
             <div class="col-md-12">
                <div class="section-title-block d-flex pb-3">
-                  <h3 class="section-widget-title">Editors Pick</h3>
-                  <a class="text-uppercase section-title-link" href="/category">
-                     See all
-                     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
-                        </path>
-                     </svg>
-                  </a>
+                  <h3 class="section-widget-title">Consumers Pick</h3>
                </div>
             </div>
          </div>
@@ -658,17 +633,17 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style3 border-0 card mb-4 position-relative">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img36.jpg')}}" alt="image"></a>
+                        <a href="{{$solarLink}}"> <img class="lazyload" src="{{asset('img/sci-hp18.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body">
-                     <a class="badge bg-danger" href="/category">Political</a>
-                     <h2><a href="/single">No. 19 Kansas upsets No. 2 Baylor as Bears</a></h2>
+                     <a class="badge bg-danger" href="{{$homeServicesLink}}">Home Services</a>
+                     <h2><a href="{{$solarLink}}">10 reasons why you should upgrade to solar panels ASAP</a></h2>
                      <div class="row">
                         <div class="col-lg-6">
                            <div class="author-block">
                               <ul class="avatar list-inline mb-0">
-                                 <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                 <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                               </ul>
                            </div>
                         </div>
@@ -685,17 +660,17 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style3 border-0 card mb-4 position-relative">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img34.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp19.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body">
-                     <a class="badge bg-secondary" href="/category">WordPress</a>
-                     <h2><a href="/single">100 things to do while stuck inside due to a pandemic</a></h2>
+                     <a class="badge bg-secondary" href="/category">Home Services</a>
+                     <h2><a href="/single">Want your roof to look like this ? CLICK here </a></h2>
                      <div class="row">
                         <div class="col-lg-6">
                            <div class="author-block">
                               <ul class="avatar list-inline mb-0">
-                                 <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                 <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                               </ul>
                            </div>
                         </div>
@@ -719,19 +694,18 @@ $homeServicesLink = "foreverhomeplus.com";
                <div class="row">
                   <div class="col-md-12">
                      <div class="section-title-block d-flex pb-3">
-                        <h3 class="section-widget-title">Nature</h3>
+                        <h3 class="section-widget-title">Astrology</h3>
                      </div>
                   </div>
                </div>
                <article class="blog-style5 d-flex align-items-center mb-3">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img17.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp20.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Plan your next hike at one of these mountain
-                           trails</a>
+                     <h6 class="post-title"><a href="/single">Embrace your cosmic potential and discover zodiac secrets</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -744,11 +718,11 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style5 d-flex align-items-center mb-3">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img18.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp21.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Hotel industry announces $5 million</a></h6>
+                     <h6 class="post-title"><a href="/single">Dive into the mysteries of the cosmos</a></h6>
                      <div class="post-meta">
                         <span class="date-info small">
 
@@ -760,11 +734,11 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style5 d-flex align-items-center">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img19.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp22.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">The best way to shampoo curly hair</a></h6>
+                     <h6 class="post-title"><a href="/single">Uncover your cosmic journey – where the stars share exclusive secrets just for you</a></h6>
                      <div class="post-meta">
                         <span class="date-info small">
 
@@ -776,7 +750,7 @@ $homeServicesLink = "foreverhomeplus.com";
                <div class="row">
                   <div class="col mt-3">
                      <a class="text-uppercase section-title-link" href="/category">
-                        View all posts (11)
+                        View more
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
                            </path>
@@ -789,18 +763,18 @@ $homeServicesLink = "foreverhomeplus.com";
                <div class="row">
                   <div class="col-md-12">
                      <div class="section-title-block d-flex pb-3">
-                        <h3 class="section-widget-title">Receipe</h3>
+                        <h3 class="section-widget-title">Walk-In Tubs</h3>
                      </div>
                   </div>
                </div>
                <article class="blog-style5 d-flex align-items-center mb-3">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img20.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp23.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Classic Pogi Kimchi (Whole Napa Cabbage
+                     <h6 class="post-title"><a href="/single">Pamper yourself with Tub upgrades
                            Kimchi)</a>
                      </h6>
                      <div class="post-meta">
@@ -814,11 +788,11 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style5 d-flex align-items-center mb-3">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img21.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp24.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Tourist hits jackpot at airport slot
+                     <h6 class="post-title"><a href="/single">Elevate your bath time with Tub transformations
                            machine</a>
                      </h6>
                      <div class="post-meta">
@@ -832,11 +806,11 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style5 d-flex align-items-center">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img22.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp25.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Alaska Airlines ordered to pay $3.2 million</a>
+                     <h6 class="post-title"><a href="/single">Blissful baths ahead with our Tub solutions</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -849,7 +823,7 @@ $homeServicesLink = "foreverhomeplus.com";
                <div class="row">
                   <div class="col mt-3">
                      <a class="text-uppercase section-title-link" href="/category">
-                        View all posts (17)
+                        View more
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
                            </path>
@@ -862,19 +836,18 @@ $homeServicesLink = "foreverhomeplus.com";
                <div class="row">
                   <div class="col-md-12">
                      <div class="section-title-block d-flex pb-3">
-                        <h3 class="section-widget-title">National</h3>
+                        <h3 class="section-widget-title">Windows</h3>
                      </div>
                   </div>
                </div>
                <article class="blog-style5 d-flex align-items-center mb-3">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img23.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp26.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Delta passenger hit flight attendant after mask
-                           dispute</a>
+                     <h6 class="post-title"><a href="/single">Upgrade your outlook with Windows to Wow</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -887,11 +860,11 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style5 d-flex align-items-center mb-3">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img24.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp27.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">United Airlines investigates Ted Cruz's </a>
+                     <h6 class="post-title"><a href="/single">See life through a new lens with Window upgrades</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -904,12 +877,11 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style5 d-flex align-items-center">
                   <a aria-label="Post Title Here" href="/single">
                      <div class="post-img-wrap position-relative overflow-hidden">
-                        <img class="lazyload post-img" src="{{asset('img/blog-img25.jpg')}}" alt="Post Title Here">
+                        <img class="lazyload post-img" src="{{asset('img/sci-hp28.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">How to talk to your family, friends about
-                           racism</a>
+                     <h6 class="post-title"><a href="/single">Light up your space with Window insights</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -922,7 +894,7 @@ $homeServicesLink = "foreverhomeplus.com";
                <div class="row">
                   <div class="col mt-3">
                      <a class="text-uppercase section-title-link" href="/category">
-                        View all posts (9)
+                        View more
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
                            </path>
@@ -936,14 +908,7 @@ $homeServicesLink = "foreverhomeplus.com";
          <div class="row pt-2">
             <div class="col-md-12">
                <div class="section-title-block d-flex pb-3">
-                  <h3 class="section-widget-title">Fashion</h3>
-                  <a class="text-uppercase section-title-link" href="/category">
-                     See all
-                     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
-                        </path>
-                     </svg>
-                  </a>
+                  <h3 class="section-widget-title">Top Notch</h3>
                </div>
             </div>
 
@@ -951,20 +916,20 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-hover-style-1 image-frame">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img31.jpg')}}" alt="image"></a>
+                        <a href="{{$solarLink}}"> <img class="lazyload" src="{{asset('img/sci-hp29.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-info" href="/category">Fashion</a>
-                        <h4><a href="/single">The best jackets to buy for spring 2021</a>
+                        <a class="badge bg-info" href="{{$solarLink}}">Solar</a>
+                        <h4><a href="{{$solarLink}}">Your dream solar paneled house coming to life</a>
                         </h4>
 
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -982,13 +947,13 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-hover-style-1 image-frame">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img28.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp30.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-info" href="/category">Fashion</a>
-                        <h4><a href="/single">Fab fleece or posh puffer? How the style set stay toasty
+                        <a class="badge bg-info" href="/category">Roofing</a>
+                        <h4><a href="/single">Keep your neighbors jealous
                            </a>
                         </h4>
 
@@ -1015,20 +980,20 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-hover-style-1 image-frame">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img29.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp31.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-info" href="/category">Fashion</a>
-                        <h4><a href="/single">The truth about working for Topshop’s top branch</a>
+                        <a class="badge bg-info" href="/category">Astrology</a>
+                        <h4><a href="/single">Know the secrets of the universe</a>
                         </h4>
 
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern"> Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -1046,20 +1011,20 @@ $homeServicesLink = "foreverhomeplus.com";
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-hover-style-1 image-frame">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/blog-img30.jpg')}}" alt="image"></a>
+                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp32.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-info" href="/category">Fashion</a>
-                        <h4><a href="/single">Rishi told hike in business tax 'choke recovery'</a>
+                        <a class="badge bg-info" href="/category">Walk-In Tubs</a>
+                        <h4><a href="/single">Take your mind off the hardships during the day in your brand new tub</a>
                         </h4>
 
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood"> C. Wood</a></li>
+                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Tyler Mayk</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -1073,6 +1038,70 @@ $homeServicesLink = "foreverhomeplus.com";
                   </div>
                </article>
             </div>
+
+             <div class="col-md-6">
+                 <article class="blog-style2 card mb-4 ">
+                     <div class="feature-image">
+                         <div class="image-hover-style-1 image-frame">
+                             <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp32.jpg')}}" alt="image"></a>
+                         </div>
+                     </div>
+                     <div class="card-body  d-md-flex align-items-center">
+                         <div class="card-flex-content">
+                             <a class="badge bg-info" href="/category">Walk-In Tubs</a>
+                             <h4><a href="/single">Take your mind off the hardships during the day in your brand new tub</a>
+                             </h4>
+
+                             <div class="row">
+                                 <div class="col-lg-6">
+                                     <div class="author-block">
+                                         <ul class="avatar list-inline mb-0">
+                                             <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Tyler Mayk</a></li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6"> <span class="date-info small  float-lg-end">
+
+                                 <span>1 mins to read</span>
+                              </span>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </article>
+             </div>
+
+             <div class="col-md-6">
+                 <article class="blog-style2 card mb-4 ">
+                     <div class="feature-image">
+                         <div class="image-hover-style-1 image-frame">
+                             <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp32.jpg')}}" alt="image"></a>
+                         </div>
+                     </div>
+                     <div class="card-body  d-md-flex align-items-center">
+                         <div class="card-flex-content">
+                             <a class="badge bg-info" href="/category">Walk-In Tubs</a>
+                             <h4><a href="/single">Take your mind off the hardships during the day in your brand new tub</a>
+                             </h4>
+
+                             <div class="row">
+                                 <div class="col-lg-6">
+                                     <div class="author-block">
+                                         <ul class="avatar list-inline mb-0">
+                                             <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Tyler Mayk</a></li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6"> <span class="date-info small  float-lg-end">
+
+                                 <span>1 mins to read</span>
+                              </span>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </article>
+             </div>
          </div>
 
       </div>
@@ -1081,24 +1110,24 @@ $homeServicesLink = "foreverhomeplus.com";
    <div class="cta-area py-5 bg-light">
 
       <ul class="circles">
-        <li><i class="fa fa-envelope-open fa-5x"></i></li>
-        <li><i class="fa fa-envelope fa-4x"></i></li>
-        <li><i class="fa fa-envelope fa-3x"></i></li>
-        <li><i class="fa fa-envelope-open fa-2x"></i></li>
-        <li><i class="fa fa-envelope fa-1x"></i></li>
-        <li><i class="fa fa-envelope fa-2x"></i></li>
-        <li><i class="fa fa-envelope fa-1x"></i></li>
-        <li><i class="fa fa-envelope fa-3x"></i></li>
-        <li><i class="fa fa-envelope fa-2x"></i></li>
-        <li><i class="fa fa-envelope fa-5x"></i></li>
+        <li><i class="fa fa-home fa-5x"></i></li>
+        <li><i class="fa fa-home fa-4x"></i></li>
+        <li><i class="fa fa-home fa-3x"></i></li>
+        <li><i class="fa fa-home fa-2x"></i></li>
+        <li><i class="fa fa-home fa-1x"></i></li>
+        <li><i class="fa fa-home fa-2x"></i></li>
+        <li><i class="fa fa-home fa-1x"></i></li>
+        <li><i class="fa fa-home fa-3x"></i></li>
+        <li><i class="fa fa-home fa-2x"></i></li>
+        <li><i class="fa fa-home fa-5x"></i></li>
       </ul>
 
       <div class="container text-center z-index-10 position-relative  ">
         <div class="row">
           <div class="col-md-8 m-auto">
-            <h2 class="text-secondary">Subscribe to see what we're thinking</h2>
-            <p>Subscribe to get access to premium content or contact us if you have any questions.</p>
-            <a href="#" class="btn btn-outline-light bg-danger text-white box-hover">Subscribe Now <i class="fas fa-envelope-open-text ms-1"></i></a>
+            <h2 class="text-secondary">Find quality contractors near you</h2>
+            <p>Make informed decisions and save more by comparing FREE quotes!</p>
+            <a href="#" class="btn btn-outline-light bg-danger text-white box-hover">Get Started!</a>
           </div>
         </div>
       </div>
@@ -1107,11 +1136,11 @@ $homeServicesLink = "foreverhomeplus.com";
   <footer class="footer-area pt-5 pb-2">
       <div class="container">
           <div class="row">
-              <div class="col-xxl-5 col-xl-3 col-lg-6 col-md-6 col-sm-6 pb-3  d-flex align-items-center">
+              <div class="col-xxl-4 col-xl-2 col-lg-6 col-md-6 col-sm-6 pb-3  d-flex align-items-center">
                   <div class="footer-widget pe-2">
-                      <img class="footer-logo mb-3" src="{{asset('img/footer-brand.png')}}" alt="">
+                      <img class="footer-logo mb-3" src="{{asset('img/fhp-logo-hp-new.png')}}" alt="">
 
-                      <p>Newsfeed is well optimized template for any kinds of newspaper, blog, magazine etc website</p>
+                      <p>For expert advice on home services and insightful consumer guidance, trust Smart Consumer Insights – your source for reliable, well-informed content.</p>
 
                   </div>
               </div>
@@ -1120,43 +1149,38 @@ $homeServicesLink = "foreverhomeplus.com";
                       <h4 class="mb-2">Navigation</h4>
                       <ul class="footer-nav list-inline">
                           <li><a href="#">Home</a></li>
-                          <li><a href="#">About</a></li>
-                          <li><a href="#">Advertisement</a></li>
-                          <li><a href="#">Contact</a></li>
+                          <li><a href="#">Home Services</a></li>
+                          <li><a href="{{$solarLink}}">Solar</a></li>
+                          <li><a href="#">Roofing</a></li>
+                          <li><a href="#">Walk-In Tubs</a></li>
+                          <li><a href="#">Windows</a></li>
+                          <li><a href="#">Astrology</a></li>
+                          <li><a href="#">Mortgage Refinance</a></li>
+                          <li><a href="#">Dish</a></li>
+                          <li><a href="#">Home Security</a></li>
                       </ul>
                   </div>
               </div>
               <div class="col-xxl-2 col-xl-3 col-lg-6 col-md-6 col-sm-6 pb-3">
                   <div class="footer-widget">
-                      <h4 class="mb-2">Social Media</h4>
+                      <h4 class="mb-2">Info</h4>
                       <ul class="footer-nav list-inline">
-                          <li><a href="#"><span class="icon"><i class="fab fa-facebook-f"></i></span>Facebook</a></li>
-                          <li><a href="#"><span class="icon"><i class="fab fa-twitter"></i></span>Twitter</a></li>
-                          <li><a href="#"><span class="icon"><i class="fab fa-instagram"></i></span>Instagram</a></li>
-                          <li><a href="#"><span class="icon"><i class="fab fa-linkedin"></i></span>Linkedin</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="#">Terms Of Use</a></li>
+                          <li><a href="#">Disclaimer</a></li>
+                          <li><a href="#">CCPA</a></li>
+                          <li><a href="#">Do Not Sell My Information</a></li>
                       </ul>
                   </div>
               </div>
 
-              <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 pb-3 ">
+              <div class="col-xxl-4 col-xl-4 col-lg-8 col-md-6 col-sm-6 pb-3 ">
                   <div class="footer-widget">
                       <h4 class="mb-2">Contact Info</h4>
                       <ul class="footer-nav list-inline">
-                          <li><a href="#"><span class="icon"><i class="fas fa-map-pin"></i></span>New S. Sales Road, Toronto, CA</a></li>
-                          <li><a href="#"><span class="icon"><i class="fas fa-envelope-open"></i></span>support@themeix.com</a></li>
-                          <li><a href="#"><span class="icon"><i class="fas fa-phone"></i></span>+1 (123) 123 456</a></li>
-                          <li><a href="#"><span class="icon"><i class="fas fa-fax"></i></span>+1 (123) 123 456</a></li>
+                          <li><a href="#"><span class="icon"><i class="fas fa-envelope-open"></i></span>info@smartconsumerinsights.com</a></li>
                       </ul>
                   </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-md-12 mt-4 border-1 border-top pt-2 border-light">
-                  <div class="footer-copyright text-sm  text-center"> <span>
-                          <p>©<span id="spanYear"></span> Newsfeed -
-                              <span>Developed with <i class="fa fa-heart text-danger"></i> by <a target="_blank" href="https://themeix.com">Themeix</a> <br>&amp; </span><span class="small">Published with <a target="_blank" href="https://getbootstrap.com/">Bootstrap 5</a></span>
-                          </p>
-                      </span></div>
               </div>
           </div>
           <a href="#" class="footer-back"><i class="fas fa-chevron-up"></i></a>
