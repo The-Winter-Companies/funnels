@@ -35,6 +35,7 @@ $page = 'main';
     <meta name="twitter:description" content="Description">
     <meta name="twitter:image" content="">
 
+    @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
     @include('partials.lead_id')

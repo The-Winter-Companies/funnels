@@ -56,6 +56,8 @@
 
 @if ( env('APP_ENV') !== 'local' )
     @include('partials.rollbar_script')
+    @include('partials.meta_script')
+
 @endif
 
 @include('partials.trusted_form')

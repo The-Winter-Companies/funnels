@@ -51,6 +51,7 @@
         })(document, window);
     </script>
 
+    @include('partials.meta_script')
 </head>
 <body>
 
