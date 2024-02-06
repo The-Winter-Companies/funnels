@@ -6,6 +6,9 @@ $tubsLink = "https://www.twck93j.com/QL3F2/D42TT/?uid=11&sub1=smartconsumerinsig
 $windowsLink = "https://www.twck93j.com/QL3F2/55M6S/?sub1=smartconsumerinsights";
 $astrologyLink = "https://www.twck93j.com/QL3F2/FGXLG/?uid=7&sub1=smartconsumerinsights";
 $homeServicesLink = "https://foreverhomeplus.com";
+$mortgageRefinanceLink = "https://www.twck93j.com/QL3F2/9B9DM/?sub1=smartconsumerinsights";
+$homeSecurityLink = "https://www.twck93j.com/QL3F2/GTSC3/?sub1=smartconsumerinsights";
+$dishLink = "https://www.twck93j.com/QL3F2/6JHXF/?sub1=smartconsumerinsights";
 
 function carbonDate($daysToSubtract){
     return \Carbon\Carbon::now()->subDays($daysToSubtract)->format('F j, Y');
@@ -28,7 +31,7 @@ function carbonDate($daysToSubtract){
 
 <body>
    <!--/// Header Area /// -->
-   <header class="header-area">
+   <header id="header" class="header-area">
 
       <div class="header-navbar-middle d-none d-lg-block">
          <div class="container">
@@ -45,14 +48,14 @@ function carbonDate($daysToSubtract){
                <div class="collapse navbar-collapse" id="main_nav">
                   <ul class="navbar-nav me-auto">
                      <li class="nav-item"><a class="nav-link" href="{{$solarLink}}">Solar</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/blog">Roofing</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/blog">Windows</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/blog">Tubs</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/contact">Horoscopes</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/contact">Mortgage Refinance</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/contact">Dish</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/contact">Home Security</a></li>
-					 <li class="nav-item"><a class="nav-link" href="">FREE Quotes<span>NEW</span></a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$roofingLink}}">Roofing</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$windowsLink}}">Windows</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$tubsLink}}">Tubs</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$astrologyLink}}">Horoscopes</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$mortgageRefinanceLink}}">Mortgage Refinance</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$dishLink}}">Dish</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{$homeSecurityLink}}">Home Security</a></li>
+					 <li class="nav-item"><a class="nav-link" href="{{$homeServicesLink}}">FREE Quotes<span>NEW</span></a></li>
                   </ul>
                </div>
             </nav>
@@ -75,7 +78,7 @@ function carbonDate($daysToSubtract){
       </div>
    </header>
    <!--/// Hero Area /// -->
-   <div class="hero-area pt-3 pb-3  pt-lg-2 pb-lg-3">
+   <div class="hero-area pt-3 pb-2  pt-lg-2 pb-lg-2">
        <div class="container">
            <div class="row">
                <div class="col-lg-6 col-md-12">
@@ -86,14 +89,14 @@ function carbonDate($daysToSubtract){
                            </div>
                        </div>
                        <div class="card-body">
-                           <a class="badge bg-danger" href="">Home Services</a>
+                           <a class="badge bg-danger" href="{{$homeServicesLink}}">Home Services</a>
                            <h2><a href="{{$solarLink}}">Homeowners: Switch to Solar for Zero Down and Save Big</a>
                            </h2>
                            <div class="row">
                                <div class="col-lg-6">
                                    <div class="author-block">
                                        <ul class="avatar list-inline mb-0">
-                                           <li class="list-inline-item"><a class="small" href="{{$solarLink}}"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
+                                           <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                        </ul>
                                    </div>
                                </div>
@@ -110,10 +113,10 @@ function carbonDate($daysToSubtract){
                    <article class="blog-style4 ">
                        <div class="card border-0">
                            <div class="blog-post-image image-hover-style-1">
-                               <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp5.jpg')}}" alt="image"></a>
+                               <a href="{{$windowsLink}}"> <img class="lazyload" src="{{asset('img/sci-hp5.jpg')}}" alt="image"></a>
                            </div>
                            <div class="card-body  px-0">
-                               <h6><a href="/single">Unlock Significant Savings: Upgrade to Stylish Windows with No Initial Investment</a>
+                               <h6><a href="{{$windowsLink}}">Unlock Significant Savings: Upgrade to Stylish Windows with No Initial Investment</a>
                                </h6>
                            </div>
                        </div>
@@ -121,10 +124,10 @@ function carbonDate($daysToSubtract){
                    <article class="blog-style4 ">
                        <div class="card border-0">
                            <div class="blog-post-image image-hover-style-1">
-                               <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp4.jpg')}}" alt="image"></a>
+                               <a href="{{$roofingLink}}"> <img class="lazyload" src="{{asset('img/sci-hp4.jpg')}}" alt="image"></a>
                            </div>
                            <div class="card-body px-0">
-                               <h6><a href="/single">Shield Your Home with $0 Down Roofing Solutions for Ultimate Protection</a>
+                               <h6><a href="{{$roofingLink}}">Shield Your Home with $0 Down Roofing Solutions for Ultimate Protection</a>
                                </h6>
                            </div>
                        </div>
@@ -142,27 +145,27 @@ function carbonDate($daysToSubtract){
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">New Beginnings Aligned: Introduce Astrology into Your Daily Life</a>
+                                   <h6 class="mb-1"><a href="{{$astrologyLink}}">New Beginnings Aligned: Introduce Astrology into Your Daily Life</a>
                                    </h6>
                                    <time datetime="2021-02-14 20:00" class="small">2 hours ago</time>
                                </article>
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">Immerse Yourself in Luxury: The Tubs You Deserve</a>
+                                   <h6 class="mb-1"><a href="{{$tubsLink}}">Immerse Yourself in Luxury: The Tubs You Deserve</a>
                                    </h6>
                                    <time datetime="2021-02-14 20:00" class="small">1 day ago</time>
                                </article>
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">10 Facts That Will Make You Rethink Your Home's Roof</a></h6>
+                                   <h6 class="mb-1"><a href="{{$roofingLink}}">10 Facts That Will Make You Rethink Your Home's Roof</a></h6>
                                    <time datetime="2021-02-14 20:00" class="small">3 days ago</time>
                                </article>
                            </li>
                            <li class="list-group-item">
                                <article class="list-blog">
-                                   <h6 class="mb-1"><a href="/single">Quietly Elegant: How to Transform Your Home with New Windows</a>
+                                   <h6 class="mb-1"><a href="{{$windowsLink}}">Quietly Elegant: How to Transform Your Home with New Windows</a>
                                    </h6>
                                    <time datetime="2021-02-14 20:00" class="small">3 days ago</time>
                                </article>
@@ -176,12 +179,12 @@ function carbonDate($daysToSubtract){
    <!--/// Ads Area /// -->
    <div class="ads-area">
       <div class="container">
-         <div class="text-center  themeix-ads"><a href="#"><img class="lazyload" src="{{asset('img/sci-hp37.jpg')}}" alt="image"></a>
+         <div class="text-center"><a href="{{$solarLink}}"><img class="lazyload image-hover-style-1" style="max-width: 70%" src="{{asset('img/sci-hp37.jpg')}}" alt="image"></a>
          </div>
       </div>
    </div>
       <!--/// Blog Block 1 Area /// -->
-   <div class="blog-block-1 py-5 ">
+   <div class="blog-block-1 py-5 " style="padding-top: 2rem !important;">
       <div class="container">
          <div class="row">
             <div class="col-lg-8 col-md-7">
@@ -193,13 +196,13 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp6.jpg')}}" alt="image"></a>
+                        <a href="{{$astrologyLink}}"> <img class="lazyload" src="{{asset('img/sci-hp6.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Horoscope</a>
-                        <h4><a href="/single">Unlock Your Celestial Path with a Free Horoscope</a>
+                        <a class="badge bg-primary" href="{{$astrologyLink}}">Horoscope</a>
+                        <h4><a href="{{$astrologyLink}}">Unlock Your Celestial Path with a Free Horoscope</a>
                         </h4>
                         <p>Discover the cosmic secrets that shape your destiny. Navigate life with celestial insights tailored just for you.
                         </p>
@@ -207,7 +210,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -223,13 +226,13 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp7.jpg')}}" alt="image"></a>
+                        <a href="{{$tubsLink}}"> <img class="lazyload" src="{{asset('img/sci-hp7.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Walk-In Tubs</a>
-                        <h4><a href="/single">Escape to Tranquility: Tub Makeover for Your Home Retreat</a>
+                        <a class="badge bg-primary" href="{{$tubsLink}}">Walk-In Tubs</a>
+                        <h4><a href="{{$tubsLink}}">Escape to Tranquility: Tub Makeover for Your Home Retreat</a>
                         </h4>
                         <p>Create a retreat within your home. Transform your bathroom into a sanctuary of tranquility
                         </p>
@@ -237,7 +240,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href=""><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -266,7 +269,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -282,13 +285,13 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp10.jpg')}}" alt="image"></a>
+                        <a href="{{$roofingLink}}"> <img class="lazyload" src="{{asset('img/sci-hp10.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Roofing</a>
-                        <h4><a href="/single">Sheltered Elegance: Your Home, Your Roofing Upgrade</a>
+                        <a class="badge bg-primary" href="{{$roofingLink}}">Roofing</a>
+                        <h4><a href="{{$roofingLink}}">Sheltered Elegance: Your Home, Your Roofing Upgrade</a>
                         </h4>
                         <p>Give your home the care it deserves with a thorough roofing analysis. Elevate your living space with insights that transform your roof into a masterpiece
                         </p>
@@ -296,7 +299,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -312,13 +315,13 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp9.jpg')}}" alt="image"></a>
+                        <a href="{{$windowsLink}}"> <img class="lazyload" src="{{asset('img/sci-hp9.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Windows</a>
-                        <h4><a href="/single">Panoramic Elegance: Elevate Your Home with Expert Window Makeovers</a>
+                        <a class="badge bg-primary" href="{{$windowsLink}}">Windows</a>
+                        <h4><a href="{{$windowsLink}}">Panoramic Elegance: Elevate Your Home with Expert Window Makeovers</a>
                         </h4>
                         <p>Transform your view with expert window makeovers. Elevate your home's elegance and create a panoramic vista from within with insightful enhancements
                         </p>
@@ -326,7 +329,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -356,7 +359,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -372,13 +375,13 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp12.jpg')}}" alt="image"></a>
+                        <a href="{{$roofingLink}}"> <img class="lazyload" src="{{asset('img/sci-hp12.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-primary" href="/category">Roofing</a>
-                        <h4><a href="/single">Above and Beyond: Explore Insightful Roofing Assessments</a>
+                        <a class="badge bg-primary" href="{{$roofingLink}}">Roofing</a>
+                        <h4><a href="{{$roofingLink}}">Above and Beyond: Explore Insightful Roofing Assessments</a>
                         </h4>
                         <p>Redefine your living experience with insightful roofing assessments. Elevate your home's protection and aesthetics with expert insights delivered to your doorstep
                         </p>
@@ -386,7 +389,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Pong Yang</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -411,13 +414,13 @@ function carbonDate($daysToSubtract){
                         </div>
                      </div>
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
-                        <a aria-label="Post Title Here" href="/single">
+                        <a aria-label="Post Title Here" href="{{$astrologyLink}}">
                            <div class="post-img-wrap position-relative overflow-hidden">
                               <img class="lazyload post-img" src="{{asset('img/sci-hp13.jpg')}}" data-src="" alt="Post Title Here">
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Dive into the mysteries of the cosmos with our Astrology Horoscopes</a>
+                           <h6 class="post-title"><a href="{{$astrologyLink}}">Dive into the mysteries of the cosmos with our Astrology Horoscopes</a>
                            </h6>
                            <div class="post-meta">
                               <span class="date-info small">
@@ -428,13 +431,13 @@ function carbonDate($daysToSubtract){
                         </div>
                      </article>
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
-                        <a aria-label="Post Title Here" href="/single">
+                        <a aria-label="Post Title Here" href="{{$tubsLink}}">
                            <div class="post-img-wrap position-relative overflow-hidden">
                               <img class="lazyload post-img" src="{{asset('img/sci-hp14.jpg')}}">
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Pamper yourself with Tub upgrades – because a little luxury goes a long way</a></h6>
+                           <h6 class="post-title"><a href="{{$tubsLink}}">Pamper yourself with Tub upgrades – because a little luxury goes a long way</a></h6>
                            <div class="post-meta">
                               <span class="date-info small">
 
@@ -444,13 +447,13 @@ function carbonDate($daysToSubtract){
                         </div>
                      </article>
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
-                        <a aria-label="Post Title Here" href="/single">
+                        <a aria-label="Post Title Here" href="{{$windowsLink}}">
                            <div class="post-img-wrap position-relative overflow-hidden">
                               <img class="lazyload post-img" src="{{asset('img/sci-hp15.jpg')}}" >
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Redefine living with Window enhancements – style meets energy efficiency</a>
+                           <h6 class="post-title"><a href="{{$windowsLink}}">Redefine living with Window enhancements – style meets energy efficiency</a>
                            </h6>
                            <div class="post-meta">
                               <span class="date-info small">
@@ -478,13 +481,13 @@ function carbonDate($daysToSubtract){
                         </div>
                      </article>
                      <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
-                        <a aria-label="Post Title Here" href="/single">
+                        <a aria-label="Post Title Here" href="{{$roofingLink}}">
                            <div class="post-img-wrap position-relative overflow-hidden">
                               <img class="lazyload post-img" src="{{asset('img/sci-hp17.jpg')}}">
                            </div>
                         </a>
                         <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                           <h6 class="post-title"><a href="/single">Give your home a royal crown with our Roofing solutions – it's a game-changer</a>
+                           <h6 class="post-title"><a href="{{$roofingLink}}">Give your home a royal crown with our Roofing solutions – it's a game-changer</a>
                            </h6>
                            <div class="post-meta">
                               <span class="date-info small">
@@ -495,13 +498,13 @@ function carbonDate($daysToSubtract){
                         </div>
                      </article>
                       <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
-                          <a aria-label="Post Title Here" href="/single">
+                          <a aria-label="Post Title Here" href="{{$dishLink}}">
                               <div class="post-img-wrap position-relative overflow-hidden">
                                   <img class="lazyload post-img" src="{{asset('img/sci-hp38.jpg')}}">
                               </div>
                           </a>
                           <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                              <h6 class="post-title"><a href="/single">Crown Your Home Entertainment – Satellite Dish Solutions, a Majestic Game-Changer</a>
+                              <h6 class="post-title"><a href="{{$dishLink}}">Crown Your Home Entertainment – Satellite Dish Solutions, a Majestic Game-Changer</a>
                               </h6>
                               <div class="post-meta">
                               <span class="date-info small">
@@ -512,13 +515,13 @@ function carbonDate($daysToSubtract){
                           </div>
                       </article>
                       <article class="blog-style5 d-flex  d-md-block d-xl-flex align-items-center">
-                          <a aria-label="Post Title Here" href="/single">
+                          <a aria-label="Post Title Here" href="{{$mortgageRefinanceLink}}">
                               <div class="post-img-wrap position-relative overflow-hidden">
                                   <img class="lazyload post-img" src="{{asset('img/sci-hp39.jpg')}}">
                               </div>
                           </a>
                           <div class="post-content pt-md-2 pt-xl-0 pt-0">
-                              <h6 class="post-title"><a href="/single">Discover Savings Sovereignty: Mortgage Refinance – A Home Finance Revolution</a>
+                              <h6 class="post-title"><a href="{{$mortgageRefinanceLink}}">Discover Savings Sovereignty: Mortgage Refinance – A Home Finance Revolution</a>
                               </h6>
                               <div class="post-meta">
                               <span class="date-info small">
@@ -541,28 +544,28 @@ function carbonDate($daysToSubtract){
                         <div class="tab-pane fade show active" id="tab1">
                            <ul class="counter-post list-inline">
                               <li class="counter-post-item">
-                                 <a href="/single">How can I understand my zodiac sign's potential?</a>
+                                 <a href="{{$astrologyLink}}">Navigating Life's Mysteries: The Power of Astrology Revealed</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="/single">How do I add a bit of luxury to my bathroom?</a>
+                                 <a href="{{$tubsLink}}">Revitalize Your Retreat: Tub Transformations for Ultimate Comfort</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="{{$solarLink}}">How do I save money by using solar power at home?</a>
+                                 <a href="{{$solarLink}}">Solar Brilliance: Transforming Your Lifestyle and Energy Bills</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="/single">How do I make my home look nicer with new windows?</a>
+                                 <a href="{{$windowsLink}}">Panoramic Elegance: Elevate Your Home with Expert Window Makeovers</a>
                               </li>
                               <li class="counter-post-item">
-                                 <a href="/single">How can I give my house a quick facelift with a new roof?</a>
+                                 <a href="{{$roofingLink}}">Top-Down Transformation: Redefining Your Shelter with Roofing</a>
                               </li>
                                <li class="counter-post-item">
-                                 <a href="/single">What are the quickest steps to bolster my home's security for peace of mind?</a>
+                                 <a href="{{$homeSecurityLink}}">Beyond Locks: Modernizing Your Home Security for Today's World</a>
                               </li>
                                <li class="counter-post-item">
-                                 <a href="/single">What's the fastest route to a superior TV setup with a new satellite dish?</a>
+                                 <a href="{{$dishLink}}">Global Connectivity: The Impact of Satellites on Communication</a>
                               </li>
                                <li class="counter-post-item">
-                                 <a href="/single">Looking for a rapid financial facelift – any advice on mortgage refinance options?</a>
+                                 <a href="{{$mortgageRefinanceLink}}">A Fresh Start: Transform Your Future with Mortgage Refinance</a>
                               </li>
                            </ul>
                         </div>
@@ -581,15 +584,15 @@ function carbonDate($daysToSubtract){
                      <ul class="tag-cloud list-inline">
                         <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$solarLink}}">Solar</a>
                         </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Roofing</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$roofingLink}}">Roofing</a>
                         </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Walk-In Tubs</a></li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Windows</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$tubsLink}}">Walk-In Tubs</a></li>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$windowsLink}}">Windows</a>
                         </li>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Astrology</a>
-                         <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Dish</a>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Mortgage Refinance</a>
-                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="/category">Home Security</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$astrologyLink}}">Astrology</a>
+                         <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$dishLink}}">Dish</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$mortgageRefinanceLink}}">Mortgage Refinance</a>
+                        <li class="list-inline-item"><a class="btn bg-light text-secondary bg-hover-danger text-hover-white bg-hover-danger text-hover-white" href="{{$homeSecurityLink}}">Home Security</a>
                         </li>
                      </ul>
                   </div>
@@ -643,7 +646,7 @@ function carbonDate($daysToSubtract){
                         <div class="col-lg-6">
                            <div class="author-block">
                               <ul class="avatar list-inline mb-0">
-                                 <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
+                                 <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                               </ul>
                            </div>
                         </div>
@@ -660,17 +663,17 @@ function carbonDate($daysToSubtract){
                <article class="blog-style3 border-0 card mb-4 position-relative">
                   <div class="feature-image">
                      <div class="image-frame image-hover-style-1">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp19.jpg')}}" alt="image"></a>
+                        <a href="{{$roofingLink}}"> <img class="lazyload" src="{{asset('img/sci-hp19.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body">
-                     <a class="badge bg-secondary" href="/category">Home Services</a>
-                     <h2><a href="/single">Want your roof to look like this ? CLICK here </a></h2>
+                     <a class="badge bg-secondary" href="{{$homeServicesLink}}">Home Services</a>
+                     <h2><a href="{{$roofingLink}}">Want your roof to look like this ? CLICK here </a></h2>
                      <div class="row">
                         <div class="col-lg-6">
                            <div class="author-block">
                               <ul class="avatar list-inline mb-0">
-                                 <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
+                                 <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                               </ul>
                            </div>
                         </div>
@@ -699,13 +702,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </div>
                <article class="blog-style5 d-flex align-items-center mb-3">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$astrologyLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp20.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Embrace your cosmic potential and discover zodiac secrets</a>
+                     <h6 class="post-title"><a href="{{$astrologyLink}}">Embrace your cosmic potential and discover zodiac secrets</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -716,13 +719,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </article>
                <article class="blog-style5 d-flex align-items-center mb-3">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$astrologyLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp21.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Dive into the mysteries of the cosmos</a></h6>
+                     <h6 class="post-title"><a href="{{$astrologyLink}}">Dive into the mysteries of the cosmos</a></h6>
                      <div class="post-meta">
                         <span class="date-info small">
 
@@ -732,13 +735,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </article>
                <article class="blog-style5 d-flex align-items-center">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$astrologyLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp22.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Uncover your cosmic journey – where the stars share exclusive secrets just for you</a></h6>
+                     <h6 class="post-title"><a href="{{$astrologyLink}}">Uncover your cosmic journey – where the stars share exclusive secrets just for you</a></h6>
                      <div class="post-meta">
                         <span class="date-info small">
 
@@ -749,7 +752,7 @@ function carbonDate($daysToSubtract){
                </article>
                <div class="row">
                   <div class="col mt-3">
-                     <a class="text-uppercase section-title-link" href="/category">
+                     <a class="text-uppercase section-title-link" href="https://astrologyspark.com">
                         View more
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
@@ -768,13 +771,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </div>
                <article class="blog-style5 d-flex align-items-center mb-3">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$tubsLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp23.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Pamper yourself with Tub upgrades
+                     <h6 class="post-title"><a href="{{$tubsLink}}">Pamper yourself with Tub upgrades
                            Kimchi)</a>
                      </h6>
                      <div class="post-meta">
@@ -786,13 +789,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </article>
                <article class="blog-style5 d-flex align-items-center mb-3">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$tubsLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp24.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Elevate your bath time with Tub transformations
+                     <h6 class="post-title"><a href="{{$tubsLink}}">Elevate your bath time with Tub transformations
                            machine</a>
                      </h6>
                      <div class="post-meta">
@@ -804,13 +807,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </article>
                <article class="blog-style5 d-flex align-items-center">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$tubsLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp25.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Blissful baths ahead with our Tub solutions</a>
+                     <h6 class="post-title"><a href="{{$tubsLink}}">Blissful baths ahead with our Tub solutions</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -822,7 +825,7 @@ function carbonDate($daysToSubtract){
                </article>
                <div class="row">
                   <div class="col mt-3">
-                     <a class="text-uppercase section-title-link" href="/category">
+                     <a class="text-uppercase section-title-link" href="https://quotes.foreverhomehub.com/tubs">
                         View more
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
@@ -841,13 +844,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </div>
                <article class="blog-style5 d-flex align-items-center mb-3">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$windowsLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp26.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Upgrade your outlook with Windows to Wow</a>
+                     <h6 class="post-title"><a href="{{$windowsLink}}">Upgrade your outlook with Windows to Wow</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -858,13 +861,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </article>
                <article class="blog-style5 d-flex align-items-center mb-3">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$windowsLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp27.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">See life through a new lens with Window upgrades</a>
+                     <h6 class="post-title"><a href="{{$windowsLink}}">See life through a new lens with Window upgrades</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -875,13 +878,13 @@ function carbonDate($daysToSubtract){
                   </div>
                </article>
                <article class="blog-style5 d-flex align-items-center">
-                  <a aria-label="Post Title Here" href="/single">
+                  <a aria-label="Post Title Here" href="{{$windowsLink}}">
                      <div class="post-img-wrap position-relative overflow-hidden">
                         <img class="lazyload post-img" src="{{asset('img/sci-hp28.jpg')}}" alt="Post Title Here">
                      </div>
                   </a>
                   <div class="post-content">
-                     <h6 class="post-title"><a href="/single">Light up your space with Window insights</a>
+                     <h6 class="post-title"><a href="{{$windowsLink}}">Light up your space with Window insights</a>
                      </h6>
                      <div class="post-meta">
                         <span class="date-info small">
@@ -893,7 +896,7 @@ function carbonDate($daysToSubtract){
                </article>
                <div class="row">
                   <div class="col mt-3">
-                     <a class="text-uppercase section-title-link" href="/category">
+                     <a class="text-uppercase section-title-link" href="https://quotes.foreverhomehub.com/windows">
                         View more
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path d="M1.5 13.5h17.79l-5.445 6.54a1.502 1.502 0 102.31 1.92l7.5-9a1.78 1.78 0 00.135-.226c0-.075.075-.12.105-.195A1.5 1.5 0 0024 12a1.499 1.499 0 00-.105-.54c0-.075-.075-.12-.105-.195a1.766 1.766 0 00-.135-.225l-7.5-9A1.499 1.499 0 0015 1.5a1.5 1.5 0 00-1.155 2.46l5.445 6.54H1.5a1.5 1.5 0 100 3z">
@@ -929,7 +932,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -947,13 +950,13 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-hover-style-1 image-frame">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp30.jpg')}}" alt="image"></a>
+                        <a href="{{$roofingLink}}"> <img class="lazyload" src="{{asset('img/sci-hp30.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-info" href="/category">Roofing</a>
-                        <h4><a href="/single">Keep your neighbors jealous
+                        <a class="badge bg-info" href="{{$roofingLink}}">Roofing</a>
+                        <h4><a href="{{$roofingLink}}">Keep your neighbors jealous
                            </a>
                         </h4>
 
@@ -961,7 +964,7 @@ function carbonDate($daysToSubtract){
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img2.jpg')}}" alt="M. Robert" data-bs-toggle="tooltip" data-bs-placement="top" title="M. Robert"> M.
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img2.jpg')}}" alt="M. Robert" data-bs-toggle="tooltip" data-bs-placement="top" title="M. Robert"> M.
                                           Robert</a></li>
                                  </ul>
                               </div>
@@ -980,20 +983,20 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-hover-style-1 image-frame">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp31.jpg')}}" alt="image"></a>
+                        <a href="{{$astrologyLink}}"> <img class="lazyload" src="{{asset('img/sci-hp31.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-info" href="/category">Astrology</a>
-                        <h4><a href="/single">Know the secrets of the universe</a>
+                        <a class="badge bg-info" href="{{$astrologyLink}}">Astrology</a>
+                        <h4><a href="{{$astrologyLink}}">Know the secrets of the universe</a>
                         </h4>
 
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img8.jpg')}}" alt="Joe Bern" data-bs-toggle="tooltip" data-bs-placement="top" title="Joe Bern">Joe Bern</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -1011,20 +1014,20 @@ function carbonDate($daysToSubtract){
                <article class="blog-style2 card mb-4 ">
                   <div class="feature-image">
                      <div class="image-hover-style-1 image-frame">
-                        <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp32.jpg')}}" alt="image"></a>
+                        <a href="{{$tubsLink}}"> <img class="lazyload" src="{{asset('img/sci-hp32.jpg')}}" alt="image"></a>
                      </div>
                   </div>
                   <div class="card-body  d-md-flex align-items-center">
                      <div class="card-flex-content">
-                        <a class="badge bg-info" href="/category">Walk-In Tubs</a>
-                        <h4><a href="/single">Take your mind off the hardships during the day in your brand new tub</a>
+                        <a class="badge bg-info" href="{{$tubsLink}}">Walk-In Tubs</a>
+                        <h4><a href="{{$tubsLink}}">Take your mind off the hardships during the day in your brand new tub</a>
                         </h4>
 
                         <div class="row">
                            <div class="col-lg-6">
                               <div class="author-block">
                                  <ul class="avatar list-inline mb-0">
-                                    <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Tyler Mayk</a></li>
+                                    <li class="list-inline-item"><a class="small"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Tyler Mayk</a></li>
                                  </ul>
                               </div>
                            </div>
@@ -1043,20 +1046,20 @@ function carbonDate($daysToSubtract){
                  <article class="blog-style2 card mb-4 ">
                      <div class="feature-image">
                          <div class="image-hover-style-1 image-frame">
-                             <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp32.jpg')}}" alt="image"></a>
+                             <a href="{{$homeSecurityLink}}"> <img class="lazyload" src="{{asset('img/sci-hp40.jpg')}}" alt="image"></a>
                          </div>
                      </div>
                      <div class="card-body  d-md-flex align-items-center">
                          <div class="card-flex-content">
-                             <a class="badge bg-info" href="/category">Walk-In Tubs</a>
-                             <h4><a href="/single">Take your mind off the hardships during the day in your brand new tub</a>
+                             <a class="badge bg-info" href="{{$homeSecurityLink}}">Home Security</a>
+                             <h4><a href="{{$homeSecurityLink}}">Relax with peace of mind – our security solutions have your home covered.</a>
                              </h4>
 
                              <div class="row">
                                  <div class="col-lg-6">
                                      <div class="author-block">
                                          <ul class="avatar list-inline mb-0">
-                                             <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Tyler Mayk</a></li>
+                                             <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Pong Yang</a></li>
                                          </ul>
                                      </div>
                                  </div>
@@ -1075,20 +1078,20 @@ function carbonDate($daysToSubtract){
                  <article class="blog-style2 card mb-4 ">
                      <div class="feature-image">
                          <div class="image-hover-style-1 image-frame">
-                             <a href="/single"> <img class="lazyload" src="{{asset('img/sci-hp32.jpg')}}" alt="image"></a>
+                             <a href="{{$mortgageRefinanceLink}}"> <img class="lazyload" src="{{asset('img/sci-hp41.jpg')}}" alt="image"></a>
                          </div>
                      </div>
                      <div class="card-body  d-md-flex align-items-center">
                          <div class="card-flex-content">
-                             <a class="badge bg-info" href="/category">Walk-In Tubs</a>
-                             <h4><a href="/single">Take your mind off the hardships during the day in your brand new tub</a>
+                             <a class="badge bg-info" href="{{$mortgageRefinanceLink}}">Mortgage Refinance</a>
+                             <h4><a href="{{$mortgageRefinanceLink}}">Ease financial stress with our mortgage refinance options – your path to a worry-free future</a>
                              </h4>
 
                              <div class="row">
                                  <div class="col-lg-6">
                                      <div class="author-block">
                                          <ul class="avatar list-inline mb-0">
-                                             <li class="list-inline-item"><a class="small" href="/author"><img src="{{asset('img/author-img3.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Tyler Mayk</a></li>
+                                             <li class="list-inline-item"><a class="small"><img src="{{asset('img/sci-hp34.jpg')}}" alt="C. Wood" data-bs-toggle="tooltip" data-bs-placement="top" title="C. Wood">Pong Yang</a></li>
                                          </ul>
                                      </div>
                                  </div>
@@ -1148,16 +1151,16 @@ function carbonDate($daysToSubtract){
                   <div class="footer-widget">
                       <h4 class="mb-2">Navigation</h4>
                       <ul class="footer-nav list-inline">
-                          <li><a href="#">Home</a></li>
-                          <li><a href="#">Home Services</a></li>
+                          <li><a href="/#header">Home</a></li>
+                          <li><a href="{{$homeServicesLink}}">Home Services</a></li>
                           <li><a href="{{$solarLink}}">Solar</a></li>
-                          <li><a href="#">Roofing</a></li>
-                          <li><a href="#">Walk-In Tubs</a></li>
-                          <li><a href="#">Windows</a></li>
-                          <li><a href="#">Astrology</a></li>
-                          <li><a href="#">Mortgage Refinance</a></li>
-                          <li><a href="#">Dish</a></li>
-                          <li><a href="#">Home Security</a></li>
+                          <li><a href="{{$roofingLink}}">Roofing</a></li>
+                          <li><a href="{{$tubsLink}}">Walk-In Tubs</a></li>
+                          <li><a href="{{$windowsLink}}">Windows</a></li>
+                          <li><a href="{{$astrologyLink}}">Astrology</a></li>
+                          <li><a href="{{$mortgageRefinanceLink}}">Mortgage Refinance</a></li>
+                          <li><a href="{{$dishLink}}">Dish</a></li>
+                          <li><a href="{{$homeSecurityLink}}">Home Security</a></li>
                       </ul>
                   </div>
               </div>
@@ -1165,22 +1168,29 @@ function carbonDate($daysToSubtract){
                   <div class="footer-widget">
                       <h4 class="mb-2">Info</h4>
                       <ul class="footer-nav list-inline">
-                          <li><a href="#">Privacy Policy</a></li>
-                          <li><a href="#">Terms Of Use</a></li>
-                          <li><a href="#">Disclaimer</a></li>
-                          <li><a href="#">CCPA</a></li>
-                          <li><a href="#">Do Not Sell My Information</a></li>
+                          <li><a href="/privacy-policy">Privacy Policy</a></li>
+                          <li><a href="/terms-and-conditions">Terms Of Use</a></li>
+                          <li><a href="/disclaimer">Disclaimer</a></li>
+                          <li><a href="/privacy-policy#ccpa">CCPA</a></li>
+                          <li><a href="/please-do-not-sell-my-personal-information">Do Not Sell My Information</a></li>
                       </ul>
                   </div>
               </div>
 
               <div class="col-xxl-4 col-xl-4 col-lg-8 col-md-6 col-sm-6 pb-3 ">
                   <div class="footer-widget">
-                      <h4 class="mb-2">Contact Info</h4>
+                      <h4 class="mb-2">Contact</h4>
                       <ul class="footer-nav list-inline">
-                          <li><a href="#"><span class="icon"><i class="fas fa-envelope-open"></i></span>info@smartconsumerinsights.com</a></li>
+                          <li><span class="icon"><i class="fas fa-envelope-open"></i></span>info@smartconsumerinsights.com</li>
                       </ul>
                   </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12 mt-4 border-1 border-top pt-2 border-light">
+                  <div class="footer-copyright text-sm  text-center"> <span>
+                          <p>@ Copyright <script>document.write(new Date().getFullYear())</script> Smart Consumer Insights. All Rights Reserved.</p>
+                      </span></div>
               </div>
           </div>
           <a href="#" class="footer-back"><i class="fas fa-chevron-up"></i></a>
