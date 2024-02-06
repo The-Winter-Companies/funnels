@@ -30,7 +30,7 @@ nav.scroll .navbar-header{background:none; padding: 0;}
 -moz-border-radius: 5px;
 border-radius: 5px;}
 .searbox .btn {background: #aed24c;
-    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 /*background: -moz-linear-gradient(top,  #ff8900 0%, #ff6100 99%);*/
 /*background: -webkit-linear-gradient(top,  #ff8900 0%,#ff6100 99%);*/
 /*background: linear-gradient(to bottom,  #ff8900 0%,#ff6100 99%);*/
