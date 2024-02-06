@@ -37,7 +37,7 @@ foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
         });
 
         Route::get('/', function () {
-            return "home_page";
+            return view('/smart_consumer_insights/home');
         });
     });
 }
