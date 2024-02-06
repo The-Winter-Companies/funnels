@@ -56,7 +56,7 @@
         <header>
             <nav class="navbar justify-content-between mx-auto">
 				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
-					<a href="https://{{$domainFullDomain}}" target="_blank"><img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="320"
+					<a href="https://{{$domainFullDomain}}" target="_blank"><img src="{{ asset('img/fhp-logo-hp-new.png') }}" onerror="this.src='{{ asset('fhp-logo-hp-new.png') }}'" width="320"
                                                                                  alt="Smart Consumer Insights" class="img-fluid" draggable="false"></a>
 				</span>
             </nav>
