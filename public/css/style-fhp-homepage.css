@@ -49,7 +49,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6100', end
 
 .project {background:#f8f8f8; padding-top: 40px; padding-bottom: 40px;}
 .project h2 {font-size: 40px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; text-align: center;}
-.project li a{min-height: 175px;background-color: #fff;outline: solid 1px #0070bb;border: 5px solid #fff;text-align: center;padding: 4px;overflow: hidden; display: block; margin-bottom: 30px; transition: outline-color 0.15s ease, transform 0.3s ease;  transform: scale(1); /* Start at normal size */
+.project li a{min-height: 175px;background-color: #fff;outline: solid 1px #0070bb5c;border: 5px solid #fff;text-align: center;padding: 4px;overflow: hidden; display: block; margin-bottom: 30px; transition: outline-color 0.15s ease, transform 0.3s ease;  transform: scale(1); /* Start at normal size */
 }
 
 .project li h3{font-family:'Montserrat',sans-serif;width:100%;height:auto;font-weight:800;text-align:center;color:#2d3134;font-size:20px;position:relative;padding-bottom:4px;display:inline;     color: #0085de;transition: color 0.15s ease, transform 0.3s ease;}
