@@ -23,6 +23,7 @@ return [
         'web-server-2.foreverhomeplus.com'
     ],
     'forever_home_hub' => [
+        'http://127.0.0.1',
         'staging-quotes.foreverhomehub.com',
         'quotes.foreverhomehub.com',
         'quotes.foreverhomehub.local',
