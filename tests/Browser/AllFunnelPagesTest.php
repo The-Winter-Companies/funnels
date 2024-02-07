@@ -74,7 +74,7 @@ class AllFunnelPagesTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/roofing/f1?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/roofing/f1?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('Where would this project take place?')
                 ->type("#zip_code", "55442")
                 ->click("#btn-zip")
@@ -107,7 +107,7 @@ class AllFunnelPagesTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/roofing/o7?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/roofing/o7?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('Find Top-Rated Roofing Pros And Save!')
                 ->type("#zip_code", "55442")
                 ->click("#btn-zip")
@@ -143,7 +143,7 @@ class AllFunnelPagesTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/roofing?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/roofing?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('Check How Much You Can Save')
                 ->type("#zip_code", "55442")
                 ->click("#btn-zip")
@@ -193,7 +193,7 @@ class AllFunnelPagesTest extends DuskTestCase
         // SOLAR MAIN
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/solar/?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/solar/?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('Enter your zip code')
                 ->type("zip_code", "55442")
                 ->click("#btn-zip")
@@ -243,7 +243,7 @@ class AllFunnelPagesTest extends DuskTestCase
         // SOLAR O7
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/solar/o7?ef_tx_id=X&ef_aff_id=Y&ef_offer_id=Z')
+                ->visit('/solar/o7?ef_tx_id=X&ef_aff_id=Y&ef_offer_id=Z&s1=test')
                 ->assertSee('Solar')
                 ->assertSee('Are you a homeowner?')
                 ->click("#pc01")
@@ -285,7 +285,7 @@ class AllFunnelPagesTest extends DuskTestCase
         // SOLAR F1
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/solar/f1?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/solar/f1?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('Where would this project take place?')
                 ->type("zip_code", "55442")
                 ->click("#btn-zip")
@@ -330,7 +330,7 @@ class AllFunnelPagesTest extends DuskTestCase
         // TUBS MAIN
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/tubs/?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/tubs/?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('Enter your zip code')
                 ->type("zip_code", "55442")
                 ->click("#btn-zip")
@@ -372,7 +372,7 @@ class AllFunnelPagesTest extends DuskTestCase
         // TUBS F1
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/tubs/f1?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/tubs/f1?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('Where would this project take place?')
                 ->type("zip_code", "55442")
                 ->click("#btn-zip")
@@ -413,7 +413,7 @@ class AllFunnelPagesTest extends DuskTestCase
         // TUBS O7
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit('/tubs/o7?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z')
+                ->visit('/tubs/o7?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
                 ->assertSee('What is your zip code?')
                 ->type("zip_code", "55442")
                 ->click("#btn-zip")
