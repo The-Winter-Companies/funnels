@@ -15,9 +15,8 @@ class AllFunnelPagesTest extends DuskTestCase
         '/solar/f1',
         '/tubs/o7',
         '/tubs/f1',
-        '/solar/',
-        '/tubs/f1',
-        '/roofing/f1',
+        '/windows/f1',
+        '/windows/o7'
     ];
 
     /**
@@ -27,7 +26,7 @@ class AllFunnelPagesTest extends DuskTestCase
 
     public function testMissingEFURLParamsRedirect(){
         foreach($this->pages as $page){
-            if(!str_ends_with($page, '/')){
+            if(!str_ends_with($page, '/')) {
 
                 $this->browse(function (Browser $browser) use ($page) {
                     $rootVerticalPath = $this->stripAfterLastSlash($page);
@@ -38,7 +37,7 @@ class AllFunnelPagesTest extends DuskTestCase
 
                 $this->browse(function (Browser $browser) use ($page) {
                     $browser
-                        ->visit($page . '?ef_tx_id=X&ef_aff_id=Y&ef_offer_id=Z')
+                        ->visit($page . '?ef_tx_id=2&ef_aff_id=2&ef_offer_id=2')
                         ->assertPathIs($page);
                 });
             }
