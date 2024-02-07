@@ -21,7 +21,7 @@ function carbonDate($daysToSubtract){
    <!-- Title -->
    <title>Smart Consumer Insights</title>
    <!-- Favicon -->
-   <link rel="icon" href="{{asset('img/favicon-32x32.png')}}">
+   <link rel="icon" href="{{asset('img/favicon.png')}}">
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&amp;family=Open+Sans&amp;display=swap" rel="stylesheet">
    <!-- gulp:css -->
@@ -35,11 +35,11 @@ function carbonDate($daysToSubtract){
 
       <div class="header-navbar-middle d-none d-lg-block">
          <div class="container">
-            <div class="navbar-brand-wrapper py-3 d-flex justify-content-center align-items-center">
-               <a class="navbar-brand" href="/">
-                  <img class="lazyload" src="{{asset('img/fhp-logo-hp-new.png')}}" alt="image">
-               </a>
-            </div>
+             <div class="navbar-brand-wrapper py-3 d-flex justify-content-start align-items-center">
+                 <a class="navbar-brand" href="/">
+                     <img class="lazyload" src="{{asset('img/fhp-logo-hp-new.png')}}" alt="image">
+                 </a>
+             </div>
          </div>
       </div>
       <div class="header-navbar-bottom pt-2 pt-lg-0 border-top border-light">
@@ -47,15 +47,63 @@ function carbonDate($daysToSubtract){
             <nav class="navbar navbar-expand-lg">
                <div class="collapse navbar-collapse" id="main_nav">
                   <ul class="navbar-nav me-auto">
-                     <li class="nav-item"><a class="nav-link" href="{{$solarLink}}">Solar</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{$roofingLink}}">Roofing</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{$windowsLink}}">Windows</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{$tubsLink}}">Tubs</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{$astrologyLink}}">Horoscopes</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{$mortgageRefinanceLink}}">Mortgage Refinance</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{$dishLink}}">Dish</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{{$homeSecurityLink}}">Home Security</a></li>
-					 <li class="nav-item"><a class="nav-link" href="{{$homeServicesLink}}">FREE Quotes<span>NEW</span></a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{$homeServicesLink}}">Home</a></li>
+                      <li class="nav-item dropdown"> <a class="nav-link  dropdown-toggle" href="/">Home Improvement</a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/"> Home v1 </a></li>
+                              <li><a class="dropdown-item" href="/"> Home v2 </a></li>
+                          </ul>
+
+                      </li>
+                      <li class="nav-item dropdown"> <a class="nav-link  dropdown-toggle" href="/">Finance</a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/"> Home v1 </a></li>
+                              <li><a class="dropdown-item" href="/"> Home v2 </a></li>
+                          </ul>
+
+                      </li>
+                      <li class="nav-item dropdown"> <a class="nav-link  dropdown-toggle" href="/">Home Gadgets</a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/"> Home v1 </a></li>
+                              <li><a class="dropdown-item" href="/"> Home v2 </a></li>
+                          </ul>
+
+                      </li>
+                      <li class="nav-item dropdown"> <a class="nav-link  dropdown-toggle" href="/">Horoscopes</a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/"> Home v1 </a></li>
+                              <li><a class="dropdown-item" href="/"> Home v2 </a></li>
+                          </ul>
+
+                      </li>
+                      <li class="nav-item dropdown"> <a class="nav-link  dropdown-toggle" href="/">Animals</a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/"> Home v1 </a></li>
+                              <li><a class="dropdown-item" href="/"> Home v2 </a></li>
+                          </ul>
+
+                      </li>
+                      <li class="nav-item dropdown"> <a class="nav-link  dropdown-toggle" href="/">Dating</a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/"> Home v1 </a></li>
+                              <li><a class="dropdown-item" href="/"> Home v2 </a></li>
+                          </ul>
+
+                      </li>
+                      <li class="nav-item dropdown"> <a class="nav-link  dropdown-toggle" href="/">Insurance<span>NEW</span></a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/"> Home v1 </a></li>
+                              <li><a class="dropdown-item" href="/"> Home v2 </a></li>
+                          </ul>
+
+                      </li>
                   </ul>
                </div>
             </nav>
