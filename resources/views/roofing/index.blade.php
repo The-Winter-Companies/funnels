@@ -493,7 +493,7 @@ $page = 'main';
                     Hub
                 @endif
             @endif Works</h2>
-        <p class="page-title text-center">3 Easy Steps To Saving Big on New Roofing:</p>
+        <p class="page-title text-center">3 Easy Steps To Saving Big on New {{ucwords($vertical)}}:</p>
 
         <div class="row">
             <div class="col-sm-4 col-12 p-box">
