@@ -144,7 +144,7 @@ class AllFunnelPagesTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser
                 ->visit('/roofing?ef_tx_id=x&ef_aff_id=y&ef_offer_id=z&s1=test')
-                ->assertSee('Check How Much You Can Save')
+                ->assertSee('Check How Much You Can Potentially Save')
                 ->type("#zip_code", "55442")
                 ->click("#btn-zip")
                 ->pause(1000)
