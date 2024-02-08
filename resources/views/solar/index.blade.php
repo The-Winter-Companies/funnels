@@ -67,7 +67,7 @@ session_start();
 
         <div class="headline container">
             <h2>Compare <span class="hl-bl">Free Quotes</span>  from <br class="d-none d-md-block">Top-Rated Solar Installers</h2>
-            <h3>Check How Much You Can Save</h3>
+            <h3>Check How Much You Can Potentially Save</h3>
         </div>
 
         <form class="form container-fluid" >
@@ -283,7 +283,7 @@ session_start();
             <fieldset><legend hidden="true">Phone</legend>
                 <center>
                     <h3 class="form-question mb-2">You're almost finished!</h3>
-                    <p class="form-desc">What's the best number to reach you at if you qualify?</p>
+                    <p class="form-desc">What's the best number to reach you at?</p>
                 </center>
 
                 <div class="form-cont">
@@ -339,7 +339,7 @@ session_start();
 <section class="page-content">
     <div class="container">
 
-        <h2 class="page-desc text-center">Why Use Forever Home
+        <h2 class="page-desc text-center" style="margin-bottom:20px;">Why Use Forever Home
             @if($mainDomain == "foreverhomeplus")
                 Plus
             @else
@@ -415,8 +415,8 @@ session_start();
                     </svg>
 
 
-                    <h3>Qualify in less <br class="d-none d-md-block">than a minute!</h3>
-                    <p>It takes less than a minute and you can get up to 4 custom quotes from top contractors who specialize in your project .</p>
+                    <h3>Find out in just <br class="d-none d-md-block"> a few minutes!</h3>
+                    <p>It takes less than a few minutes and you can get up to 4 custom quotes from top contractors who specialize in your project.</p>
                 </div>
             </div>
         </div>
@@ -438,7 +438,7 @@ session_start();
                     Hub
                 @endif
             @endif Works </h2>
-        <p class="page-title text-center">3 Easy Steps To Saving Big on New Windows:</p>
+        <p class="page-title text-center">3 Easy Steps To Receive Your Free Solar Quote:</p>
 
         <div class="row">
             <div class="col-sm-4 col-12 p-box">
