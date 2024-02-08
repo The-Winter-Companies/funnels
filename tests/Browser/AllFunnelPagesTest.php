@@ -362,7 +362,7 @@ class AllFunnelPagesTest extends DuskTestCase
                 ->type("#email", 'test@test.com')
                 ->click("#btn-email")
                 ->pause(1000)
-                ->assertSee('What\'s the best number to reach you at?')
+                ->assertSee('What\'s the best number to reach you at if you qualify?')
                 ->type("#phone", '1111111111')
                 ->click('#form_submit')
                 ->pause(2000)
