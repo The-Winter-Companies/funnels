@@ -93,6 +93,14 @@ foreach ($mergedFHHAndFHPDomains as $mergedFHHAndFHPDomain){
             return view('roofing/index');
         });
 
+        Route::get('/solar-pre', function () {
+            return view('pre-pages/solar-pre');
+        });
+
+        Route::get('/roofing-pre', function () {
+            return view('pre-pages/roofing-pre');
+        });
+
         Route::get('/tubs', function () {
             return view('tubs/index');
         });
