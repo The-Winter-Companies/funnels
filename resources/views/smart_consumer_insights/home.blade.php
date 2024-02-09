@@ -37,7 +37,7 @@ function carbonDate($daysToSubtract){
          <div class="container">
              <div class="navbar-brand-wrapper py-3 d-flex justify-content-start align-items-center">
                  <a class="navbar-brand" href="/">
-                     <img class="lazyload" src="{{asset('img/fhp-logo-hp-new.png')}}" alt="image">
+                     <img class="lazyload" src="{{asset('img/sci-logo-final.png')}}" alt="image" style="width: 100%; height: auto;">
                  </a>
              </div>
          </div>
@@ -1189,7 +1189,7 @@ function carbonDate($daysToSubtract){
           <div class="row">
               <div class="col-xxl-4 col-xl-2 col-lg-6 col-md-6 col-sm-6 pb-3  d-flex align-items-center">
                   <div class="footer-widget pe-2">
-                      <img class="footer-logo mb-3" src="{{asset('img/fhp-logo-hp-new.png')}}" alt="">
+                      <img class="footer-logo mb-3" src="{{asset('img/sci-logo-final.png')}}" alt="">
 
                       <p>For expert advice on home services and insightful consumer guidance, trust Smart Consumer Insights – your source for reliable, well-informed content.</p>
 
