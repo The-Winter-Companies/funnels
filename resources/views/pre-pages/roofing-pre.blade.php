@@ -51,19 +51,23 @@
             color: #fff;
             padding: 10px 0;
             font-size: 16px;
-            border: 1px solid #000; /* Add black border */
+            border: 1px solid #000;
             cursor: pointer;
             width: 100%;
         }
 
         .text a {
-            text-decoration: none; /* Remove underline from the anchor tag */
-            color: #0e64b7; /* Set the link color */
+            text-decoration: none;
+            color: #137ee7;
         }
 
         .text h2 {
-            margin-top: 0; /* Adjusted margin-top */
-            font-size: 28px; /* Adjusted font size */
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .text p {
+            color: #777;
         }
 
     </style>
