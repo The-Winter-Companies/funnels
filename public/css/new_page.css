@@ -22,7 +22,7 @@ a{outline: none; color:#333; text-decoration:none;}
 a:hover {outline: none; color:#000; text-decoration:none;}
 img {border:none;}
 li {list-style:none;}
-img{max-width:100%;}
+img{max-width:250px;}
 .clearall{
   clear:both;
   font-size:1px;
