@@ -25,6 +25,7 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
+    <title>{{$domainTitle}} | Contact</title>
 
 
     <!-- Bootstrap -->
@@ -50,7 +51,6 @@
 				</span>
         </nav>
     </header>
-    <title>Forever Home Plus | Contact</title>
 @else
     @if($mainDomain == "smartconsumerinsights")
         <header>
@@ -61,7 +61,6 @@
 				</span>
             </nav>
         </header>
-        <title>Smart Consumer Insights | Contact</title>
     @endif
 @endif
 

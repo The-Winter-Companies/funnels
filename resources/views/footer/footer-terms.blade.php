@@ -12,6 +12,8 @@
 	<meta itemprop="description" content="">
 	<meta itemprop="image" content="">
 
+    <title>{{$domainTitle}} | Terms</title>
+
 	<!-- Facebook Meta Tags -->
 	<meta property="og:url" content="#">
 	<meta property="og:type" content="website">
@@ -50,7 +52,6 @@
 				</span>
           </nav>
       </header>
-      <title>Forever Home Plus | Contact</title>
   @else
       @if($mainDomain == "smartconsumerinsights")
           <header>
@@ -61,7 +62,6 @@
 				</span>
               </nav>
           </header>
-          <title>Smart Consumer Insights | Contact</title>
       @endif
   @endif
 

@@ -11,6 +11,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @include('partials.domain-particularities', ['mainDomain' => $mainDomain])
+    <title>{{ucwords($vertical)}} - {{$domainTitle}}</title>
     <meta name="description" content="Discover the best solutions for your forever home with our trusted network and insightful resources."/>
     <meta name="author" content="">
     <meta name="keywords" content=""/>
@@ -339,16 +340,7 @@ session_start();
 <section class="page-content">
     <div class="container">
 
-        <h2 class="page-desc text-center" style="margin-bottom:20px;">Why Use Forever Home
-            @if($mainDomain == "foreverhomeplus")
-                Plus
-            @else
-                @if($mainDomain == "foreverhomequotes")
-                    Quotes
-                @else
-                    Hub
-                @endif
-            @endif</h2>
+        <h2 class="page-desc text-center" style="margin-bottom:20px;">Why Use {{$domainTitle}}</h2>
         <p class="page-title text-center">Get multiple quotes quickly and without any pressure</p>
 
 
@@ -428,16 +420,7 @@ session_start();
 <section class="page-content bl">
     <div class="container">
 
-        <h2 class="page-desc text-center">How Forever Home
-            @if($mainDomain == "foreverhomeplus")
-                Plus
-            @else
-                @if($mainDomain == "foreverhomequotes")
-                    Quotes
-                @else
-                    Hub
-                @endif
-            @endif Works </h2>
+        <h2 class="page-desc text-center">How {{$domainTitle}} Works </h2>
         <p class="page-title text-center">3 Easy Steps To Saving Big on New {{ucwords($vertical)}}:</p>
 
         <div class="row">

@@ -19,6 +19,8 @@
     <meta property="og:description" content="">
     <meta property="og:image" content="">
 
+    <title>{{$domainTitle}} | Do Not Sell My Information</title>
+
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="">
@@ -107,7 +109,6 @@
 				</span>
         </nav>
     </header>
-    <title>Forever Home Plus | Contact</title>
 @else
     @if($mainDomain == "smartconsumerinsights")
         <header>
@@ -118,7 +119,6 @@
 				</span>
             </nav>
         </header>
-        <title>Smart Consumer Insights | Contact</title>
     @endif
 @endif
 

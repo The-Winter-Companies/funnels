@@ -11,6 +11,7 @@ $page = 'main';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @include('partials.domain-particularities', ['mainDomain' => $mainDomain])
+    <title>{{ucwords($vertical)}} - {{$domainTitle}}</title>
     <meta name="description" content="Discover the best solutions for your forever home with our trusted network and insightful resources."/>
     <meta name="author" content="">
     <meta name="keywords" content=""/>
@@ -307,16 +308,7 @@ $page = 'main';
 <section class="page-content">
     <div class="container">
 
-        <h2 class="page-desc text-center">Why Use Forever Home
-            @if($mainDomain == "foreverhomeplus")
-                Plus
-            @else
-                @if($mainDomain == "foreverhomequotes")
-                    Quotes
-                @else
-                    Hub
-                @endif
-            @endif </h2>
+        <h2 class="page-desc text-center">Why Use {{$domainTitle}}</h2>
         <p class="page-title text-center">Get multiple quotes quickly and without any pressure</p>
 
 
@@ -396,16 +388,7 @@ $page = 'main';
 <section class="page-content bl">
     <div class="container">
 
-        <h2 class="page-desc text-center">How Forever Home
-            @if($mainDomain == "foreverhomeplus")
-                Plus
-            @else
-                @if($mainDomain == "foreverhomequotes")
-                    Quotes
-                @else
-                    Hub
-                @endif
-            @endif Works</h2>
+        <h2 class="page-desc text-center">How {{$domainTitle}} Works</h2>
         <p class="page-title text-center">3 Easy Steps To Saving Big on New {{ucwords($vertical)}}:</p>
 
         <div class="row">
@@ -522,16 +505,7 @@ $page = 'main';
             <h2 class="page-desc ml-0">About Us</h2>
             <p class="page-title ml-0">Find the best walk-in tubs products & contractors in your area.</p>
 
-            <p>Forever Home
-                @if($mainDomain == "foreverhomeplus")
-                    Plus
-                @else
-                    @if($mainDomain == "foreverhomequotes")
-                        Quotes
-                    @else
-                        Hub
-                    @endif
-                @endif is a fast, free and easy way for homeowners like you to get estimates from bathtub installers in your area!</p>
+            <p>{{$domainTitle}} is a fast, free and easy way for homeowners like you to get estimates from bathtub installers in your area!</p>
 
             <p>We simplify the process by matching you with up to 4 qualified experts in your local area. Get the information you need to make the right walk-in tubs decision. It is recommended that you get at least four walk-in tubs estimates before making any hiring decisions.</p>
         </div>

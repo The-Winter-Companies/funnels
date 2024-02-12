@@ -25,7 +25,7 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
-
+    <title>{{$domainTitle}} | Disclaimer</title>
 
     <!-- Bootstrap -->
     <link href="{{asset('css/bootstrap-v4.0.0.css')}}" rel="stylesheet">
@@ -50,7 +50,6 @@
 				</span>
         </nav>
     </header>
-    <title>Forever Home Plus | Contact</title>
 @else
     @if($mainDomain == "smartconsumerinsights")
         <header>
@@ -61,7 +60,6 @@
 				</span>
             </nav>
         </header>
-        <title>Smart Consumer Insights | Contact</title>
     @endif
 @endif
 
@@ -85,7 +83,7 @@
                 <b>1.</b> Company (referred to as either “the Company”, “We”, “Us” or “Our” in this Disclaimer) refers to {{$domainTitle}}, 224 West 35th Street, New City, NY, United States, New York.<br>
                 <b>2.</b> Service refers to the Website.<br>
                 <b>3.</b> You means the individual accessing the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.<br>
-                <b>4.</b> Website refers to {{$domainTitle}}, accessible from https://foreverhomehub.com/
+                <b>4.</b> Website refers to {{$domainTitle}}, accessible from https://{{$domainFullDomain}}/
             </p>
             <h4>Disclaimer</h4>
             <p>
