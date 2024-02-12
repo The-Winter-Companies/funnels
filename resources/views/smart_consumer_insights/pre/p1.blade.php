@@ -1,6 +1,6 @@
 <?php
 $requestParams = $_GET;
-$baseURL = "https://quotes.foreverhomehub.com/solar/o7";
+$baseURL = "https://www.twck93j.com/3J67C/3QQG7";
 $finalURL = $baseURL . '?' . http_build_query($requestParams);
 ?>
 <!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head>
