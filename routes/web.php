@@ -29,7 +29,7 @@ $smartConsumerInsightsDomains = config('domains.smart_consumer_insights');
 foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
     Route::domain($smartConsumerInsightsDomain)->group(function () {
 
-        Route::middleware(['check_everflow_params_or_redirect'])->group(function () {
+//        Route::middleware(['check_everflow_params_or_redirect'])->group(function () {
 
             Route::get('/l3', function () {
                 $cookie = Cookie::make('visited_page', 'l3', 60 * 24 * 5);
@@ -40,7 +40,7 @@ foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
                 return view('/smart_consumer_insights/pre/p2');
             });
 
-        });
+//        });
 
         Route::get('/', function () {
             return view('/smart_consumer_insights/home');
