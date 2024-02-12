@@ -30,10 +30,16 @@ foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
     Route::domain($smartConsumerInsightsDomain)->group(function () {
 
         Route::middleware(['check_everflow_params_or_redirect'])->group(function () {
-            Route::get('/solar', function () {
-                $cookie = Cookie::make('visited_page', 'solar', 60 * 24 * 5);
-                return response(view('/smart_consumer_insights/solar'))->cookie($cookie);
+
+            Route::get('/l3', function () {
+                $cookie = Cookie::make('visited_page', 'l3', 60 * 24 * 5);
+                return response(view('/smart_consumer_insights/pre/p1'))->cookie($cookie);
             });
+
+            Route::get('/x9', function () {
+                return view('/smart_consumer_insights/pre/p2');
+            });
+
         });
 
         Route::get('/', function () {
