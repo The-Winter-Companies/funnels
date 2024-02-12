@@ -21,7 +21,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
     <meta name="keywords" content="windows companies,windows contractors,windows companies near me,windows supply, window fitter near me, glass technician">
     <meta http-equiv="cleartype" content="on">
     @include('partials.domain-particularities', ['mainDomain' => $mainDomain])
-
+    <title>{{$domainTitle}}</title>
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="">
     <meta itemprop="description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
@@ -326,7 +326,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
                     to contact me about home improvement offers by phone calls and SMS messages to the number I provided. I understand that these
                     marketing communications may be delivered to me using an automatic telephone dialing system or by prerecorded message, even if my
                     telephone number is currently listed on any state, federal, local or corporate Do Not Call list. I understand that my consent is not
-                    a condition of purchase. I also have read and agree to the <a href="https://foreverhomehub.com/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://foreverhomehub.com/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
+                    a condition of purchase. I also have read and agree to the <a href="https://{{$domainFullDomain}}/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://{{$domainFullDomain}}/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
                 </label>
             </p>
         </fieldset>

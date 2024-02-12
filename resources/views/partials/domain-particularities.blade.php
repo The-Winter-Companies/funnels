@@ -11,7 +11,6 @@
             </nav>
         </header>
     @endif
-    <title>{{ ucfirst($vertical) }} - ForeverHomePlus</title>
 @else
     @if($mainDomain == "foreverhomequotes")
         @if($page !== 'o7')
@@ -25,7 +24,6 @@
                 </nav>
             </header>
         @endif
-        <title>{{ ucfirst($vertical) }} - ForeverHomeQuotes</title>
     @else
         @if($page !== 'o7')
             <header>
@@ -37,7 +35,6 @@
                 </nav>
             </header>
         @endif
-        <title>{{ ucfirst($vertical) }} - ForeverHomeHub</title>
     @endif
 @endif
 

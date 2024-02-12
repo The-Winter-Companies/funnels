@@ -9,6 +9,7 @@ $page = 'f1';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+    <title>{{$domainTitle}}</title>
     @include('partials.domain-particularities', ['mainDomain' => $mainDomain])
     <meta name="description" content="Lower your electric bill up to 80%">
     <meta name="author" content>
@@ -269,7 +270,7 @@ $page = 'f1';
                     to contact me about home improvement offers by phone calls and SMS messages to the number I provided. I understand that these
                     marketing communications may be delivered to me using an automatic telephone dialing system or by prerecorded message, even if my
                     telephone number is currently listed on any state, federal, local or corporate Do Not Call list. I understand that my consent is not
-                    a condition of purchase. I also have read and agree to the <a href="https://foreverhomehub.com/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://foreverhomehub.com/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
+                    a condition of purchase. I also have read and agree to the <a href="https://{{$domainFullDomain}}/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://{{$domainFullDomain}}/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
                 </label>
             </p>
         </fieldset>
