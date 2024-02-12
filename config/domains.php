@@ -22,6 +22,10 @@ return [
         'web-server-1.foreverhomeplus.com',
         'web-server-2.foreverhomeplus.com'
     ],
+    'your_after_home' => [
+        'yourafterhome.local',
+        'yourafterhome.com',
+    ],
     'forever_home_hub' => [
         'http://127.0.0.1',
         'staging-quotes.foreverhomehub.com',

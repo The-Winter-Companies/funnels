@@ -470,7 +470,7 @@ $page = 'main';
                     </svg>
 
 
-                    <h3>Fidn out in just <br class="d-none d-md-block">a few minutes!</h3>
+                    <h3>Find out in just <br class="d-none d-md-block">a few minutes!</h3>
                     <p>It takes less than a minute and you can get up to 4 custom quotes from top contractors who specialize in your project .</p>
                 </div>
             </div>

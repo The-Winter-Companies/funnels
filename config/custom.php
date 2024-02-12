@@ -12,6 +12,11 @@ return [
             'domain' => "foreverhomeplus.com",
             'info_email' => "info@foreverhomeplus.com"
         ],
+        'yourafterhome' => [
+            'title' => "Your After Home",
+            'domain' => "yourafterhome.com",
+            'info_email' => "info@yourafterhome.com"
+        ],
         'smartconsumerinsights' => [
             'title' => "Smart Consumer Insights",
             'domain' => "smartconsumerinsights.com",

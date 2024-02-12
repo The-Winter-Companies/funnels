@@ -50,15 +50,15 @@ foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
 
 $foreverHomePlusDomains = config('domains.forever_home_plus');
 
-foreach ($foreverHomePlusDomains as $foreverHomePlusDomain){
-    Route::domain($foreverHomePlusDomain)->group(function () {
+foreach (array_merge($foreverHomePlusDomains, config('domains.your_after_home')) as $domain){
+    Route::domain($domain)->group(function () {
         Route::get('/', function () {
             return view('home');
         });
     });
 }
 
-$mergedFHPAndSCIDomains = array_merge($foreverHomePlusDomains, $smartConsumerInsightsDomains);
+$mergedFHPAndSCIDomains = array_merge($foreverHomePlusDomains, $smartConsumerInsightsDomains, config('domains.your_after_home'));
 
 foreach ($mergedFHPAndSCIDomains as $mergedFHPAndSCIDomain){
     Route::domain($mergedFHPAndSCIDomain)->group(function () {
@@ -90,7 +90,7 @@ foreach ($mergedFHPAndSCIDomains as $mergedFHPAndSCIDomain){
 
 $foreverHomeHubDomains = config('domains.forever_home_hub');
 
-$mergedFHHAndFHPDomains = array_merge($foreverHomePlusDomains, $foreverHomeHubDomains);
+$mergedFHHAndFHPDomains = array_merge($foreverHomePlusDomains, $foreverHomeHubDomains, config('domains.your_after_home'));
 
 foreach ($mergedFHHAndFHPDomains as $mergedFHHAndFHPDomain){
     Route::domain($mergedFHHAndFHPDomain)->group(function () {
