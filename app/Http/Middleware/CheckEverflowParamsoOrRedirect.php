@@ -34,7 +34,7 @@ class CheckEverflowParamsoOrRedirect
             }
 
             if(str_contains($request->fullUrl(), "smartconsumerinsights")){
-                $newUrl = str_replace("smartconsumerinsights", "foreverhomeplus", $request->fullUrlWithoutQuery());
+                $newUrl = str_replace("smartconsumerinsights", "foreverhomeplus", $request->fullUrlWithoutQuery(''));
                 return redirect($newUrl);
             } else {
                 return redirect('/');
