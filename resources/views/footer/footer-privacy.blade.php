@@ -37,7 +37,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&amp;display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
     <link href="{{ asset('css/funnels-footer.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -62,6 +61,17 @@
 				</span>
             </nav>
         </header>
+    @else
+        @if($mainDomain == "yourafterhome")
+            <header>
+                <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<a href="https://{{$domainFullDomain}}" target="_blank"><img src="{{ asset('img/yah-logo.png') }}" onerror="this.src='{{ asset('img/yah-logo.png') }}'" width="320"
+                                                                                 alt="Your After Home" class="img-fluid" draggable="false"></a>
+				</span>
+                </nav>
+            </header>
+        @endif
     @endif
 @endif
 
