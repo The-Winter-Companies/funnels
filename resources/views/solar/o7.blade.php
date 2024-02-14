@@ -14,11 +14,11 @@ $page = 'o7';
     <meta name="author" content>
     <meta name="keywords" content>
     <meta itemprop="description" content="Lower your electric bill up to 80%">
+    <meta itemprop="image" content="{{asset($domainLogoPath)}}">
     <meta property="og:url" content="#">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Lower your electric bill up to 80%">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="Lower your electric bill up to 80%">
+    <meta property="og:image" content="{{asset($domainLogoPath)}}">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&amp;display=swap" rel="stylesheet">

@@ -24,15 +24,18 @@ class MainDomainProvider extends ServiceProvider
         $defaultTitle = config("custom.dynamic_domain_content.foreverhomehub.title");
         $defaultFullDomain = config("custom.dynamic_domain_content.foreverhomehub.domain");
         $defaultInfoEmail = config("custom.dynamic_domain_content.foreverhomehub.info_email");
+        $defaultLogoPath = config("custom.dynamic_domain_content.foreverhomehub.logo_path");
 
         $domainTitle = config("custom.dynamic_domain_content.$mainDomain.title");
         $domainFullDomain = config("custom.dynamic_domain_content.$mainDomain.domain");
         $domainInfoEmail = config("custom.dynamic_domain_content.$mainDomain.info_email");
+        $domainLogoPath = config("custom.dynamic_domain_content.$mainDomain.logo_path");
 
         View::share('domainTitle', $domainTitle ?? $defaultTitle);
         View::share('domainFullDomain', $domainFullDomain ?? $defaultFullDomain);
         View::share('domainInfoEmail', $domainInfoEmail ?? $defaultInfoEmail);
         View::share('mainDomain', $mainDomain);
+        View::share('domainLogoPath', $domainLogoPath);
     }
 
     public function register()

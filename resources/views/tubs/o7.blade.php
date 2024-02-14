@@ -13,18 +13,15 @@ $page = 'o7';
     <meta name="Discover the best solutions for your forever home with our trusted network and insightful resources.">
     <meta name="author" content="">
     <meta name="keywords" content="">
-    <meta itemprop="name" content="Walk-in Bathtub - ForeverHomeHub">
     <meta itemprop="description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
-    <meta itemprop="image" content="{{ asset('img/logo.png') }}">
+    <meta itemprop="image" content=content="{{asset($domainLogoPath)}}">
     <meta property="og:url" content="#">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Walk-in Bathtub - ForeverHomeHub">
     <meta property="og:description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
-    <meta property="og:image" content="{{ asset('img/logo.png') }}">
+    <meta property="og:image" content=content="{{asset($domainLogoPath)}}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Walk-in Bathtub - ForeverHomeHub">
     <meta name="twitter:description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
-    <meta name="twitter:image" content="{{ asset('img/logo.png') }}">
+    <meta name="twitter:image" content=content="{{asset($domainLogoPath)}}">
 
     @include('partials.meta_script')
     @include('partials.rollbar_script')

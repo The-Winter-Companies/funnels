@@ -11,22 +11,14 @@
     <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
 
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="">
     <meta itemprop="description" content="Your Info Has Been Submitted!">
-    <meta itemprop="image" content="">
+    <meta itemprop="image" content="{{asset($domainLogoPath)}}">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="#">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="">
     <meta property="og:description" content="Your Info Has Been Submitted!">
-    <meta property="og:image" content="">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="Your Info Has Been Submitted!">
-    <meta name="twitter:image" content="">
+    <meta property="og:image" content="{{asset($domainLogoPath)}}">
 
     @include('partials.rollbar_script')
 
