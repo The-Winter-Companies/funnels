@@ -119,6 +119,17 @@
 				</span>
             </nav>
         </header>
+    @else
+        @if($mainDomain == "yourafterhome")
+            <header>
+                <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<a href="https://{{$domainFullDomain}}" target="_blank"><img src="{{ asset('img/yah-logo.png') }}" onerror="this.src='{{ asset('img/yah-logo.png') }}'" width="320"
+                                                                                 alt="Your After Home" class="img-fluid" draggable="false"></a>
+				</span>
+                </nav>
+            </header>
+        @endif
     @endif
 @endif
 
