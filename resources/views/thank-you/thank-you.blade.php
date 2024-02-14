@@ -52,6 +52,9 @@
     </script>
 
     @include('partials.meta_script')
+    <script>
+        fbq('track', 'Lead');
+    </script>
 </head>
 <body>
 
