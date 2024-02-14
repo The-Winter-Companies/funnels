@@ -19,22 +19,19 @@ $page = 'main';
     <link rel="icon" type="image/png" href="#">
 
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="">
     <meta itemprop="description" content="Description">
-    <meta itemprop="image" content="">
+    <meta itemprop="image" content="{{asset($domainLogoPath)}}">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="#">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="">
     <meta property="og:description" content="Description">
-    <meta property="og:image" content="">
+    <meta property="og:image" content="{{asset($domainLogoPath)}}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="">
     <meta name="twitter:description" content="Description">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:image" content="{{asset($domainLogoPath)}}">
 
     @include('partials.meta_script')
     @include('partials.rollbar_script')

@@ -22,22 +22,15 @@ $page = 'o7';
 @include('partials.domain-particularities', ['mainDomain' => $mainDomain])
     <title>{{$domainTitle}}</title>
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="">
     <meta itemprop="description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
-    <meta itemprop="image" content="../../img/favicon.png">
+    <meta itemprop="image" content="{{asset($domainLogoPath)}}">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="#">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="">
     <meta property="og:description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
-    <meta property="og:image" content="../../img/favicon.png">
+    <meta property="og:image" content="{{asset($domainLogoPath)}}">
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
-    <meta name="twitter:image" content="../../img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,800" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
     <link href="{{ asset('css/roofing-o7.css') }}" rel="stylesheet">
