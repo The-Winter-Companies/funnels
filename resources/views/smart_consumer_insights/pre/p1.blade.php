@@ -54,7 +54,7 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
                 <div class="date"><script type="text/javascript">getDate(0);</script></div>
                 <div class="clearall"></div>
 
-                <p class="commontxt"><a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/power1.jpg')}}" align="right" style="margin-left:15px; margin-bottom:10px;"></a><strong>Do NOT pay your next power bill until you read this...</strong></p>
+                <p class="commontxt"><a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/sci-power1.jpeg')}}" align="right" style="max-width:350px; margin-left:15px; margin-bottom:10px;"></a><strong>Do NOT pay your next power bill until you read this...</strong></p>
                 <p class="commontxt">Power companies are fighting an uphill battle they are sure to lose and they’re blaming customers who are taking advantage of massive savings programs. Specifically, they are blaming State Rebates that incentivize homeowners to use clean energy <strong>by reducing solar power installation costs.</strong></p>
 				<p class="commontxt">Until now, solar panels were less about saving money and more about environmental protection. In order to get more people to switch to clean solar energy companies are highly incentivizing homeowners who live in specific zip codes to go solar with <strong><a href="{{$finalURL}}" target="_blank">$1000’s of dollars in savings</a> and incentives that can cover the large costs</strong> associated with a new solar panel installation.</p>
 
@@ -77,9 +77,9 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
             <div class="rgtPart">
             	<div class="rgt-content">
                 	<div class="rgtHeading">Market Update</div>
-                    <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/rt1.jpg')}}" alt="" width="299" height="173"><br></a>
+                    <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/sci-rt1.jpeg')}}" alt="" width="299" height="173"><br></a>
                     <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/rt2.jpg')}}"><br><br></a>
-                    <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/sb.jpg')}}"><br><br></a>
+                    <a href="{{$finalURL}}" target="_blank"><img src="{{asset('img/sci-sb1.jpeg')}}" style="max-width: 300px"><br><br></a>
             </div>
         </div>
     </div>
