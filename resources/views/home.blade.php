@@ -40,6 +40,16 @@
  }
  </style>
 <link rel="stylesheet" id="wp-block-library-css" href="{{asset('css/style-fhp-homepage.min.css')}}" type="text/css" media="all">
+<style>
+    .navbar-brand{width: 320px; height: 120px; background: url({{$domainLogoPath}}); background-repeat: no-repeat; background-position: 0 0; text-indent: -999px; color: transparent; background-size: 100%; margin: 0 0 0 0;  position: relative;filter: brightness(0) invert(1); }
+    nav.scroll .navbar-brand{height:
+    @if($mainDomain === "yourafterhome")
+            40px
+    @else
+            80px
+    @endif
+    ; background-size:auto 100%; margin-top: 0px;filter: brightness(1) invert(0); }
+</style>
 </head>
 
 <body class="home page-template page-template-home page-template-home-php page page-id-31">
@@ -105,6 +115,7 @@
     window.addEventListener('resize', function(){
         heroheight();
     });
+
 
     $(window).scroll(function() {
         var nav = $('nav');
