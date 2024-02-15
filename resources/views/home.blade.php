@@ -5,7 +5,7 @@
 
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
-<title>Forever Home Plus</title>
+<title>{{$domainTitle}}</title>
 <meta name="Find you qualified roofing pros that best meet the needs of your project, but if you are not fully satisfied with the estimates provided, you are not obligated to move forward.">
 <meta name="keywords" content="contractors, roofing companies,roofing companies near me,roofing supply, roofers near me, air conditioner repairs, home repair services, home window repair">
 <meta itemprop="description" content="Find you qualified roofing pros that best meet the needs of your project, but if you are not fully satisfied with the estimates provided, you are not obligated to move forward.">
@@ -56,7 +56,7 @@
 <nav class="navbar fixed-top  navbar-expand-md">
 <div class="container">
 <div class="navbar-header">
-    <a class="navbar-brand logo-img logo-img-a pix-adjust-height" href="/">Forever Home Plus</a>
+    <a class="navbar-brand logo-img logo-img-a pix-adjust-height" href="/">{{$domainTitle}}</a>
 </div>
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 <span class="sr-only">Toggle Nav</span>
@@ -198,7 +198,7 @@
 <div class="container">
 {{--<a href="/" target="_blank"><img src="{{asset('img/foreverhomeplus_logo.png')}}" width="320" height="51" alt="" class="img-fluid ftr-logo"></a>--}}
 <div class="row">
-<div class="col-lg-4 cpy"><p class="copyright">Copyright © <script>document.write(new Date().getFullYear());</script> Forever Home Plus. All rights reserved.</p></div>
+<div class="col-lg-4 cpy"><p class="copyright">Copyright © <script>document.write(new Date().getFullYear());</script> {{$domainTitle}}. All rights reserved.</p></div>
 <div class="col-lg-8">
 <div class="footer-links">
 <ul>
