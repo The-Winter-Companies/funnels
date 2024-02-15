@@ -68,7 +68,7 @@ $page = 'main';
             <div class="progress" >
                 <div class="progress-bar " role="progressbar" aria-valuenow="10" style="width: 12%" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <p class="progress-val text-center"><strong> Your Savings Calculation is <b><span id="progress-value">0</span>%</b>  <font class="complete">Complete</font></strong></p>
+            <p class="progress-val text-center"><strong><b><span id="progress-value">0</span>%</b>  <font class="complete">Complete</font></strong></p>
         </div>
 
         <div class="headline container">
@@ -428,7 +428,7 @@ $page = 'main';
                         <path class="st0" d="M25,20.7c4-0.8,7.9-0.9,11.8,0"/>
 
                     </svg>
-                    <h3>Save By Comparing <br class="d-none d-md-block">100% Free Quotes</h3>
+                    <h3>Potentially Save By Comparing <br class="d-none d-md-block">100% Free Quotes</h3>
                     <p>Save time and money by receiving free quotes from  trusted pre-screened contractors</p>
                 </div>
             </div>
@@ -468,7 +468,7 @@ $page = 'main';
     <div class="container">
 
         <h2 class="page-desc text-center">How {{$domainTitle}} Works</h2>
-        <p class="page-title text-center">3 Easy Steps To Saving Big on New {{ucwords($vertical)}}:</p>
+        <p class="page-title text-center">3 Easy Steps To Potentially Save Big on New {{ucwords($vertical)}}:</p>
 
         <div class="row">
             <div class="col-sm-4 col-12 p-box">
