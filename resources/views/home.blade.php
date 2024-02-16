@@ -40,6 +40,7 @@
  }
  </style>
 <link rel="stylesheet" id="wp-block-library-css" href="{{asset('css/style-fhp-homepage.min.css')}}" type="text/css" media="all">
+    @include('pixels.all-pages-head')
 <style>
     .navbar-brand{width: 320px; height: 120px; background: url({{$domainLogoPath}}); background-repeat: no-repeat; background-position: 0 0; text-indent: -999px; color: transparent; background-size: 100%; margin: 0 0 0 0;  position: relative;filter: brightness(0) invert(1); }
     nav.scroll .navbar-brand{height:
@@ -53,6 +54,8 @@
 </head>
 
 <body class="home page-template page-template-home page-template-home-php page page-id-31">
+
+@include('pixels.all-pages-body')
 <nav class="navbar fixed-top  navbar-expand-md">
 <div class="container">
 <div class="navbar-header">

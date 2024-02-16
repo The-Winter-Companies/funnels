@@ -47,9 +47,12 @@
     <script>
         fbq('track', 'Lead');
     </script>
+
+    @include('pixels.all-pages-head')
 </head>
 <body>
 
+@include('pixels.all-pages-body')
 @if($mainDomain == "foreverhomeplus")
     <header>
         <nav class="navbar justify-content-between mx-auto">
