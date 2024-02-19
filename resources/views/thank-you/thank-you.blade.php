@@ -190,6 +190,7 @@
                         </div>
                     </a>
 
+
                     <a class="partner featured" href="https://{{$domainFullDomain == "foreverhomehub.com" ? "quotes.foreverhomehub.com" : $domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
                         <div class="row align-items-center" >
