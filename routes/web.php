@@ -174,3 +174,7 @@ foreach ($foreverHomeHubDomains as $foreverHomeHubDomain){
 Route::get('/', function () {
     return view('redirect-fhh');
 });
+
+Route::get('/ty-new', function () {
+    return view('ty-new');
+});

@@ -23,8 +23,8 @@
     @include('partials.rollbar_script')
 
     <!-- Bootstrap -->
-    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/thank-you.css') }}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap-v4.0.0.css')}}" rel="stylesheet">
+    <link href="{{asset('css/ty-new.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="#">
 
@@ -47,6 +47,16 @@
     <script>
         fbq('track', 'Lead');
     </script>
+    <!--[if IE 9]>
+
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
+    <![endif]-->
+
 </head>
 <body>
 
@@ -167,14 +177,16 @@
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'roofing')
 
-                    <a class="partner featured" href="https://{{$domainFullDomain}}/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
-                        <h4 class="d-block d-md-none  partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
-                        <div class="row align-items-center" >
+                    <div class="partners">
+
+                    <a class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#solar_form">
+                        <h4 class="d-block d-md-none  partner_title">Slash Your Electric Bill Each Month By Going Solar</h4>
+                        <div class="row align-items-center">
                             <div class="col col-partner_img">
                                 <img src="{{ asset('img/bg-solar.jpg') }}" class="img-fluid">
                             </div>
                             <div class="col col-partner_cont">
-                                <h4 class="d-none d-md-block partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
+                                <h4 class="d-none d-md-block partner_title">Slash Your Electric Bill Each Month By Going Solar</h4>
                                 <ul>
                                     <li>Affordable, clean energy at your fingertips</li>
                                     <li>Join the solar campaign for lower bills and eco-friendly living</li>
@@ -186,6 +198,7 @@
                             </div>
                         </div>
                     </a>
+                    </div>
 
                     <a class="partner featured" href="https://{{$domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
@@ -254,8 +267,6 @@
                 @endif
 
 
-
-
                 <a class="partner" href="https://thetamkt.com/?a=13418&c=148803&s1={{\Illuminate\Support\Facades\Request::get('s1')}}&s2={{\Illuminate\Support\Facades\Request::get('s2')}}&s3={{\Illuminate\Support\Facades\Request::get('s3')}}">
                         <h4 class="d-block d-md-none  partner_title">Reduce Your Mortgage</h4>
                         <div class="row align-items-center">
@@ -318,6 +329,64 @@
     </section>
 </main>
 
+<div class="modal fade" role="dialog" tabindex="-1" id="solar_form">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4> Step <span class="slidenum">1 of 7</span></h4>
+                <button type="button" class="btn modal-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form" action="" method="get">
+                    <fieldset><legend hidden="true">Electric Bill</legend>
+                        <h3 class="form_box-question mb-1">What is your estimated monthly electric&nbsp;bill?</h3>
+                        <p class="form_box-desc">This helps us determine how much solar power may save you.</p>
+                        <div class="form-cont">
+                            <div class="form-group no-gutter row justify-content-center">
+                                <div class="radio-btn col-md-auto col-6 ">
+                                    <input id="bill01" type="radio" name="electricity_bill" value="$0-100">
+                                    <label for="bill01"><span>$0-100</span></label>
+                                </div>
+                                <div class="radio-btn col-md-auto col-6 ">
+                                    <input id="bill02" type="radio" name="electricity_bill" value="$101-200">
+                                    <label for="bill02"><span>$101-200</span></label>
+                                </div>
+                                <div class="radio-btn col-md-auto col-6 ">
+                                    <input id="bill03" type="radio" name="electricity_bill" value="$201-300" checked="">
+                                    <label for="bill03"><span>$201-300</span></label>
+                                </div>
+                                <div class="radio-btn col-md-auto col-6 ">
+                                    <input id="bill04" type="radio" name="electricity_bill" value="$301-400">
+                                    <label for="bill04"><span>$301-400</span></label>
+                                </div>
+                                <div class="radio-btn col-md-auto col-6 ">
+                                    <input id="bill05" type="radio" name="electricity_bill" value="$401+">
+                                    <label for="bill05"><span>$400+</span></label>
+                                </div>
+                            </div>
+                            <div class="form-btns">
+                                <button class="btn form-btn btn-next" type="submit"><span class="btn-text">Continue</span></button><br>
+                            </div>
+                            <p class="tcpa form-tcpa text-center mt-3">
+                                <label id="tcpa_label" style="font-weight: normal; font-size: 12px; color:rgba(0,0,0,0.7); line-height: 1.2;">
+                                    <input type="hidden" id="leadid_tcpa_disclosure">
+                                    By clicking "<span id="tcpa_txt">Continue</span>", I authorize up to 4 home improvement services companies, their
+                                    contractors and <a href="https://thesimplehomequotes.com/partners" target="_blank">partner companies</a> to contact
+                                    me about home improvement offers by phone calls and SMS messages to the number I provided. I authorize that
+                                    these marketing communications may be delivered to me using an automatic telephone dialing system or by
+                                    prerecorded message. I understand that my consent is not a condition of purchase. I also have read and agree to
+                                    the <a href="https://thesimplehomequotes.com/terms" target="_blank">Terms and Conditions</a> and <a href="https://thesimplehomequotes.com/privacy" target="_blank">Privacy Policy</a> of this website. Message
+                                    and Data rates may apply.
+                                </label>
+                            </p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @include('partials/footer')
 
@@ -326,6 +395,10 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <![endif]-->
+
+<script src="{{asset('js/jquery/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-4.0.0.js')}}"></script>
 <script>
 
 
@@ -381,7 +454,19 @@
     })();
 </script>
 
+<script>
+    $('.modal').on('show.bs.modal', function () {
+        totalStep = $(this).find("fieldset").length;
+        currentStep = $(this).find("fieldset").data('step');
+        $('.slidenum').html('' + currentStep + ' of ' + totalStep + '');
 
+        if (totalStep == 1) {
+            $('.modal-header h4').hide();
+        }else{
+            $('.modal-header h4').show();
+        }
+    });
+</script>
 
 </body>
 </html>
