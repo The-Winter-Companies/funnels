@@ -57,9 +57,12 @@
     <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
     <![endif]-->
 
+
+    @include('pixels.all-pages-head')
 </head>
 <body>
 
+@include('pixels.all-pages-body')
 @if($mainDomain == "foreverhomeplus")
     <header>
         <nav class="navbar justify-content-between mx-auto">

@@ -27,9 +27,13 @@ function carbonDate($daysToSubtract){
    <!-- gulp:css -->
    <link href="{{asset('css/app.min.css')}}" rel="stylesheet">
    <!-- endgulp -->
+
+    @include('pixels.all-pages-head')
 </head>
 
 <body>
+
+    @include('pixels.all-pages-body')
    <!--/// Header Area /// -->
    <header id="header" class="header-area">
 

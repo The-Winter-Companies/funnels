@@ -16,7 +16,7 @@ session_start();
     <img src='https://rdcdn.com/rt?aid=21578&e=1&img=1' height='1' width='1' />
     <!-- validation block start !-->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
-
+    @include('pixels.all-pages-head')
     @include('partials.meta_script')
     @include('partials.astrology_head_scripts')
     @include('partials.rollbar_script')
@@ -60,7 +60,7 @@ session_start();
 </head>
 
 <body>
-
+@include('pixels.all-pages-body')
 <div class="stars"></div>
 
 <div class="planet">

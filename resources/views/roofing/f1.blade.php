@@ -59,6 +59,7 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
     <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
     <![endif]-->
 
+    @include('pixels.all-pages-head')
     @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
@@ -67,6 +68,8 @@ $sessionStartTime = \Illuminate\Support\Carbon::now();
 </head>
 
 <body>
+
+@include('pixels.all-pages-body')
 <main>
     <section class="main roofing text-center text-white">
         <h1 class="main_heading ">

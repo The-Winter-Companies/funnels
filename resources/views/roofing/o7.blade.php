@@ -55,7 +55,7 @@ $page = 'o7';
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
     <![endif]-->
-
+    @include('pixels.all-pages-head')
     @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
@@ -63,6 +63,7 @@ $page = 'o7';
 </head>
 <body>
 
+@include('pixels.all-pages-body')
 <main class="container">
     <header>
         <h1>Simple Roofing Survey </h1>

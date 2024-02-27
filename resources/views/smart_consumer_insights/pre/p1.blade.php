@@ -22,10 +22,13 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
         }
     </script>
 
+    @include('pixels.all-pages-head')
     @include('partials.meta_script')
 </head>
 
 <body>
+
+@include('pixels.all-pages-body')
 <div class="topBar">
 	<div class="container">Advertisement</div>
 </div>

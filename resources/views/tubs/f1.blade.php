@@ -24,7 +24,7 @@ $page = 'f1';
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Discover the best solutions for your forever home with our trusted network and insightful resources.">
     <meta name="twitter:image" content="{{asset($domainLogoPath)}}">
-
+    @include('pixels.all-pages-head')
     @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
@@ -36,6 +36,8 @@ $page = 'f1';
     <link href="{{ asset('css/funnels-footer.css') }}" rel="stylesheet">
 </head>
 <body>
+
+@include('pixels.all-pages-body')
 <main>
     <form id="msform" class="form">
 

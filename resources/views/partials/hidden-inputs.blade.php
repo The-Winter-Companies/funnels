@@ -2,6 +2,7 @@
 <input type="hidden" id="xxTrustedFormCertUrl" name="xxTrustedFormCertUrl" value>
 <input type="hidden" id="ef_aff_id" name="ef_aff_id" value>
 <input type="hidden" id="ef_tx_id" name="ef_tx_id" value>
+<input type="hidden" id="ef_offer_id" name="ef_offer_id" value>
 <input type="hidden" id="s1" name="s1" value>
 <input type="hidden" id="s2" name="s2" value>
 <input type="hidden" id="s3" name="s3" value>

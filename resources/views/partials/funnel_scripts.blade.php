@@ -5,7 +5,7 @@
 ?>
 <script src="{{ asset('js/jquery/jquery.custom-validators.js') }}"></script>
 <script src="{{ asset('js/funnel-support.js') }}"></script>
-@include('partials.funnel-support-document-ready')
+@include('partials.funnel-support-document-ready', ['vertical' => $vertical, 'page' => $page])
 <script type="text/javascript" src="{{ asset('js/solar/power_companies.js') }}"></script>
 @if($vertical !== 'astrology' && $vertical !== 'thank-you-page')
     <script src="{{ asset('js/address-validation.js') }}"></script>

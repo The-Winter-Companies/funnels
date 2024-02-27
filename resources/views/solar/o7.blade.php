@@ -34,7 +34,7 @@ $page = 'o7';
     </style>
 
     <link rel="manifest" href={{ asset('manifest.json') }}>
-
+    @include('pixels.all-pages-head')
     @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
@@ -42,6 +42,8 @@ $page = 'o7';
 
 </head>
 <body>
+
+@include('pixels.all-pages-body')
 <main class="container">
     <header>
         <h1>Forever Home

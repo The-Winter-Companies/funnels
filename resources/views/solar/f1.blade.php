@@ -35,7 +35,7 @@ $page = 'f1';
         }
     </style>
     <link rel="manifest" href="{{ asset('manifest.json') }}">
-
+    @include('pixels.all-pages-head')
     @include('partials.meta_script')
     @include('partials.rollbar_script')
     @include('partials.trusted_form')
@@ -43,6 +43,8 @@ $page = 'f1';
 
 </head>
 <body>
+
+@include('pixels.all-pages-body')
 <form id="msform" class="form">
 
     @include('partials.hidden-inputs')
