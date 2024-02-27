@@ -404,7 +404,7 @@ $page = 'o7';
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
-                submitLead(formData);
+                submitLead(formData, false);
             }
             $('#form_submit').removeAttr('disabled');
         });

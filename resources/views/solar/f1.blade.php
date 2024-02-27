@@ -54,6 +54,7 @@ $page = 'f1';
     <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
     <input type="hidden" id="property_type" name="property_type" value="Single Family">
     <input type="hidden" id="credit_rating" name="credit_rating" value="Good">
+    <input type="hidden" name="roof_shade" id="roof_shade" value="Not Sure">
     <input type="hidden" id="roof_type" name="roof_type" value="Tile">
     <input type="hidden" id="home_owner" name="home_owner" value="Yes">
     <section class="main solar text-center text-white">
@@ -187,17 +188,17 @@ $page = 'f1';
             <div class="container" style="max-width:500px;">
                 <div class="form-group parent-error">
                     <div class="radio-colored">
-                        <input id="roof_shade" type="radio" name="roof_shade" value="No Shade" required>
-                        <label for="roof_shade" id="no-shade-label">No Shade</label> <span></span></div>
+                        <input id="rs1" type="radio" name="roof_shade_radio" value="No Shade" checked>
+                        <label for="rs1" id="no-shade-label">No Shade</label> <span></span></div>
                     <div class="radio-colored">
-                        <input id="roof_shade" type="radio" name="roof_shade" value="Partial Shade" required>
-                        <label for="roof_shade" id="partial-shade-label">Partial Shade</label> <span></span></div>
+                        <input id="rs2" type="radio" name="roof_shade_radio" value="Partial Shade">
+                        <label for="rs2" id="partial-shade-label">Partial Shade</label> <span></span></div>
                     <div class="radio-colored">
-                        <input id="roof_shade" type="radio" name="roof_shade" value="Full Shade">
-                        <label for="roof_shade" id="full-shade-label">Full Shade</label> <span></span></div>
+                        <input id="rs3" type="radio" name="roof_shade_radio" value="Full Shade">
+                        <label for="rs3" id="full-shade-label">Full Shade</label> <span></span></div>
                     <div class="radio-colored">
-                        <input id="roof_shade" type="radio" name="roof_shade" value="Not sure">
-                        <label for="roof_shade" id="not-sure-label">Not sure</label> <span></span></div>
+                        <input id="rs4" type="radio" name="roof_shade_radio" value="Not sure">
+                        <label for="rs4" id="not-sure-label">Not sure</label> <span></span></div>
                     <div class="form-error-message">Pros need this information to generate a quote.</div>
                 </div>
                 <div class="form-btns">
@@ -361,7 +362,7 @@ $page = 'f1';
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
-                submitLead(formData);
+                submitLead(formData, false);
             }
             $('#form_submit').removeAttr('disabled');
         });
@@ -369,6 +370,10 @@ $page = 'f1';
 
         $('input[type=radio][name=monthly_electric_bill_radio]').click(function(){
             $('#monthly_electric_bill').val($(this).val());
+        });
+
+        $('input[type=radio][name=roof_shade_radio]').click(function(){
+            $('#roof_shade').val($(this).val());
         });
 
         window.zip_container = true;

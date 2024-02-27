@@ -327,7 +327,7 @@ $page = 'f1';
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
-                submitLead(formData);
+                submitLead(formData, false);
             }
             $('#form_submit').removeAttr('disabled');
         });

@@ -7,7 +7,7 @@
 <script src="{{ asset('js/funnel-support.js') }}"></script>
 @include('partials.funnel-support-document-ready')
 <script type="text/javascript" src="{{ asset('js/solar/power_companies.js') }}"></script>
-@if($vertical !== 'astrology')
+@if($vertical !== 'astrology' && $vertical !== 'thank-you-page')
     <script src="{{ asset('js/address-validation.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAPS_API_KEY")}}&libraries=places&callback=initMap"></script>
 @endif
@@ -20,42 +20,51 @@
     /**
      *
      * @param formData
+     * @param fromThankYouPage
      */
-    function submitLead(formData){
+    function submitLead(formData, fromThankYouPage){
         //stl(formData);
         let lpResult = false;
-        let winterbotResult = submitToWinterbot(formData);
+        let winterbotResult = submitToWinterbot(formData, fromThankYouPage);
 
-        if(winterbotResult === false && isTestLead(formData) === false) {
-            lpResult = submitToLP(formData);
-            if(lpResult === true){
-                Rollbar.warning('WARNING: Failed to submit the lead through Winterbot, but sent successfully directly to LP.',
-                    {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
-                );
-            } else {
-                Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! Inspect urgently !',
-                    {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
-                );
+        if(fromThankYouPage === false){
+            if(winterbotResult === false && isTestLead(formData) === false) {
+                lpResult = submitToLP(formData);
+                if(lpResult === true){
+                    Rollbar.warning('WARNING: Failed to submit the lead through Winterbot, but sent successfully directly to LP.',
+                        {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
+                    );
+                } else {
+                    Rollbar.error('EMERGENCY! Lead failed to submit through both Winterbot AND LP! Inspect urgently !',
+                        {formData: formData, winterbotResult: winterbotResult, lpResult: lpResult}
+                    );
+                }
             }
         }
-
-        if((winterbotResult || lpResult) || (!winterbotResult && !lpResult)) {
-            window.location.replace(getThankYouPageUrl('{{$vertical}}'));
+        if(fromThankYouPage === false) {
+            if((winterbotResult || lpResult) || (!winterbotResult && !lpResult)) {
+                window.location.replace(getThankYouPageUrl('{{$vertical}}', formData['token']));
+            }
         }
     }
 
     /**
      * Submits data to Winterbot
      * @param formData
+     * @param fromThankYouPage
      * @returns {boolean}
      */
-    function submitToWinterbot(formData){
+    function submitToWinterbot(formData, fromThankYouPage){
+        let async = false;
+        if(fromThankYouPage === true){
+            async = true;
+        }
         let result = false;
         $.ajax({
             type: 'POST',
             url: '{{ env("WINTERBOT_LEAD_SUBMIT_URL") }}/ingest.php',
             data: formData,
-            async: false,
+            async: async,
             dataType: "text",
             success: function (response) {
                 response = JSON.parse(response);

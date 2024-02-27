@@ -318,7 +318,7 @@ $page = 'main';
                 </div>
 
                 <p class="tcpa text-centerex">
-                    <label style="font-weight: normal;  font-size: 12px;"><input type="hidden" id="leadid_tcpa_disclosure"/>By clicking "continue," I authorize up to 4 home improvement services companies,their contractors and <a href="https://foreverhomehub.com/partners" target="_blank">partner companies</a> to contact me about home improvement offers by phone calls and SMS messages to the number I provided. I authorize that these marketing communications may be delivered to me using an automatic telephone dialing system or by prerecorded message. I understand that my consent is not a condition of purchase. I also have read and agree to the <a href="https://foreverhomehub.com/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://foreverhomehub.com/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
+                    <label style="font-weight: normal;  font-size: 12px;"><input type="hidden" id="leadid_tcpa_disclosure"/>By clicking "continue," I authorize up to 4 home improvement services companies,their contractors and <a href="https://foreverhomehub.com/partners" target="_blank">partner companies</a> to contact me about home improvement offers by phone calls and SMS messages to the number I provided. I authorize that these marketing communications may be delivered to me using an automatic telephone dialing system or by prerecorded message. I understand that my consent is not a condition of purchase. I also have read and agree to the <a href="https://{{$domainFullDomain}}/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://{{$domainFullDomain}}/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
                     </label>
                 </p>
 
@@ -613,7 +613,7 @@ $page = 'main';
                     return;
                 } else {
                     let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
-                    submitLead(formData);
+                    submitLead(formData, false);
                 }
                 $('#form_submit').removeAttr('disabled');
             });

@@ -133,7 +133,7 @@
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'solar')
 
-                    <a class="partner featured" href="https://{{$domainFullDomain}}/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="roofing_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#roofing_form">
                         <h4 class="d-block d-md-none  partner_title">Rise Above with Our Roofing Excellence: Elevate Your Home Today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -153,7 +153,7 @@
                         </div>
                     </a>
 
-                    <a class="partner featured" href="https://{{$domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="tubs_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#tubs_form">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -177,10 +177,8 @@
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'roofing')
 
-                    <div class="partners">
 
-                    <a class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#solar_form">
-                        <h4 class="d-block d-md-none  partner_title">Slash Your Electric Bill Each Month By Going Solar</h4>
+                    <a id="solar_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#solar_form">
                         <div class="row align-items-center">
                             <div class="col col-partner_img">
                                 <img src="{{ asset('img/bg-solar.jpg') }}" class="img-fluid">
@@ -198,9 +196,8 @@
                             </div>
                         </div>
                     </a>
-                    </div>
 
-                    <a class="partner featured" href="https://{{$domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="tubs_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#tubs_form">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -224,7 +221,7 @@
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'tubs')
 
-                    <a class="partner featured" href="https://{{$domainFullDomain}}/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="roofing_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#roofing_form">
                         <h4 class="d-block d-md-none  partner_title">Rise Above with Our Roofing Excellence: Elevate Your Home Today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -244,7 +241,7 @@
                         </div>
                     </a>
 
-                    <a class="partner featured" href="https://{{$domainFullDomain}}/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="solar_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#solar_form">
                         <h4 class="d-block d-md-none  partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -329,66 +326,16 @@
     </section>
 </main>
 
-<div class="modal fade" role="dialog" tabindex="-1" id="solar_form">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4> Step <span class="slidenum">1 of 7</span></h4>
-                <button type="button" class="btn modal-close" data-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form class="form" action="" method="get">
-                    <fieldset><legend hidden="true">Electric Bill</legend>
-                        <h3 class="form_box-question mb-1">What is your estimated monthly electric&nbsp;bill?</h3>
-                        <p class="form_box-desc">This helps us determine how much solar power may save you.</p>
-                        <div class="form-cont">
-                            <div class="form-group no-gutter row justify-content-center">
-                                <div class="radio-btn col-md-auto col-6 ">
-                                    <input id="bill01" type="radio" name="electricity_bill" value="$0-100">
-                                    <label for="bill01"><span>$0-100</span></label>
-                                </div>
-                                <div class="radio-btn col-md-auto col-6 ">
-                                    <input id="bill02" type="radio" name="electricity_bill" value="$101-200">
-                                    <label for="bill02"><span>$101-200</span></label>
-                                </div>
-                                <div class="radio-btn col-md-auto col-6 ">
-                                    <input id="bill03" type="radio" name="electricity_bill" value="$201-300" checked="">
-                                    <label for="bill03"><span>$201-300</span></label>
-                                </div>
-                                <div class="radio-btn col-md-auto col-6 ">
-                                    <input id="bill04" type="radio" name="electricity_bill" value="$301-400">
-                                    <label for="bill04"><span>$301-400</span></label>
-                                </div>
-                                <div class="radio-btn col-md-auto col-6 ">
-                                    <input id="bill05" type="radio" name="electricity_bill" value="$401+">
-                                    <label for="bill05"><span>$400+</span></label>
-                                </div>
-                            </div>
-                            <div class="form-btns">
-                                <button class="btn form-btn btn-next" type="submit"><span class="btn-text">Continue</span></button><br>
-                            </div>
-                            <p class="tcpa form-tcpa text-center mt-3">
-                                <label id="tcpa_label" style="font-weight: normal; font-size: 12px; color:rgba(0,0,0,0.7); line-height: 1.2;">
-                                    <input type="hidden" id="leadid_tcpa_disclosure">
-                                    By clicking "<span id="tcpa_txt">Continue</span>", I authorize up to 4 home improvement services companies, their
-                                    contractors and <a href="https://thesimplehomequotes.com/partners" target="_blank">partner companies</a> to contact
-                                    me about home improvement offers by phone calls and SMS messages to the number I provided. I authorize that
-                                    these marketing communications may be delivered to me using an automatic telephone dialing system or by
-                                    prerecorded message. I understand that my consent is not a condition of purchase. I also have read and agree to
-                                    the <a href="https://thesimplehomequotes.com/terms" target="_blank">Terms and Conditions</a> and <a href="https://thesimplehomequotes.com/privacy" target="_blank">Privacy Policy</a> of this website. Message
-                                    and Data rates may apply.
-                                </label>
-                            </p>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
+@include('partials.modals')
 
 @include('partials/footer')
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!--[if lte IE 8]>
@@ -396,9 +343,13 @@
 
 <![endif]-->
 
-<script src="{{asset('js/jquery/jquery-3.2.1.min.js')}}"></script>
+<script src="{{ asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-4.0.0.js')}}"></script>
+<script src="{{ asset('js/jquery/jquery.validate.min.js') }}"></script>
+
+<script src="{{ asset('js/jquery/jquery-ui.custom.min.js') }}"></script>
+@include('partials.funnel_scripts', ['vertical' => 'thank-you-page', 'page' => 'thank-you-page'])
 <script>
 
 
@@ -455,17 +406,173 @@
 </script>
 
 <script>
-    $('.modal').on('show.bs.modal', function () {
-        totalStep = $(this).find("fieldset").length;
-        currentStep = $(this).find("fieldset").data('step');
-        $('.slidenum').html('' + currentStep + ' of ' + totalStep + '');
 
-        if (totalStep == 1) {
-            $('.modal-header h4').hide();
-        }else{
-            $('.modal-header h4').show();
+    function slidenum(currentStep) {
+        $('.slidenum').html('' + currentStep + ' of ' + totalStep + '');
+    }
+
+    function submitData(modalId){
+
+        let formData ={};
+
+        formData['getParams'] = getURLParams();
+        formData['lead'] = 1;
+        formData['complete'] = 1;
+        formData['token'] = getUrlParameter('token');
+        formData['from_thank_you_page'] = 1;
+
+        if(modalId === "solar_form"){
+            formData['roof_shade'] = $('#roof_shade').val();
+            formData['monthly_electric_bill'] = $('#monthly_electric_bill').val();
+            formData['credit_rating'] = $('#credit_rating').val();
+            formData['time_frame'] = $('#time_frame').val();
+            formData['property_type'] = $('#property_type').val();
+            formData['roof_type'] = $('#roof_type').val();
+            formData['utility_provider'] = $('#utility_provider').val();
+            formData['lp_campaign_id'] = "17604";
+            formData['lp_supplier_id'] = "38531";
+            formData['lp_key'] = "qqz1h52vku0dpy";
+            formData['vertical'] = 'solar';
         }
+
+        if(modalId === "roofing_form"){
+            formData['roof_type'] = $('#roofing_type').val();
+            formData['time_frame'] = $('#time_frame').val();
+            formData['project_type'] = $('#project_type').val();
+            formData['lp_campaign_id'] = "17608";
+            formData['lp_supplier_id'] = "38543";
+            formData['lp_key'] = "2e3nsxqveudg5l";
+            formData['vertical'] = 'roofing';
+        }
+
+        if(modalId === "tubs_form"){
+            formData['time_frame'] = $('#time_frame').val();
+            formData['project_reason'] = $('#project_reason').val();
+            formData['lp_campaign_id'] = "18372";
+            formData['lp_supplier_id'] = "41113";
+            formData['lp_key'] = "x2yzfldq0srz17";
+            formData['vertical'] = 'tubs';
+        }
+
+        submitLead(formData, true);
+
+    }
+
+    function updateOfferDiv(partnerLink){
+
+        partnerLink.removeAttr('data-target');
+
+        partnerLink.find('.col-partner_btn span').html("On Its Way!").css('cursor', 'auto');
+
+    }
+
+    $(document).ready(function() {
+        var currentStep = 0;
+        $('.modal').on('show.bs.modal', function () {
+            var modalFieldsets = $(this).find("fieldset");
+            totalStep = modalFieldsets.length;
+            var currentStep = modalFieldsets.attr('data-step');
+            slidenum(currentStep);
+
+            var currentModalID = modalFieldsets.filter(':visible').closest('.modal').attr('id');
+            $('#' + currentModalID).modal('show');
+        });
+
+        $('.modal').on('hidden.bs.modal', function () {
+            currentStep = 0;
+
+            var form = $(this).find('form')[0];
+            form.reset();
+
+            $(this).find('fieldset').hide();
+            $(this).find('fieldset:first').show();
+            slidenum(1);
+        });
+
+        $(".radio-next input[type=radio], .btn-next").on("click", function () {
+            let modalId = $(this).closest('.modal').attr('id');
+
+            var partnerLink;
+            if (modalId === "solar_form") {
+                partnerLink = $('#solar_div');
+            } else {
+                if (modalId === "tubs_form") {
+                    partnerLink = $('#tubs_div');
+                }else{
+                    if(modalId ==="roofing_form"){
+                        partnerLink = $('#roofing_div');
+                    }
+                }
+            }
+
+            var parent_fieldset = $(this).parents('fieldset').last();
+
+            parent_fieldset.hide("slide", { direction: "left" }, 300, function () {
+                var next_fieldset = $(this).next();
+
+                if (next_fieldset.length > 0) {
+                    // If the next fieldset exists, show it
+                    next_fieldset.show("slide", { direction: "right" }, 300, function () {
+                        var currentStep = next_fieldset.data('step');
+                        slidenum(currentStep);
+                    });
+                }else{
+                    var currentModalID = parent_fieldset.closest('.modal').attr('id');
+                    $('#' + currentModalID).modal('hide');
+
+                    updateOfferDiv(partnerLink);
+
+                }
+            });
+        });
+
+        $('#modal-close').on('click', function () {
+            currentStep = 0;
+
+            $('.modal:visible').find('form')[0].reset();
+
+        });
+
+        document.getElementById('form_submit_solar').addEventListener('click', function (){
+            let modalId = $(this).closest('.modal').attr('id');
+            submitData(modalId);
+        })
+        document.getElementById('form_submit_roofing').addEventListener('click', function (){
+            let modalId = $(this).closest('.modal').attr('id');
+            submitData(modalId);
+        })
+        document.getElementById('form_submit_tubs').addEventListener('click', function (){
+            let modalId = $(this).closest('.modal').attr('id');
+            submitData(modalId);
+        })
+
+        $('input[type=radio][name=monthly_electric_bill_radio]').click(function(){
+            $('#monthly_electric_bill').val($(this).val());
+        });
+
+        $('input[type=radio][name=roof_shade_radio]').click(function(){
+            $('#roof_shade').val($(this).val());
+        });
+
+        $('input[type=radio][name=roofing_type_radio]').click(function(){
+            $('#roofing_type').val($(this).val());
+        });
+
+        $('input[type=radio][name=time_frame_radio]').click(function(){
+            $('#time_frame').val($(this).val());
+        });
+
+        $('input[type=radio][name=project_reason_radio]').click(function(){
+            $('#project_reason').val($(this).val());
+        });
+
+        $('input[type=radio][name=time_frame_tubs_radio]').click(function(){
+            $('#time_frame').val($(this).val());
+        });
+
     });
+
+
 </script>
 
 </body>
