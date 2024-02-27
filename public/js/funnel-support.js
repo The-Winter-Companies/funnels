@@ -309,8 +309,8 @@ function getAllInputFieldsAsObject(){
 }
 
 
-function getThankYouPageUrl(vertical){
-    return "/thank-you?ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v="+vertical + "&ef_offer_id=" + getUrlParameter('ef_offer_id')
+function getThankYouPageUrl(vertical, token){
+    return "/thank-you?token=" + token + "&ef_aff_id=" + getUrlParameter('ef_aff_id') + "&ef_tx_id=" + getUrlParameter('ef_tx_id') + "&s1=" + getUrlParameter('s1') + "&s2=" + getUrlParameter('s2') + "&s3=" + getUrlParameter('s3') + "&s4=" + getUrlParameter('s4') + "&s5=" + getUrlParameter('s5') + "&v="+vertical + "&ef_offer_id=" + getUrlParameter('ef_offer_id');
 }
 
 /* min height zip*/

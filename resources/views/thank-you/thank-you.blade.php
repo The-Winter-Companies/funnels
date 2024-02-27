@@ -23,8 +23,8 @@
     @include('partials.rollbar_script')
 
     <!-- Bootstrap -->
-    <link href="{{ asset('css/bootstrap-v4.0.0.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/thank-you.css') }}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap-v4.0.0.css')}}" rel="stylesheet">
+    <link href="{{asset('css/ty-new.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="#">
 
@@ -47,6 +47,16 @@
     <script>
         fbq('track', 'Lead');
     </script>
+    <!--[if IE 9]>
+
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
+    <![endif]-->
+
 
     @include('pixels.all-pages-head')
 </head>
@@ -126,7 +136,7 @@
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'solar')
 
-                    <a class="partner featured" href="https://{{$domainFullDomain == "foreverhomehub.com" ? "quotes.foreverhomehub.com" : $domainFullDomain}}/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="roofing_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#roofing_form">
                         <h4 class="d-block d-md-none  partner_title">Rise Above with Our Roofing Excellence: Elevate Your Home Today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -146,7 +156,7 @@
                         </div>
                     </a>
 
-                    <a class="partner featured" href="https://{{$domainFullDomain == "foreverhomehub.com" ? "quotes.foreverhomehub.com" : $domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="tubs_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#tubs_form">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -170,14 +180,14 @@
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'roofing')
 
-                    <a class="partner featured" href="https://{{$domainFullDomain == "foreverhomehub.com" ? "quotes.foreverhomehub.com" : $domainFullDomain}}/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
-                        <h4 class="d-block d-md-none  partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
-                        <div class="row align-items-center" >
+
+                    <a id="solar_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#solar_form">
+                        <div class="row align-items-center">
                             <div class="col col-partner_img">
                                 <img src="{{ asset('img/bg-solar.jpg') }}" class="img-fluid">
                             </div>
                             <div class="col col-partner_cont">
-                                <h4 class="d-none d-md-block partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
+                                <h4 class="d-none d-md-block partner_title">Slash Your Electric Bill Each Month By Going Solar</h4>
                                 <ul>
                                     <li>Affordable, clean energy at your fingertips</li>
                                     <li>Join the solar campaign for lower bills and eco-friendly living</li>
@@ -190,8 +200,7 @@
                         </div>
                     </a>
 
-
-                    <a class="partner featured" href="https://{{$domainFullDomain == "foreverhomehub.com" ? "quotes.foreverhomehub.com" : $domainFullDomain}}/tubs/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="tubs_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#tubs_form">
                         <h4 class="d-block d-md-none  partner_title">Immerse in Luxury: The Ultimate Tubs Transformation!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -215,7 +224,7 @@
 
                 @if(\Illuminate\Support\Facades\Request::get('v') == 'tubs')
 
-                    <a class="partner featured" href="https://{{$domainFullDomain == "foreverhomehub.com" ? "quotes.foreverhomehub.com" : $domainFullDomain}}/roofing/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=3&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="roofing_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#roofing_form">
                         <h4 class="d-block d-md-none  partner_title">Rise Above with Our Roofing Excellence: Elevate Your Home Today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -235,7 +244,7 @@
                         </div>
                     </a>
 
-                    <a class="partner featured" href="https://{{$domainFullDomain == "foreverhomehub.com" ? "quotes.foreverhomehub.com" : $domainFullDomain}}/solar/o7?ef_tx_id={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}&ef_aid=1&ef_adv_event_id=2&ef_offer_id={{\Illuminate\Support\Facades\Request::get('ef_offer_id')}}&ef_aff_id={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                    <a id="solar_div" class="partner featured" data-backdrop="static" data-toggle="modal" data-keyboard="false" data-target="#solar_form">
                         <h4 class="d-block d-md-none  partner_title">Embrace the power of the sun. Switch to solar and avoid blackouts. Get your free quote today!</h4>
                         <div class="row align-items-center" >
                             <div class="col col-partner_img">
@@ -256,8 +265,6 @@
                     </a>
 
                 @endif
-
-
 
 
                 <a class="partner" href="https://thetamkt.com/?a=13418&c=148803&s1={{\Illuminate\Support\Facades\Request::get('s1')}}&s2={{\Illuminate\Support\Facades\Request::get('s2')}}&s3={{\Illuminate\Support\Facades\Request::get('s3')}}">
@@ -305,8 +312,6 @@
             </div>
 
 
-
-
             <hr class="breaker">
             <div class="align-items-center promise" >
                 <div class="row">
@@ -322,14 +327,30 @@
     </section>
 </main>
 
+@include('partials.modals')
 
 @include('partials/footer')
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!--[if lte IE 8]>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 <![endif]-->
+
+<script src="{{ asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-4.0.0.js')}}"></script>
+<script src="{{ asset('js/jquery/jquery.validate.min.js') }}"></script>
+
+<script src="{{ asset('js/jquery/jquery-ui.custom.min.js') }}"></script>
+@include('partials.funnel_scripts', ['page' => 'thank-you-page', 'vertical' =>\Illuminate\Support\Facades\Request::get('v') ])
 <script>
 
 
@@ -385,7 +406,175 @@
     })();
 </script>
 
+<script>
 
+    function slidenum(currentStep) {
+        $('.slidenum').html('' + currentStep + ' of ' + totalStep + '');
+    }
+
+    function submitData(modalId){
+
+        let formData ={};
+
+        formData['getParams'] = getURLParams();
+        formData['lead'] = 1;
+        formData['complete'] = 1;
+        formData['token'] = getUrlParameter('token');
+        formData['from_thank_you_page'] = 1;
+
+        if(modalId === "solar_form"){
+            formData['roof_shade'] = $('#roof_shade').val();
+            formData['monthly_electric_bill'] = $('#monthly_electric_bill').val();
+            formData['credit_rating'] = $('#credit_rating').val();
+            formData['time_frame'] = $('#time_frame').val();
+            formData['property_type'] = $('#property_type').val();
+            formData['roof_type'] = $('#roof_type').val();
+            formData['utility_provider'] = $('#utility_provider').val();
+            formData['lp_campaign_id'] = "17604";
+            formData['lp_supplier_id'] = "38531";
+            formData['lp_key'] = "qqz1h52vku0dpy";
+            formData['vertical'] = 'solar';
+        }
+
+        if(modalId === "roofing_form"){
+            formData['roof_type'] = $('#roofing_type').val();
+            formData['time_frame'] = $('#time_frame').val();
+            formData['project_type'] = $('#project_type').val();
+            formData['lp_campaign_id'] = "17608";
+            formData['lp_supplier_id'] = "38543";
+            formData['lp_key'] = "2e3nsxqveudg5l";
+            formData['vertical'] = 'roofing';
+        }
+
+        if(modalId === "tubs_form"){
+            formData['time_frame'] = $('#time_frame').val();
+            formData['project_reason'] = $('#project_reason').val();
+            formData['lp_campaign_id'] = "18372";
+            formData['lp_supplier_id'] = "41113";
+            formData['lp_key'] = "x2yzfldq0srz17";
+            formData['vertical'] = 'tubs';
+        }
+
+        submitLead(formData, true);
+
+    }
+
+    function updateOfferDiv(partnerLink){
+
+        partnerLink.removeAttr('data-target');
+
+        partnerLink.find('.col-partner_btn span').html("On Its Way!").css('cursor', 'auto');
+
+    }
+
+    $(document).ready(function() {
+        var currentStep = 0;
+        $('.modal').on('show.bs.modal', function () {
+            var modalFieldsets = $(this).find("fieldset");
+            totalStep = modalFieldsets.length;
+            var currentStep = modalFieldsets.attr('data-step');
+            slidenum(currentStep);
+
+            var currentModalID = modalFieldsets.filter(':visible').closest('.modal').attr('id');
+            $('#' + currentModalID).modal('show');
+        });
+
+        $('.modal').on('hidden.bs.modal', function () {
+            currentStep = 0;
+
+            var form = $(this).find('form')[0];
+            form.reset();
+
+            $(this).find('fieldset').hide();
+            $(this).find('fieldset:first').show();
+            slidenum(1);
+        });
+
+        $(".radio-next input[type=radio], .btn-next").on("click", function () {
+            let modalId = $(this).closest('.modal').attr('id');
+
+            var partnerLink;
+            if (modalId === "solar_form") {
+                partnerLink = $('#solar_div');
+            } else {
+                if (modalId === "tubs_form") {
+                    partnerLink = $('#tubs_div');
+                }else{
+                    if(modalId ==="roofing_form"){
+                        partnerLink = $('#roofing_div');
+                    }
+                }
+            }
+
+            var parent_fieldset = $(this).parents('fieldset').last();
+
+            parent_fieldset.hide("slide", { direction: "left" }, 300, function () {
+                var next_fieldset = $(this).next();
+
+                if (next_fieldset.length > 0) {
+                    // If the next fieldset exists, show it
+                    next_fieldset.show("slide", { direction: "right" }, 300, function () {
+                        var currentStep = next_fieldset.data('step');
+                        slidenum(currentStep);
+                    });
+                }else{
+                    var currentModalID = parent_fieldset.closest('.modal').attr('id');
+                    $('#' + currentModalID).modal('hide');
+
+                    updateOfferDiv(partnerLink);
+
+                }
+            });
+        });
+
+        $('#modal-close').on('click', function () {
+            currentStep = 0;
+
+            $('.modal:visible').find('form')[0].reset();
+
+        });
+
+        document.getElementById('form_submit_solar').addEventListener('click', function (){
+            let modalId = $(this).closest('.modal').attr('id');
+            submitData(modalId);
+        })
+        document.getElementById('form_submit_roofing').addEventListener('click', function (){
+            let modalId = $(this).closest('.modal').attr('id');
+            submitData(modalId);
+        })
+        document.getElementById('form_submit_tubs').addEventListener('click', function (){
+            let modalId = $(this).closest('.modal').attr('id');
+            submitData(modalId);
+        })
+
+        $('input[type=radio][name=monthly_electric_bill_radio]').click(function(){
+            $('#monthly_electric_bill').val($(this).val());
+        });
+
+        $('input[type=radio][name=roof_shade_radio]').click(function(){
+            $('#roof_shade').val($(this).val());
+        });
+
+        $('input[type=radio][name=roofing_type_radio]').click(function(){
+            $('#roofing_type').val($(this).val());
+        });
+
+        $('input[type=radio][name=time_frame_radio]').click(function(){
+            $('#time_frame').val($(this).val());
+        });
+
+        $('input[type=radio][name=project_reason_radio]').click(function(){
+            $('#project_reason').val($(this).val());
+        });
+
+        $('input[type=radio][name=time_frame_tubs_radio]').click(function(){
+            $('#time_frame').val($(this).val());
+        });
+
+    });
+
+
+</script>
 
 </body>
 </html>

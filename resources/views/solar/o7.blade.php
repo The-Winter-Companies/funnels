@@ -80,6 +80,7 @@ $page = 'o7';
             <input type="hidden" id="property_type" name="property_type" value="Single Family">
             <input type="hidden" id="roof_type" name="roof_type" value="Tile">
             <input type="hidden" name="credit_rating" id="credit_rating" value="Good">
+            <input type="hidden" name="roof_shade" id="roof_shade" value="Not Sure">
             <input type="hidden" id="home_owner" name="home_owner" value="Yes">
             <fieldset data-step="1">
                 <legend hidden="true">homeowner</legend>
@@ -162,19 +163,19 @@ $page = 'o7';
                 <h3 class="form_box-question">How shaded is your roof area?</h3>
                 <div class="form-group radio-next">
                     <div class="radio-btn">
-                        <input id="rf1" type="radio" name="roof_shade" value="No Shade" required checked>
+                        <input id="rf1" type="radio" name="roof_shade_radio" value="No Shade" required checked>
                         <label for="rf1"><span>No Shade</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="rf2" type="radio" name="roof_shade" value="Partial Shade" required>
+                        <input id="rf2" type="radio" name="roof_shade_radio" value="Partial Shade" required>
                         <label for="rf2"><span>Partial Shade</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="rf3" type="radio" name="roof_shade" value="Full Shade">
+                        <input id="rf3" type="radio" name="roof_shade_radio" value="Full Shade">
                         <label for="rf3"><span>Full Shade</span></label>
                     </div>
                     <div class="radio-btn">
-                        <input id="rf4" type="radio" name="roof_shade" value="Not Sure">
+                        <input id="rf4" type="radio" name="roof_shade_radio" value="Not Sure">
                         <label for="rf4"><span>Not Sure</span></label>
                     </div>
                     <div class="form-error-message">Pros need this information to generate a quote.</div>
@@ -391,7 +392,7 @@ $page = 'o7';
                 return;
             } else {
                 let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
-                submitLead(formData);
+                submitLead(formData, false);
             }
             $('#form_submit').removeAttr('disabled');
         });
@@ -495,6 +496,10 @@ $page = 'o7';
 
         $('input[type=radio][name=home_owner_radio]').click(function(){
             $('#home_owner').val($(this).val());
+        });
+
+        $('input[type=radio][name=roof_shade_radio]').click(function(){
+            $('#roof_shade').val($(this).val());
         });
 
         $(".btn-next").click(function(){

@@ -74,6 +74,7 @@ session_start();
             <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
             <input type="hidden" id="property_type" name="property_type" value="Single Family">
             <input type="hidden" id="credit_rating" name="credit_rating" value="Good">
+            <input type="hidden" name="roof_shade" id="roof_shade" value="Not Sure">
             <input type="hidden" id="roof_type" name="roof_type" value="Tile">
             <input type="hidden" id="home_owner" name="home_owner" value="Yes">
             <fieldset id="zip-container" data-step="1"><legend hidden="true">zip</legend>
@@ -145,20 +146,20 @@ session_start();
                 <div class="form-cont">
                     <div class="form-group radio-next">
                         <div class="radio-btn">
-                            <input  id="roof_shade" type="radio" name="roof_shade" value="No Shade"  checked>
-                            <label for="roof_shade" id="no-shade-label"><span>No Shade</span></label>
+                            <input  id="rs1" type="radio" name="roof_shade_radio" value="No Shade"  checked>
+                            <label for="rs1" id="no-shade-label"><span>No Shade</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="roof_shade" type="radio" name="roof_shade" value="Partial Shade" >
-                            <label for="roof_shade" id="partial-shade-label"><span>Partial Shade</span></label>
+                            <input id="rs2" type="radio" name="roof_shade_radio" value="Partial Shade" >
+                            <label for="rs2" id="partial-shade-label"><span>Partial Shade</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input  id="roof_shade" type="radio" name="roof_shade" value="Full Shade" >
-                            <label for="roof_shade" id="full-shade-label"><span>Full Shade</span></label>
+                            <input  id="rs3" type="radio" name="roof_shade_radio" value="Full Shade" >
+                            <label for="rs3" id="full-shade-label"><span>Full Shade</span></label>
                         </div>
                         <div class="radio-btn">
-                            <input id="roof_shade" type="radio" name="roof_shade" value="Not Sure" >
-                            <label for="roof_shade" id="not-sure-label"><span>Not Sure</span></label>
+                            <input id="rs4" type="radio" name="roof_shade_radio" value="Not Sure" >
+                            <label for="rs4" id="not-sure-label"><span>Not Sure</span></label>
                         </div>
                         <div class="form-error-message">Pros need this information to generate a quote.</div>
                     </div>
@@ -309,7 +310,7 @@ session_start();
                             to contact me about home improvement offers by phone calls and SMS messages to the number I provided. I understand that these
                             marketing communications may be delivered to me using an automatic telephone dialing system or by prerecorded message, even if my
                             telephone number is currently listed on any state, federal, local or corporate Do Not Call list. I understand that my consent is not
-                            a condition of purchase. I also have read and agree to the <a href="https://foreverhomehub.com/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://foreverhomehub.com/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
+                            a condition of purchase. I also have read and agree to the <a href="https://{{$domainFullDomain}}/terms-and-conditions" target="_blank">Terms and Conditions</a> and <a href="https://{{$domainFullDomain}}/privacy-policy/" target="_blank">Privacy Policy</a> of this website. Message and Data rates may apply.
                         </label>
                     </p>
                 </div>
@@ -597,6 +598,9 @@ session_start();
             },
             monthly_electric_bill: {
                 required: true
+            },
+            roof_shade: {
+                required: true
             }
         },
         messages: validationMessages,
@@ -628,7 +632,7 @@ session_start();
                     return;
                 } else {
                     let formData = prepFormDataForSubmit('{{$vertical}}', '{{$page}}');
-                    submitLead(formData);
+                    submitLead(formData, false);
                 }
                 $('#form_submit').removeAttr('disabled');
             });
@@ -730,6 +734,10 @@ session_start();
 
             $('input[type=radio][name=home_owner_radio]').click(function(){
                 $('#home_owner').val($(this).val());
+            });
+
+            $('input[type=radio][name=roof_shade_radio]').click(function(){
+                $('#roof_shade').val($(this).val());
             });
 
             $("#zip").enterKey(function () {
