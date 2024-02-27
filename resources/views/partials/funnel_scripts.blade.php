@@ -1,13 +1,19 @@
 <?php
     if(!isset($vertical, $page)){
-        abort(500, 'Vertical or Page was not passed to the blade template.');
+        if($page == 'thank-you-page') {
+            //don't do anything
+        } else {
+            abort(500, 'Vertical or Page was not passed to the blade template.');
+        }
     }
 ?>
+
 <script src="{{ asset('js/jquery/jquery.custom-validators.js') }}"></script>
 <script src="{{ asset('js/funnel-support.js') }}"></script>
 @include('partials.funnel-support-document-ready', ['vertical' => $vertical, 'page' => $page])
 <script type="text/javascript" src="{{ asset('js/solar/power_companies.js') }}"></script>
-@if($vertical !== 'astrology' && $vertical !== 'thank-you-page')
+
+@if($vertical !== 'astrology' && $page !== 'thank-you-page')
     <script src="{{ asset('js/address-validation.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAPS_API_KEY")}}&libraries=places&callback=initMap"></script>
 @endif

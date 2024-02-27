@@ -312,8 +312,6 @@
             </div>
 
 
-
-
             <hr class="breaker">
             <div class="align-items-center promise" >
                 <div class="row">
@@ -352,7 +350,7 @@
 <script src="{{ asset('js/jquery/jquery.validate.min.js') }}"></script>
 
 <script src="{{ asset('js/jquery/jquery-ui.custom.min.js') }}"></script>
-@include('partials.funnel_scripts', ['vertical' => 'thank-you-page', 'page' => 'thank-you-page'])
+@include('partials.funnel_scripts', ['page' => 'thank-you-page', 'vertical' =>\Illuminate\Support\Facades\Request::get('v') ])
 <script>
 
 
