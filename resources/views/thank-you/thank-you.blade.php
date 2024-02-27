@@ -434,6 +434,8 @@
             formData['lp_supplier_id'] = "38531";
             formData['lp_key'] = "qqz1h52vku0dpy";
             formData['vertical'] = 'solar';
+            formData['ef_adv_event_id'] = "2";
+            formData['ef_aid'] = "1";
         }
 
         if(modalId === "roofing_form"){
@@ -444,6 +446,8 @@
             formData['lp_supplier_id'] = "38543";
             formData['lp_key'] = "2e3nsxqveudg5l";
             formData['vertical'] = 'roofing';
+            formData['ef_adv_event_id'] = "3";
+            formData['ef_aid'] = "1";
         }
 
         if(modalId === "tubs_form"){
@@ -453,7 +457,10 @@
             formData['lp_supplier_id'] = "41113";
             formData['lp_key'] = "x2yzfldq0srz17";
             formData['vertical'] = 'tubs';
+            formData['ef_adv_event_id'] = "2";
+            formData['ef_aid'] = "1";
         }
+
 
         submitLead(formData, true);
 
