@@ -771,7 +771,7 @@ session_start();
                                 var append = "";
                             }
 
-                            location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append;
+                            location.href = "https://astrologyspark.com/thank-you?sign="+window.formdata['horoscope']+"&uid="+result.uniqueId+append+"&fill="+encodeURIComponent(btoa(JSON.stringify(window.formdata)));
                         }
                     }, error: function(data) {
                         alert("There was an issue, please try again or contact us at info@astrologyspark.com");
