@@ -288,29 +288,29 @@
                     </a>
 
 
-                <a class="partner" href="https://thetamkt.com/?a=13418&c=148803&s1={{\Illuminate\Support\Facades\Request::get('s1')}}&s2={{\Illuminate\Support\Facades\Request::get('s2')}}&s3={{\Illuminate\Support\Facades\Request::get('s3')}}">
-                        <h4 class="d-block d-md-none  partner_title">Reduce Your Mortgage</h4>
-                        <div class="row align-items-center">
-                            <div class="col col-partner_img">
-                                <img src="{{ asset('img/fedwatch168x81.jpg') }}" class="img-fluid" alt="erelief">
-                            </div>
-                            <div class="col col-partner_cont">
-                                <h4 class="d-none d-md-block partner_title">Reduce Your Mortgage</h4>
-                                <ul>
-                                    <li>Pay off your mortgage with a rate that works for YOU</li>
-                                    <li>We have helped thousands of Americans</li>
-                                    <li>Qualify for free in less than 60 seconds - no login required</li>
-                                </ul>
-                            </div>
-                            <div class="col col-partner_btn">
-                                <span>View My Quote</span>
-                            </div>
-                        </div>
-                    </a>
+{{--                <a class="partner" href="https://thetamkt.com/?a=13418&c=148803&s1={{\Illuminate\Support\Facades\Request::get('s1')}}&s2={{\Illuminate\Support\Facades\Request::get('s2')}}&s3={{\Illuminate\Support\Facades\Request::get('s3')}}">--}}
+{{--                        <h4 class="d-block d-md-none  partner_title">Reduce Your Mortgage</h4>--}}
+{{--                        <div class="row align-items-center">--}}
+{{--                            <div class="col col-partner_img">--}}
+{{--                                <img src="{{ asset('img/fedwatch168x81.jpg') }}" class="img-fluid" alt="erelief">--}}
+{{--                            </div>--}}
+{{--                            <div class="col col-partner_cont">--}}
+{{--                                <h4 class="d-none d-md-block partner_title">Reduce Your Mortgage</h4>--}}
+{{--                                <ul>--}}
+{{--                                    <li>Pay off your mortgage with a rate that works for YOU</li>--}}
+{{--                                    <li>We have helped thousands of Americans</li>--}}
+{{--                                    <li>Qualify for free in less than 60 seconds - no login required</li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <div class="col col-partner_btn">--}}
+{{--                                <span>View My Quote</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
 
 
 
-                <a class="partner" href="https://mumkt.com/?a=13418&c=151271&s1={{\Illuminate\Support\Facades\Request::get('s1')}}">
+                <a class="partner" href="https://www.twck93j.com/29T6R6/6JHXF/?sub1={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&sub5={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}">
                         <h4 class="d-block d-md-none  partner_title">The Secret to Saving $1,080 when switching to DISH!!</h4>
                         <div class="row align-items-center">
                             <div class="col col-partner_img">
