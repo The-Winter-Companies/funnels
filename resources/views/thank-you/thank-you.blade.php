@@ -267,6 +267,27 @@
                 @endif
 
 
+                <a class="partner" href="https://www.twck93j.com/29T6R6/GTSC3/?sub1={{\Illuminate\Support\Facades\Request::get('ef_aff_id')}}&sub5={{\Illuminate\Support\Facades\Request::get('ef_tx_id')}}">
+                        <h4 class="d-block d-md-none  partner_title">ADT HOME SECURITY: PRO-INSTALL</h4>
+                        <div class="row align-items-center">
+                            <div class="col col-partner_img">
+                                <img src="{{ asset('img/thank-you/adt.png') }}" class="img-fluid" style="max-width:95%;" alt="erelief">
+                            </div>
+                            <div class="col col-partner_cont">
+                                <h4 class="d-none d-md-block partner_title">ADT Home Security: Pro-Install</h4>
+                                <ul>
+                                    <li>Experienced technicians can customize your system</li>
+                                    <li>Appointments to fit your schedule</li>
+                                    <li>Up and running in one day</li>
+                                </ul>
+                            </div>
+                            <div class="col col-partner_btn">
+                                <span>Learn More</span>
+                            </div>
+                        </div>
+                    </a>
+
+
                 <a class="partner" href="https://thetamkt.com/?a=13418&c=148803&s1={{\Illuminate\Support\Facades\Request::get('s1')}}&s2={{\Illuminate\Support\Facades\Request::get('s2')}}&s3={{\Illuminate\Support\Facades\Request::get('s3')}}">
                         <h4 class="d-block d-md-none  partner_title">Reduce Your Mortgage</h4>
                         <div class="row align-items-center">
@@ -275,8 +296,8 @@
                             </div>
                             <div class="col col-partner_cont">
                                 <h4 class="d-none d-md-block partner_title">Reduce Your Mortgage</h4>
-                                <p>Pay off your mortgage with a rate that works for YOU</p>
                                 <ul>
+                                    <li>Pay off your mortgage with a rate that works for YOU</li>
                                     <li>We have helped thousands of Americans</li>
                                     <li>Qualify for free in less than 60 seconds - no login required</li>
                                 </ul>
