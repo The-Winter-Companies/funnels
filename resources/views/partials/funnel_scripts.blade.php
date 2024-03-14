@@ -23,6 +23,10 @@
     "use strict";
     $.token = $.makeid(8);
 
+    @if(!empty(\Illuminate\Support\Facades\Request::get('zip_code')))
+        $('#zip_code').val({{\Illuminate\Support\Facades\Request::get('zip_code')}});
+    @endif
+
     /**
      *
      * @param formData
