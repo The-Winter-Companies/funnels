@@ -21,8 +21,6 @@ class MainDomainProvider extends ServiceProvider
             $mainDomain = $host;
         }
 
-        //$ipRegion = $this->getIpRegion();
-
         $defaultTitle = config("custom.dynamic_domain_content.foreverhomehub.title");
         $defaultFullDomain = config("custom.dynamic_domain_content.foreverhomehub.domain");
         $defaultInfoEmail = config("custom.dynamic_domain_content.foreverhomehub.info_email");
@@ -45,11 +43,4 @@ class MainDomainProvider extends ServiceProvider
 
     }
 
-    function getIpRegion() {
-        $url = "https://ipinfo.io?token=" . env('IP_INFO_TOKEN');
-        $response = file_get_contents($url);
-        $ip_info = json_decode($response, true);
-
-        return $ip_info['region'];
-    }
 }

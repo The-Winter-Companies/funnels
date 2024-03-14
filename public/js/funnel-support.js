@@ -333,6 +333,11 @@ function populateIPHiddenFields(token){
         // $("#ip_readme").val(response.readme);
         $("#ip_region").val(response.region);
         $("#ip_timezone").val(response.timezone);
+        if (document.getElementById("client_ip_region")) {
+            $("[id='client_ip_region']").each(function() {
+                $(this).text(response.region);
+            });
+        }
     }, "json");
 }
 

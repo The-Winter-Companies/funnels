@@ -13,7 +13,7 @@
 @include('partials.funnel-support-document-ready', ['vertical' => $vertical, 'page' => $page])
 <script type="text/javascript" src="{{ asset('js/solar/power_companies.js') }}"></script>
 
-@if($vertical !== 'astrology' && $page !== 'thank-you-page')
+@if($vertical !== 'astrology' && $page !== 'thank-you-page' && $page !== 'smart_consumer_insights_x9')
     <script src="{{ asset('js/address-validation.js') }}"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env("GOOGLE_MAPS_API_KEY")}}&libraries=places&callback=initMap"></script>
 @endif
