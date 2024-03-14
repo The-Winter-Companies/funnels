@@ -17,7 +17,7 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
         .error-message {
             color: red;
             display: block;
-            margin-top: 5px; /* Adjust this value to control the space between input and error message */
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -35,7 +35,7 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
         <div id="ebc-form-sm-control">
           <label id="ebc-form-sm-label">Enter Your Zip Code</label>
             <input name="zip_code" pattern="^[0-9]{5}(?:-[0-9]{4})?$" onkeyup="validateZip(this)" maxlength="5" placeholder="Enter Your Zip Code Here" id="ebc-form-sm-input">
-            <button type="button" id="ebc-form-sm-btn-submit" disabled>Check My Zip Code</button>
+            <a href="{{$finalURL}}"><button type="button" id="ebc-form-sm-btn-submit">Check My Zip Code</button></a>
         </div>
           <div id="zipError" class="error-message"></div>
       </form>
@@ -57,23 +57,23 @@ $finalURL = $baseURL . '?' . http_build_query($requestParams);
 </div>
 <p><a href="{{$finalURL}}" class="btn fbtn">See If I am Eligible</a></p>
 </div></article><footer class="sc-36qip6-0 kgeVDl"><div class="sc-36qip6-1 kkZmCB"><span>© <script>document.write(new Date().getFullYear())</script> Smart Consumer Insights</span></div><a href="/terms-and-conditions" target="_blank" class="sc-36qip6-2 ccTPDu">Terms &amp; Disclosures</a><a href="/privacy-policy" target="_blank" class="sc-36qip6-2 ccTPDu">Privacy Policy</a><a href="/contact-us" target="_blank" class="sc-36qip6-2 ccTPDu">Contact Us</a></footer></div></div></div>
-<script>
+{{--<script>--}}
 
-    function validateZip(input){
-        input.value = input.value.replace(/[^\d]/, '');
-        const submitButton = document.getElementById('ebc-form-sm-btn-submit');
-        if (input.value.length !== 5) {
-            submitButton.disabled = true;
-            document.getElementById("zipError").innerText = "Zip code must be 5 digits.";
-        } else {
-            submitButton.disabled = false;
-            document.getElementById("zipError").innerText = "";
-        }
+{{--    function validateZip(input){--}}
+{{--        input.value = input.value.replace(/[^\d]/, '');--}}
+{{--        const submitButton = document.getElementById('ebc-form-sm-btn-submit');--}}
+{{--        if (input.value.length !== 5) {--}}
+{{--            submitButton.disabled = true;--}}
+{{--            document.getElementById("zipError").innerText = "Zip code must be 5 digits.";--}}
+{{--        } else {--}}
+{{--            submitButton.disabled = false;--}}
+{{--            document.getElementById("zipError").innerText = "";--}}
+{{--        }--}}
 
-    }
-    document.getElementById('ebc-form-sm-btn-submit').addEventListener('click', function(){
-        var zipCodeInput = document.querySelector('input[name="zip_code"]');
-        var zipCode = zipCodeInput.value;
-        window.location.href = "http://quotes.foreverhomehub.local/solar?zip_code=" + zipCode;
-    });
-</script>
+{{--    }--}}
+{{--    document.getElementById('ebc-form-sm-btn-submit').addEventListener('click', function(){--}}
+{{--        var zipCodeInput = document.querySelector('input[name="zip_code"]');--}}
+{{--        var zipCode = zipCodeInput.value;--}}
+{{--        window.location.href = "http://quotes.foreverhomehub.local/solar?zip_code=" + zipCode;--}}
+{{--    });--}}
+{{--</script>--}}
