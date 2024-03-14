@@ -21,6 +21,8 @@ class MainDomainProvider extends ServiceProvider
             $mainDomain = $host;
         }
 
+        $ipRegion = $this->populateIPHiddenFields(env('IP_INFO_TOKEN'));
+
         $defaultTitle = config("custom.dynamic_domain_content.foreverhomehub.title");
         $defaultFullDomain = config("custom.dynamic_domain_content.foreverhomehub.domain");
         $defaultInfoEmail = config("custom.dynamic_domain_content.foreverhomehub.info_email");
@@ -36,10 +38,19 @@ class MainDomainProvider extends ServiceProvider
         View::share('domainInfoEmail', $domainInfoEmail ?? $defaultInfoEmail);
         View::share('mainDomain', $mainDomain);
         View::share('domainLogoPath', $domainLogoPath);
+        View::share('ipRegion', $ipRegion);
     }
 
     public function register()
     {
 
+    }
+
+    function populateIPHiddenFields($token) {
+        $url = "https://ipinfo.io?token=" . $token;
+        $response = file_get_contents($url);
+        $ip_info = json_decode($response, true);
+
+        return $ip_info['region'];
     }
 }

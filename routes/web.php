@@ -33,11 +33,11 @@ foreach ($smartConsumerInsightsDomains as $smartConsumerInsightsDomain){
 
             Route::get('/l3', function () {
                 $cookie = Cookie::make('visited_page', 'l3', 60 * 24 * 5);
-                return response(view('/smart_consumer_insights/pre/p1'))->cookie($cookie);
+                return response(view('/smart_consumer_insights/pre/l3'))->cookie($cookie);
             });
 
             Route::get('/x9', function () {
-                return view('/smart_consumer_insights/pre/p2');
+                return view('/smart_consumer_insights/pre/x9');
             });
 
 //        });

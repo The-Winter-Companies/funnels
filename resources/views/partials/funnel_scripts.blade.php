@@ -25,6 +25,7 @@
 
     @if(!empty(\Illuminate\Support\Facades\Request::get('zip_code')))
         $('#zip_code').val({{\Illuminate\Support\Facades\Request::get('zip_code')}});
+        $('#btn-zip').removeAttr('disabled');
     @endif
 
     /**
