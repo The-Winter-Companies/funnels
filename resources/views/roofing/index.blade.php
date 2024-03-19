@@ -78,8 +78,6 @@ $page = 'main';
         </div>
 
         <form class="form container-fluid" >
-            <input id="leadid_token" name="universal_leadid" type="hidden" value=""/>
-
             <fieldset id="zip-container" data-step="1"><legend hidden="true">zip</legend>
                 <h4 class="form-question">Enter your zip code<br class="d-none d-md-block"> to get started:</h4>
                 <div class="form-cont">
