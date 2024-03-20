@@ -7,10 +7,10 @@ body {
     color: #14274d;
     background-color: #fff;
 	min-width: 320px; overflow-x: hidden;
-	-webkit-transition: all 0.3s ease;                  
-	-moz-transition: all 0.3s ease;                 
-	-o-transition: all 0.3s ease;   
-	-ms-transition: all 0.3s ease;          
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -33,7 +33,7 @@ main.tubs:after{opacity: 0.7 !important}
 main.solar:before{background-image: url("../img/bg-solar.jpg"); background-size: cover;background-position: center -300px !important }
 
 .headline {text-align: center; max-width: 1400px;}
-.headline h2 {font-size: 6vh; margin-bottom: 1rem; font-weight: 700}
+.headline h2 {font-size: 5vh; margin-bottom: 1rem; font-weight: 700}
 .headline h3 {font-size:30px; margin-bottom: 2rem}
 
 .hl-bl{background-image: -webkit-gradient(linear,right top,left top,from(#4e73d1),to(#269bd6));
@@ -169,7 +169,7 @@ div.error,.form-error-message {color: red;font-size: 12px;margin-bottom:0;displa
 
 
 .form fieldset:first-of-type .form-control,
-.form fieldset:first-of-type .btn-text{line-height: 70px; height: 70px !important;text-align: center; font-size: 1.4rem; position: relative; padding-right: 30px;} 
+.form fieldset:first-of-type .btn-text{line-height: 70px; height: 70px !important;text-align: center; font-size: 1.4rem; position: relative; padding-right: 30px;}
 .form fieldset:first-of-type .btn{background: linear-gradient(90deg,#307df6 0%,#14BBBF 100%),linear-gradient(90deg,#0cd5d1 0%,#0ba9a6 100%); }
 .form fieldset:first-of-type .btn:hover{  -webkit-transform: scale3d(0.95, 0.95, 1.01);transform: scale3d(0.95, 0.95, 1.01); }
 
@@ -185,7 +185,7 @@ div.error,.form-error-message {color: red;font-size: 12px;margin-bottom:0;displa
 
 
 
-.form fieldset:not(:first-of-type) .form-btn{font-size:1.4rem;padding:6px 10px;} 
+.form fieldset:not(:first-of-type) .form-btn{font-size:1.4rem;padding:6px 10px;}
 .form fieldset:not(:first-of-type) .form-question{font-size: 2rem;}
 
 
@@ -333,33 +333,33 @@ label.form-error-message {display:none; width: 100%;
 	.headline h3 {font-size: calc(3vw + 10px)!important;}
 	.navbar img{max-width: 150px;}
 	.form-question{font-size: calc(3.125vw + 10px)!important;}
-	
+
 	.form fieldset:first-of-type .form-question{font-size: 1rem !important}
 	main:before{background-position:center 25vh  !important; background-size: 300%!important;}
-	
+
 	.page-title {font-size: 1.5rem}
-	
+
 }
 
 
 @media (min-width: 576px) and  (max-width: 767px) {.form fieldset:first-of-type .btn .btn-text{width: 30px !important; font-size: 0.1px; color: transparent !important;} .p-box{min-width:100%!important}}
-	
-	
-	
+
+
+
  @media (max-width: 576px) {
 	 .zip_box,
 	 .zip_box.fail {box-shadow: none !important;}
 	 .zip_box{background: transparent; border: none; }
 	 .zip_box .form-btns {min-width: 100%;}
 	 .form fieldset:first-of-type .form-control{background-color: #fff!important;border-radius: 50px !important;box-shadow: 0 5px 20px rgb(0 0 0 / 10%); margin-bottom: 20px !important ; padding-left: 20px !important; font-size: 16px !important; background-position:center left 10px;}
-	 
-	 .zip_box.fail .form-control{box-shadow: 0 0 0 4px #d400002d!important;} 
-	 
-	 
+
+	 .zip_box.fail .form-control{box-shadow: 0 0 0 4px #d400002d!important;}
+
+
 	 .p-box .page-box{border-radius: 0px !important;}
 	 .p-box:first-of-type .page-box{border-top-left-radius: 20px!important; border-top-right-radius: 20px!important;}
 	 .p-box:last-of-type .page-box{border-bottom-left-radius: 20px !important; border-bottom-right-radius: 20px !important;}
-	 
+
 	 .imgbg{background-position: center  top; background-size: cover}
 	 .imgbg:before {    background: linear-gradient(180deg, rgba(255,255,255,0.5) 20%, rgba(255,255,255,1) 50%);}
 	 .imgbg .page-desc{background-color: #fff}
