@@ -25,10 +25,14 @@ return [
     'your_after_home' => [
         'yourafterhome.local',
         'yourafterhome.com',
+        'web-server-1.yourafterhome.com',
+        'web-server-2.yourafterhome.com'
     ],
     'home_quotes_pro' => [
         'homequotespro.local',
         'homequotespro.com',
+        'web-server-1.homequotespro.com',
+        'web-server-2.homequotespro.com'
     ],
     'forever_home_hub' => [
         'http://127.0.0.1',
