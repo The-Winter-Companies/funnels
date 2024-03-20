@@ -26,6 +26,10 @@ return [
         'yourafterhome.local',
         'yourafterhome.com',
     ],
+    'home_quotes_pro' => [
+        'homequotespro.local',
+        'homequotespro.com',
+    ],
     'forever_home_hub' => [
         'http://127.0.0.1',
         'staging-quotes.foreverhomehub.com',
