@@ -37,15 +37,28 @@
                 </header>
             @endif
         @else
-            @if($page !== 'o7')
-                <header>
-                    <nav class="navbar justify-content-between mx-auto">
+            @if($mainDomain == "homequotespro")
+                @if($page !== 'o7')
+                    <header>
+                        <nav class="navbar justify-content-between mx-auto">
+				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
+					<a href="https://{{$domainFullDomain}}" target="_blank"><img src="{{ asset('img/home-quotes-pro.png') }}" onerror="this.src='{{ asset('img/home-quotes-pro.png') }}'" width="320"
+                                                                                 alt="Home Quotes Pro" class="img-fluid" draggable="false"></a>
+				</span>
+                        </nav>
+                    </header>
+                @endif
+            @else
+                @if($page !== 'o7')
+                    <header>
+                        <nav class="navbar justify-content-between mx-auto">
 				<span href="https://foreverhomehub.com" class="navbar-brand mx-auto">
 					<a href="https://{{$domainFullDomain}}" target="_blank"><img src="{{ asset('img/logo.png') }}" onerror="this.src='{{ asset('img/logo.png') }}'" width="320"
                                                                                  alt="Forever Home Hub" class="img-fluid" draggable="false"></a>
 				</span>
-                    </nav>
-                </header>
+                        </nav>
+                    </header>
+                @endif
             @endif
         @endif
     @endif

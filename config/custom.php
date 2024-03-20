@@ -20,6 +20,12 @@ return [
             'info_email' => "info@yourafterhome.com",
             'logo_path' => 'img/yah-logo.png'
         ],
+        'homequotespro' => [
+            'title' => "Home Quotes Pro",
+            'domain' => "homequotespro.com",
+            'info_email' => "info@homequotespro.com",
+            'logo_path' => 'img/home-quotes-pro.png'
+        ],
         'smartconsumerinsights' => [
             'title' => "Smart Consumer Insights",
             'domain' => "smartconsumerinsights.com",
