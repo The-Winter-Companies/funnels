@@ -21,6 +21,7 @@
     <meta property="og:image" content="{{asset($domainLogoPath)}}">
 
     @include('partials.rollbar_script')
+    @include('partials.trusted_form')
 
     <!-- Bootstrap -->
     <link href="{{asset('css/bootstrap-v4.0.0.css')}}" rel="stylesheet">
@@ -442,6 +443,7 @@
         formData['complete'] = 1;
         formData['token'] = getUrlParameter('token');
         formData['from_thank_you_page'] = 1;
+        formData['trustedform_cert_url'] = $('#xxTrustedFormCertUrl_0').val();
 
         if(modalId === "solar_form"){
             formData['roof_shade'] = $('#roof_shade').val();

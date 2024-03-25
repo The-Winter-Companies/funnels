@@ -17,6 +17,7 @@
                     <input type="hidden" id="roof_type" name="roof_type" value="Tile">
                     <input type="hidden" name="credit_rating" id="credit_rating" value="Good">
                     <input type="hidden" name="roof_shade" id="roof_shade" value="Not Sure">
+                    <input type="hidden" id="xxTrustedFormCertUrl" name="xxTrustedFormCertUrl" value>
                     <fieldset data-step="1" class="fadeInRight"><legend hidden="true">Electric Bill</legend>
                         <h3 class="form_box-question mb-1">What is your estimated monthly electric&nbsp;bill?</h3>
                         <p class="form_box-desc">This helps us determine how much solar power may save you.</p>
@@ -114,6 +115,7 @@
                     <input type="hidden" id="roofing_type" name="roofing_type" value="Asphalt shingle">
                     <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
                     <input type="hidden" id="project_type" name="project_type" value="New roof for new home">
+                    <input type="hidden" id="xxTrustedFormCertUrl" name="xxTrustedFormCertUrl" value>
                     <fieldset data-step="1" class="fadeInRight"><legend hidden="true">Roofing Type</legend>
                         <h3 class="form_box-question mb-1">What type of roof are you looking for?</h3><br>
                         <div class="form-cont">
@@ -204,6 +206,7 @@
                 <form class="form">
                     <input type="hidden" id="time_frame" name="time_frame" value="Immediately">
                     <input type="hidden" id="project_reason" name="project_reason" value="Other">
+                    <input type="hidden" id="xxTrustedFormCertUrl" name="xxTrustedFormCertUrl" value>
                     <fieldset data-step="1" class="fadeInRight"><legend hidden="true">Roofing Type</legend>
                         <h3 class="form_box-question mb-1">Why Do You Want A Walk-In Tub?</h3><br>
                         <div class="form-cont">
