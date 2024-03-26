@@ -480,7 +480,7 @@
             formData['lp_supplier_id'] = "41113";
             formData['lp_key'] = "x2yzfldq0srz17";
             formData['vertical'] = 'tubs';
-            formData['ef_adv_event_id'] = "2";
+            formData['ef_adv_event_id'] = "10";
             formData['ef_aid'] = "1";
         }
 
