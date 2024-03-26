@@ -540,9 +540,15 @@
 
             parent_fieldset.hide("slide", { direction: "left" }, 300, function () {
                 var next_fieldset = $(this).next();
+                var next_input = $(this).next('input');
+                var isTrustedInput = false;
+                if(next_input.length > 0){
+                    if(next_input.attr('name').includes('Trusted')){
+                        isTrustedInput = true;
+                    }
+                }
 
-                if (next_fieldset.length > 0) {
-                    // If the next fieldset exists, show it
+                if (next_fieldset.length > 0 && !isTrustedInput) {
                     next_fieldset.show("slide", { direction: "right" }, 300, function () {
                         var currentStep = next_fieldset.data('step');
                         slidenum(currentStep);
